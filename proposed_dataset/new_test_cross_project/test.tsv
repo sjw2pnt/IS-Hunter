@@ -1,0 +1,86 @@
+OQ	Hi@AlexDBlack, one question regarding  the MNISTAnomalyExample: when outputting the Worst(High Rec. Err) digits (or called outliers), are they correctly recognized ? In other words, they are recognized as ground-truth digits, but have large reconstruction error.  __eou__	user	0	1	1	2
+IG	anomaly detection and classification are different tasksthere is no "correctly recognized" in anomaly detection __eou__	agent	1	1	0	1
+FQ	the output Worst(High Rec. Err) digits are considered as anomalies/outliers? __eou__	user	0	1	0	0
+CC	yes __eou__	agent	0	1	0	0
+AE	if this is to demo a simple autocoder, it is fine. But if it is to demo the accuracy of the model, it is inadequate -- many outliers do not look like outliers. __eou__	user	0	1	0	0
+CC	thewzhang: the autocoder doesn\'t know what "outlier" means __eou__	agent	0	1	0	0
+FD	it is an example of using the values from the autoencoder to proximate what WE would consider outliers __eou__	agent	0	1	0	0
+PF	daredemo: , got it, thanks! __eou__	user	0	1	0	0
+
+OQ	How to get Layer instance of a specific vertex in ComputationGraph from custom BaseInputPreProcessor...  ?  I want to simply reach the weights of a layer (vertex) from another layer (vertex) during training...  __eou__	user	0	0	0	0
+
+OQ	but Adam,  I have 1 million records (each has 10 time series), so that means I have to create 1 million files with 10 record in each . I don't think it is a good choice ....  __eou__	user	0	1	1	2
+IG	That's what I do too (for other reasons) and it gives me just a few hundred files (batches of 150 examples) __eou__	agent	1	1	0	1
+FD	(note that I need multiple files for a single example, multiple inputs and outputs, but that shouldn't matter otherwise) __eou__	agent	1	1	0	1
+GG	thanks Ede,  __eou__	user	0	1	0	0
+
+OQ	Thanks Alex. Actually my data are stored in a database , and I planed to  load and convert them to CSV files so that I could use D4J built-in DataIterator, but it is not feasible to create a million files , so I am wondering there are other built-in methods for this  :)  __eou__	user	0	1	1	2
+CQ	if you have data in database, why would you need csv? __eou__	agent	0	1	0	0
+CQ	Because we don't have a JDBC record reader yet? __eou__	agent	0	1	0	0
+JK	:D __eou__	agent	0	1	0	0
+CQ	but he can read his data on his own, and just pass it via one of existing DataSetIterators that take jvm-originated data? __eou__	agent	0	1	0	0
+FD	we have bunch of those __eou__	agent	0	1	0	0
+IG	I was just trying to follow the tutorial . you know , I am new to D4J , so I am not familiar with how to create a custom DataSetIterator , so I started from the tutorial __eou__	user	0	1	0	0
+IG	right but JDBC straight from the source would be more straightforward :D __eou__	agent	1	1	0	1
+FQ	Is there any sample for loading data from database and put into RNN  ?@raver119@agibsonccc __eou__	user	0	1	0	0
+IG	CSV is also the best tested __eou__	agent	1	1	0	1
+
+OQ	hey, I'm trying to import a model from keras, which seems to be working, but I don't really understand how to include the json and hdf file in the output jar. I put them in a resources folder that's a resource root and they are present at the root of the jar file, but I get a no file found exception  __eou__	user	0	0	0	0
+
+OQ	Within class LenetMnistExample in deeplearning4j example package, when you train the model, how can you specify the input data label to fit the model? I only see you using model.fit(inputData) without specific the label with it.  __eou__	user	0	0	0	0
+PA	DataSet contains input and label fields __eou__	agent	0	0	0	0
+FQ	But if have separate dataset how can I combine them __eou__	user	0	0	0	0
+FD	for example by dataset input is 3 dimension and output is 1 dimensional output __eou__	user	0	0	0	0
+FD	Based on this link [<-LINK->] , Can I just declare it like this Dataset input = new Dataset(input,Label) while both input and label are NDArray with different dimension __eou__	user	0	0	0	0
+PA	input and label fields can be any INDArrays (that are appropriate for the network you are training, anyway) __eou__	agent	0	0	0	0
+FD	and yes, you create it using that constructor __eou__	agent	0	0	0	0
+PF	Thank __eou__	user	0	0	0	0
+
+OQ	Hi guys how are you  __eou__	user	0	0	0	0
+
+OQ	raver119: Let me train a new model in 0.7.0 and test it out once... if that fails too I will share the models and file an issue  __eou__	user	0	0	0	0
+AC	just post configurations you have, i'll do it faster :) __eou__	agent	0	0	0	0
+IG	i know where to look there :) __eou__	agent	0	0	0	0
+FD	raver119:  [<-LINK->] __eou__	user	0	0	0	0
+CQ	how big is corpus? is it sentences or documents? __eou__	agent	0	0	0	0
+FD	documents = set of sentences. i.e. text file. __eou__	agent	0	0	0	0
+CC	documents __eou__	user	0	0	0	0
+PF	amazing, thanks __eou__	agent	0	0	0	0
+FQ	how big is it? how many documents, and what's average size of single document in bytes? __eou__	agent	0	0	0	0
+IG	We have 3 different models  : 1 with 2 lakhs docs, 1 with 32k docs and last one with 476 docs... all have average 10-12 sentencesa __eou__	user	0	0	0	0
+FQ	lakhs <- what's that word means? __eou__	agent	0	0	0	0
+IG	0.2 mil __eou__	user	0	0	0	0
+PF	aha, thanks. __eou__	agent	0	0	0	0
+
+OQ	So I was having trouble finding out what that int array that used to be returned for that old getGameScreen. even was, there was no info about it on their site, so it\'s a little hard for me to figure out what I should do to get it into the correct format.  So I tried just converting to an int array (because that\'s what it expects) but it\'s complaining about "Mis matched lengths"  do I need to scale it somehow so it's equal size?  __eou__	user	0	1	1	2
+CQ	i can’t read your mind, sorry. give full exception as !gist please :) __eou__	agent	0	1	0	0
+IG	To use gist: paste your code/exception/large output log into [<-LINK->] , click 'Create Secret Gist' and paste URL link here __eou__	agent	0	1	0	0
+AC	Will do, one sec. Appreciate the patience. __eou__	user	0	1	0	0
+IG	 [<-LINK->]  __eou__	user	0	1	0	0
+NF	Oh shoot, my bad I used public. Won't do that again. __eou__	user	0	1	0	0
+GG	that doesnt matters __eou__	agent	0	1	0	0
+JK	so __eou__	agent	0	1	0	0
+IG	exception is at the bottom __eou__	user	0	1	0	0
+IG	one thing looks like a hint __eou__	agent	1	1	0	1
+FD	i guess your byte[] length is 1440000 __eou__	agent	1	1	0	1
+FD	and expected int[] length is  is 360000 __eou__	agent	1	1	0	1
+FD	which is 1440000 / 4 (sizeof int)  = 360000 __eou__	agent	1	1	0	1
+CQ	what their documentation says? :) __eou__	agent	0	1	0	0
+IG	 [<-LINK->]  __eou__	user	0	1	0	0
+FD	not crazy specific there __eou__	user	0	1	0	0
+CQ	InMemoryLookupTable.plotVocab needs UIConnection argument. where do I find examples for that? __eou__	agent	0	1	0	0
+NF	just says it's a byte array is all, and the previous api was just returning an int[] when you called getGameScreen() (no longer there), but I can't find any info on what that was either __eou__	user	0	1	0	0
+AE	raver119: So that 1440000 number is = to the number of pixles in an 800x600 image, which is the resolution i'm running the game __eou__	user	0	1	0	0
+JK	aha __eou__	agent	0	1	0	0
+CQ	so that’s probably rl4j expects lower resolution? __eou__	agent	0	1	0	0
+PF	possible... I didn't touch the resolution though so that'd be strange __eou__	user	0	1	0	0
+FD	I suppose I could step through and figure out where that 36000 number is coming from __eou__	user	0	1	0	0
+IG	from line 72 __eou__	agent	0	1	0	0
+FD	observationSpace = new ArrayObservationSpace<>(new int[]{game.getScreenHeight(), game.getScreenWidth(), 3}); __eou__	agent	0	1	0	0
+FD	i guess those options should be pr propagated to dl4j level __eou__	agent	0	1	0	0
+IG	raver119: Okay, was having workspace issues... back at it now.  So the issue is that the ind array is totally different for what you said it's expecting there, and the screen_buffer __eou__	user	0	1	0	0
+FD	what it's expecting is a shape of 800,600, 3 in an ndarray __eou__	user	0	1	0	0
+FD	what it's getting is a 1,360000 __eou__	user	0	1	0	0
+
+OQ	I am trting to load a saved keras model, and the backend is tensorflow. My environment is eclipse, java 1.8, CPU. this is my code:https://gist.github.com/kuluofenghun/581c8be86031bbe28112a3b91eb66214.js and this is my pom filehttps://gist.github.com/kuluofenghun/8fcdcaebffb84bd0b8a8b07afb662b40.jsBut it failed.  the error information is :Exception in thread "main" java.lang.NoClassDefFoundError: org/nd4j/shade/jackson/core/type/TypeReferenceI also try to use the git source. there is the same error in the deeplearning4j-modelimport project:The import org.nd4j.shade.jackson.core.type.TypeReference cannot be resolvedThe import org.nd4j.shade.jackson.databind.ObjectMapper cannot be resolvedHow to solve this question?  AlexDBlack: I have correct my pom file and remove the  nd4j-jackson in my pom filebut the error is stillException in thread "main" java.lang.NoClassDefFoundError: org/nd4j/shade/jackson/core/type/TypeReferenceI also tried the git source of dl4j, the are the same error in the project deeplearning4j-modelimport:The import org.nd4j.shade.jackson.core.type.TypeReference cannot be resolved  __eou__	user	0	1	1	2
+
