@@ -1,0 +1,346 @@
+OQ	How would I run the program C++? (the simplest way) There are so many programs for one language. If someone can pm me to help me step by step itd be greatly appreciated __eou__	user	0	0	0	0
+
+GG	hi __eou__	user	0	1	1	2
+OF	The one missing feature of Gitter I would like to see is the ability to search through room history __eou__	user	0	1	0	0
+FD	I see this: [<-ISSUE->]  __eou__	user	0	1	0	0
+OQ	I wonder how long it might be before we see this feature implemented? __eou__	user	0	1	0	0
+AE	other than that I prefer gitter over slack __eou__	user	0	1	0	0
+IG	zacts: you can search the current room, not across rooms. use the search icon to the left. __eou__	agent	1	1	0	1
+PF	mydigitalself: Nice, thanks! re: searching chat room history __eou__	user	0	1	0	0
+
+OQ	discourse has slack chat plugin ... is there nay plans for gitter plugin for same? __eou__	user	0	0	0	0
+
+OF	Mikaela: wishes the reactions came to GitHub mobile web and API too so it didn't need remembering what to on desktop and it could be clicked in Octodroid which is also missing subscribing thanks to API not having it __eou__	user	0	0	0	0
+IG	Mikaela: it's available in preview via the API __eou__	agent	0	0	0	0
+FD	 [<-LINK->]  __eou__	agent	0	0	0	0
+FD	look below the payload __eou__	agent	0	0	0	0
+CC	I mean subscribe to email notifications __eou__	user	0	0	0	0
+IG	wishes the reactions came to GitHub mobile web and API too you said exactly that __eou__	agent	0	0	0	0
+FD	and then went on to say more about subscriptions in the API __eou__	agent	0	0	0	0
+FD	and i'm saying that reactions is coming to the API and you can preview it __eou__	agent	0	0	0	0
+UF	Sorry, I confused.  __eou__	user	0	0	0	0
+AC	That could probably be thrown to octodroid tracker __eou__	user	0	0	0	0
+
+OQ	Where can I go to buy an encoder? __eou__	user	0	1	1	2
+FD	 [<-LINK->] __eou__	user	0	1	0	0
+IG	Crljules: e-shop __eou__	agent	1	1	0	1
+
+OQ	Hi I'm new to the community. It's nice to be here, I am just starting to work with Linux any advice would be greatly appreciated __eou__	user	0	1	1	2
+IG	jermbone1000_twitter: check BSD systems  __eou__	agent	1	1	0	1
+
+OQ	MadLittleMods: hey... regarding the chat and transferring of messages. maybe thats good enough. Because i guess i can add/invite all the learners to the new channel easily. If in addition, the old channel is being deleted or forwards to the new one, thats fine. But i guess i still need to write tosupport@gitter.im? __eou__	user	0	0	0	0
+
+OQ	Basic question !! How can i setup gitter so it ONLY gives me notifications for where i am mentioned ?? I want to set this globally for all my gitters __eou__	user	0	1	1	2
+IG	joeblew99: go to notification settings,  in any room, click onConfigure Defaultschange it toMutedone. __eou__	agent	1	1	0	1
+IG	per what @mydigitalself said, you can also apply that as the default to all rooms after setting it for one, or at least there is a link there @joeblew99 __eou__	agent	1	1	0	1
+UF	mydigitalself: thanks.  __eou__	user	0	1	0	0
+PF	have done and that and see if its less chatty :) __eou__	user	0	1	0	0
+
+OP	I am stuck . <p>   I have to Chang colour  to p element tex. Can anyone help please __eou__	user	0	0	0	0
+IG	 [<-LINK->] @craigchilled This room is for Gitter support, not general technical support. Please read the welcome message when joining a room and take note of the room description/topic in the chat header at the top. After fixing up your question, [<-LINK->] , you should try [<-LINK->]  __eou__	agent	0	0	0	0
+
+OQ	anyone give me wordpress slideR>? __eou__	user	0	0	0	0
+IG	engradeelnayyar: This room is for Gitter support, not general technical support. Please read and adhere to the welcome message you see when joining rooms and the room description/topic at the top in the chat header. Google will be your best bet to compare options __eou__	agent	0	0	0	0
+
+OQ	Hey would it ever be possible that IRC access could be allowed to not require signup (for non private rooms, perhaps as opt in?) __eou__	user	0	0	0	0
+FQ	like freenode? __eou__	agent	0	0	0	0
+PF	yes __eou__	user	0	0	0	0
+FD	exactly like freenode __eou__	user	0	0	0	0
+CC	of course, I do also use freenode, but everyone loves gitter more than freenode. I especially like the public logging of channels Gitter does, which is something that freenode doesn't have or even encourage by default. __eou__	user	0	0	0	0
+AE	me too - but for something I am working on gitter works better __eou__	user	0	0	0	0
+AE	I wouldn't mind having some sort of bridge from Gitter to my freenode channel, which I already have public logging for. I would consider my logs to be canonical. I wouldn't care if Gitter logs the channel as well. It's more about having an easy way for people to jump into the channel and start talking. __eou__	agent	0	0	0	0
+AE	We tried same room.io which is close - but makes it come through one user, which is odd. __eou__	user	0	0	0	0
+AE	Yeah, I haven't quite been satisfied with the user experience so far. For now, I just stook up an instance of Shout so people have an easy way to connect to the freenode channel from a web browser. No freenode captcha, no having to think about which channel to join. You just pick a username and start talking. Works pretty well. __eou__	agent	0	0	0	0
+CC	The user experience of the various "sync freenode and Gitter" solutions, I mean. __eou__	agent	0	0	0	0
+
+OQ	How to make a room invite only afterwards? __eou__	user	0	0	0	0
+IG	Bluscream: you can't change the room type after you've created it __eou__	agent	0	0	0	0
+FQ	So i have to delete and recreate the whole room? :/ __eou__	user	0	0	0	0
+AE	That's not very user-friendly __eou__	user	0	0	0	0
+IG	It's just not something that's implemented yet __eou__	agent	0	0	0	0
+FD	I can count on one hand the number of times it's been requested, and i don't have an abnormally large number of fingers ;) __eou__	agent	0	0	0	0
+AC	 [<-LINK->] @Bluscream Create a new issue [<-LINK->]  __eou__	agent	0	0	0	0
+
+OQ	Hi people, I love Gitter, coming from Slack. But what's really annoying is that "eyeballs" indicator. It was much clearer and more reliable in Slack which used a connection indicator. This issue [<-ISSUE->] ( [<-ISSUE->] ) was opened like two years ago, any news on an improved indicator? Thanks :) __eou__	user	0	0	0	0
+FD	I also experience the same as [<-ISSUE->] __eou__	user	0	0	0	0
+
+GG	Hello world! Just joining now. Looking forward to learning a bunch from y'all! __eou__	user	0	0	0	0
+FQ	julisan1: Perhaps you meant to go to [<-LINK->] - Just curious, how did you end up in this room (retrace steps)? __eou__	agent	0	0	0	0
+PF	MadLittleMods: , I guess you're right. __eou__	user	0	0	0	0
+FQ	 [<-CODE->] Still curious on how you got into this room after signing in if you can remember __eou__	agent	0	0	0	0
+IG	MadLittleMods: , I was trying out suggestions provided to me by freecodecamp __eou__	user	0	0	0	0
+FQ	julisan1: Can you expand or link what you mean by suggestions? __eou__	agent	0	0	0	0
+IG	@MadLittleMods @julisan1 I guess these suggestions? __eou__	agent	0	0	0	0
+
+OQ	any one know how to make popup ? __eou__	user	0	1	1	2
+JK	a __eou__	user	0	1	0	0
+IG	engradeelnayyar: Perhaps you meant to go to [<-LINK->] __eou__	agent	1	1	0	1
+
+GG	Hi everyone __eou__	user	0	1	1	2
+OQ	what is the best way to share a list of rooms with my development team? __eou__	user	0	1	0	0
+FD	i was looking for a way to share my profile with them... hoping it would show the list of rooms i joined or starred __eou__	user	0	1	0	0
+IG	jbcebe-seekers: It has been mentioned internally before but there isn't a way to share a list outside of linking a community home [<-LINK->]  __eou__	agent	1	1	0	1
+FQ	MadLittleMods: thanks Eric, how would you use the community home for that purpose? __eou__	user	0	1	0	0
+FQ	do you mean... just share the URL by some other mean outside Gitter? __eou__	user	0	1	0	0
+FD	for example in GitHub or Twitter... you could see who I am following, which repo I starred __eou__	user	0	1	0	0
+FD	I wished there was something similar... so I can show other ppl which chat room i'm in  :) __eou__	user	0	1	0	0
+FD	or which one i starred __eou__	user	0	1	0	0
+
+OQ	is there an easy way to reference another channel without the full gitter.im URL? or is that the best way? __eou__	user	0	1	1	2
+IG	that's the only way __eou__	agent	1	1	0	1
+AE	ok, makes sense since # gives you tightly integrated GitHub issues/PRs so it wouldn't work for a channel name __eou__	user	1	1	0	1
+
+GG	Hey __eou__	user	0	1	1	2
+OQ	How can I give admin permissions for a gitter organization to one more user ? __eou__	user	0	1	0	0
+FD	I can see a "Permissions" option in every room's settings, but I want to give admin rights to this user organization-wide __eou__	user	0	1	0	0
+FQ	amberj: what do you see at the bottom left of that modal? __eou__	agent	0	1	0	0
+IG	"Edit community permission".. yup this is what I was looking for. Thanks@mydigitalself __eou__	user	0	1	0	0
+JK	 __eou__	agent	0	1	0	0
+IG	just add them as extra admins if the community is linked to a GitHub org __eou__	agent	1	1	0	1
+
+OQ	MadLittleMods: and colleagues, has anyone else reported sporadic search failures? For example, around one minute ago, seekingwebhooksin this room found nothing and there appeared a notification about communication issues. __eou__	user	0	0	0	0
+FD	A second search for the same word found some matches, and there reappeared the notification. Subsequent searches for the same word found nothing, and there reappeared the notification. For example: __eou__	user	0	0	0	0
+FD	 [<-LINK->]  __eou__	user	0	0	0	0
+IG	@grahamperrin Please refrain from pinging people directly. Anyone here can help you.It is a problem I noticed a while back and is caused by some limits we are hitting with the version of elasticsearch we are on atm iirc.troupe/gitter-webapp#2133 __eou__	agent	0	0	0	0
+CC	Apologies Eric. I'm already subscribed to [<-ISSUE->] but had not imagined the symptoms going beyond searches for usernames. __eou__	user	0	0	0	0
+IG	Just any query that could hit the timeout __eou__	agent	0	0	0	0
+FD	Thefrom:xxxsyntax is a more involved query that reproduces the problem often __eou__	agent	0	0	0	0
+NF	 [<-ISSUE->] page not found if attempt to open the issue in GitHub; and pointing at the link in this chat does not always reveal an outline of the issue in the pop-up. __eou__	user	0	0	0	0
+IG	grahamperrin: Internal issue for my own reference __eou__	agent	0	0	0	0
+FQ	Ah OK. So I guess that GitHub can allow a limited view of internal issues, yes?  (Or did you make the issue private a few seconds ago?) __eou__	user	0	0	0	0
+IG	grahamperrin: nope. It is just a private repo __eou__	agent	0	0	0	0
+CC	Hmm, I did see the content of that issue (did have access) a few times when pointing at the first of your two bullet pointed links at [<-LINK->] above. __eou__	user	0	0	0	0
+AC	grahamperrin: Screenshots if you can reproduce again please. __eou__	agent	0	0	0	0
+
+OQ	Hello I'm new. But I have a question about Git.  Can I ask these type of questions here? __eou__	user	0	0	0	0
+IG	Guaby: This room is for Gitter support. You can try [<-LINK->] __eou__	agent	0	0	0	0
+
+OP	almost daily running firefox if i leave gitter running I get an error that a script is not running correctly. Then I have to stop it and restart gitter. The script ishttps://cdn02.gitter.im/_s/7136ee1/js/vendor.js:9is this a known bug? __eou__	user	0	0	0	0
+FD	 [<-LINK->]  __eou__	user	0	0	0	0
+FD	image to followup on the above question __eou__	user	0	0	0	0
+FQ	lydatech: never got that error for me on firefox 51.0b6 win 10 64bit. Then again, I don't usually run for over a day. Pressingdebug scriptand finding more details about the error might help? __eou__	agent	0	0	0	0
+
+OQ	our repo was converted from a personal repo to an organizational repo— how can we update our gitter to point to the new repo? __eou__	user	0	0	0	0
+
+GG	Hello guys :D __eou__	user	0	0	0	0
+OP	I need some help from any admin!. I had created this account : [<-LINK->] , which was associated with the github account severustux. But later I deleted the linked github account and opened the account  "severus-tux" and this is the one I am currently using ( [<-LINK->] ) . I would like to delete my old gitter account  ( [<-LINK->] ) but I cannot login to it as I have completely deleted the linked github account. Could someone help me ? __eou__	user	0	0	0	0
+
+OQ	i want to know how can download a website text? __eou__	user	0	0	0	0
+IG	engradeelnayyar: with respect, that's not a Gitter support question. Please seek answers in a more appropriate area; you're likely to find the question asked, and answered, at [<-LINK->]  __eou__	agent	0	0	0	0
+
+OP	Archives here [<-LINK->] and elsewhere no longer work. __eou__	user	0	0	0	0
+IG	grahamperrin: archives working for me.. maybe fixed since you asked __eou__	agent	0	0	0	0
+FD	Heat map present but no heat, no presence of archived content __eou__	user	0	0	0	0
+PF	Works for me, I can see the "heat", the green coloured blocks; can also browse archives. No errors in console? __eou__	agent	0	0	0	0
+IG	 [<-CODE->] __eou__	user	0	0	0	0
+FD	That was from reproduction of a cold and empty heat map with an almost new Firefox profile on FreeBSD-based TrueOS Desktop; nothing other than LastPass installed. Since then I have reproduced the problem with Firefox on Android for both [<-LINK->] and [<-LINK->] __eou__	user	0	0	0	0
+FD	Now with TrueOS Desktop I see what's expected, maybe thanks to a Control-F5 reload without cached content). __eou__	user	0	0	0	0
+PF	Android, now https://gitter.im/gitterHQ/gitter/archives/all looks OK,  __eou__	user	0	0	0	0
+AE	aybe thanks to a reload __eou__	user	0	0	0	0
+AC	grahamperrin: closes the test instance of Firefox __eou__	user	0	0	0	0
+IG	 [<-LINK->] __eou__	user	0	0	0	0
+AC	Attention to the notifications. I suspect that this problem will not occur if I use WebKit-based QupZilla … __eou__	user	0	0	0	0
+AE	My suspicion was wrong. Screen recording to follow. __eou__	user	0	0	0	0
+IG	 [<-LINK->] __eou__	user	0	0	0	0
+AC	A recording of the problem in GNOME Web. One of two linked archive pages (both opened before I began recording) was cold and empty until, whilst recording, I reloaded the page: __eou__	user	0	0	0	0
+IG	 [<-LINK->] __eou__	user	0	0	0	0
+AE	chat-cache was unexpectedly enabled. I'm certain that this preference was not set by me, because I was warned that the feature causes problems: __eou__	user	0	0	0	0
+IG	 [<-LINK->] __eou__	user	0	0	0	0
+AE	Maybe the problem affecting some views of archives falls under "any query that could hit the timeout" __eou__	user	0	0	0	0
+IG	@grahamperrinhttps://gitter.im/trueos/Lobby/archives/all remains cold and empty after ten or more consecutive reloads.yep I'm having problem as #1528 i.e. network issues, it seems specific to that room. I'm on chrome; not using gitter.next __eou__	agent	0	0	0	0
+
+OP	Hey, I'm trying to add the github repository activity to the gitter autoNumeric channel, but as a collaborator (with write access to the official repo), I only see my own repo and forks. Why is that? __eou__	user	0	1	1	2
+IG	AlexandreBonneau:  [<-LINK->] and I assume you want activity from [<-LINK->] - You would need to have admin permissions to add a webhook. Because it is a repo on another user, they might need to add it themselves because there isn't any third party application access like on an org.You could setup a custom webhook integration and give them the URL to add in the GitHub interface __eou__	agent	1	1	0	1
+UF	MadLittleMods: ok thank you __eou__	user	0	1	0	0
+
+OQ	does anyone know anything about performance testing? __eou__	user	0	0	0	0
+IG	Performance of Gitter? If it's not a Gitter support question, please ask elsewhere. Thanks. __eou__	agent	0	0	0	0
+
+OP	just my monthly moan that rooms should be open by default:Went to: [<-LINK->] Thought, I have an issue, wanna discuss it, so I change URL to: [<-LINK->] - 404.... now what? __eou__	user	0	0	0	0
+NF	intellix: don't understand the issue - public is the default permission when creating a room __eou__	agent	0	0	0	0
+CC	the issue is 404 when renaming a github repository URL to gitter, because the owner hasn't opted into creating a room: [<-ISSUE->] __eou__	user	0	0	0	0
+
+OP	I am having an issue where I either leave, or type /leave in a channel, and as soon as a message is posted to the channel it pops back up in my conversations list __eou__	user	0	1	1	2
+FQ	Maxels88: the web interface, yes? Do you use GitterNextand if so, is chat-cache enabled? __eou__	agent	0	1	0	0
+PF	grahamperrin: I think I figured it out.  __eou__	user	0	1	0	0
+AC	 stumbled on some irc interface and had that hooked up. leaving the channels on my irc client seem to have stopped the auto rejoins __eou__	user	1	1	0	1
+GG	thanks for the follow up though __eou__	user	0	1	0	0
+
+OP	Has anyone had the issue of all fonts being italic? __eou__	user	0	0	0	0
+FD	Using Edge __eou__	user	0	0	0	0
+FD	It only happens on one of my machine __eou__	user	0	0	0	0
+FD	Clearing cache, signing out etc nothing helped __eou__	user	0	0	0	0
+FQ	Sounds like a font/style override in your browser, all sites or just one? __eou__	agent	0	0	0	0
+IG	Only Gitter __eou__	user	0	0	0	0
+FD	 [<-LINK->]  __eou__	user	0	0	0	0
+FD	And it started totally out of nowhere __eou__	user	0	0	0	0
+FD	 [<-ISSUE->]  __eou__	user	0	0	0	0
+IG	that it only happens on one computer and we've heard no other reports of it, would lead me to believe it's something specific with your setup __eou__	agent	0	0	0	0
+FD	does Edge have multiple profiles and does it happen on the same machine in another browser <--- that would actually be interesting, i have a theory __eou__	agent	0	0	0	0
+FD	which is, we use Source Sans font, but we also look for a local version of it before going out to the web for a web font. andmaybeyou have a corrupt local version of source sans on your machine where the regular style is somehow italic __eou__	agent	0	0	0	0
+AC	can you check your installed fonts? __eou__	agent	0	0	0	0
+AC	you can also try inspect and go down to.fonts-loaded bodyclass and removeSourceSansLocal __eou__	agent	0	0	0	0
+JK	felixfbecker:  __eou__	agent	0	0	0	0
+AC	let me check __eou__	user	0	0	0	0
+PF	it works fine in Chrome __eou__	user	0	0	0	0
+FD	I heard some other user had the same problem __eou__	user	0	0	0	0
+NF	Removing SourceSansLocal does not solve it __eou__	user	0	0	0	0
+IG	try removing any of the other ones one at a time from left to right __eou__	agent	0	0	0	0
+PA	removing source-sans-pro fixes it __eou__	user	0	0	0	0
+IG	So now it is font-family: Source Sans Pro,-apple-system,Roboto,pt sans,calibri,sans-serif; __eou__	user	0	0	0	0
+FD	But the font looks different now than in Chrome __eou__	user	0	0	0	0
+AE	source-sans-prois the web font - so somehow your browser is displaying/loading italic in place of regular __eou__	agent	0	0	0	0
+AC	Okay, so I went to fontsquirrel and installed Source Code Pro __eou__	user	0	0	0	0
+NF	Now only the chat box is italic, the chat and chat rooms not anymore __eou__	user	0	0	0	0
+FD	I don't see any network requests for the font __eou__	user	0	0	0	0
+IG	i can see why, the intput text area for some reason doesn't have the local fall-back font __eou__	agent	0	0	0	0
+NF	But still, there is an issue when the user does not have the font downloaded __eou__	user	0	0	0	0
+FQ	i still don't understand why Edge is displaying italics - doesn't happen on your other machine, same OS/Edge versions? __eou__	agent	0	0	0	0
+IG	hm actually my other machine is on stable, while this one is on Insiders.  __eou__	user	0	0	0	0
+AE	ut I don't think that is the problem, because it appeared out of nowhere and I was on Insiders before already __eou__	user	0	0	0	0
+FQ	is there a reason the gist preview box doesn't get scrollbars when embedded vs how GitHub's own embed URLs work eg on a blog? __eou__	agent	0	0	0	0
+
+OQ	Is it a bug or a feature that it looks to people that I read at Gitter messages immediately because I use irc.gitter.im? This came to my attention at [<-LINK->] __eou__	user	0	1	1	2
+JK	all* __eou__	user	0	1	0	0
+IG	"feature" I think, as you also get to read people's messages instantly and when they make edits it sends a new message to your client rather than "fixing" the old one, so you can see everybody's dirty minds :D __eou__	agent	1	1	0	1
+
+OQ	hey there campers..... i think there is a bug blocking my progress. I am stuck on the 'Create a Set of Radio Buttons' where I've worte the following code:<input type="text" placeholder="cat photo URL" required><lable>     <input type="radio" name="indoor-outdoor">Indoor</lable><lable><input type="radio" name="indoor-outdoor">Outdoor</lable><button type="submit">Submit</button></form>Please help. __eou__	user	0	0	0	0
+NF	srimanipandey: wrong room __eou__	agent	0	0	0	0
+
+OP	For reference, but not worth making an issue of at this time (QupZilla here is not the most recent version): __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+FD	After the event I browsed back and realised that whilst double-clicking to select text within a title, I had inadvertently clicked a 'CREATE TOPIC' button: __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+AEFQ	that doesn't look normal at all, does it look like that in other browsers? __eou__	agent	0	0	0	0
+FQ	like FireFox? __eou__	agent	0	0	0	0
+IG	Not reproducible with Firefox. With regard to QupZilla, see the postscript to [<-ISSUE->] __eou__	user	0	0	0	0
+FD	Appearances are very unpredictable, worse, in [<-LINK->] 4.14.10 but (again) that's probably an outdated version. __eou__	user	0	0	0	0
+FD	I don't use Konqueror (I launched it out of curiosity), I do sometimes use QupZilla. __eou__	user	0	0	0	0
+
+OQ	Hi,  guys!  Please,  help me to know how i could add cufon in my project..  Maybe someone can share with me different tutorials or links to educational materials with this topic? __eou__	user	0	0	0	0
+CQ	Is the project Gitter-related?  If it's not a Gitter support question, please ask elsewhere. Thanks. __eou__	agent	0	0	0	0
+IG	There's a "community" link at [<-LINK->] __eou__	agent	0	0	0	0
+
+GG	Hell-O's __eou__	user	0	0	0	0
+
+OQ	can we have an option to upload images so that users can share screenshots __eou__	user	0	1	1	2
+IG	arunkumar413: You can already paste or drag images into the chat. __eou__	agent	1	1	0	1
+UF	cbj4074: thanks.  __eou__	agent	0	1	0	0
+NF	aste does not have the required effect when the copy is from within e.g. Eye of MATE Image Viewer. __eou__	agent	0	1	0	0
+PF	 see now that it works when copied from e.g. GIMP. __eou__	agent	1	1	0	1
+AE	grahamperrin: Depends on how the OS and your browser interprets things. Not very standard __eou__	agent	1	1	0	1
+PF	grahamperrin: Sure, no prob... sounds like it can be finnicky! __eou__	agent	0	1	0	0
+
+GG	Hi Glitter __eou__	user	0	0	0	0
+
+GG	hello __eou__	user	0	0	0	0
+OQ	@ProProgrammer  can you notice any bug in the  html here<!DOCTYPE html><html><head>  <!--All attachments go here-->  <link rel="text/stylesheet" href="css/bootstrap.min.css">  <link href="text/javascript" href="css/bootstrap-theme.min.css"></head><body><nav id="myNav" class="navbar navbar-default ">  <div class="container-fluid">    <div class="navbar-header">      <a href="#" class="navbar-brand">Sanjay</a>    </div>    <div>      <ul class="nav navbar-nav">        <li class="active"><a href="#">Home</a><li>          <li><a href="#">Movies</a></li>          <li><a href="#">Songs</a></li>          <li><a href="#">Tweets</a></li>      </ul>    </div></div></nav><script src="js/bootstrap.min.js"></script><script src="js/jquery.min.js"></script></body></html> __eou__	user	0	0	0	0
+NF	indonogakusei: if not related to support for Gitter, please seek help elsewhere. This room is dedicated to Gitter. Thanks. __eou__	agent	0	0	0	0
+
+OQ	Hi, we renamed our github repository there is a chance to rename the gitter channel ? __eou__	user	0	0	0	0
+
+OQ	Hi there! Is Gitter.com unstable? Or is it my laptop? __eou__	user	0	0	0	0
+FD	Keeps crashing. __eou__	user	0	0	0	0
+FD	It crashes often. __eou__	user	0	0	0	0
+FD	Now it doesn't show my last line.  Anyone? __eou__	user	0	0	0	0
+JK	? __eou__	user	0	0	0	0
+CC	we can hear you __eou__	agent	0	0	0	0
+
+OQ	Good morning all. What are the limitations of integration deployment within rooms? Seemingly anyone can add integrations to any room but I haven't seen any events show up in any room where I'm a member, or otherwise. __eou__	user	0	0	0	0
+FD	Oh and while I'm thinking about it, both the android and iOS apps will blank out the content of a room (right pane empty, right header still visible). In such cases the only way to recover is to switch to another room and switch back, sometimes more than once to get the content to reappear. __eou__	user	0	0	0	0
+
+OQ	Hi can you merge this with my github account please __eou__	user	0	1	1	2
+FD	MadLittleMods: Hi can you merge accounts __eou__	user	0	1	0	0
+IG	weirdavid1_twitter: re: [<-LINK->] above please refrain from the personal address. Thanks. __eou__	agent	1	1	0	1
+PF	Cool just read it __eou__	user	0	1	0	0
+JK	Quiet in here tonight __eou__	user	0	1	0	0
+
+GG	hi my profile picture will not update __eou__	user	0	0	0	0
+
+GG	hello world __eou__	user	0	0	0	0
+
+OQ	is gitter open source? __eou__	user	0	1	1	2
+IG	Good question. I don't believe so. __eou__	agent	1	1	0	1
+
+GG	hello __eou__	user	0	0	0	0
+OQ	how can i find settings in gitter? __eou__	user	0	0	0	0
+FD	to delete account __eou__	user	0	0	0	0
+
+GG	Hello evry one __eou__	user	0	0	0	0
+GG	first head gitter __eou__	user	0	0	0	0
+GG	tommego: Hey! __eou__	agent	0	0	0	0
+GG	seanmitch: Aha? __eou__	user	0	0	0	0
+JK	coding __eou__	user	0	0	0	0
+OQ	tommego: Hello, hey I was wondering, I am a C# dev and was debating between also learning C and V++ __eou__	agent	0	0	0	0
+FD	C++* __eou__	agent	0	0	0	0
+AE	I like OOP and encapsulation, but since I might want to penetration test when I'm older C might be better for that? __eou__	agent	0	0	0	0
+OQ	Do you think I should learn c or c++? __eou__	agent	0	0	0	0
+AE	seanmitch: I prefer to c++ __eou__	user	0	0	0	0
+CQ	Any reason why? __eou__	agent	0	0	0	0
+IG	And I dev app using c++ __eou__	user	0	0	0	0
+FQ	And is that still easily usable on Linux? __eou__	agent	0	0	0	0
+JK	^ __eou__	agent	0	0	0	0
+PF	of course __eou__	user	0	0	0	0
+NF	DKurilo: @tommego@seanmitchThis room is for Gitter support. Please read the welcome message when joining a room and mind the room description/topic in the chat header. Please use [<-LINK->] __eou__	agent	0	0	0	0
+IG	I use Qt __eou__	user	0	0	0	0
+UF	MadLittleMods: sorry __eou__	user	0	0	0	0
+IG	tommego: Join the chat: [<-LINK->] __eou__	agent	0	0	0	0
+UF	Lol so we don't get yelled at __eou__	agent	0	0	0	0
+
+OQ	Hi all,Does anybody know how to break a line in Gitter mobile application (Android)?I tried Shift + Enter, Ctrl + Enter. But it doesn't work. __eou__	user	0	1	1	2
+NF	DKurilo: @tommego@seanmitchThis room is for Gitter support. Please read the welcome message when joining a room and mind the room description/topic in the chat header. Please use [<-LINK->]  __eou__	agent	0	1	0	0
+CC	MadLittleMods: , I asked about Gitter. My question is:How to make new line in Gitter mobile application? __eou__	user	0	1	0	0
+NF	 [<-LINK->] @DKuriloYou can't, there is only chat mode on mobile. __eou__	agent	0	1	0	0
+IG	DKurilo: there is a workaround, if you type some text and move your cursor into the middle of the text and press the enter key it will give you a new line and not send a text, at least on Android __eou__	agent	1	1	0	1
+FD	And only sometimes __eou__	agent	1	1	0	1
+PF	dragon788: , thanks. It's not very comfortable. :) __eou__	user	0	1	0	0
+
+OQ	howdy... just joined gitter today in order to work with the Plone community.  i got connected to the IRC bridge, and it works okay... however, my client is being queried (/who) once per minute, littering my logs with useless messages. Is that expected/normal?   Also, it would super nifty if that bridge could (optionally? bi-directionally?) convert '<nick>:' at the start of a line to '@<nick>', so as  to improve interoperability between the two conventions of addressing individuals in a room. __eou__	user	0	0	0	0
+
+OQ	Hi everyone! my "ACTIVITY" bar is not updating. my "integrations" are correctly configured... any suggestions? thank you! __eou__	user	0	0	0	0
+
+GG	Good morning __eou__	user	0	0	0	0
+OQ	is their a way to merge 2 glitter accounts this one and@dweiruk_twitterI believe it was __eou__	user	0	0	0	0
+
+OQ	Hello everyone. Why does Gitter client have such a high energy impact on mac OS? It constantly reports as high energy impact and that it requires the discrete graphics chip on macbook pro __eou__	user	0	1	1	2
+FD	This is while running in the gitter client and while running in safari. __eou__	user	0	1	0	0
+FD	running in Chrome does not appear to have that issue __eou__	user	0	1	0	0
+FD	I've also noticed a lot of spinning when posting messages with markdown on a very slow or flaky network/internet connection __eou__	user	0	1	0	0
+OQ	is this some issue with gitter client itself or more likely a safari/webkit issue? __eou__	user	0	1	0	0
+FD	 [<-LINK->] __eou__	user	0	1	0	0
+IG	I’m not educated on this topic, but could it be that the Gitter client is just an Electron wrapper? __eou__	agent	1	1	0	1
+FD	Because, if that’s the case, you’re running another instance of Chrome. But again, this is just speculation. __eou__	agent	1	1	0	1
+
+OQ	Is [<-ISSUE->] going to be fixed at some point?I may be wrong, but it seems like an easy fix, and the issue has been open for over a month now. __eou__	user	0	0	0	0
+
+OQ	Hi! Curious if there are any communities in particular that show a good example of room organization __eou__	user	0	1	1	2
+OQ	Looking to set one up for my community and want to see a finished product __eou__	user	0	1	0	0
+IG	lisbetho: some organizations use a "Lobby" room that is org specific, and then they have additional rooms for each repository, but you can also set up rooms around topics as well (see FreeCodeCamp for examples) __eou__	agent	1	1	0	1
+
+OQ	It doesn't work on my site: [<-LINK->] Login issue __eou__	user	0	0	0	0
+
+OQ	Geezus42How do I bridge riot to gitter? __eou__	user	0	0	0	0
+
+OQ	I am new here. I really like this approach of an app directed at community-building. However I feel that the homepage does not do a great job of communicating this. Also, it took me a while to figure out how easy to go into a room and try it out. __eou__	user	0	0	0	0
+JK	somebody at? __eou__	agent	0	0	0	0
+JK	paramaggarwal_twitter: __eou__	agent	0	0	0	0
+
+OQ	To make a suggestion about chat functionality, should I post it [<-LINK->] or maybe some could point to a place where I could post a suggestion. GitHub issues maybe? __eou__	user	0	1	1	2
+IG	OFFLlNE: Yep, feature requests go on GitHib issues. You can indicate that it's a feature request in the title, and the maintainers will tag it accordingly. __eou__	agent	1	1	0	1
+GG	cbj4074: aight, thanks __eou__	user	0	1	0	0
+
+GG	Hi ! __eou__	user	0	0	0	0
+JK	(sorry for the pic, that wasn't meant to go here) __eou__	user	0	0	0	0
+OF	I really like gitter, and was thinking "what about a more compact theme ?" __eou__	user	0	0	0	0
+FD	the "chat" zone is ok, but a more compact "left" zone may be a good option __eou__	user	0	0	0	0
+FD	for touch device, the tall "contact" items in lists is great but on a computer, the more I have on screen, the better it is __eou__	user	0	0	0	0
+OQ	What do you think about it ? __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+FD	that was a quick "console hack" but I think space is important. Scrolling to find a room/person is really boring now :) __eou__	user	0	0	0	0
+FD	And with all this space, adding separators or categories may be interesting __eou__	user	0	0	0	0
+UF	mtancoigne: thanks …  __eou__	agent	0	0	0	0
+NF	maybe boring, but if scrolling will be desirable or required then a scroll bar and scroller should be visible. (If there's a bar in your shot, I can't see it.) __eou__	agent	0	0	0	0
+
+OQ	hi, trying to use the android app login via Github, and it's stuck at Two-factor authentication, waiting to receive an SMS but nothing coming. Is this only usable on a phone (and not a tablet with no SIM) ? __eou__	user	0	1	1	2
+IG	never mind, SMS arrived after a long wait! __eou__	user	1	1	0	1
+

@@ -1,0 +1,616 @@
+OF	I just use the boostrap 3 css. I'm not really satisfied with the current state of any of the libs __eou__	user	0	0	0	0
+AE	it's a problem with many ng wrappers. Often one-man shows that are maintained for a year or two before they start to rot. __eou__	agent	0	0	0	0
+AE	And even with maintained packages, they tend to lag __eou__	agent	0	0	0	0
+
+JK	/aot __eou__	user	0	1	1	2
+OQ	has anyone successfully done aot build following [<-LINK->] ? __eou__	user	0	1	0	0
+IG	or use the cli __eou__	agent	0	1	0	0
+NF	I was using angular-cli to do aot, then realized that it can't be trusted yet __eou__	user	0	1	0	0
+IG	2goatduo: there some versioning incompatibilities to watch out for __eou__	agent	1	1	0	1
+CQ	@2goatduowhy not? __eou__	agent	0	1	0	0
+CC	Toxicable:  [<-LINK->] __eou__	user	0	1	0	0
+NF	2goatduo: I dont get it __eou__	agent	0	1	0	0
+FD	Toxicable: ng build --aotis doing alot of work, and hiding alot of detail, such as handling of scss files.  I can't easily do an aot build withngc, as suggested here: [<-LINK->] .  Andng build --aotwas succeeding when I had not specified a main.ts with ngfactory bootstrap.   Andngccompile failed on stuff whenng build --aotdidn't, like templates accessing private members of associated classes. __eou__	user	0	1	0	0
+AE	2goatduo:  [<-LINK->] __eou__	agent	0	1	0	0
+NF	DzmitryShylovich: thanks, but I've been there before __eou__	user	0	1	0	0
+
+GG	Hello __eou__	user	0	1	1	2
+OQ	Can anyone help me figure out how to bundle my Angular 2 app into a 'bundle.js' file to be put onto heroku and served from an express server? __eou__	user	0	1	0	0
+IG	adamgarcia4: The CLI makes that pretty easy. Otherwise one of the Angular seeds and their build steps might be a good place to start. __eou__	agent	1	1	0	1
+FQ	piercers: I started a project from scratch, following one of the Udemy courses.  Would you suggest that I port everything over to the CLI folder structure? __eou__	user	0	1	0	0
+AE	adamgarcia4: You might not need to go that far. I’m just pointing out those other options as inspiration.  __eou__	agent	0	1	0	0
+IG	If your code is in TypeScript, it shouldn’t be too difficult to port it over if it came down to that. __eou__	agent	1	1	0	1
+FQ	Pardon my inexperience.  hmm, does the angular cli webpack support being able to run an express server? __eou__	user	0	1	0	0
+PF	yes __eou__	agent	0	1	0	0
+AC	Alright, time to port my project over to the angular cli!   __eou__	user	0	1	0	0
+UF	Wish me luck __eou__	user	0	1	0	0
+
+OP	Hi guys, I'm trying to bootstrap an Angular2 app inside shadowdom. Shadowdom v1 doesn't have /deep/ so I don't think I can use selector. Is there any way to pass an actual HTMLElement for the entrypoint? __eou__	user	0	0	0	0
+FD	I assume that should be possible with platform-browser __eou__	user	0	0	0	0
+
+OQ	Can I create a dummy component in my TestBed from a raw template string in order to test my directive? __eou__	user	0	0	0	0
+FD	 [<-CODE->] but it points to internals __eou__	user	0	0	0	0
+FQ	which doesn't seem like a good idea. How can I produce components in this way without using angular internals? __eou__	user	0	0	0	0
+
+FD	 [<-CODE->]  [<-CODE->]  __eou__	user	0	1	1	2
+OQ	can I somehow inject Math object to use inside my template? __eou__	user	0	1	0	0
+IG	 [<-CODE->]  __eou__	agent	1	1	0	1
+PF	DzmitryShylovich: I got it to work as you explained, thank you! __eou__	user	0	1	0	0
+IG	PhotoPaul: creating a pipe is more elegant __eou__	agent	1	1	0	1
+PF	n00dl3: You are right __eou__	user	0	1	0	0
+AE	but this is already part of a 3 piece pipe so I thought of keeping it simple __eou__	user	0	1	0	0
+AC	Maybe if I need to use it again I will convert it into a pipe __eou__	user	0	1	0	0
+
+OQ	How can I delay showing my "loading-screen" to only show if the Observable takes more than x ms to return a result? __eou__	user	0	0	0	0
+
+GG	Hi all.  __eou__	user	0	0	0	0
+OP	Anyone had an error like this before when trying to load a route?"uncaught (in promise): Error: loading chunk" 10 failedonly seeing it on IE9, works on everything else as far as I know. __eou__	user	0	0	0	0
+
+GG	Hi guys!  __eou__	user	0	1	1	2
+OQ	I just got out of HTML, CSS and some basic Javascript. I'm now studying AngularJS. There are topics on $http and route resolvers which I don't get. I was wondering if I need background on some backend stuff, nodeJS perhaps, to understand $http/route resolvers better? __eou__	user	0	1	0	0
+CQ	Matteoo7: also, are you familiar with the concept of client-side routing in a SPA? __eou__	agent	0	1	0	0
+CC	alxhub: nope. not yet at least. what do you recommend? __eou__	user	0	1	0	0
+IG	Matteoo7: , well,$httpsuggests you're talking about Angular1. This is the Angular2 chat. __eou__	agent	1	1	0	1
+FD	So you could head over to the Angular1 gitter at [<-LINK->] and ask the awesome folks there. __eou__	agent	1	1	0	1
+AC	alxhub: ah, yes. I better move to the other side of the chat room. Thanks though! __eou__	user	0	1	0	0
+IG	And also, if you're sticking with Angular1, [<-LINK->] will help you understand client-side routing and resolve a little better. __eou__	agent	1	1	0	1
+FD	Or you could decide to do the Angular2 tutorial instead: [<-LINK->] __eou__	agent	1	1	0	1
+FD	Up to you :) __eou__	agent	1	1	0	1
+PF	alxhub: all very helpful resources! Im going to go through client-side routing first and the whole angular1 before checking out angular2. Surely, it'll be ofsomehelp when I get to angular2 :) __eou__	user	0	1	0	0
+AE	Eh, actually, they're sufficiently different that it's better to go straight to Angular2. __eou__	agent	0	1	0	0
+PF	oh __eou__	user	0	1	0	0
+PF	ohhhhhh __eou__	user	0	1	0	0
+PF	alxhub: thank you, if i'm going to save time, it's going to be because of you! Thank you for your time, very much appreciated. I guess I'll be off with Angular2 now __eou__	user	0	1	0	0
+
+JK	noted. __eou__	user	0	0	0	0
+OP	Chrome 54.0.2840 (Windows 10 0.0.0) DndItem should have original position styling after mouse up FAILED\n[1]     Expected '' to equal null. __eou__	user	0	0	0	0
+FD	i know why that test failed __eou__	user	0	0	0	0
+FD	its still set toposition: absolute __eou__	user	0	0	0	0
+FD	but what i dont understand is why jasmine thinks the position is a blank string? __eou__	user	0	0	0	0
+FD	 [<-CODE->]  __eou__	user	0	0	0	0
+FD	doesn't seem right to me that it would be blank __eou__	user	0	0	0	0
+FD	when i remove the positioning, the test passes __eou__	user	0	0	0	0
+FD	having to do this kinda sucks :( [<-CODE->]  __eou__	user	0	0	0	0
+CQ	Are you sure the test browser is going to have the same layout as a user browser?  (Just my guess@jjstreet) __eou__	agent	0	0	0	0
+CQ	are you asking me? __eou__	user	0	0	0	0
+CQ	Are you styling a custom element,@jjstreet? __eou__	agent	0	0	0	0
+CC	\'<div [dndItem]="item"></div>\'is the template for the item im styling __eou__	user	0	0	0	0
+FD	so im grabbing that div __eou__	user	0	0	0	0
+IG	Ahh. Yeah, not the problem I was thinking of then. __eou__	agent	0	0	0	0
+CC	im not sure i understand your question@daddyschmack __eou__	user	0	0	0	0
+FD	im use chrome as the browser used by jasmine __eou__	user	0	0	0	0
+FD	wonder if i hit another bug withDebugElement __eou__	user	0	0	0	0
+IG	jjstreet: , I’m just guessing, if you are using the native element, it may not layout the same way in the jasmine plugin renderes, but I’m not sure.. It really is just a guess. __eou__	agent	0	0	0	0
+CQ	but what do you mean by layout? __eou__	user	0	0	0	0
+FD	im just changing styles __eou__	user	0	0	0	0
+FD	and checking styles __eou__	user	0	0	0	0
+IG	oh, I thought since you’re moving things around with element offset height and element offset width.. that might have caused some kind of issue with the “native element” But again, I’m just pulling this out of my butt.  If you drop a debugger in there, what do you see? __eou__	agent	0	0	0	0
+NF	i was just remarking on how its not ideal to be accessing native element properties in my directive thats all __eou__	user	0	0	0	0
+NF	i dont have any problems yet with offsetHeight and offsetWidth __eou__	user	0	0	0	0
+JK	jjstreet: , I’m not criticizing! __eou__	agent	0	0	0	0
+JK	lol i never said you were __eou__	user	0	0	0	0
+
+FD	Soooo apparently Im terrible at codingAnyone got some suggestions at how to Transform a nested tree __eou__	user	0	1	1	2
+OP	like from data models into database modelsit's the thing I was working on this morning, question has multiple questions __eou__	user	0	1	0	0
+JK	:/ __eou__	user	0	1	0	0
+CQ	you're using relational database? __eou__	agent	0	1	0	0
+FD	basically like a .map() but... with a tree __eou__	user	0	1	0	0
+CC	Yeah, but it can be represented in models, just need to get it to the right ones __eou__	user	0	1	0	0
+AE	that's exactly why we have mongodb __eou__	agent	0	1	0	0
+AE	so we don't need a strict schema __eou__	agent	0	1	0	0
+AE	migrate. __eou__	agent	0	1	0	0
+RQ/AE?	well even then, i'd still have the same issue __eou__	user	0	1	0	0
+IG	no you wouldn't you'd just save the json __eou__	agent	1	1	0	1
+FD	save JSON.stringify of your tree in a database cell __eou__	agent	1	1	0	1
+FD	I need to get it to models that have things like, created by, created at, other ID's and what not __eou__	user	0	1	0	0
+PA	 [<-CODE->]  __eou__	agent	0	1	0	0
+CC	what I mean is my UI is giving me something like [<-CODE->] but it needs to be [<-CODE->]  __eou__	user	0	1	0	0
+FD	the count is for multiplying it out btw, so if it's 3 I need to make 3 copies of that one __eou__	user	0	1	0	0
+
+GG	Morning everyone. Hope everyone had a good weekend. __eou__	user	0	0	0	0
+OQ	Does anyone  use ng-bootstrap/ng-bootstrap modal component? __eou__	user	0	0	0	0
+
+OP	Hey guys, so i'm trying to use SignalR with my App but im having trouble getting it setup. The issue is that if I put some code to init the connection in my index.html file then it works fineIf I put that same code in my component the variable it's trying to access is undefined, i've tried putting it in a NgZone.run and doing it awhile after the app starts up but it's always undefined [<-CODE->]  [<-CODE->] __eou__	user	0	0	0	0
+FD	 [<-LINK->] and I just did it in a plunkr for that and it worked fine >.> I don't see what local stuff im running could break this __eou__	user	0	0	0	0
+
+OQ	Hi, quick question: I am trying to find the parentNode of an element contained in a component. The last parentNode is the first child of the component. I want to catch the component as the parentNode. Do you know how to do this? __eou__	user	0	0	0	0
+FD	I forgot to mention that this is outside of angular. __eou__	user	0	0	0	0
+
+GG	hey all.  __eou__	user	0	1	1	2
+OQ	I’m trying to get myself rolling with ng2 and am having a problem with my unit tests. used the cli to make a project, added a module (angular material) and got it working in my hello-world. But, when I run my tests withng testI getError: Template parse errors:\n    'md-card' is not a known element:I imagine my unit test environment isnt loading the module, but I just dont know wher eto go to fix that situation… any guidance? __eou__	user	0	1	0	0
+IG	brendanjerwin: it sounds like you haven't imported angular material into your test __eou__	agent	1	1	0	1
+FD	 [<-LINK->] __eou__	agent	1	1	0	1
+
+OQ	The PreloadAllModules strategy you can use - how does it deal with modules that are only called in the routes of nested modules? __eou__	user	0	0	0	0
+FD	For example, my app lazyloads the store module, and that lazyloads the cart module, so there's no direct reference to cart in the base app routes. Will the compilation stage cascade it all down so that preloading will preload both? __eou__	user	0	0	0	0
+
+AC	Rob I've been studying your writings lately. Huge help for me getting organized. Thanks! __eou__	user	0	0	0	0
+
+OQ	I am working with forms... but if the form is too large then covers the whole page...Any suggestions on how to control the design layout? __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	Does anyone has good library for rxjs + socket.io? __eou__	user	0	1	1	2
+FD	how can i disconnect from a websocket automatically when no component using it in the dom? __eou__	user	0	1	0	0
+FD	i dont want to hold many websockets because its resource consuming __eou__	user	0	1	0	0
+FD	or atleast thats what i think it is, correct me if im wrong __eou__	user	0	1	0	0
+FD	i want kind of lazy usage of websockets is it possible? __eou__	user	0	1	0	0
+IG	lihaibh: use the websocket subject in rxjs or wrap your websocket into an observable and share it __eou__	agent	1	1	0	1
+CQ	and how would i know when to disconnect? __eou__	user	0	1	0	0
+CC	when all subscribers unsubscribe then the dispose function will be executed as long as you “share” it.  I think share has been removed so you would need to run .publishReplay(1).refcount(). __eou__	agent	0	1	0	0
+CQ	publishReplay? not regular 'publish'? __eou__	user	0	1	0	0
+CC	I had to implement an operator that delayed the dispose though, because since changing routes will destroy the components before the new ones are created and the websocket connection will be torn down. __eou__	agent	0	1	0	0
+FD	It’s to share only 1 version of the websocket __eou__	agent	0	1	0	0
+
+OQ	what's the barcode scanner thingy? :( __eou__	user	0	0	0	0
+IG	somebody asked earlier if they could scan barcodes in html5 __eou__	agent	0	0	0	0
+CQ	i mean, what do i point at the camera? a usual barcode? __eou__	user	0	0	0	0
+CQ	works pretty well here [<-LINK->] so i guess it's something with plunker not displaying the green squiggly lines __eou__	user	0	0	0	0
+CQ	Are we meant to scan barcodes with it? __eou__	agent	0	0	0	0
+FD	tried it on my phone and it uses my front camera lol __eou__	agent	0	0	0	0
+CC	yeah it works for some stuff i have on desk by shoing green lines but doesn't recognize it as a barcode __eou__	user	0	0	0	0
+FD	works when pointing to site's logo (talking about my link above, not the plunker) __eou__	user	0	0	0	0
+FD	probably those locales and commy stuff as rob said :) __eou__	user	0	0	0	0
+AE?	ok well now it's using the back one but im not seeing naything come up either __eou__	agent	0	0	0	0
+
+GG	Hi all __eou__	user	0	0	0	0
+OQ	we are having some issues with translations in our application as we have multiple sources of XLF that we want to inject.Is there an option to change the format from xlf to JSON or some other easy to parse in the frontend value? __eou__	user	0	0	0	0
+
+OQ	How can Inject Router,ActivatedRoute - it'sundefinedin my Compontent's constructor. I've read we should register ROUTER_PROVIDERS but that doesn't seem to exist in latest angular2, what should I be registering instead? __eou__	user	0	1	1	2
+FD	can't find an example on plunkr that uses the new router, everything uses ROUTER_DIRECTIVES, e.g: [<-LINK->] is there anything that replaces it? __eou__	user	0	1	0	0
+IG	mythz:  [<-LINK->]  __eou__	agent	1	1	0	1
+PF	DzmitryShylovich: thx __eou__	user	0	1	0	0
+AC	checking it out __eou__	user	0	1	0	0
+
+GG	Hi guys,  __eou__	user	0	1	1	2
+OQ	I'm having problems with the zone.js. I can't catch an error because there is no catch after the try in zone.js code. Can someone help me, please? [<-CODE->]  __eou__	user	0	1	0	0
+CQ	what are u trying to accomplish?@hardyrz __eou__	agent	0	1	0	0
+CQ	Won't the error be caught in the inner try/catch? __eou__	agent	0	1	0	0
+CC	The thing is that is catching one error and throwing another __eou__	user	0	1	0	0
+IG	It'll only be re-thrown from there if the zone'shandleErrorfunction returns true. __eou__	agent	1	1	0	1
+PF	Yes, it is returning true __eou__	user	0	1	0	0
+FD	Then that's why it's being re-thrown. __eou__	agent	1	1	0	1
+CQ	So, how I can catch it? __eou__	user	0	1	0	0
+FD	Because with a simple try/catch i'm not able __eou__	user	0	1	0	0
+CC	DzmitryShylovich: I want to catch an error in my application but that piece of code is not allowing me. [<-CODE->]  __eou__	user	0	1	0	0
+
+AE	I have drowned, and found heaven __eou__	user	0	0	0	0
+AE	foxjazz: @intellixI know angular pretty damn hard __eou__	agent	0	0	0	0
+
+OQ	has flatmap been removed from rxjs? __eou__	user	0	0	0	0
+IG	nope __eou__	agent	0	0	0	0
+IG	u need to import it __eou__	agent	0	0	0	0
+NF	DzmitryShylovich: well i canot find it o.o __eou__	user	0	0	0	0
+
+OQ	Could anyone spare 5 minutes to talk through some ideal angular structure perhaps in private? I could paste it here but I don't want to spam the channel __eou__	user	0	0	0	0
+
+GG	Hello __eou__	user	0	0	0	0
+
+OQ	off topic: any used AMP ? __eou__	user	0	0	0	0
+IG	only awp __eou__	agent	0	0	0	0
+CQ	seriously though, how'd you handle it? __eou__	agent	0	0	0	0
+CQ	handle what? __eou__	agent	0	0	0	0
+CQ	erm, awp? __eou__	user	0	0	0	0
+IG	Toxicable: yes on AMP __eou__	agent	0	0	0	0
+FD	i'm experimenting with AMP + universal __eou__	agent	0	0	0	0
+CQ	Oh so it actually works with Angular? __eou__	user	0	0	0	0
+CQ	Toxicable: lol u don't know what is awp? __eou__	agent	0	0	0	0
+CC	nope __eou__	user	0	0	0	0
+IG	AMP __eou__	agent	0	0	0	0
+IG	Accelerated mobile pages __eou__	agent	0	0	0	0
+IG	Take out your smartphone, Google "AMP" __eou__	agent	0	0	0	0
+FD	awp __eou__	user	0	0	0	0
+IG	Toxicable: AMP pages can't run any JS in the browser __eou__	agent	0	0	0	0
+UF	robwormald: Yeah that's what I thought, then I realized that's probably why you said + universal  :D __eou__	user	0	0	0	0
+
+OP	I have a problem with a form validator directive that I created, it seems to not get executed [<-CODE->] The validator looks as follows: [<-CODE->]  __eou__	user	0	0	0	0
+FD	Also I noticed that Angular does not error out when I add an unknown attribute to a tag in my template __eou__	user	0	0	0	0
+FD	according to the docs it should error on unknown attributes: [<-LINK->]  __eou__	user	0	0	0	0
+
+GG	Hello Friend __eou__	user	0	0	0	0
+GG	Hello all __eou__	user	0	0	0	0
+JK	I need help __eou__	user	0	0	0	0
+FD	I am using trackBy in ngFor __eou__	user	0	0	0	0
+OP	but the variables defined in constructor are not accessible in trackBy function __eou__	user	0	0	0	0
+JK	please help me __eou__	user	0	0	0	0
+JK	DzmitryShylovich: please help me __eou__	user	0	0	0	0
+CQ	gargtushar: why do u need the variables defined in constructor inside trackBy? __eou__	agent	0	0	0	0
+CQ	gargtushar: why not set those variables somewhere in your class? Then, in thetrackByfunction, you can refer them withthis.property. __eou__	agent	0	0	0	0
+CC	they are also not available here __eou__	user	0	0	0	0
+FD	<li #key class = "dropdown"  *ngFor="let children of list.children_data, trackBy: getdetails; let i = index;" >{{children.name}}</li> __eou__	user	0	0	0	0
+FD	export class NavlistComponent  implements OnInit { @Input() list: any;   a : any;   childList : any;   arry : any;   constructor(private elRef:ElementRef, public magentoservice : MagentoApiService) { }   ngOnInit() {   } [<-CODE->] } __eou__	user	0	0	0	0
+FD	I need to hit the service in the trackBy function __eou__	user	0	0	0	0
+JK	wut __eou__	agent	0	0	0	0
+FD	i want to hit a http get request in the track by on the basis of ID of children and returns is details to dislay __eou__	user	0	0	0	0
+AE	if I understood correctly, you don't use trackBy to make requests. RT wut. __eou__	agent	0	0	0	0
+CQ	gargtushar: whyyyyy? __eou__	agent	0	0	0	0
+AE	trackBy cant resolve async functions __eou__	agent	0	0	0	0
+AE	and it shouldn't at all __eou__	agent	0	0	0	0
+IG	u should stop watching anime really __eou__	agent	0	0	0	0
+CQ	gargtushar: I refuse to believe that, you can query for their ID afterwards but not before? __eou__	agent	0	0	0	0
+RQ	please tell me how to make that accessible in trackBy function __eou__	user	0	0	0	0
+FQ	but i am unable to pass extra params to this function __eou__	user	0	0	0	0
+FQ	how can i pass __eou__	user	0	0	0	0
+CQ	gargtushar: how can you pass what? __eou__	agent	0	0	0	0
+GG	gargtushar: hope u are trolling :) __eou__	agent	0	0	0	0
+CC	I want that magentoservice variable inside trackBy function __eou__	user	0	0	0	0
+
+OQ	Working on the Pythagoras tree for Ng... Trying to get the maximum performance.. __eou__	user	0	1	1	2
+FD	I'm around a frame rate of 20fps.. (but the cycle version is around 40fps. ) __eou__	user	0	1	0	0
+FD	The main problem is the recursive component.. that executes too many things.. __eou__	user	0	1	0	0
+IG	seems like inferno has the best performance __eou__	agent	1	1	0	1
+FD	I don’t know why. Maybe all that type checking from TypeScript adds runtime overhead after transpiling?:) __eou__	agent	1	1	0	1
+FD	Now this… this was smooth on my machine. Maybe it just feels smooth because I looked at it right after the Angular version, but damn. __eou__	agent	1	1	0	1
+FD	nice post __eou__	agent	1	1	0	1
+AE	DzmitryShylovich: this is the part i don't like... __eou__	user	0	1	0	0
+NF	because the teropa version is not reactive... and really is slow... just try it... clonning... __eou__	user	0	1	0	0
+
+OQ	Does anyone know where I can go to get help with angular2 and the jasmine testing framework? __eou__	user	0	0	0	0
+FD	I'm trying to create a jasmine test that makes sure console.log is called in my app.component's ngOnInit my code is here but that doesn't seem to work __eou__	user	0	0	0	0
+FD	more specifically it says "Expected spy log to have been called." so I guess it just hasn\'t.... __eou__	user	0	0	0	0
+
+OQ	Reactive forms Question:  What's the best way to handle conditional validation?  Say you have two radio buttons, and selecting one displays a subform with required fields.  If the other radio button is selected, then the form's validity should not consider the (hidden) subform's validity.  So far I've considered: [<-CODE->] Both of these are ugly, but #1 seems like a better approach to me.  Anyone else deal with this? __eou__	user	0	0	0	0
+
+OQ	Has anyone here completed Deborah Kurata\'s "Getting started with Angular" course on Pluralsight ???? __eou__	user	0	0	0	0
+
+OQ	Hi guys.. long time no see __eou__	user	0	0	0	0
+
+GG	Hi guys, strange problem.  __eou__	user	0	0	0	0
+OQ	Using firebase I making a chatbot app. In the oninit cycle I subscribe to the input-observable but first push a welcome message to the firebase list observable. But somehow when I start sending input the items will show up before the welcome message. Is a subscribe function handled first or something? __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+
+GG	Hi Folks, __eou__	user	0	0	0	0
+OQ	Can  anyone  looks into this issue and help me outhttp://stackoverflow.com/questions/41177558/angular-2-nested-routing-for-two-level __eou__	user	0	0	0	0
+
+OQ	is it possible to use lazy loading for sub routes ? (eg ModuleA is lazy loaded from app-routing.module, and ModuleB is lazy loaded from module-a-routing.module) __eou__	user	0	0	0	0
+
+GG	Morning everyone __eou__	user	0	0	0	0
+
+GG	hello __eou__	user	0	0	0	0
+OQ	my pipe not filter __eou__	user	0	0	0	0
+FD	 [<-LINK->]  __eou__	user	0	0	0	0
+FD	 [<-LINK->]  __eou__	user	0	0	0	0
+CQ	what's the error?@kiokotzu __eou__	agent	0	0	0	0
+CC	Toxicable: 43/5000It goes empty, but when I type there if you search __eou__	user	0	0	0	0
+CQ	kiokotzu: what? I don't know what you mean by thatwhat's the error? or if you cant explain the error can you reproduce in a plunkr __eou__	agent	0	0	0	0
+CC	Toxicable: Sorry for my english, I'm trying to do this in angular 2 __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+CQ	kiokotzu: oaky so can you reproduce your error in a plunkr [<-LINK->] __eou__	agent	0	0	0	0
+CC	vale __eou__	user	0	0	0	0
+
+GG	Hi ,everyBody __eou__	user	0	0	0	0
+GG	hiii doctor nick __eou__	agent	0	0	0	0
+OQ	can you help  me in this code ! __eou__	user	0	0	0	0
+CQ	is that a question or a statement __eou__	agent	0	0	0	0
+CC	 [<-LINK->]  __eou__	user	0	0	0	0
+
+OQ	How do you access the previous state in ngrx? __eou__	user	0	1	1	2
+CQ	jxxcarlson: previous? as in the one before you changed it?  __eou__	agent	0	1	0	0
+IG	you would have to log it somewhere. __eou__	agent	1	1	0	1
+UF	derek: Cool. __eou__	user	0	1	0	0
+AC	I will do that __eou__	user	0	1	0	0
+IG	i thought you could use [<-LINK->] to do "time travelling" __eou__	agent	0	1	0	0
+FD	never done it myself though __eou__	agent	0	1	0	0
+NF	oops i can't read@bonnicijust said that __eou__	agent	0	1	0	0
+
+OQ	Hi everyone i am facing some difficulties described here : [<-LINK->] . If anyone as the time to try to answer my question i would really appreciate it thank you very much. __eou__	user	0	0	0	0
+IG	 [<-LINK->] @dgorobopecwe were discussing this an hour ago, as far as I can tell you can do only html templates with i18n, so I would suggest ng2-translate if you need ts code as well __eou__	agent	0	0	0	0
+
+OQ	Where can I find more info on the Angular 4 router, I am creating a tutorial which is due for release in Q2 2017, so it makes sense that I try to work with it now, if possible __eou__	user	0	0	0	0
+IG	 [<-LINK->]  __eou__	agent	0	0	0	0
+CQ	DzmitryShylovich: was that for me? If that covers the angular 2 router, will that not be different than the angular 4 router if the purpose of Angular 4 is the router version 4? __eou__	user	0	0	0	0
+IG	AlexZan:  [<-LINK->] __eou__	agent	0	0	0	0
+
+OQ	Hello friends.Can you help me to resolve a problem with how to build nested model-driven forms?Here is the plunker [<-LINK->] The problem is when is try to embedded a third form control. __eou__	user	0	0	0	0
+FD	I try* __eou__	user	0	0	0	0
+
+OQ	ilennert: I'm trying to deploy this repo. [<-LINK->] , using the tasknpm run tscto output directory dist, but how do I configure this for use with, say, firebase?  The build process does not copy node_modules, so I get this error when I try to runhttp-server .in thedistdirectory:Failed to load resource: the server responded with a status of 404 (Not Found) __eou__	user	0	1	1	2
+IG	e-beach: , your missing a few things here.  It looks like your bootstrapping as you would if you were using Webpack (the recommended way) but you don't have any webpack stuff in your package.json or repo.  Please allow me to recommend this video, it will answer all your questions! [<-LINK->] __eou__	agent	1	1	0	1
+UF	ilennert: Thanks! __eou__	user	0	1	0	0
+
+OQ	 Hey guys, [<-CODE->] one time binding operator in our templates?' I know online I saw people built solutions to this in JS in their components, but is this something that is relevant for Angular 2? Does it have the same perf benefits as it did in angular 1? __eou__	user	0	1	1	2
+IG	josephliccini: I can\'t say for sure, but I think the "most equivalent" option is ChangeDetectionStrategy.OnPush (assuming I understand what one-time binding operator did in ng1) __eou__	agent	1	1	0	1
+FD	You can read this too [<-LINK->]  __eou__	agent	1	1	0	1
+FD	And this@josephliccini [<-LINK->]  __eou__	agent	1	1	0	1
+PF	ericmartinezr: thanks!  __eou__	user	0	1	0	0
+AE	I will read these.  I believe Angular 1 one-time binding was so you could write data to the template, but then not have it check for updates in change detection later.  That is, once angular set the value in the template, it would not update it later. __eou__	user	0	1	0	0
+
+OQ	Is it normal that if I change of view in my app, a validator gets triggered multiple times? __eou__	user	0	0	0	0
+
+GG	someone awake? __eou__	user	0	1	1	2
+OQ	 [<-CODE->] this dont works,  but I need to press the to vars row and col into the component cell __eou__	user	0	1	0	0
+FD	bonnici: any idea for me? __eou__	user	0	1	0	0
+IG	let cellrow of round.cells; let cellindex = index; __eou__	agent	1	1	0	1
+FD	let cellcol of cellrow; let rowindex = index; __eou__	agent	1	1	0	1
+FD	or the other way around __eou__	agent	1	1	0	1
+FD	 [<-LINK->]  __eou__	agent	1	1	0	1
+UF	oh yeah nice __eou__	user	0	1	0	0
+AC	i try __eou__	user	0	1	0	0
+??	bonnici:  [<-CODE->]  __eou__	user	0	1	0	0
+CQ	ByMiles: have you done the Tour of Heroes introductory tutorial? __eou__	agent	0	1	0	0
+NF	like this? somewhere might be a bug, still not working __eou__	user	0	1	0	0
+CC	yes i looked it up __eou__	user	0	1	0	0
+CQ	Have you gone through it though, and followed along and built the ToH app? __eou__	agent	0	1	0	0
+CC	i buid two nother tutorials from youtube^^ __eou__	user	0	1	0	0
+AE	problem for me they always only handle textdata __eou__	user	0	1	0	0
+CQ	What's the actual error that you're getting? __eou__	agent	0	1	0	0
+CC	no errror in compilor, but the side is "loading..." __eou__	user	0	1	0	0
+FD	i think the row [<-CODE->]  __eou__	user	0	1	0	0
+FD	is not correct __eou__	user	0	1	0	0
+FD	in the component cell i have@inputrow: number __eou__	user	0	1	0	0
+IG	You're right that's not correct. __eou__	agent	0	1	0	0
+FD	That's why I suggested doing Tour of Heroes. You need some practice with the data binding syntax. __eou__	agent	0	1	0	0
+FD	And reading the error messages that you're getting. __eou__	agent	0	1	0	0
+CC	there is no errormessage __eou__	user	0	1	0	0
+FD	:( __eou__	user	0	1	0	0
+FD	and on the ToH is no example with two variables in one component __eou__	user	0	1	0	0
+IG	The error is probably in your browser javascript console. __eou__	agent	0	1	0	0
+CC	[URL= [<-LINK->] ] __eou__	user	0	1	0	0
+FD	thats the way it looks without this row __eou__	user	0	1	0	0
+IG	Bindings use normal HTML attribute syntax __eou__	agent	1	1	0	1
+FD	<tag [binding]="expression" attribute="constant value" (event)="listener($event)"> __eou__	agent	1	1	0	1
+FD	Note the space after<tagand the quotes around expressions and values __eou__	agent	1	1	0	1
+PF	when i understand this right, this line helped me more than 2 hours reading and reading... __eou__	user	0	1	0	0
+AC	let me try __eou__	user	0	1	0	0
+NF	alxhub: no it says: "attributs are not allowed here" __eou__	user	0	1	0	0
+PF	but that exactly what i want to do, i want to set an attribute... __eou__	user	0	1	0	0
+CQ	ByMiles: , have you seen Plunker? [<-LINK->]  __eou__	agent	0	1	0	0
+AE	See if you can reproduce your problem there. __eou__	agent	0	1	0	0
+PF	now it works, i think ;) __eou__	user	0	1	0	0
+FQ	alxhub: are you still out there? i need a hint. Its harder then thougt to switch from java fx to angular... __eou__	user	0	1	0	0
+FD	depending on 2 booleans i want to hide or color a circle or draw another one. do you have a hint in which way i should think? __eou__	user	0	1	0	0
+
+GG	Hi all __eou__	user	0	0	0	0
+OQ	Could I ask here for support about Angular 2? __eou__	user	0	0	0	0
+IG	fplini: just ask and you'll see :) __eou__	agent	0	0	0	0
+OQ	I\'m developing an angular 2 app. So essentialy, if I run the app with "ng serve" all works fine, if I refresh the page (for example [<-LINK->] ) it works fine and angular recognizes the right route. The problem occurs when I build the app in a war and deploy it on wildfly with a different context path (ex. /myapp). At this point the routing navigation works fine but if I refresh the page I receive a "Not found error". My base href on index.html is <base href="."> I also tried with <base href="./myapp"> but in this case angular try to look for the resources under [<-LINK->] and not under [<-LINK->] Anyone have any idea on how to fix it? __eou__	user	0	0	0	0
+IG	I think the base href should really be just / __eou__	agent	0	0	0	0
+FD	./ __eou__	agent	0	0	0	0
+IG	fplini: try<script>document.write(\'<base href="\' + document.location + \'" />\');</script> __eou__	agent	0	0	0	0
+PF	DzmitryShylovich: yes with this script it works fine. __eou__	user	0	0	0	0
+NF	but when I refresh I received a "not found" error __eou__	user	0	0	0	0
+CQ	path/hash location strategy? __eou__	agent	0	0	0	0
+CC	Uhm.. If I add the hash the refresh is ok but ng2 doesn't recognize the route and redirects on  home but the url is broken.. let me explain better with an example __eou__	user	0	0	0	0
+IG	fplini: add this to your appmodules providers [<-CODE->]  __eou__	agent	0	0	0	0
+AE	my url is [<-LINK->] if I refresh the page I get a not found error. Instead if i go on [<-LINK->] the app goes on the home and the new url is [<-LINK->]  __eou__	user	0	0	0	0
+AC	SamiAl90: I'm going to try with this code ;) __eou__	user	0	0	0	0
+CQ	fplini: what location strategy do u use? __eou__	agent	0	0	0	0
+FD	default one? __eou__	agent	0	0	0	0
+CC	yes default __eou__	user	0	0	0	0
+FD	(without hash) __eou__	user	0	0	0	0
+IG	fplini: u need to configure your server to return index.html for all angular routes __eou__	agent	0	0	0	0
+AE	I'm only set the context root path in the jboss-web.xml to make available the app under the right path __eou__	user	0	0	0	0
+JK	I'm serious __eou__	agent	0	0	0	0
+IG	fplini:  [<-LINK->]  __eou__	agent	0	0	0	0
+AC	DzmitryShylovich: thanks I'm going to check it and try a lot. I'll come back later :) __eou__	user	0	0	0	0
+
+OQ	is there a great up to date angular-cli hello world git repo that can be forked? __eou__	user	0	0	0	0
+
+OQ	how subscribe on  each ngModel changes on template driven form ? __eou__	user	0	0	0	0
+
+OQ	Newbie question: why would it be that my styles.scss file’s variables wouldn’t be available to a component? I’m getting “undefined variable” even though the variable is declared in my top level style.scss file. __eou__	user	0	1	1	2
+IG	etsuo: you need to import the styles.scss in to the components style sheet __eou__	agent	1	1	0	1
+FD	or you need to add it to the styleUrls __eou__	agent	1	1	0	1
+CQ	jjstreet: where’s the styleUrls? __eou__	user	0	1	0	0
+CC	 [<-CODE->]  __eou__	agent	0	1	0	0
+CQ	Oh…. i see… so it doesn’t get imported top level? like in the index.html? __eou__	user	0	1	0	0
+CC	scss is a preprocessed language __eou__	agent	0	1	0	0
+FD	so you can't import them into html like any other css file __eou__	agent	0	1	0	0
+AE	right, but I would have expected style.scss to be compiled down to style.css that’s the global style __eou__	user	0	1	0	0
+AE	right __eou__	agent	0	1	0	0
+AE	but variables in that file aren't magically available to other scss files __eou__	agent	0	1	0	0
+AE	you have to import that styles.scss file into them __eou__	agent	0	1	0	0
+PF	OOOOO i get it… thanks@jjstreet __eou__	user	0	1	0	0
+NF	sorry, so I tried:styleUrls: [\'../styles.scss\', \'./app.component.scss’]andng set defaults.styleExt scssbut I’m still gettingUndefined variable: "$colors”when I try to access the $colors variable defined in the styles.sass file that’s meant for global styles… :/? __eou__	user	0	1	0	0
+IG	etsuo: try doingimportin the app.component.scss file __eou__	agent	1	1	0	1
+PF	jjstreet: that did the trick… thanks __eou__	user	0	1	0	0
+JK	etsuo: np __eou__	agent	0	1	0	0
+
+OQ	Can  service implementing CanActivate receive param ? I want my route guard to check according to some param ...`canActivate: [ AuthGuard .. . some param ], __eou__	user	0	1	1	2
+IG	macdasi: it would have access to the router params __eou__	agent	1	1	0	1
+
+OQ	Guys any idea how to solve this error? [<-CODE->] error: Property 'uid' does not exist on type '{}'. __eou__	user	0	0	0	0
+IG	cast 'res' to your object __eou__	agent	0	0	0	0
+IG	.then((res: any) => { __eou__	agent	0	0	0	0
+NF	(res : any) is not working, and __eou__	user	0	0	0	0
+AE	it should __eou__	agent	0	0	0	0
+JK	frankspin89:  __eou__	agent	0	0	0	0
+
+OQ	is it a good idea to.share()on a selector with ngrx ? I think it is but thinking of any downside ... ? __eou__	user	0	0	0	0
+
+OQ	Guys, how should I call my async validator? __eou__	user	0	1	1	2
+FD	I've got a service which looks like this: [<-CODE->] __eou__	user	0	1	0	0
+FD	and I call just simply this way __eou__	user	0	1	0	0
+FD	 [<-CODE->] __eou__	user	0	1	0	0
+FD	But the input always invalid __eou__	user	0	1	0	0
+IG	zedz01: why do you use new Promise ? You can use toPromise() operator ... __eou__	agent	1	1	0	1
+
+OQ	I have ngOnInit setup in my component. but when I send the component data via@Inputhow do I get a function to fire? __eou__	user	0	1	1	2
+FD	ngOnInit only happens once so it is sort of irrelavent __eou__	user	0	1	0	0
+CQ	ngOnChanges __eou__	agent	0	1	0	0
+CQ	What's OnChanges for? __eou__	agent	0	1	0	0
+IG	 [<-LINK->]  __eou__	agent	1	1	0	1
+IG	it's not __eou__	agent	1	1	0	1
+IG	foxjazz:  [<-LINK->]  __eou__	agent	1	1	0	1
+
+OQ	going back to@Toxicable  do you know how i can close a  boot strap modal in ts ? __eou__	user	0	1	1	2
+FD	i mean how can one do that in angular __eou__	user	0	1	0	0
+FD	close an open modal __eou__	user	0	1	0	0
+IG	Ellipizle: for things like modals I'd suggest using something like [<-LINK->] __eou__	agent	1	1	0	1
+
+OQ	hey ,all!I have problem with downloading local csv file.I have a cli project and my file in src folder.I have next template: [<-CODE->] But it just doesn't work. Any ideas? __eou__	user	0	1	1	2
+IG	I don't think angular-cli serves files from /src directly, put them into assets, as it gets copied over during serve/build __eou__	agent	1	1	0	1
+
+OQ	Hey guys what is the best way to add scripts to my component? My end goal is to have my header.component become static after certain scroll height is reached __eou__	user	0	0	0	0
+FQ	I'm using angular-cli __eou__	user	0	0	0	0
+FQ	It's not every page that I want this to happen only in certain pages __eou__	user	0	0	0	0
+
+OQ	Is there any way of preserving component state when leaving for another route? __eou__	user	0	1	1	2
+FD	I know one - using service __eou__	user	0	1	0	0
+IG	sinedsem: RouteReuseStartegy __eou__	agent	1	1	0	1
+IG	Redux __eou__	agent	1	1	0	1
+IG	use a service __eou__	agent	1	1	0	1
+IG	sinedsem: A service can be an easy way to do this, otherwise some implementation of state management like ngrx/Store or Redux __eou__	agent	1	1	0	1
+AE	2 votes for service and 1 vote for one more poorly documented thing - routeReuseStrategy __eou__	user	0	1	0	0
+AE	services are boring :) __eou__	agent	0	1	0	0
+AE	oh if we're voting i'd vote for ngrx/Store __eou__	agent	0	1	0	0
+AE	it depends on yor use case __eou__	agent	0	1	0	0
+AE	^ and your knowledge of flux architecture __eou__	agent	0	1	0	0
+
+OQ	Are there any known issues with ngIf rendering on IE? I have a really simple ngIf that just checks a boolean that gets flipped by a function in the component. Works great everywhere except IE. __eou__	user	0	0	0	0
+
+OQ	Hello there! I am trying to write some tests for a component which is using the ng2-bootstrap's DropdownModule and ButtonModule. I have placed both modules in the spec's imports array However, I'm getting the following error message: Can't bind to 'isOpen' since it isn't a known property of 'div'Any suggestions on what to do here? __eou__	user	0	1	1	2
+CQ	tuomasi: did u import DropdownModule and ButtonModule? __eou__	agent	0	1	0	0
+FD	in your test module __eou__	agent	0	1	0	0
+CC	Ah, I thought I did __eou__	user	0	1	0	0
+IG	But I wrote 'import' instead of 'imports'...sorry and thanks! :) __eou__	user	1	1	0	1
+AE	your IDE should handle that __eou__	agent	0	1	0	0
+AE	also you should've seen compilation errors from ts :) __eou__	agent	0	1	0	0
+AE	Nope, there was no such message. Otherwise I probably would not have come here :P __eou__	user	0	1	0	0
+
+OP	Trying to get modules working properly in our app. Currently stuck at our collection of pipes, gathered in a PipeModule. If I import the module in multiple other modules that use the pipes I get an error sayingFooPipe is part of the declaration of 2 modules: PipeModule and PipeModule. If I only import it in our AppModule I get errors saying angular cant find the pipe. Am I missing something obvious here? o.O __eou__	user	0	1	1	2
+CQ	urrang: did you export in PipeModule and only import in the other modules? __eou__	agent	0	1	0	0
+CC	PipesModule has declarations & exports for the different pipes, everywhere else its just an import of PipesModule form what I can tell (/project search can find) __eou__	user	0	1	0	0
+IG	urrang: you dont need to import the pipe in all modules, only in the appmodule __eou__	agent	0	1	0	0
+NF	Thats what I figured, but I seem to be getting errors now saying the pipes cannot be found __eou__	user	0	1	0	0
+IG	imports: [..., PipesModule] __eou__	agent	0	1	0	0
+GG	ohh __eou__	agent	0	1	0	0
+NF	had also problems with pipes but can't remember ^^ __eou__	agent	0	1	0	0
+JK	(good that you can say now "it was last year) ;-) __eou__	agent	0	1	0	0
+AE	If its not anything obvious I probably just need to dig deeper in our clusterfuck of modules. Kind of hard fixing a huge project when all examples have one root module that imports one other module with a single component __eou__	user	0	1	0	0
+AE	but I also have my custom pipes as providers in my sharedModule... really no idea why __eou__	agent	0	1	0	0
+FQ	But generally importing a module multiple places should not be a problem then? Or should you only have to import the shared modules in your root module, and it will in theory work everywhere? __eou__	user	0	1	0	0
+IG	in the app module do:declarations: [...PIPES,] __eou__	agent	1	1	0	1
+CQ	Mkay, so no module for the pipes then? __eou__	user	0	1	0	0
+AE	Worth a shot __eou__	user	0	1	0	0
+CC	i have a module : SharedModule __eou__	agent	0	1	0	0
+JK	me2 __eou__	agent	0	1	0	0
+FD	and have all pipes, serices __eou__	agent	0	1	0	0
+FD	services* __eou__	agent	0	1	0	0
+CQ	And you only import that at the top, then its available everywhere? __eou__	user	0	1	0	0
+CC	and I import the SharedModule in the App Module __eou__	agent	0	1	0	0
+CC	and the sharedmodule inside imports in appmodule __eou__	agent	0	1	0	0
+AE	Alright, then im on the right path at least. Thanks! __eou__	user	0	1	0	0
+IG	The ngmodule anotation in SharedModule looks like: [<-CODE->] __eou__	agent	0	1	0	0
+IG	urrang: give it a shot to also add your Pipes toproviders:in your PipeModule __eou__	agent	1	1	0	1
+FD	if I remove them from there, I also get an error in my feature modules which are using them __eou__	agent	0	1	0	0
+UF	dklmuc: I'll look into that, thanks a lot! __eou__	user	0	1	0	0
+
+OQ	Hey guys! Are there any best practices (rough estimates, opinions whatever) in terms of how big components should be? When is a component too large? How can one refactor code so that the code becomes easier to test? __eou__	user	0	0	0	0
+
+OQ	I've got an array of objects, and I've got an issue where something works if I unshift a new object into the array, but if I push an object then it doesn't work. Because I'm guessing that the array isn't being redrawn in the same way when I push. Is there any way to force a redraw so it behaves the same for unshift and push?@DzmitryShylovich Any idea? __eou__	user	0	1	1	2
+IG	chrillewoodz: u should create a new array instead of mutating __eou__	agent	1	1	0	1
+
+OQ	@losorio2015_twitterHello guys, when I consult an observable, it emits me 2 timesThe first obsevable emptyAnd the second observable with date.How can I avoid it, just ask me 2 times?I just want you to consult me, the observable date@Dorusbefore you modifiy them (or just dont modify)https://files.gitter.im/ngrx/store/1q9N/blob __eou__	user	0	0	0	0
+FD	I consult my observable state, with the operator select () __eou__	user	0	0	0	0
+CQ	make a plunker. screenshots don't help anyone diagnose anything __eou__	agent	0	0	0	0
+CC	@robwormald , I am only consulting my state, observable, with this lineThis.sub1 = this.store.select (fromRoot.getDocumentDialog);And I am emitting 2 times the observable. __eou__	user	0	0	0	0
+FD	I'm using the project, from the official app exampleHttps://github.com/ngrx/example-app __eou__	user	0	0	0	0
+FD	When I use the first () operator, it emits only once the observable one, but I get the observable void:This.sub1 = this.store.select (fromRoot.getDocumentDialog) .firts () __eou__	user	0	0	0	0
+CQ	again. make a plunker. it is impossible to diagnose your code with you explaining it line by line, or posting screenshots __eou__	agent	0	0	0	0
+CC	I understand,@robwormald, I'm going to try to make a plunker __eou__	user	0	0	0	0
+IG	here's a starter [<-LINK->] __eou__	agent	0	0	0	0
+UF	thank __eou__	user	0	0	0	0
+
+OQ	Okay Gentlemen,  We have a button that doesn’t get enabled until certain required fields are not ng-invalid and not ng-pristine.. We have to go there and manually update those fields to trigger the button to become active.  HOWEVER, we populate these select controls with VALID values on the ngInit event.  Why are they not being set to valid and touched then? __eou__	user	0	0	0	0
+
+OQ	cmon guys, it's such a simple question: how to show component by calling service function? __eou__	user	0	0	0	0
+
+OQ	 [<-LINK->] __eou__	user	0	1	1	2
+FQ	Am I doing something wrong here or is this a bug o.O __eou__	user	0	1	0	0
+IG	RicardoVaranda: depends.. what are you trying to do? If it\'s about thatvalue="{{food.name}}".. that\'s a bug, already fixed, merged, but not released yet __eou__	agent	1	1	0	1
+PF	bboehm86: Thanks thats exactly what I was referring to :) __eou__	user	0	1	0	0
+
+OQ	Would you mind linking the PR? __eou__	user	0	0	0	0
+
+OP	 [<-CODE->] Why does mij startAnimation() function fire when the message.animationState is set to the 'first' state? __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+CQ	are you sure it's not changing __eou__	agent	0	0	0	0
+FD	like it has a default value and you're setting a different value right after __eou__	agent	0	0	0	0
+CC	maybe because im setting the value to inactive __eou__	user	0	0	0	0
+FD	If i go from null -> active __eou__	user	0	0	0	0
+AE	if you're setting the value to inactive it shouldn't because you don't have transition that ends with inactive __eou__	agent	0	0	0	0
+IG	it goes from opacity 0.5 to opacity 1 __eou__	agent	0	0	0	0
+FD	without any transition, because you have not set it... __eou__	agent	0	0	0	0
+NF	ghetolay: indeed, but even if the state is null, the done function fires __eou__	user	0	0	0	0
+FD	on animation state null is also a transition... form void => inactive __eou__	agent	0	0	0	0
+CQ	how can i set it up so that the done event does not fire? __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+FD	because this is not working __eou__	user	0	0	0	0
+CQ	jordic: you sure the callback is always called ? even for non-defined animation ? __eou__	agent	0	0	0	0
+CQ	or can i sepicify on what transition the done event fires? __eou__	user	0	0	0	0
+AE	not sure if is a feature or a bug ... but is the only way of explaining the situation... __eou__	agent	0	0	0	0
+AE	perhaps you can check the event... I think it contains this kind of information... __eou__	agent	0	0	0	0
+AC	Sure, so pass the event to a function __eou__	user	0	0	0	0
+PA	The callbacks receive an AnimationTransitionEvent which contains useful properties such as fromState, toState and totalTime. __eou__	agent	0	0	0	0
+JK	okay i can try that __eou__	user	0	0	0	0
+JK	 [<-LINK->] __eou__	user	0	0	0	0
+PF	You were right __eou__	user	0	0	0	0
+PA	ok learned something __eou__	agent	0	0	0	0
+FD	ghetolay: your idea to use a different array to store animation states worked! __eou__	user	0	0	0	0
+FD	the ngFor loop animates one message at a time. __eou__	user	0	0	0	0
+FD	DirkWolthuis: well you seem to look surprised __eou__	agent	0	0	0	0
+JK	No not at all. Just gratefull __eou__	user	0	0	0	0
+JK	:) __eou__	agent	0	0	0	0
+PA	glad I could help __eou__	agent	0	0	0	0
+JK	thanks! __eou__	user	0	0	0	0
+PA	my day was not completely wasted __eou__	agent	0	0	0	0
+PA	Maybe i will use my new knowlegde to make a blogpost or something __eou__	user	0	0	0	0
+IR	DirkWolthuis: as animation idea, this is perhaps more hacky... [<-LINK->] __eou__	agent	0	0	0	0
+FD	jordic: need to read more about observables to fully understand your example. But I think my solutions is pretty safe. __eou__	user	0	0	0	0
+
+OQ	Hello! If I have this code<my-component (click)="onClick()"></my-component>, is there any way to programatically remove the event listener after the first event? Or something similar to jQuery.one() where the handler is executed at most once per element? __eou__	user	0	0	0	0
+
+GG	hi all __eou__	user	0	0	0	0
+GG	Morning __eou__	agent	0	0	0	0
+OQ	is there a way to avoid the first router transition? I am using universal and the server renders the view. When the browser side angular kicks in. It starts with a transition animation. This look strange because universal already rendered the view. __eou__	user	0	0	0	0
+
+OQ	Hello, I am new in A2. I am trying to develop an app where users fill the search form and click search button , it sends request to API to get results. This search form is in one component and I want to display the search result in another component on the same web page. How can I make so that when I click search button in "searchform" component, the result will be displayed in "results" component ? I have searchservice to handle the http request. How can i make connection with search button to trigger to load the result lists in result component ? __eou__	user	0	1	1	2
+IG	@sayedrakib If your components are siblings then try to send event to the parent component to initialize the results to some variable say <srch_results> and using the bindings for the results component set one to get <srch_results>  and do what ever you want with that data in your results component.You can do it via services, Observables too.But if the results is a child component then you can do it directly thinking a bit will give you the sol.And for more on this read about component interacion cookbook on angular 2 website.https://angular.io/docs/ts/latest/cookbook/component-communication.html __eou__	agent	1	1	0	1
+
+OQ	ergh, i feel like a dummy for asking, but in my templates i wrote [@someInput]="something" for the life of me i can\'t remember why i put the @ in, what\'s @ do? __eou__	user	0	0	0	0
+PA	doh! i remember now nvm :D __eou__	user	0	0	0	0
+
+OQ	why does one shipngccompiled sources with a component for AoT, i.e. why make thecompileddirectory part of the repository? __eou__	user	0	0	0	0
+
+OQ	hi all, is there a way to configure the currency pipe to use single quotes instead of commas?{{310000.004 | currency:\'CHF\':true:\'1.2-2\'}}will result to "CHF310,000.00" but I need "CHF310\'000.00" __eou__	user	0	1	1	2
+RQ	any ideas, anyone??? hi all, is there a way to configure the currency pipe to use single quotes instead of commas?{{310000.004 | currency:\'CHF\':true:\'1.2-2\'}}will result to "CHF310,000.00" but I need "CHF310\'000.00" __eou__	user	0	1	0	0
+IG	geekrumper: make a custom pipe which extends the currency pipe __eou__	agent	1	1	0	1
+UF	thanks@dklmuc... not so funny@DzmitryShylovich;) __eou__	user	0	1	0	0
+AE	no context, but I know what you mean a second pipe which transforms comas to quotes... __eou__	user	0	1	0	0
+
+OP	HI guys,  I'm using angular-cli beta.26 and when I try to build my porject usingng build --prod --aot --base-href /frontdesk2/I get the stacktraceERROR in vendor.7e4f12f39ba998306173.bundle.js from UglifyJs\nSyntaxError: Unexpected token: name (isLastCharLower) [vendor.7e4f12f39ba998306173.bundle.js:50363,5]Have someone idea about it? __eou__	user	0	1	1	2
+FD	 [<-CODE->]  __eou__	user	0	1	0	0
+IG	so... it seems in AoT you can't useuseValuein a provider  if the value isn't known in compile time __eou__	agent	1	1	0	1
+CQ	Hmm. So you are saying instead of putting the component startup logic right in ngOnInit, put some subscribing-to-store block in ngOnInit so that the initialization logic can go in that subscribe block and therefore won't get fired until the store is ready? __eou__	agent	0	1	0	0
+AE	but the compiler doesn't complain and you get anullin runtime __eou__	agent	0	1	0	0
+AC	I'll moving this questionn to angular cli group __eou__	user	0	1	0	0
+UF	thanks __eou__	user	0	1	0	0
+
+OQ	any ideas why I\'m not getting "Only initialized variables and constants can be referenced because the value of this variable is needed by the template compiler" when I updated ng? __eou__	user	0	0	0	0
+FD	DzmitryShylovich: has some comments mentioning that it's AOT? __eou__	user	0	0	0	0
+
+OP	Hello Guys please help me in md2-select... How to one value by default active? __eou__	user	0	0	0	0
+IG	create credits.json file :) __eou__	agent	0	0	0	0
+CQ	DzmitryShylovich: Can you tell me please how to set by default active in md2-select? __eou__	user	0	0	0	0
+CC	aminsmartsense: never used it but logic would say just set<md2-select [(ngModel)]="item" [...]and the item should be the active one pre-defined if you have the options<md2-option *ngFor="let i of items" [...] __eou__	agent	0	0	0	0
+NF	But I am Designer so I want to add only static data like this __eou__	user	0	0	0	0
+
+OQ	robwormald: compiler providers are not available for the app [<-LINK->] is this intentional? __eou__	user	0	1	1	2
+IG	DzmitryShylovich:  [<-LINK->]  __eou__	agent	1	1	0	1
+
+OQ	I am confused by this, and is probably a misunderstanding on my part. but how is it possible to not support 2.1?   When I add angular to my project, aren't I just consuming the javascript and typings?  How is it possible for Angular TS to conflict with mine? __eou__	user	0	0	0	0
+
+OQ	Hi All, I need to have a tabs in my app. each tab will load its own component. so there would be parent component which will have 3 tabs and each tab will load its own component when user clicks on it. any solution to achieve this ? __eou__	user	0	1	1	2
+JK	vishalgajjar: Exactly what you just said lol __eou__	agent	0	1	0	0
+IG	Just make the tabs with routerLinks __eou__	agent	1	1	0	1
+IG	and a <router-outlet> underneath __eou__	agent	1	1	0	1
+CQ	HauntedSmores: there is already one router-outlet in the application so how to target the child router-outlet.? __eou__	user	0	1	0	0
+CC	vishalgajjar: You may need to structure your app a little differently. You cant have more than one router outlet in a single component __eou__	agent	0	1	0	0
+FD	vishalgajjar: Lets say you have Component A with its child component, Component B, which will hold the tabs __eou__	agent	0	1	0	0
+FD	vishalgajjar: Then you have one <router-outlet> that pulls in your top level components. INSIDE component A you have another <router-outlet> That pulls in and routes to your different tabs __eou__	agent	0	1	0	0
+
+OQ	when i run tsc and  will it look for tsconfig.json in the current as well as all parent folders till the root folder of the applicaton ?? __eou__	user	0	1	1	2
+IG	geeky77_twitter:  [<-LINK->] __eou__	agent	1	1	0	1
+
+OQ	Hi guys, is anyone here able to answer or give me a hint what's going on with my angular2 app?  Details are posted here: [<-LINK->] __eou__	user	0	0	0	0
+

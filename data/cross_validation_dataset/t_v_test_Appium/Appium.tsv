@@ -1,0 +1,794 @@
+OQ	mgmanikandan87: @RatkoDany  iOS  in built to hit enter or back button..similar to Androidkey method in android __eou__	user	0	1	1	2
+FD	? __eou__	user	0	1	0	0
+FD	inbuilt methods? __eou__	user	0	1	0	0
+FD	and ScrollTo() is removed from Java-client 4.02 __eou__	user	0	1	0	0
+FD	jar __eou__	user	0	1	0	0
+FD	? __eou__	user	0	1	0	0
+GG	oh __eou__	agent	0	1	0	0
+UF	ok __eou__	agent	0	1	0	0
+FD	otherway to scroll any idea> __eou__	user	0	1	0	0
+FD	? __eou__	user	0	1	0	0
+GG	even __eou__	agent	0	1	0	0
+IG	you can do this __eou__	agent	1	1	0	1
+FD	“\n" __eou__	agent	1	1	0	1
+CC	fro scrolling __eou__	user	0	1	0	0
+FD	? __eou__	user	0	1	0	0
+NF	no __eou__	agent	0	1	0	0
+CC	it is for enter ? __eou__	agent	0	1	0	0
+IG	swipe down :) __eou__	agent	1	1	0	1
+PF	yes __eou__	agent	0	1	0	0
+UF	ok... __eou__	agent	0	1	0	0
+AC	instead of scroll I am usig swipe __eou__	agent	1	1	0	1
+FD	swiping is the only option available __eou__	agent	1	1	0	1
+GG	hmmm __eou__	user	0	1	0	0
+IG	Do not use driver.swipe. It was deprecated in Java 5.0 __eou__	agent	1	1	0	1
+FD	use TouchAction class __eou__	agent	1	1	0	1
+CC	tfcardoso: for swipe __eou__	user	1	1	0	1
+FD	?\ __eou__	user	0	1	0	0
+PF	yes...  __eou__	agent	0	1	0	0
+IG	you can do press().waitaction().moveTo().release().perform() p.e. __eou__	agent	1	1	0	1
+FD	I still didn't adapt my code to it, but I'll have to change all the swipe, tap, zoom, pinch, etc. that I have __eou__	agent	1	1	0	1
+
+OQ	if any of you know the beter scroll option in latest appium please suggest __eou__	user	0	1	1	2
+GG	yeah __eou__	agent	0	1	0	0
+IG	MobileElement ab=(MobileElement)dr.findElement(By.id("")); [<-CODE->]  __eou__	agent	1	1	0	1
+FD	shabinmohan: this works a little bit you can try __eou__	agent	1	1	0	1
+UF	prabudakshan: Sure let me try this one thanks __eou__	user	0	1	0	0
+GG	WC __eou__	agent	0	1	0	0
+
+OQ	hey everyone, will Appium 1.6.3 work with XCode 7.3.1? Or do I need to upgrade to XCode8? __eou__	user	0	1	1	2
+IG	it should __eou__	agent	1	1	0	1
+PF	awesome. thank you __eou__	user	0	1	0	0
+FD	don't use automationName XCUITest __eou__	agent	1	1	0	1
+FD	in your caps __eou__	agent	1	1	0	1
+CC	is that only for Xcode 8? __eou__	user	1	1	0	1
+PF	yes __eou__	agent	0	1	0	0
+PF	awesome. I will remember that. thank you __eou__	user	0	1	0	0
+
+OQ	Hi guys, i have appium 1.5.3 installed in my Mac, i had created an iOS simulator for iPhone 5 with version 9.3 using Xcode 7.3.1 and i was able to launch the web app i had put in my script.  When i updated to Xcode 8.2.1 the simulator would not launch nor run script __eou__	user	0	1	1	2
+FD	I also cannot execute any tests using real iOS device, is there certain steps i have to take using the developer id for real iOS device to work? __eou__	user	0	1	0	0
+IG	You cannot use Xcode 8.2.1 with Appium 1.5.3 __eou__	agent	1	1	0	1
+FD	Xcode 8.0 + replaced the instrumentation with XCtests...... __eou__	agent	1	1	0	1
+IG	upgrade to appium 1.6.3 __eou__	agent	1	1	0	1
+GG	^ +++ __eou__	agent	0	1	0	0
+FQ	would i be able to test on my real device using 1.6.3 and Xcode 8.2.1? __eou__	user	0	1	0	0
+IG	yeah, but it's going to take a bit of updating to get there __eou__	agent	0	1	0	0
+FD	This video does a good job telling you what to do: [<-LINK->] __eou__	agent	0	1	0	0
+FQ	is 1.6.3 available on appium.io for Mac? __eou__	user	0	1	0	0
+PF	Yes and no.. __eou__	agent	0	1	0	0
+FD	as of Appium 1.6.0, there is no .dmg you have to run everything via command line. __eou__	agent	0	1	0	0
+FQ	what if i used xcdoe 7 __eou__	user	0	1	0	0
+FD	Then appium 1.5.3 will work __eou__	agent	0	1	0	0
+FD	but you wont be able to target a iOS 10 device __eou__	agent	0	1	0	0
+FQ	would it support iOS 10.2? __eou__	user	0	1	0	0
+NF	nope. __eou__	agent	0	1	0	0
+FD	anything iOS 10 + requires Xcode 8.0 + __eou__	agent	0	1	0	0
+FQ	once the iOS updates to latest version, is it possible to downgrade? __eou__	user	0	1	0	0
+NF	nope. __eou__	agent	0	1	0	0
+FD	Well, I sorta lied. __eou__	agent	0	1	0	0
+FQ	do i have to setup the certificate and provisioning through apple developer site for all this to work? __eou__	user	0	1	0	0
+IG	You can downgrade, but you have a very short window to do it. Basically, Apple's activation server removes the older iOS version. I cannot remember if it is immediate or it's a few days. __eou__	agent	0	1	0	0
+FD	I believe you do need a developer team account to get it all working. I'm not sure. Perhaps someone could answer that for you. __eou__	agent	0	1	0	0
+PF	thats fine ill just leave it at 10.2...i enabled the UI automation __eou__	user	0	1	0	0
+FD	yea my company got the dev team id, i just have to figure out a way to make the script run on real device __eou__	user	0	1	0	0
+FD	i have the android real device setup, iOS seems a little more tricky __eou__	user	0	1	0	0
+PF	cool, thnx, ill check it out __eou__	user	0	1	0	0
+
+OQ	driver.findelement(by.name() not supporting in the latest appium. Have any alternative to this? __eou__	user	0	1	1	2
+IG	use accessibility id instead of name __eou__	agent	1	1	0	1
+CC	how can we write any sample? __eou__	user	0	1	0	0
+FD	driver.findelement(by.name("login")).click(); __eou__	user	0	1	0	0
+IG	driver.findElementByAccessibilityId("Login").click(); __eou__	agent	1	1	0	1
+CQ	sanojqa: do you see any error if you use name? __eou__	agent	0	1	0	0
+CQ	or its just that appium doesn't find the required element? __eou__	agent	0	1	0	0
+UF	got it __eou__	agent	0	1	0	0
+IG	appium now uses UiAutomator2 __eou__	agent	1	1	0	1
+FD	 [<-LINK->] __eou__	agent	1	1	0	1
+AE	this seems to be the current code, the one I posted above is the old one __eou__	agent	0	1	0	0
+FD	I dnt see any by.Name here __eou__	agent	0	1	0	0
+FD	and the error matches what you have mentioned __eou__	agent	0	1	0	0
+FQ	is this work for iOS?  __eou__	user	0	1	0	0
+CQ	what works for iOS? name? __eou__	agent	0	1	0	0
+CC	name not working for iOS, actually I got the issue for iOS __eou__	user	0	1	0	0
+IG	I see it for old ios driver [<-LINK->] __eou__	agent	0	1	0	0
+AE	but I guess new version uses appium-xcuitest-driver ?? __eou__	agent	1	1	0	1
+FD	am using appium 1.5.3 and locator 'name' __eou__	user	0	1	0	0
+FD	its not working __eou__	user	0	1	0	0
+AE	I am not sure what appium 1.5.3 uses, I assume it is using appium-xcuitest-driver __eou__	agent	1	1	0	1
+JK	haven't worked on appium for long time __eou__	agent	0	1	0	0
+PF	aniket-21: ok fine, Thanks for the response __eou__	user	0	1	0	0
+IG	i.6.0 should be using appium-xcuitest-driver as per the changelog [<-LINK->] __eou__	agent	0	1	0	0
+FD	1.6.0* __eou__	agent	0	1	0	0
+FD	so ideally Name should work __eou__	agent	0	1	0	0
+PF	aniket-21: fin __eou__	user	0	1	0	0
+FD	e __eou__	user	0	1	0	0
+IG	check java-client library __eou__	agent	0	1	0	0
+FD	sanojqa: , u can try something like findElementByIosUIAutomation("au.getElementByName('somename')") __eou__	agent	0	1	0	0
+AC	aniket-21: let me try and update you __eou__	user	0	1	0	0
+AE	also it would be good to see appium log when u get the error for name __eou__	agent	1	1	0	1
+FD	would be helpful to debug __eou__	agent	1	1	0	1
+
+OQ	java-client lob should have it else his code won't compile, right? __eou__	user	0	1	1	2
+FD	 [<-LINK->] __eou__	user	0	1	0	0
+IG	(Y) __eou__	agent	1	1	0	1
+FD	 __eou__	agent	1	1	0	1
+
+OQ	Hi All, Can someone tell me how can I use UI inspector for iOS in appium 1.6? __eou__	user	0	1	1	2
+IG	Achini_C_twitter:  [<-LINK->]  __eou__	agent	1	1	0	1
+FD	 [<-LINK->]  __eou__	agent	1	1	0	1
+UF	mgmanikandan87: Thanks a lot.  __eou__	user	0	1	0	0
+FQ	Can you let me know one thing clarification? How can I enable the phone to support development in xcode. Due to this I cannot select iPhone via Accessibility inspector? __eou__	user	0	1	0	0
+IG	once you connect the device you can launch the inspect though that also you can view the screen __eou__	agent	0	1	0	0
+UF	ok. Manu Thanks __eou__	user	0	1	0	0
+
+OQ	Guys, is it possible to automate application written in Swift 3 using Appium? I've been told that Appium can interact only with objective c apps __eou__	user	0	1	1	2
+IG	I hv automated swift apps ,not sure about swift 3 in specific __eou__	agent	1	1	0	1
+UF	aniket-21: thanks for your answer __eou__	user	0	1	0	0
+IG	I think it doesn't matter which language is used to write the app, either way, appium does not require anythin to be implemented in the app so the automation will work, unlike some other frameworks __eou__	agent	1	1	0	1
+FD	appium uses apple testing framework, now XCUItest __eou__	agent	0	1	0	0
+FQ	RatkoD: so it is possible to run tests on iOS 10 and it is compatibel with XCode 8 now? __eou__	user	0	1	0	0
+IG	mkulava: it is indeed, with the capability automationName : XCUITest __eou__	agent	0	1	0	0
+UF	hazmeister: great news, thank you __eou__	user	0	1	0	0
+FD	yes, just to confirm, but it's a very complicated setup __eou__	agent	0	1	0	0
+FD	very very complicated __eou__	agent	0	1	0	0
+FD	very __eou__	agent	0	1	0	0
+
+OQ	Hi any one can tell what are the mandatory capabilities for iOS to run on real device? __eou__	user	0	1	1	2
+IG	you cannot test iOS app using windows, just on mac __eou__	agent	1	1	0	1
+FD	you cannot do anything on Win for a iOS app __eou__	agent	1	1	0	1
+PF	Exactly ! __eou__	user	0	1	0	0
+FD	you cannot develop on other then Mac __eou__	agent	1	1	0	1
+
+OQ	anyone know why appium 1.5.3 will not work with my android emulator? It worked prior to 1.5.3 __eou__	user	0	0	0	0
+CQ	blueice349: app is nnot launching ? __eou__	agent	0	0	0	0
+CC	yes its not I have been trying to firgure out what is wrong __eou__	user	0	0	0	0
+FD	it works on Android Device __eou__	user	0	0	0	0
+
+OQ	Does anyone know what steps do i have to take to launch a website from safari in iOS devices? do i have to download a safari extension? __eou__	user	0	0	0	0
+FD	package demos;import org.openqa.selenium.By;import org.openqa.selenium.WebDriver;import org.openqa.selenium.WebElement;import org.openqa.selenium.safari.SafariDriver;public class Test4 { [<-CODE->] } __eou__	user	0	0	0	0
+CQ	are you testing a native iOS app or Web application on iOS? __eou__	agent	0	0	0	0
+CC	this doesn't seem to work __eou__	user	0	0	0	0
+FD	web app __eou__	user	0	0	0	0
+IG	here you go: [<-LINK->] __eou__	agent	0	0	0	0
+FQ	would this work for appium 1.6.3 and iOS version 10.2? __eou__	user	0	0	0	0
+FD	WebDriver driver = new SafariDriver();driver.get(" [<-LINK->] "); __eou__	user	0	0	0	0
+FD	would i still have to input this into my script? __eou__	user	0	0	0	0
+IG	here an example from  the link I posted: [<-CODE->]  __eou__	agent	0	0	0	0
+FQ	would it be same for real device? i just have to input udid # and change the iOS version? __eou__	user	0	0	0	0
+IG	the code yes, but there's a setup process that is different the instructions are listed in the link I provided. If you read through it, it should have everything you need to know. __eou__	agent	0	0	0	0
+
+OQ	What languages are everyone using for writing tests?  MochaJS?  Ruby?  Python?  What do you think is best? __eou__	user	0	1	1	2
+IG	I use Java __eou__	agent	1	1	0	1
+FD	I use Java and Groovy __eou__	agent	1	1	0	1
+FD	Well Groovy (on Java) __eou__	agent	1	1	0	1
+CC	it's a JVM right? __eou__	agent	0	1	0	0
+IG	Groovy? Yeah it compiles down to Java and runs on JVM. __eou__	agent	1	1	0	1
+UF	Interesting.   __eou__	user	0	1	0	0
+AC	I just took a crash course in Python and liked it a lot.  I'm using MochaJS though and also like that and have found really great help with it.   __eou__	user	0	1	0	0
+FQ	Does anyone use Python and if so are there any qualities such as debugging tools or special libraries that you think would not be available in other languages? __eou__	user	0	1	0	0
+
+OQ	any idea how can I locate an element on different android version which has only "content-desc" attribute __eou__	user	0	1	1	2
+CQ	long time since I worked on appium, does content-desc map to name or to text? __eou__	agent	0	1	0	0
+CC	I tried googling it says name.. __eou__	user	0	1	0	0
+FD	by which I was unable to locate using name __eou__	user	0	1	0	0
+IG	worst case u can always try npm uninstall and then npm install __eou__	agent	1	1	0	1
+FD	it will just reinstall all the dependencies __eou__	agent	1	1	0	1
+FD	name should ideally work __eou__	agent	1	1	0	1
+FD	 [<-LINK->] __eou__	agent	1	1	0	1
+FD	what I can make out from this code is in case of Name, it searches by Content description and text as well __eou__	agent	1	1	0	1
+
+OQ	ok if noboday knows then another question: can I somehow exit a text input field? __eou__	user	0	1	1	2
+CQ	not clear@forkiwhat do you mean by exit a text input field __eou__	agent	0	1	0	0
+IG	click on a different element or some and you will exit __eou__	agent	0	1	0	0
+NF	hardik-d: yes but then I need to guess an element that has no action. __eou__	user	0	1	0	0
+IG	no need to guess, click on some logo or picture or something. Not everything is clickable __eou__	agent	1	1	0	1
+PF	ok - not exactly what I want but seems the only way __eou__	user	0	1	0	0
+FD	yes, usually you enter some text and take some other action like submit a button or verify other elements etc. __eou__	agent	1	1	0	1
+FD	hope you are not trying to hide the keyboard or some __eou__	agent	1	1	0	1
+FQ	the problem with is that you need to click twice __eou__	user	0	1	0	0
+FQ	at least when a text box has focus __eou__	user	0	1	0	0
+
+OQ	The problem I faced with Protractor is, as soon as it invokes app, it immediately tries to inject protractor javascript into webview __eou__	user	0	1	1	2
+FD	in cases of splash screen or 1st screen as native screen, injection of protractor script fails due to absence of any webview __eou__	user	0	1	0	0
+FD	if you can dump the appium log here, that would be helpful __eou__	user	0	1	0	0
+IG	Same thing I was am facing.. I added caps.setCapability("appWaitActivity", "your Main activity name"); __eou__	agent	1	1	0	1
+FD	but this is for java + appium not sure if you can do it in protractor.. __eou__	agent	1	1	0	1
+CC	what do u get in the server log? __eou__	user	0	1	0	0
+IG	 [<-CODE->] It was stopping server at launch.. and it was random... __eou__	agent	1	1	0	1
+FD	sometime it used to launch app successfully and sometimes it was showing me above issue.. __eou__	agent	1	1	0	1
+
+OQ	I would like to know if there is something else on the market. I've asked previously in this chat about Hive CI, but there was no response. __eou__	user	0	1	1	2
+IG	RatkoD: Yes __eou__	agent	1	1	0	1
+
+OP	hey all ... i'm trying to get scroll working with python and android but it doesn't seem to be implemented with selenium3? i've searched everywhere and my brain is hurting ... in python-client sourcehttps://github.com/appium/python-client/blob/master/appium/webdriver/webdriver.pyi see the following: [<-CODE->]  __eou__	user	0	1	1	2
+FD	i've tried [<-CODE->]  __eou__	user	0	1	0	0
+FD	doesn't seem to work __eou__	user	0	1	0	0
+FD	 [<-CODE->] ^this one gave me an error saying str is not a func __eou__	user	0	1	0	0
+FD	i'm testing websites not apps .. so no api ... any help is appreciated __eou__	user	0	1	0	0
+FD	this doesn't work [<-CODE->]  __eou__	user	0	1	0	0
+FD	i get the following: [<-CODE->]  __eou__	user	0	1	0	0
+IG	I've had luck scrolling with a swipe event - you might try that! __eou__	agent	1	1	0	1
+FD	(I'm using Mocha though) __eou__	agent	0	1	0	0
+CC	could you send me an example? __eou__	user	0	1	0	0
+GG	Sure __eou__	agent	0	1	0	0
+UF	thank you so much __eou__	user	0	1	0	0
+GG	i think i'm going to go bald soon __eou__	user	0	1	0	0
+GG	lol __eou__	agent	0	1	0	0
+IG	 [<-CODE->]  __eou__	agent	0	1	0	0
+UF	thank you ..  __eou__	user	0	1	0	0
+AC	.let me try this ... __eou__	user	0	1	0	0
+FD	np!  Beware though this is Mocha not python. __eou__	agent	0	1	0	0
+FD	(you could probably tell :)  ) __eou__	agent	0	1	0	0
+FD	haha no worries .. going to try and translate __eou__	user	0	1	0	0
+UF	thanks thanks __eou__	user	0	1	0	0
+CC	did it work? __eou__	agent	0	1	0	0
+NF	ugh nope __eou__	user	0	1	0	0
+FQ	selenium.common.exceptions.WebDriverException: Message: Not yet implemented. Please help us: http://appium.io/get-involved.html __eou__	user	0	1	0	0
+FD	simply trieddriver.swipe(100, 100, 100, 400) __eou__	user	0	1	0	0
+FD	python appium client says [<-CODE->]  __eou__	user	0	1	0	0
+PF	mmcintyre123: thanks for trying tho __eou__	user	0	1	0	0
+IG	I can't help too much with Python unfortunately but I can tell you that in Mocha the swipe action is part of the wd library - so I have to [<-CODE->]  __eou__	agent	0	1	0	0
+IG	I am seeing instruments fail after 90000 ms not being able to locate device. I specify iPhone Simulator is it better to be explicit like provide iPhone 6? __eou__	agent	0	1	0	0
+PF	mmcintyre123: ah ... hmm ... let me try with mocha ... might take me a while __eou__	user	0	1	0	0
+GG	reywinters03: np - good luck! __eou__	agent	0	1	0	0
+
+OQ	I have a doubt.hide_keyboard is working great but do you know how to know if the keyboard is open or not __eou__	user	0	1	1	2
+FD	for andorid app __eou__	user	0	1	0	0
+IG	Hi@deepakchoudhury@deepakchoudhury: I don't think u have an option to check if keyboard is opened or not. But u can try catch the hide keyboard. If it throws exception means keyboard is already closed __eou__	agent	1	1	0	1
+PF	Thanks@pramodnaik...its working... __eou__	user	0	1	0	0
+
+OQ	I am writing multiple test , so while starting second test it gives me thisorg.openqa.selenium.SessionNotCreatedException: A new session could not be created. Details: Problem getting session data for driver type AndroidDriver; does it implement 'get driverData'? (WARNING: The server did not provide any stacktrace information)Do I need to  instantiate again __eou__	user	0	0	0	0
+IG	can you try with override session in appium server... __eou__	agent	0	0	0	0
+NF	tekisrinivas20: Does not work , still closes the app after first testcase method __eou__	user	0	0	0	0
+FD	Is ther anyone online?? __eou__	user	0	0	0	0
+
+OQ	Hi guys , Can any one tel me how to check contacts are in sorted order using Appium/Selenium __eou__	user	0	1	1	2
+IG	Divya-tfw: : First u have to collect all the contacts in an ArrayList. and compare if that array list is sorted. __eou__	agent	1	1	0	1
+FD	Divya-tfw: : Example for checking sortedboolean checkSorting(ArrayList< String > arraylist){boolean isSorted=true;for(int i=1;i < arraylist.size();i++){if(arraylist.get(i-1).compareTo(arraylist.get(i)) > 0){isSorted= false;break;}}return isSorted;} __eou__	agent	1	1	0	1
+UF	pramodnaik: : ok will try __eou__	user	0	1	0	0
+
+OQ	To start the Appium server, the command is "appium" but what is the command to run a file against the server, "something filename.js"? I'm a newbie to Appium __eou__	user	0	1	1	2
+IG	lionel-pushios: you'll want to make requests to the appium server. The easiest way to do this is with a webdriver client. __eou__	agent	1	1	0	1
+UF	thanks@kidmillionsno  __eou__	user	0	1	0	0
+FQ	I was having trouble to actually run a JavaScript file to utilize Apple's XCUITest framework, but I realize now I needed the xcuitest-driver and then I can just use the Mocha commands __eou__	user	0	1	0	0
+
+OQ	Does anyone know how I can run my automation test on more then one device at one time? I am using Appium 1.5.x and Mocha. __eou__	user	0	1	1	2
+IG	blueice349: You can try the AppiumTestDistribution framework from@saikrishna321 [<-LINK->]  __eou__	agent	1	1	0	1
+FD	it works fine with android devices and ios until 9.x version, but I have troubles making it work with iOS 10, Appium 1.6.x and xCode 8.2 __eou__	agent	1	1	0	1
+
+OQ	Hello. Anyone know when Appium will support Xcode 8.2? __eou__	user	0	1	1	2
+IG	it supports __eou__	agent	1	1	0	1
+FD	install appium 1.6.3 __eou__	agent	1	1	0	1
+UF	RatkoD: thank you! __eou__	user	0	1	0	0
+
+OQ	RatkoD: did the parallel framework work with ios 10 ? __eou__	user	0	1	1	2
+IG	i could not make it work with two ios 10 devices __eou__	agent	1	1	0	1
+FD	probably because of problems with signing of the webdriver __eou__	agent	1	1	0	1
+
+OQ	mgmanikandan87: @RatkoDany  iOS  in built to hit enter or back button..similar to Androidkey method in android __eou__	user	0	1	1	2
+FD	? __eou__	user	0	1	0	0
+FD	inbuilt methods? __eou__	user	0	1	0	0
+FD	mgmanikandan87:  __eou__	user	0	1	0	0
+FD	any suggestion for me __eou__	user	0	1	0	0
+FD	? __eou__	user	0	1	0	0
+FD	for hitting the enter from virtual keypad __eou__	user	0	1	0	0
+FD	? __eou__	user	0	1	0	0
+IG	.submit() ? __eou__	agent	1	1	0	1
+FD	will work i guss __eou__	agent	1	1	0	1
+UF	hmm __eou__	user	0	1	0	0
+AC	let me check but not sure about __eou__	user	0	1	0	0
+FD	it __eou__	user	0	1	0	0
+GG	yes __eou__	agent	0	1	0	0
+
+OQ	Any of you know what are the check list we have  to go through before start iOS automation (mainly for inspecting elements) to find out nothing is missed or not followed proper development standards to name each and every element in app __eou__	user	0	0	0	0
+FD	from developers side __eou__	user	0	0	0	0
+
+OQ	hi , i am working on appium android by using python, the same application is being developer in IOS . can any one help me how to migrate the scripts to ios compatability and easy way to find the object properties __eou__	user	0	0	0	0
+
+OQ	Hi everyone, i am trying to find a way to browse the UI tree/elements using Appium. On WebDriver i can navigate to the "body" element, and then use XPath "*" to list the immediate children of an element and in that way browse the tree. __eou__	user	0	0	0	0
+
+OQ	has anyone figured out scrolling in ios on appium 1.6.3 __eou__	user	0	0	0	0
+FD	i used to use touch_actions long_press method which is not yet implemented __eou__	user	0	0	0	0
+FD	for now Appium::TouchAction.new.press(x: 100, y: 200).move_to(x: 100, y: -200).release.perform seems to be working to scroll up but if someone has a better way let me know __eou__	user	0	0	0	0
+
+OQ	PeterGolf: hi all!Does any one have problems with finding elements in ios application with ios driver?appium version 1.6.3i can see element on screen of devicebut when i'm making getPageSource - cant find them __eou__	user	0	0	0	0
+
+GG	Hello All, __eou__	user	0	0	0	0
+OQ	Is there any best tool to inspect native android UI ? __eou__	user	0	0	0	0
+FD	other than UI Automator viewer and Appium inspector. __eou__	user	0	0	0	0
+
+OP	Is Appium 1.6.3 supposed to be able to run multiple Android emulators concurrently assuming I use separate Appium server instances? __eou__	user	0	0	0	0
+FD	Whenever I try to do it, Appium just cannot seem to handle it. For example, one server instance is supposed to handle one emulator but then it telnets into the other emulator or something. __eou__	user	0	0	0	0
+FD	Maybe that's not even it, but it tries to do something with both emulators. __eou__	user	0	0	0	0
+FD	Despite using different server ports, bootstrap ports, chromedriver ports, even UDID (whether it makes a difference or not) __eou__	user	0	0	0	0
+FD	Not just that. I actually cannot even reliably run tests on two different emulators sequentially. __eou__	user	0	0	0	0
+FD	Sometimes works, sometimes not __eou__	user	0	0	0	0
+FD	All these problems lead me to think that Appium is not meant to support it, even through I have read various places that one can do it anyway. __eou__	user	0	0	0	0
+IG	i used to do it previously __eou__	agent	0	0	0	0
+FD	haven't tried on 1.6.3 __eou__	agent	0	0	0	0
+FD	"Despite using different server ports, bootstrap ports, chromedriver ports, even UDID (whether it makes a difference or not)" this is must __eou__	agent	0	0	0	0
+FD	$ appium -p 4754 -bp 4756 -U "192.168.56.101:5555" --chromedriver-port 9527// -p is appium port, -bp is bootstrap port, -U is UDID for emulators, --chromedriver-port// to get UDID for genymotion emulators, launch desired emulator then type below:$ adb devices// finally launch tests by passing in additional params$ PORT=4754 UDID=192.168.56.101:5555 PLATFORM=android rspec -b appium_test __eou__	agent	0	0	0	0
+PF	Thanks for replying __eou__	user	0	0	0	0
+FD	this is what has worked before __eou__	agent	0	0	0	0
+FD	check the ports i am using __eou__	agent	0	0	0	0
+FD	they have to be 10# apart from one instance to another __eou__	agent	0	0	0	0
+FQ	Hmm. Isn't -U the same as --udid ? __eou__	user	0	0	0	0
+IG	ofcourse i use UDID and PORT in my caps __eou__	agent	0	0	0	0
+NF	Sorry __eou__	user	0	0	0	0
+FD	yes but you start your server and tell it the UDID and have to tell your test code the same __eou__	agent	0	0	0	0
+FQ	When I run my tests, I have emulators with UDID "emulator-5554" and "emulator-5556". How do I know what to tell Appium? __eou__	user	0	0	0	0
+FD	Or does the parameter set the UDID in the emulator as well? __eou__	user	0	0	0	0
+IG	in ruby __eou__	agent	0	0	0	0
+FQ	Hmm. Not sure what that appium_lib is so I will check that out. Maybe I could just put the UDID inside my "default-capabilities.json" file? __eou__	user	0	0	0	0
+IG	so basically you have to tell your driver to talk to which port __eou__	agent	0	0	0	0
+IG	figure ^^ out in whatever appium client lib you are using __eou__	agent	0	0	0	0
+CQ	you using java/python/js? __eou__	agent	0	0	0	0
+CC	Python __eou__	user	0	0	0	0
+FD	I tried to set the UDID to something random so maybe that is the problem. __eou__	user	0	0	0	0
+UF	k __eou__	agent	0	0	0	0
+FD	I just do not know what/who decides what the UDID of the emulator will be. __eou__	user	0	0	0	0
+FD	If it's Appium then maybe it will work. __eou__	user	0	0	0	0
+FD	server has to know exact UDID to talk to and your driver  has to know what UDID and appium port to talk to __eou__	agent	0	0	0	0
+FD	UDID is unique per device/emulator __eou__	agent	0	0	0	0
+FD	has nothing to do with appium __eou__	agent	0	0	0	0
+FD	So maybe it's set when I create the AVD then __eou__	user	0	0	0	0
+FD	yes __eou__	agent	0	0	0	0
+AC	Okay I will try :D __eou__	user	0	0	0	0
+FD	if your emulator/avd is running __eou__	agent	0	0	0	0
+FD	typing adb devices should give you the UDID __eou__	agent	0	0	0	0
+PF	Thank you, Hardik! I will be right back. Need to switch from Windows to macOS where I do the development/testing. __eou__	user	0	0	0	0
+NF	Hmm. I do not think it worked out the way I expected. __eou__	user	0	0	0	0
+FQ	I launched one emulator (Android 5.1) andadb devicesgave me "emulator-5554". Then I quit the emulator and launched another one (Android 7.1). This time,adb devicesalso gave me "emulator-5554". __eou__	user	0	0	0	0
+FD	If I then start up the first emulator again (Android 5.1), its UDID appears to be "emulator-5556". __eou__	user	0	0	0	0
+FD	I don't know but maybe this is a problem for Appium? __eou__	user	0	0	0	0
+IG	I have an idea. I can try to use the avdArgs capability to pass the "-port" parameter to the emulator. "Set the console port number for this emulator instance to <port>. The console port number must be an even integer between 5554 and 5584, inclusive. <port>+1 must also be free and will be reserved for adb." __eou__	user	0	0	0	0
+FD	That may make the UDID consistent at least. __eou__	user	0	0	0	0
+FD	In the end, I decided to create an issue on GitHub: [<-ISSUE->] __eou__	user	0	0	0	0
+
+OQ	Hi guys, wanted to know how to download appium 1.6 dmg file . Please help __eou__	user	0	0	0	0
+
+OQ	what kind of dependencies i need to install to run Android Web test cases on Appium 1.6.3? __eou__	user	0	0	0	0
+
+OQ	hi all i am new to the group please help me in getting source __eou__	user	0	0	0	0
+
+OQ	hi any of you know what is "p" & "d" represents  in api request ? __eou__	user	0	0	0	0
+
+OQ	MobileElement makeTextLocartord = (MobileElement) driver.findElementsByIosUIAutomation("new UiSelector().Value(\"Full Name\")"); __eou__	user	0	0	0	0
+FD	when i am trying to type in full name using this i m getting such exception __eou__	user	0	0	0	0
+FD	Exception in thread "main" org.openqa.selenium.InvalidSelectorException: Locator Strategy '-ios uiautomation' is not supported __eou__	user	0	0	0	0
+
+OQ	not able to run appium test in iOS real device with os 10.1.1, Appium version 1.6, xcode 8. anything to install. Also I able to run appium in iOS simulator by installing  'brew install carthage' __eou__	user	0	0	0	0
+
+AC	I created an issue if anyone could help: [<-ISSUE->] __eou__	user	0	0	0	0
+
+OQ	hi guys..  if i want to test new application do i need to configure webDriver Agent again... __eou__	user	0	0	0	0
+FD	what is the capability code for real device __eou__	user	0	0	0	0
+
+OQ	I am new to android development, i've been learning java for past 2 months and would really like to work on an android app Idea of my own. Can anyone help me in understanding what i need to study to get my concepts clear for developing my app __eou__	user	0	0	0	0
+FD	? __eou__	user	0	0	0	0
+FD	here's the link to what i want to develop for the sake of learning: [<-LINK->] __eou__	user	0	0	0	0
+
+GG	hi __eou__	user	0	0	0	0
+OQ	Could someone have a look at this question of my [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	Hi guys, We have problem when try to run our test with appium behind our corporate proxy (In our own house runs ok). Do you have any idea how we can pass the proxy and no-proxy info to appium? __eou__	user	0	0	0	0
+
+OQ	I'm facing some problems while I'm using Appium with wd-bridge __eou__	user	0	0	0	0
+FD	I have this config file __eou__	user	0	0	0	0
+FD	[<-CODE->] __eou__	user	0	0	0	0
+FD	When I try to run protractor, it returns an errro __eou__	user	0	0	0	0
+FD	WebDriverError: No such context found. __eou__	user	0	0	0	0
+FD	From: Task: WebDriver.createSession() __eou__	user	0	0	0	0
+OQ	What would be the problem here? __eou__	user	0	0	0	0
+
+GG	Hi I am gettting Test Failed while trying to launch the app __eou__	user	0	0	0	0
+FD	can any one help to fix __eou__	user	0	0	0	0
+FD	below are the appium logs __eou__	user	0	0	0	0
+FD	[<-CODE->] __eou__	user	0	0	0	0
+FD	Sorry please find below full logs ignore the previous one __eou__	user	0	0	0	0
+FD	[<-CODE->] __eou__	user	0	0	0	0
+FD	[<-CODE->] __eou__	user	0	0	0	0
+
+OQ	is anyone else facing this issue: [<-ISSUE->] __eou__	user	0	0	0	0
+
+OQ	I'm using appium and the ms WinAppDriver to ui test my universal windows apps. How can I register my apps on my build server (win10) so on the buildserver, things are getting registered in a way, so that appium can run it? __eou__	user	0	0	0	0
+
+OQ	set WebDriverWait timeout as 5s,why not give an exception? __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	does anyone know how to turn wifi off on iOS and Android? using appium 1.5.3 and Mocha ( javascript ) __eou__	user	0	0	0	0
+
+OQ	Hi, there, anyone who use python nosetests framework? __eou__	user	0	0	0	0
+
+OQ	Any of you have taken CMAP Mobile App Test Automation Certification ? __eou__	user	0	0	0	0
+
+GG	hi :) __eou__	user	0	0	0	0
+OQ	I'm using appium 1.6 on real iOS 9 device __eou__	user	0	0	0	0
+FD	and the app launch twice for the appium session __eou__	user	0	0	0	0
+OQ	is this the expected behaviour? I only call 'launch' once in my appium client __eou__	user	0	0	0	0
+
+GG	Hi guys __eou__	user	0	0	0	0
+OQ	Automation step:A)Upload images from Gallery into Facebook album __eou__	user	0	0	0	0
+FD	Using  Mobile Browser can you guys give me some idea __eou__	user	0	0	0	0
+FD	? __eou__	user	0	0	0	0
+FD	Android device, chrome browser __eou__	user	0	0	0	0
+
+OQ	hiI'm using appium 1.6 on real iOS 9 deviceand the app launch twice for the appium sessionis this the expected  __eou__	user	0	0	0	0
+
+OQ	Hi All.. How to get the placeholder text in textbox? __eou__	user	0	0	0	0
+
+OQ	Hello everyone, I am new to Appium and I would like to know are there any limitations or issues for automating iOS app made with Swift 3? __eou__	user	0	0	0	0
+
+GG	hi __eou__	user	0	0	0	0
+OQ	I am using appium 1.6 beta version to automate an native app..in between the app redirects to web view..can anybody please help how to automate this ..do we need to do context switch __eou__	user	0	0	0	0
+
+OQ	when you start appium in the terminal, is there a way to test if it can be accessed (such as through jenkins running scripts) __eou__	user	0	0	0	0
+
+OQ	Hi All, Can you help me on how to int egrate xcode server and appium tests? __eou__	user	0	0	0	0
+FD	*integrate __eou__	user	0	0	0	0
+
+OQ	are you executing your code on the same machine appium is on? __eou__	user	0	0	0	0
+FD	is anyone able to interact with a iOS PickerWheel? Using 1.6.3 __eou__	user	0	0	0	0
+
+OQ	Does Appium 1.6.3 support parralel test for IOS APPS. __eou__	user	0	1	1	2
+IG	I don't think so, unless XCUITest  allows it __eou__	agent	1	1	0	1
+
+OQ	I'm trying to run a safari test on a real iOS device - works in the simulator and on android device but I can't get the apple phone running on appium 1.6.3 __eou__	user	0	1	1	2
+FD	it was working previously on appium 1.6.0 with iOS 9 __eou__	user	0	1	0	0
+FD	updated phone to 10.2.1 and appium to 1.6.3 __eou__	user	0	1	0	0
+FD	getting this: __eou__	user	0	1	0	0
+FD	[<-CODE->] __eou__	user	0	1	0	0
+FD	not sure where undefined command is creeping in from __eou__	user	0	1	0	0
+FD	seems to be failing on the first driver.get() __eou__	user	0	1	0	0
+IG	ok, turns out part of the problem was lcokdown was inaccessible __eou__	user	1	1	0	1
+FD	sudo chmod 777 /var/db/lockdown __eou__	user	1	1	0	1
+
+OQ	I'm evaluating testing solutions and Appium seems great but there are a few things I haven't been able to figure out if it can do: __eou__	user	0	1	1	2
+FD	Can any app in an emulator be scripted, or does it have to be one that you're developing yourself? __eou__	user	0	1	0	0
+FD	Specifially, I'm trying to build a solution for testing how emails display in different email clients and would love to have an automated way to test against Apple Mail on iOS devices. __eou__	user	0	1	0	0
+IG	mbuckbee: you can interact only with your app, no other app can be used during the test. __eou__	agent	1	1	0	1
+FQ	RatkoD: I'm thinking that's some app restriction limitation and not specific to appium? __eou__	user	0	1	0	0
+IG	the limitations come from apple __eou__	agent	0	1	0	0
+PF	Yeah, that's what I figured. __eou__	user	0	1	0	0
+FQ	So, to do this I'd either need to do click/swipe from an OSX mac or jailbreak (which I was trying to avoid). __eou__	user	0	1	0	0
+AE	I think there is no cure for this, it's simple, apple would not allow you to interact with other apps __eou__	agent	1	1	0	1
+FD	not iven with clicking on coordinates __eou__	agent	1	1	0	1
+FD	or anything __eou__	agent	1	1	0	1
+FD	I don't know how jailbraking will help here __eou__	agent	1	1	0	1
+IG	RatkoD: I found a couple listed solutions that were: __eou__	user	1	1	0	1
+FD	Jailbreak the device __eou__	user	1	1	0	1
+FD	Install a VNC client on the device __eou__	user	1	1	0	1
+FD	User our library to remotely run commands against the device __eou__	user	1	1	0	1
+FQ	mbuckbee: also does not know how to do numbering in Gitter apparently __eou__	user	0	1	0	0
+
+OQ	Hey guys, does anyone knows a solution for the Too many instances of this service are already running error __eou__	user	0	0	0	0
+FD	it happens all the time, even after just a few tests, and I need to reboot the tested device __eou__	user	0	0	0	0
+FD	and it's a pain in the ass to do this all the time __eou__	user	0	0	0	0
+FD	or nobody here is using appium 1.6+ because it's actually unusable with all the bugs and things not working __eou__	user	0	0	0	0
+
+OF	anyone updated to the new itunes?  I have a suspicion its broke appium’s ability to talk to safari on real devices __eou__	user	0	1	1	2
+IG	i haven't, its knocking on the door __eou__	agent	1	1	0	1
+
+OQ	 [<-LINK->] __eou__	user	0	0	0	0
+FD	hello every one ! can some one help me with this issue ? __eou__	user	0	0	0	0
+FD	android Application crash at the moment i run my testNG while using Appium __eou__	user	0	0	0	0
+FD	hello, while i send login and password both are written in password field ! __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	hi All , Does anyone know what is the reason maven build failure if i am initializing __eou__	user	0	0	0	0
+FD	/declaring as  AppiumDriver< WebElement> driver1; __eou__	user	0	0	0	0
+
+GG	hi __eou__	user	0	0	0	0
+
+GG	Selenium conference 2017 Early bird tickets are on Sale now.!! [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	Hello guys, has anybody worked with zephyr for automation ?  I have written appium scripts in java in android studio and I want to trigger them from Jira via zephyr plugin . Any help ? __eou__	user	0	0	0	0
+
+OQ	anyone had any issues with latest intelij ... java/TestNG/Cucumber ?  i keep on getting no tests where found in a clean project setup __eou__	user	0	0	0	0
+FD	create a new local repo.. re-cloned... opeend intelij.. all works now.. __eou__	user	0	0	0	0
+
+OP	i'm trying to scroll up the page of a android application, i'm using below method, but its not working, is there any other way ? __eou__	user	0	0	0	0
+FD	public void scrollPageUp() {JavascriptExecutor js = (JavascriptExecutor) driver;HashMap<String, Double> swipeObject = new HashMap<String, Double>();swipeObject.put("startX", 0.50);swipeObject.put("startY", 0.95);swipeObject.put("endX", 0.50);swipeObject.put("endY", 0.01);swipeObject.put("duration", 3.0);js.executeScript("mobile: swipe", swipeObject);} __eou__	user	0	0	0	0
+FD	error log: org.openqa.selenium.WebDriverException: Not yet implemented. Please help us: [<-LINK->] (WARNING: The server did not provide any stacktrace information) __eou__	user	0	0	0	0
+IG	Mobile: swipe is not a valid implementation __eou__	agent	0	0	0	0
+FD	Support for such actions was removed long back __eou__	agent	0	0	0	0
+CQ	Why r u using execute script for swiping __eou__	agent	0	0	0	0
+CC	aniket-21: so, could you please tell me which method i can use? __eou__	user	0	0	0	0
+CC	 [<-LINK->] __eou__	agent	0	0	0	0
+PF	Thanks, Let me check.@aniket-21 __eou__	user	0	0	0	0
+FQ	which method i have to call for page scroll up? __eou__	user	0	0	0	0
+FD	SwipeElementDirection    this one ??? __eou__	user	0	0	0	0
+IG	swipeElementDirection is class name __eou__	agent	0	0	0	0
+CC	swipe   ?  from 202 line ? __eou__	user	0	0	0	0
+PF	yes __eou__	agent	0	0	0	0
+CC	and for left and right swiping ? __eou__	user	0	0	0	0
+IG	offset determines the direct __eou__	agent	0	0	0	0
+FD	direction __eou__	agent	0	0	0	0
+CC	sorry, i didn't get you ? __eou__	user	0	0	0	0
+IG	see the code __eou__	agent	0	0	0	0
+FD	int startX = getStartX(p, location, size, offset1);int startY = getStartY(p, location, size, offset1);int endX = getEndX(p, location, size, offset2);int endY = getEndY(p, location, size, offset2); __eou__	agent	0	0	0	0
+FD	although I am finding this code little weird __eou__	agent	0	0	0	0
+NF	that means swipe method for all (scroll up, left swiping and right swiping ) __eou__	user	0	0	0	0
+NF	my bad __eou__	agent	0	0	0	0
+NF	don't use that code __eou__	agent	0	0	0	0
+IG	use touch actions __eou__	agent	0	0	0	0
+FD	 [<-LINK->] __eou__	agent	0	0	0	0
+FD	because where ever there is swipe code, I see the comment that its deprecated and will be removed __eou__	agent	0	0	0	0
+FD	better to use touchActions than breaking your code at later point of time __eou__	agent	0	0	0	0
+PF	Thanks a lot@aniket-21for you replay __eou__	user	0	0	0	0
+
+OP	Don't work driver.findElement(By.XPATH,"//AppiumAUT/XCUIElementTypeApplication") for Appium 1.6.3? [iOS real device] __eou__	user	0	1	1	2
+FD	not working with driver.findElement(By.xpath("//XCUIElementTypeApplication")) __eou__	user	0	1	0	0
+IG	bakiko: //XCUIElementTypeApplication  this is not full xpath __eou__	agent	1	1	0	1
+FD	its just applicaiton window __eou__	agent	0	1	0	0
+FD	level __eou__	agent	0	1	0	0
+FD	you need to give  exact element __eou__	agent	0	1	0	0
+UF	mgmanikandan87: thank you.  __eou__	user	0	1	0	0
+AC	mgmanikandan87: I have tried this "driver.findElement(By.xpath("//XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeNavigationBar/XCUIElementTypeOther[3]/XCUIElementTypeOther"))"  __eou__	user	1	1	0	1
+PF	and it is working.  __eou__	user	0	1	0	0
+FQ	Is it possible to use this format for find the element xpath (driver.findElement(By.xpath("//[0]/[0]/[0]/[0]/[0]/[0]/[0]/[0]/[0]/[3]/[0])? __eou__	user	0	1	0	0
+IG	//XCUIElementTypeNavigationBar/XCUIElementTypeOther[3]/XCUIElementTypeOther __eou__	agent	1	1	0	1
+PF	i think this should work __eou__	agent	0	1	0	0
+FD	driver.nagivate().back(); __eou__	agent	1	1	0	1
+PF	this should work __eou__	agent	0	1	0	0
+PF	mgmanikandan87: thank you. It is working!!!!  __eou__	user	0	1	0	0
+GG	cool __eou__	agent	0	1	0	0
+IG	//XCUIElementTypeOther[3]/XCUIElementTypeOther __eou__	agent	1	1	0	1
+PF	even this should work __eou__	agent	0	1	0	0
+FD	try it __eou__	agent	0	1	0	0
+
+OP	is someone here using appium with react native? Does you experience difficulties getting elements by accessibility strategy? It seems that testID etc. behaves differently between iOS and Android __eou__	user	0	1	1	2
+CQ	guysegal: so testID has an observable effect for appium for you?  __eou__	agent	0	1	0	0
+IG	I set it for a couple of images in my react native android  app and appium pagesource didn't change at all.  __eou__	agent	1	1	0	1
+CQ	How is this supposed to work? __eou__	agent	0	1	0	0
+CC	forki: I'm adding these properties to the component props: __eou__	user	0	1	0	0
+FD	{ testID: testID, accessible:true, accessibilityLabel:testID } __eou__	user	0	1	0	0
+FD	in android it works in most of the places you'll put it. I'm having difficulties to understand how it works is iOS __eou__	user	0	1	0	0
+FD	a component that have these props is reachable by appium android, but not always in appium ios __eou__	user	0	1	0	0
+FD	I'm probably doing something wrong __eou__	user	0	1	0	0
+FD	Anyone ever executed test with two android devices connected to the same appium server? I'm getting this error message: __eou__	user	0	1	0	0
+FD	"A new session could not be created. Details: Problem getting session data for driver type AndroidDriver; does it implement 'get driverData'?" __eou__	user	0	1	0	0
+FD	the weird thing is that the same test with iOS & Android devices connected runs successfully __eou__	user	0	1	0	0
+CQ	guysegal: how do you find that element after that in appium? what is your selector? __eou__	agent	0	1	0	0
+FD	yes I am. I'm using accessibility selector __eou__	user	0	1	0	0
+CQ	no xpath? __eou__	agent	0	1	0	0
+IG	I always thought testID would somehow map to a resource-id __eou__	agent	0	1	0	0
+
+GG	guys __eou__	user	0	1	1	2
+OP	i need on help __eou__	user	0	1	0	0
+FD	manikandan can u help me __eou__	user	0	1	0	0
+CC	tell me what you need ? __eou__	agent	0	1	0	0
+FD	package audio;import java.net.MalformedURLException;import java.net.URL;import java.util.concurrent.TimeUnit;import org.openqa.selenium.WebDriver;import org.openqa.selenium.remote.CapabilityType;import org.openqa.selenium.remote.DesiredCapabilities;import org.openqa.selenium.remote.RemoteWebDriver;import org.testng.annotations.BeforeTest;import org.testng.annotations.Test;import io.appium.java_client.ios.IOSDriver;import io.appium.java_client.service.local.AppiumDriverLocalService;public class trackinfo {    RemoteWebDriver driver;    AppiumDriverLocalService appiumService;    //String appiumServiceUrl; [<-CODE->]  __eou__	user	0	1	0	0
+FD	this the code i am using but i cant connect to appium server __eou__	user	0	1	0	0
+FD	but server is running __eou__	user	0	1	0	0
+FD	can u help m ein this __eou__	user	0	1	0	0
+CQ	appium logs ? __eou__	agent	0	1	0	0
+CC	nothing is coming in my appium server __eou__	user	0	1	0	0
+CQ	screenshot ? __eou__	agent	0	1	0	0
+CC	Last login: Tue Nov 22 12:56:56 on ttys000RIMM12:~ user$ appium[Appium] Welcome to Appium v1.6.1-beta[Appium] Appium REST http interface listener started on 0.0.0.0:4723 __eou__	user	0	1	0	0
+FD	its is just in this state only __eou__	user	0	1	0	0
+IG	 [<-CODE->] appiumServiceUrl = appiumService.getUrl().toString(); __eou__	agent	1	1	0	1
+FD	can you remove above code __eou__	agent	1	1	0	1
+FD	 __eou__	agent	1	1	0	1
+FD	and run it __eou__	agent	1	1	0	1
+UF	ok __eou__	user	0	1	0	0
+FD	and __eou__	agent	0	1	0	0
+AC	i willl try  it __eou__	user	0	1	0	0
+IG	change __eou__	agent	1	1	0	1
+FD	RemoteWebDriver __eou__	agent	1	1	0	1
+FD	to IOSDriver<> __eou__	agent	1	1	0	1
+UF	as ok __eou__	user	0	1	0	0
+UF	ok __eou__	user	0	1	0	0
+AC	i will try it and say u __eou__	user	0	1	0	0
+GG	ok __eou__	agent	0	1	0	0
+
+CQ	reywinters03: are you facing still scrolling issue ? __eou__	user	0	0	0	0
+CC	mgmanikandan87: yep __eou__	agent	0	0	0	0
+CQ	reywinters03: android & iOS ? __eou__	user	0	0	0	0
+CC	Xcode 8 and above __eou__	user	0	0	0	0
+IG	@reywinters03AndroidElement listView = (AndroidElement) wd.findElementByClassName("android.widget.ScrollView");listView.swipe(SwipeElementDirection.UP, 20, 15, 5000);This should work __eou__	user	0	0	0	0
+
+OQ	Hi! I'm using Appium 1.6.0 with Android SDK  24.4.1. During apk installation I get this error which I have never seen beforeDevice API level: 22  [<-CODE->] __eou__	user	0	1	1	2
+CQ	sankleta: post your desired caps, device android version __eou__	agent	0	1	0	0
+CC	@mgmanikandan87 sure, heredef setUp():    desired_caps = {}    desired_caps['platformName'] = 'Android'    desired_caps['platformVersion'] = '5.1'    desired_caps['deviceName'] = 'MrCucumber'    desired_caps['app'] = '/apk/test-armv7-debug.apk' [<-CODE->] so device has 5.1 as well __eou__	user	0	1	0	0
+IG	sankleta: can you try with any other apk, its seems every looks fine or we need to check with android source code __eou__	agent	1	1	0	1
+
+OQ	anyone familiar with selenium grid? __eou__	user	0	1	1	2
+CQ	what's your query@yozzz06_twitter __eou__	agent	0	1	0	0
+CC	so i have selenium grid plugin installed in Jenkins which is on machine A (Unix), i have nodes on machine B (unix) and machine C (windows) . If i start the node for the Machine B (Unix) it's all ok. But if i start then and the node on Machine C (Windows), something is happening because i can't even acces the URL/grid/console __eou__	user	0	1	0	0
+CQ	what log do u see on grid server (machine A) when you start windows node (Machine C) __eou__	agent	0	1	0	0
+CC	channel stopped __eou__	user	0	1	0	0
+FD	here is the node log: [<-LINK->] __eou__	user	0	1	0	0
+FD	i don't understand why the windows machine causing this...all the machine are in the same VPN __eou__	user	0	1	0	0
+IG	09:25:08.824 INFO - Starting auto registration thread. Will try to register every 5000 ms.09:25:08.824 INFO - Registering the node to the hub: [<-LINK->] 09:25:08.830 INFO - The node is registered to the hub and ready to use __eou__	agent	0	1	0	0
+FD	This is for Linux Node or Windows node __eou__	agent	0	1	0	0
+CC	for the windows node __eou__	user	0	1	0	0
+FD	the linux node connects and is registered to the hub...it's everything good..the windows node is giving me a headache __eou__	user	0	1	0	0
+IG	09:25:08.830 INFO - The node is registered to the hub and ready to use09:26:01.275 INFO - Stopping Acceptor ServerSocket[addr=0.0.0.0/0.0.0.0,localport=4444] __eou__	agent	1	1	0	1
+FD	in these 2 statements, there is a gap of 1 min __eou__	agent	1	1	0	1
+CC	aren't you doing anything after node is connected? __eou__	agent	0	1	0	0
+CC	nope..:| __eou__	user	0	1	0	0
+FD	only hit start from jenkins and that's all __eou__	user	0	1	0	0
+CQ	what I meant is __eou__	agent	0	1	0	0
+FD	r u not running any tests on this node __eou__	agent	0	1	0	0
+CC	nope __eou__	user	0	1	0	0
+FD	i only want to establish the connection __eou__	user	0	1	0	0
+FD	DefaultRemoteProxy unknown version this is from the grind/console __eou__	user	0	1	0	0
+CQ	how is the log looking on node __eou__	agent	0	1	0	0
+FD	can u paste node log? __eou__	agent	0	1	0	0
+
+OQ	is anyone using appium with node? i can't seem to getbrowser.execute('mobile:scroll', {'direction':'down'})to work ... __eou__	user	0	1	1	2
+FD	i tried using touchAction but it says it's not yet implemented __eou__	user	0	1	0	0
+CQ	none of touch action is implemented? __eou__	agent	0	1	0	0
+FD	or a particular touchaction method isn't __eou__	agent	0	1	0	0
+IG	i don't use node js with appium but use ruby instead __eou__	agent	1	1	0	1
+FD	and always use touchaction class for scrolling __eou__	agent	1	1	0	1
+CC	i tried using touchAction but it says it's not yet implemented __eou__	user	0	1	0	0
+FD	i tried [<-CODE->] __eou__	user	0	1	0	0
+FD	i get an error saying not yet implemented __eou__	user	0	1	0	0
+FD	and then when i tried using mobile: scroll i'm gettingUnexpected error in -[UIAScrollView_ __eou__	user	0	1	0	0
+IG	Appium::TouchAction.new.press(x: 100, y: 200).move_to(x: 100, y: -200).release.perform ruby code works for me __eou__	agent	1	1	0	1
+FD	on ios __eou__	agent	1	1	0	1
+FD	follow [<-LINK->] __eou__	agent	1	1	0	1
+FD	for node js __eou__	agent	1	1	0	1
+
+GG	good morning __eou__	user	0	1	1	2
+OP	I am getting this error running appium: [XCUITest] Error: xcodebuild failed with code 65 __eou__	user	0	1	0	0
+FD	[Xcode]     Signing for "WebDriverAgentRunner" requires a development team. Select a development team in the project editor.Code signing is required for product type 'UI Testing Bundle' in SDK 'iOS 10.2' __eou__	user	0	1	0	0
+FD	already tried this solution: [<-LINK->]  __eou__	user	0	1	0	0
+GG	Hi @ vfennerac __eou__	agent	0	1	0	0
+IG	vfennerac: : I believe [<-LINK->] this would help __eou__	agent	1	1	0	1
+FD	for real devices __eou__	agent	1	1	0	1
+IG	vfennerac:  [<-LINK->]  __eou__	agent	1	1	0	1
+CC	its kinda weird that we need team id and profile just to run browser tests __eou__	user	0	1	0	0
+UF	thanks for the link and vid, will give it a try __eou__	user	0	1	0	0
+CC	what if I don't have a team do give to appium? __eou__	user	0	1	0	0
+FD	all I want to do is automated browser testing on the iphone __eou__	user	0	1	0	0
+IG	Well, you should ask Apple for the logic. Their idea is that you need to pay for a dev account, you cannot develop without dev account, since you develop, you need to test the app, so for testing you need dev account. __eou__	agent	1	1	0	1
+
+OQ	hey all , I am working in a react-native app and I am trying to scroll a specified section of the page.  I can't get the scroll to happen at all.  Anyone have any ideas as to what I can do to make the scroll happen? __eou__	user	0	1	1	2
+CQ	Hw r u scrolling __eou__	agent	0	1	0	0
+CQ	What does appium log say when u scroll __eou__	agent	0	1	0	0
+CC	I am working through a webdriverio framework and using appium through that. the only thing I see in the appium log is - __eou__	user	0	1	0	0
+FD	[HTTP] --> POST /wd/hub/session/da4d1331-298b-44a8-adcf-7ecde612dbbd/touch/scroll {"element":"//button[@data-id=\"loadMoreITemsButtons\"]","xoffset":0,"yoffset":-250}[HTTP] <-- POST /wd/hub/session/da4d1331-298b-44a8-adcf-7ecde612dbbd/touch/scroll 501 2 ms - 112 __eou__	user	0	1	0	0
+CQ	What is the response code 501? __eou__	agent	0	1	0	0
+CC	apparently its an HTTP protocal issue meaning "not implemented" __eou__	user	0	1	0	0
+FD	I will have to look further into this __eou__	user	0	1	0	0
+IG	Ya cos scroll is no more there __eou__	agent	1	1	0	1
+FD	U shud use swipe __eou__	agent	1	1	0	1
+UF	ah. I will try that then __eou__	user	0	1	0	0
+
+OQ	Hi All, I'm having trouble with Appium 1.6.3, Xcode 8.2.1, and iOS 10.2.  I installed the new iOS driver XCUITest and now I am trying to get my tests to run in an iPad Air 2 simulator - or really any iOS 10+ simulator.  The simulator pops up, the new WebDriverAgent appears to start, but my app WILL NOT launch.  It tries to, but closes immediately.  I've tried almost everything and sort of at a loss.  Will post more details momentarily about how I built the app and appium logs.  If anyone can help though I would appreciate it!! __eou__	user	0	1	1	2
+FD	I can launch the app in the simulator from within Xcode, which is strange.  So I am wondering if there is some conflict or incorrect setup of the new automation drivers... __eou__	user	0	1	0	0
+FD	My OS is El Capitan 10.11.6 __eou__	user	0	1	0	0
+IG	mmcintyre123: logs will help, I can try to assist you when you are ready. __eou__	agent	1	1	0	1
+FD	My OS is El Capitan 10.11.6 __eou__	user	0	1	0	0
+UF	ok __eou__	user	0	1	0	0
+UF	thx __eou__	user	0	1	0	0
+FD	give me one min __eou__	user	0	1	0	0
+FD	Edge-Man: __eou__	user	0	1	0	0
+AC	sent log in PM to avoid cluttering the channel - will share solution here if we get it working! __eou__	user	0	1	0	0
+IG	mmcintyre123:  [<-LINK->] __eou__	agent	1	1	0	1
+FD	see if this helps __eou__	agent	1	1	0	1
+FD	mainlyappium-remote-debugger@3.2.1piece __eou__	agent	1	1	0	1
+FD	in my case sleep 5 also helped __eou__	agent	1	1	0	1
+
+OQ	I just downloaded the sample code for nodejs and ran the simple test, and got an error.Filed an issue 12 days ago here: appium/appium#7510I'm wondering if there's anything I'm missing?or should I just wait for someone to attend the issue on GH? __eou__	user	0	1	1	2
+CQ	goldylucks: i saw your log, could please post your code __eou__	agent	0	1	0	0
+CC	thanks@mgmanikandan87the code is posted in the issue __eou__	user	0	1	0	0
+CC	u want me to copy paste all of it here? __eou__	user	0	1	0	0
+FD	will b quite long ... __eou__	user	0	1	0	0
+CQ	is this android ? __eou__	agent	0	1	0	0
+FD	right ? __eou__	agent	0	1	0	0
+CC	mgmanikandan87: yes, ATM it's only android __eou__	user	0	1	0	0
+IG	goldylucks: try adding appActivity and appWaitActivity capabilities, appium is clearly giving up after few tries to find element. What is happening during actual test run? is the app launched correctly? __eou__	agent	1	1	0	1
+
+OQ	String arr[]={"x","y","z"};String arr1[]={"321","324","123"}; [<-CODE->]  __eou__	user	0	0	0	0
+FD	Above is my code when the app is logged in successfully on the when the loop runs on third time im getting An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information) __eou__	user	0	0	0	0
+FD	Instead of showing logged in successfully __eou__	user	0	0	0	0
+FD	Can some one help where did i missed something? __eou__	user	0	0	0	0
+FD	app is successfully logged in  but im getting this error message.." An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)" __eou__	user	0	0	0	0
+CQ	prabudakshan: appium log ? __eou__	agent	0	0	0	0
+
+GG	hi __eou__	user	0	0	0	0
+OQ	[<-CODE->] Error: connect ECONNREFUSED ::1:4724    at Socket.<anonymous> (../../lib/bootstrap.js:87:21) [<-CODE->]  __eou__	user	0	0	0	0
+FD	plz help me solve this error. __eou__	user	0	0	0	0
+CQ	is this all on the same machine? ECONNREFUSED suggests something couldn’t reach something else on the network __eou__	agent	0	0	0	0
+CC	hazmeister: ys __eou__	user	0	0	0	0
+FD	try to run in single device only __eou__	user	0	0	0	0
+
+OQ	I'm trying to get the appium software and the appium doctor is giving me the following error.nfo AppiumDoctor ### Diagnostic starting ###info AppiumDoctor   Xcode is installed at: /Applications/Xcode.app/Contents/Developer[Error: Could not detect Mac OS X Version from sw_vers output: '10.12.2'] __eou__	user	0	1	1	2
+FD	appium Version 1.5.3 (Ara) __eou__	user	0	1	0	0
+CQ	which xcode version are you using? __eou__	agent	0	1	0	0
+CC	V 8.2.1 __eou__	user	0	1	0	0
+IG	need to use appium 1.6.3 __eou__	agent	0	1	0	0
+FD	 [<-LINK->]  __eou__	agent	0	1	0	0
+CC	I don't see 1.6.3 on the appium bitbucket account __eou__	user	0	1	0	0
+FD	appium is 1.6.3 if I install via the terminal but the desktop app is still 1.5.3 __eou__	user	0	1	0	0
+IG	yeah, there's no .dmg for Appium 1.6.3, this is something the guys are working on __eou__	agent	1	1	0	1
+FD	so.. __eou__	agent	1	1	0	1
+FD	you have to install it via command line __eou__	agent	1	1	0	1
+UF	kk __eou__	user	0	1	0	0
+IG	cbiermannIMVU: appium does not support sierra __eou__	agent	1	1	0	1
+FD	you are on sierra __eou__	agent	1	1	0	1
+FD	downgrade to mac os 10.11 __eou__	agent	1	1	0	1
+IG	Appium 1.6.3 works for me with Sierra __eou__	agent	1	1	0	1
+FD	but I think what hardik is saying that Appium 1.5.3 doesnt work with Sierra? __eou__	agent	1	1	0	1
+FD	and it wont work with Xcode 8.2.1  because apple remove the old instrumentation that drives it, so it shouldn't work. So if you want to use appium 1.6.3, you have to roll back Mac OS to 10.11 and roll back to an older version of Xcode =  Xcode 8.0 pre.  and you wont be able to test on iOS 10 __eou__	agent	1	1	0	1
+UF	Got it __eou__	user	0	1	0	0
+
+OP	org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.I got this error while trying to automate an hybrid app. Please help __eou__	user	0	0	0	0
+CQ	how long the scripts are running ? __eou__	agent	0	0	0	0
+IG	Rahul: : Stop ur appium and stop app on device, start appium again __eou__	agent	0	0	0	0
+FD	we are running daily .But individually its ok .but batch run all r failing only few passing __eou__	agent	0	0	0	0
+CQ	Rahul-Chulliparambil: post your caps here? __eou__	agent	0	0	0	0
+CC	caps means? __eou__	user	0	0	0	0
+CC	desired capabilities __eou__	agent	0	0	0	0
+GG	Ok __eou__	user	0	0	0	0
+FD	 [<-CODE->]  __eou__	user	0	0	0	0
+CQ	new URL(url) ? __eou__	agent	0	0	0	0
+CQ	url ? __eou__	agent	0	0	0	0
+IG	Divya-tfw: yes individually it will work fine __eou__	agent	0	0	0	0
+CC	its for web driver. I am working on a hybrid app. __eou__	user	0	0	0	0
+CQ	driver = new AndroidDriver(new URL(url) ? __eou__	agent	0	0	0	0
+FD	i am asking where is the url params ? __eou__	agent	0	0	0	0
+FD	appium url __eou__	agent	0	0	0	0
+CC	public class FirstAppiumTrial { [<-CODE->]  __eou__	user	0	0	0	0
+CQ	appium logs ? __eou__	agent	0	0	0	0
+CC	Actually I am new to appium. I dont know much. appium logs means? __eou__	user	0	0	0	0
+CQ	did you start the appium >? __eou__	agent	0	0	0	0
+CC	Divya-tfw: : after that do i have to  run my code again in eclipse? __eou__	user	0	0	0	0
+FD	mgmanikandan87: : yes, I started __eou__	user	0	0	0	0
+CC	Divya-tfw: can you try start apium server with override exist session.. __eou__	agent	0	0	0	0
+CC	mgmanikandan87: : So now how can I delete cache data and start run ?or any other alternative for the problem __eou__	agent	0	0	0	0
+FD	override exist session ? where is that option ? Appium or shud i add in capabilit __eou__	agent	0	0	0	0
+IG	In apium server settings u can find override exist session check box..u can check it __eou__	agent	0	0	0	0
+CC	Rahul-Chulliparambil: are you using GUI or command line tool __eou__	agent	0	0	0	0
+AC	ok let me check __eou__	agent	0	0	0	0
+CC	? __eou__	agent	0	0	0	0
+FD	Divya-tfw: override exist session means will override exit session for next run it won’t create new session __eou__	agent	0	0	0	0
+AE	Then scripts will fail I guess, as new session will be created evry time when we run scripts .Now since its over riding that if some thing fails , then it will abort execution __eou__	agent	0	0	0	0
+CC	Divya-tfw: can you post your appium full logs here ? __eou__	agent	0	0	0	0
+FD	Logs will throw error as Element not found and continues with next script __eou__	agent	0	0	0	0
+CC	can you post whole appium logs __eou__	agent	0	0	0	0
+FD	ok will post .Let me give run and send u __eou__	agent	0	0	0	0
+UF	ok __eou__	agent	0	0	0	0
+IG	In my case also I was able to run first test successfully. for second script it is failing. this solution solved for me.. __eou__	agent	0	0	0	0
+UF	ok .let me try __eou__	agent	0	0	0	0
+AC	I am using eclipse IDE __eou__	user	0	0	0	0
+CC	mgmanikandan87: : Do you have any properly running  appium code ? __eou__	user	0	0	0	0
+PF	Rahul-Chulliparambil: yes __eou__	agent	0	0	0	0
+FD	@mgmanikandan87 : this is my appium logLaunching Appium server with command: [<-CODE->] __eou__	user	0	0	0	0
+CQ	Can You share any code with me? __eou__	user	0	0	0	0
+CC	sure, give sometime __eou__	agent	0	0	0	0
+UF	ok __eou__	user	0	0	0	0
+UF	Thank u guys .I got solution for batch run using Override Existing session.Thank u __eou__	agent	0	0	0	0
+FD	Congrats@Divya-tfw.Guys, Please help me to resolve my issue as well. __eou__	user	0	0	0	0
+UF	ok __eou__	agent	0	0	0	0
+FD	Tel me r u getting same issue can not create new session again? __eou__	agent	0	0	0	0
+PF	Yes __eou__	user	0	0	0	0
+FQ	When ever I run the code I am getting same error. __eou__	user	0	0	0	0
+IG	I will send u few capabilties ,try  adding it __eou__	agent	0	0	0	0
+UF	Ok __eou__	user	0	0	0	0
+PF	It shud work.As it worked for me __eou__	agent	0	0	0	0
+
+OF	Do we have to do any configuration in appium? apart from selecting the folder of apk and device name etc. ? __eou__	user	0	0	0	0
+IG	No I am speaking wrt Capability __eou__	agent	0	0	0	0
+CC	Ok.. But I will add those capabilities from you as well and try. __eou__	user	0	0	0	0
+IG	url=" [<-LINK->] ";File app=new File("path");DesiredCapabilities capabilities=new DesiredCapabilities();capabilities.setCapability("device", "Android");capabilities.setCapability("deviceName", "02157df2c1d35539");capabilities.setCapability("appPackage","com.celltrust.securesmsgen2");capabilities.setCapability("newCommandTimeout", 120);capabilities.setCapability("app",app.getAbsolutePath()); [<-CODE->]  __eou__	agent	0	0	0	0
+PF	try this it will work __eou__	agent	0	0	0	0
+UF	Divya-tfw: ok __eou__	agent	0	0	0	0
+UF	Thanks. Let me try.@Divya-tfw __eou__	user	0	0	0	0
+GG	cool __eou__	agent	0	0	0	0
+FQ	Divya-tfw: What is the purpose of this line ? __eou__	user	0	0	0	0
+FD	"com.celltrust.secureline.ui.view.celltrust.gui.activity.CTOnBoardingActivity"); __eou__	user	0	0	0	0
+FD	When I am running my appium server finally i am getting this error: __eou__	user	0	0	0	0
+NF	error: Could not pre-launch appium: Error: Permission to start activity denied.Appium server process ended __eou__	user	0	0	0	0
+
+OQ	can anyone give me a link to download appium 1.6.3 it's not showing as an option in the appium.io site __eou__	user	0	1	1	2
+IG	there is none __eou__	agent	1	1	0	1
+FD	that is what@Edge-Manmeant when he said there is no dmg __eou__	agent	1	1	0	1
+FQ	so is there way of downloading it? __eou__	user	0	1	0	0
+IG	npm __eou__	agent	0	1	0	0
+FD	 [<-LINK->] __eou__	agent	0	1	0	0
+

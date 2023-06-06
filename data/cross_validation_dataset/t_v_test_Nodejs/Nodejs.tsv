@@ -1,0 +1,646 @@
+OQ	how are npm modules going to work when there are many different yearly versions of javascript? __eou__	user	0	1	1	2
+IG	protometa: there is theenginesproperty ( [<-LINK->] ) to warn about compatibility __eou__	agent	1	1	0	1
+PF	ewnd9: engines could work  __eou__	user	0	1	0	0
+AE	but it doesn't seem to be used much. I'm also thinking about the use of npm for frontend modules. It seems like we are going to need to have better tracking of javascript version or we'll be in javascript version hell, or be stuck with publishing only es5 modules forever. __eou__	user	0	1	0	0
+AE	protometa: I'm fine with es5 . But as an example of a variation - somereact-nativemodules are published as is and if you need to use them in other environments you need to use only single presetbabel-preset-react-native __eou__	agent	0	1	0	0
+AE	ewnd9: that works if you know a specific module or set of modules is pure es6 or es7 but seems like we need a more general solution for module consumers to know which version of javascript a module uses. __eou__	user	0	1	0	0
+AE	rather than making it a concern of newer modules to covert for older consumers the older consumers could just convert newer modules that they wish to use. __eou__	user	0	1	0	0
+AE	then we could all publish pure es7 modules and a platform that can run es7 isn't stuck with es5. __eou__	user	0	1	0	0
+
+OQ	 [<-LINK->] <- I took in this project and wanted to understand how to play with Node JS. I wanted to add to a page the system information. What would be a good suggestion on a guide to help me? __eou__	user	0	1	1	2
+IG	 [<-LINK->] ? __eou__	agent	1	1	0	1
+FD	or OS __eou__	agent	1	1	0	1
+PF	OS __eou__	user	0	1	0	0
+AE	(I do hope you saw the link on the side of that that says 'OS') __eou__	agent	0	1	0	0
+
+GG	Hello __eou__	user	0	0	0	0
+OQ	i'm having this issue 'npm install' __eou__	user	0	0	0	0
+FD	npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform forfsevents@1.0.15: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"}) __eou__	user	0	0	0	0
+FD	please house to fix it ? __eou__	user	0	0	0	0
+
+OQ	hey guys I am using angular 2 as my client side , express +node at server and want to use firebase as my db ,, so hw can I get started?? __eou__	user	0	1	1	2
+FD	when i try to retrieve the data.name from my server i dont get the value: __eou__	user	0	1	0	0
+FD	res.json({name:['ayz','s'],work:['web app dev','front end dev']}); __eou__	user	0	1	0	0
+FD	i need to retireve data.name in my client side... when i retrieve name i get it but how can i retrieve data.name __eou__	user	0	1	0	0
+CQ	AyzPat: can you explain better "i need to retireve data.name in my client side... when i retrieve name i get it but how can i retrieve data.name"? __eou__	agent	0	1	0	0
+CC	fox1t: i have a plukr with basic files not exactly working one.. __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+IG	*ngFor="let data of data"? maybe change the name of local var to not clash with data __eou__	agent	0	1	0	0
+CC	@fox1tits not a problem on the client side, the problem is in res.json() __eou__	user	0	1	0	0
+FD	fox1t: m new to node so not getting how to send the information __eou__	user	0	1	0	0
+IG	res.json({name:['ayz','s'],work:['web app dev','front end dev']}); <-- this is ok __eou__	agent	0	1	0	0
+FD	try to query the route with postman and check if the returned object's props __eou__	agent	0	1	0	0
+CQ	fox1t: then why is data.name or say user.name is not getting retrieved it gives an error: Cannot find a differ supporting object '[object Object]' of type 'ayz,s'. NgFor only supports binding to Iterables such as Arrays. __eou__	user	0	1	0	0
+FD	Cannot find a differ supporting object '[object Object]' of type 'ayz,s'. NgFor only supports binding to Iterables such as Arrays. __eou__	user	0	1	0	0
+FD	on queryin to postman i got this:{"name": ["ayz","s"],"work": ["web app dev","front end dev"]} __eou__	user	0	1	0	0
+IG	so nodejs part is ok, as you can see __eou__	agent	1	1	0	1
+FD	the problem is inside client side code __eou__	agent	1	1	0	1
+FD	i am not angular2 ninja, but i suppose you have to find a way to convert your data to array.  Maybe here: [<-ISSUE->]  __eou__	agent	1	1	0	1
+FD	ok here is the answer: [<-LINK->]  __eou__	agent	1	1	0	1
+FD	this one is your issue, see problem 1 __eou__	agent	0	1	0	0
+
+OQ	 [<-CODE->] anyone have suggestions for a tool for this? __eou__	user	0	1	1	2
+IG	 [<-CODE->] gulp.task('default', function () {   return browserify('./source/app.js')      .transform(babelify)      .bundle()      .pipe(source('your-destination-single-file-name.js'))      .pipe(gulp.dest('./build/'));});``` this will compile everything into a single js file that you can include in your html __eou__	agent	1	1	0	1
+PF	ah cool :) __eou__	user	0	1	0	0
+IG	not sure why to code isn't formatted correctly but you get the idea __eou__	agent	0	1	0	0
+FD	babel is for jsx and stuff. not sure what libs you're using butbrowserifyis the main one you're looking for __eou__	agent	0	1	0	0
+JK	devzer01:  __eou__	agent	0	1	0	0
+PF	i see __eou__	user	0	1	0	0
+AE	i  didn't use anything yet __eou__	user	0	1	0	0
+AE	i just wrote few classes and setup ci and stuff, and made a tiny mock for window and document by hand just to keep it simple and before i go any further wanted to figure out how to do this step properly :) __eou__	user	0	1	0	0
+UF	so thank u very much __eou__	user	0	1	0	0
+AC	i have couple of things to read about now, thanks again :) __eou__	user	0	1	0	0
+JK	devzer01: yw __eou__	agent	0	1	0	0
+IG	devzer01: rollup is pretty easy too __eou__	agent	0	1	0	0
+UF	cool :) thanks :) __eou__	user	0	1	0	0
+
+OQ	Guys, does anyone have an example of a rest post form uploading images with express? Ty __eou__	user	0	0	0	0
+
+AE	Even scientists are unable to understand time and space.Stephen Hawking is researching about it. We might see the results soon... o/ __eou__	user	0	0	0	0
+
+OQ	hi guys, I'm trying to install NodeJS 7.2.0 in an alpine:3.4 docker container, but I keep running in to this: [<-CODE->]  __eou__	user	0	0	0	0
+FD	node is there but I can't execute it __eou__	user	0	0	0	0
+FD	 [<-CODE->]  __eou__	user	0	0	0	0
+IG	iamtew: the last time i ran into that of probelem i had to overwrite the old  node directory __eou__	agent	0	0	0	0
+CC	there's no old node directory, this is my Dockerfile [<-CODE->]  __eou__	user	0	0	0	0
+FD	and that's it __eou__	user	0	0	0	0
+IG	iamtew: did you trydocker rm -f $(docker ps -a -q)and rebuild your containers? __eou__	agent	0	0	0	0
+CC	no, but that's irrelevant, I'm missing some glibc symbols, so I need to install some comparability library package or something __eou__	user	0	0	0	0
+AE	but that's a task for tomorrow, my work day is done here :)have a nice evening ya'll __eou__	user	0	0	0	0
+
+OQ	Hello do you know how to create a HTTPS server and how to implement a payment system with credit cards ? __eou__	user	0	1	1	2
+FD	If you have a link it would be great __eou__	user	0	1	0	0
+IG	jerometea: For HTTPS and node, I personally go with a regular HTTP express setup listening to some port on local host (make sure you're not listening to 0.0.0.0) then I apply certbot (letsencrypt) https certificates through a web facing Nginx proxy in Nginx configuration. __eou__	agent	1	1	0	1
+UF	Egoscio: Thank you __eou__	user	0	1	0	0
+CQ	Can you define quickly what are are Cerbot, EFF, web facing, Nginx ? Is it possible to use Amzon EC2 ? __eou__	user	0	1	0	0
+FD	I am really new to node, I have 1 month exp in the web ^^' __eou__	user	0	1	0	0
+
+OQ	Can anyone recommend a package that exports an API for getting from the npm registry a package.json by name? __eou__	user	0	0	0	0
+FD	 [<-LINK->] , obviously, duh.. __eou__	user	0	0	0	0
+
+FD	 [<-LINK->]  __eou__	user	0	1	1	2
+OQ	anybody using webpack? im getting an error when importing modules. not on my entry point but inside the module. im using ES6 with babel for transpiling. im getting this error on console when i build.@as3k __eou__	user	0	1	0	0
+IG	This is more an error of what you're exporting __eou__	agent	1	1	0	1
+JK	as3k:  __eou__	agent	0	1	0	0
+FD	You're exporting an object, and you're declaring a constant inside the object __eou__	agent	1	1	0	1
+FD	You do eithermodule.exports = { apikey : blablah... etc } __eou__	agent	1	1	0	1
+FD	Or __eou__	agent	1	1	0	1
+FD	const config = { values }; module.exports = config ; __eou__	agent	1	1	0	1
+UF	ahhhh okay Thanks@jenkynolasco11 __eou__	user	0	1	0	0
+AC	ill try that and see if it works __eou__	user	0	1	0	0
+
+OP	can i ask something about node.js + socket.io here? __eou__	user	0	0	0	0
+JK	Go ahead __eou__	agent	0	0	0	0
+GG	hey :) __eou__	user	0	0	0	0
+JK	so __eou__	user	0	0	0	0
+AE	Not sure if I'll be able to answer because class just started, but there are many capable and knowledgeable people here. __eou__	agent	0	0	0	0
+FD	i am sending from the client side a messege to the server (for a chat) __eou__	user	0	0	0	0
+FD	but i am getting NaN __eou__	user	0	0	0	0
+FD	so it is sending numbers __eou__	user	0	0	0	0
+FD	how do i send a string? __eou__	user	0	0	0	0
+CQ	Can you post your code here? __eou__	agent	0	0	0	0
+CC	sorry that i posted it like this __eou__	user	0	0	0	0
+IG	you can edit and add ```   before and after the code to format it better __eou__	agent	0	0	0	0
+AE	yes is saw it after __eou__	user	0	0	0	0
+IG	you can still go back and click edit (right side of message by timstamp) __eou__	agent	0	0	0	0
+AE	oh ok __eou__	user	0	0	0	0
+IG	it's accent ticks (under the ~ ) __eou__	agent	0	0	0	0
+FD	 [<-CODE->]  __eou__	user	0	0	0	0
+FD	 [<-CODE->]  __eou__	user	0	0	0	0
+CQ	Did socket.io connect on the client side? __eou__	agent	0	0	0	0
+JK	NikkCh:  __eou__	agent	0	0	0	0
+FD	i am getting message : NaN __eou__	user	0	0	0	0
+FD	i am just not getting the text i type in only numbers __eou__	user	0	0	0	0
+IG	Look at this [<-CODE->]  __eou__	agent	0	0	0	0
+FD	What's wrong in it? __eou__	agent	0	0	0	0
+FD	That's the problem you have, right there __eou__	agent	0	0	0	0
+AE	wups embarrasing.... __eou__	user	0	0	0	0
+UF	thanks for your time __eou__	user	0	0	0	0
+GG	You're welcome :) __eou__	agent	0	0	0	0
+
+OQ	I really need help I am using auth0I i am confused about the flow. Do Ii need to set 2 html pagesone page login page with its own react login componentand if it authenticatesthen i send another html page, lets say welcome page andits own componentorit has to be one html page with unmounting login component and mounting welcome componentany idea? __eou__	user	0	1	1	2
+IG	ankur1163: hey Ankur, I don’t know if it will helps you but check my project on github [<-LINK->]  __eou__	agent	1	1	0	1
+UF	thanks@abdalla __eou__	user	0	1	0	0
+AC	let me take a look __eou__	user	0	1	0	0
+AC	I am using auth0@abdalla __eou__	user	0	1	0	0
+
+OQ	 [<-CODE->] e.g. [<-CODE->] How do you differentiate a sync from an async function?reveal me your secrets  __eou__	user	0	0	0	0
+FD	Yes ,I need to create a config file for production and dev  December 8, 2016 1:04 PM [<-CODE->]  __eou__	user	0	0	0	0
+
+OQ	Hello. Does anyone have some knowledge why if I manually put files on mounted folder (Linux), fs.watch() detects new file, if it is put in the same folder by costumer via webdav, it does not recognize new file. Can i do something? __eou__	user	0	0	0	0
+UF	tnx __eou__	user	0	0	0	0
+RQ	miha-: Hello to@/all. Does anyone have some knowledge why if I manually put files on mounted folder (Linux), fs.watch() detects new file, if it is put in the same folder by costumer via webdav, it does not recognize new file. Can i do something?tnx __eou__	user	0	0	0	0
+GG	hi@miha __eou__	agent	0	0	0	0
+
+OQ	Hello everyone! I was wondering if anyone has any knowledge of the google-maps package? __eou__	user	0	1	1	2
+FD	I have require("google-maps") in one of my controller js files __eou__	user	0	1	0	0
+FD	But it seems to be passing in null for the root parameter and throwing the following exception: "Google-maps package can be used only in browser" __eou__	user	0	1	0	0
+FD	I'm not entirely sure where it gets the root from! __eou__	user	0	1	0	0
+IG	ErrorOperator: I like to use react-google-maps in my react projects __eou__	agent	1	1	0	1
+FD	 [<-CODE->]  __eou__	agent	1	1	0	1
+FD	hope it is helpful :) __eou__	agent	1	1	0	1
+
+OQ	I have a quick question: When developing for the cloud how do you split your local code from the cloud code in such a way that you don't write too much local code ? __eou__	user	0	1	1	2
+FD	try to create a config file and set your environment while starting server __eou__	agent	1	1	0	1
+
+OQ	anybody here have good insight on testing streams in node.js __eou__	user	0	1	1	2
+IG	jbelmont: You'll certainly have to write doubles and spies streams. You can start there to understand the idea of creating a stream  : [<-LINK->]  __eou__	agent	1	1	0	1
+FQ	imatmati: how about in tape.jsvar stream = test.createStream(opts)Create a stream of output, bypassing the default output stream that writes messages toconsole.log(). By default stream will be a text stream of TAP output, but you can get an object stream instead by setting opts.objectMode to true.` __eou__	user	0	1	0	0
+FD	imatmati: I will check out your markdown file as well __eou__	user	0	1	0	0
+
+OQ	im getting errors in my console when i try to run commands for nodeschool __eou__	user	0	1	1	2
+FD	any help please __eou__	user	0	1	0	0
+IG	 [<-CODE->]  [<-CODE->]  [<-CODE->]  [<-CODE->]  [<-CODE->]  __eou__	agent	1	1	0	1
+
+OQ	I wanna need beginner web developers for work with,does anyone interest __eou__	user	0	0	0	0
+
+OQ	Hi guys. I am trying to combine angular 2 with .net mvc 5 and I seem to lack some basic understanding here regarding npm. I have so far only used angular2 combined with meteor so I didn't have to deal with this things...Do I need to have node.js on the server for deployment? Like locally in development I just install my packages with npm install etc. in node_modules. But for deployment I don't want to have node.js there, can I just bundle node_modules somehow or how does it work? __eou__	user	0	1	1	2
+IG	bergben: I would assume where you are deploying would have node installed - for example on Heroku you provide build instructions and your package.json file and it does the rest.  I believe digital ocean works the same way.  I have not done it in a while so I am recalling this from memory __eou__	agent	1	1	0	1
+IG	bergben: you need node at build time, and you should be deploying an archived tarball to production __eou__	agent	1	1	0	1
+FQ	I understand I need it at build time, but I would rather build it beforehand and then deploy the build. By now I am thinking about bundling the whole node_modules using [<-LINK->] and then just include that file... Do you think that would work? Or how do you mean "deploying an archived tarball", how would I do that@ljharb?@maxwellsmart84I know how it works for Heorku, unfortunately this project is for a company for a client on a custom server and communicating them to install node.js and npm then do npm install etc. just makes it complicated for them and should be avoided at all costs __eou__	user	0	1	0	0
+UF	I appreciate your help by the way guys@ljharband@maxwellsmart84 __eou__	user	0	1	0	0
+CQ	bergben: are you deploying to a UNIX env? __eou__	agent	0	1	0	0
+CC	Actually I am not even the one deploying so I don't even know that, I just know it should be as easy as possible and therefore the frontend stuff should just be bundled and included and good to go. No prior extra work on the server needed, so it shouldn't even matter which server I deploy to... __eou__	user	0	1	0	0
+AE	yeah that is tricky __eou__	agent	0	1	0	0
+IG	 [<-LINK->]  __eou__	agent	1	1	0	1
+FD	i found that - so its possible to run package manager through a proxy - just not sure if its your solution __eou__	agent	1	1	0	1
+PF	I actually got it runnng using rollupjs. It gets an entry point and follows up all the import statements and creates a minified bundle out of that. This is freaking awesome. All I have to do in production now is include one single javascript file __eou__	user	0	1	0	0
+PF	maxwellsmart84: Thanks though, I appreciate your effort! __eou__	user	0	1	0	0
+IG	bergben: you're definitely supposed to build, tar up the build, and then deploy that archive later __eou__	agent	0	1	0	0
+IG	bergben: which means you only need node to make the build. you don't need it in production at all, unless you're using a node service __eou__	agent	0	1	0	0
+
+OQ	is there an easy way to get  current function name? I could throw-catch a new Error and parse it from there... (yes it might be called 'Anonymous') __eou__	user	0	1	1	2
+IG	d3x0r: no  __eou__	agent	1	1	0	1
+CC	ut why would you want it __eou__	agent	0	1	0	0
+IG	you're inside the function you wrote, so you can just reference it. __eou__	agent	1	1	0	1
+CC	ya.... copyable code snippets... or just tags that reference where they are...shrugno macros so can't really hide it as easily as C __eou__	user	0	1	0	0
+CC	what would be the use case? __eou__	agent	0	1	0	0
+AE	(also, code snippets should never be blindly copied) __eou__	agent	0	1	0	0
+
+GG	Hi! __eou__	user	0	1	1	2
+OQ	I need help installing NOdeJs __eou__	user	0	1	0	0
+FD	I copied the extracted files to /opt/nodejs, now what? __eou__	user	0	1	0	0
+IG	 [<-LINK->] __eou__	agent	1	1	0	1
+UF	Thanks! __eou__	user	0	1	0	0
+IG	or [<-LINK->] __eou__	agent	1	1	0	1
+
+OQ	anyone here with the WASD code keyboard? __eou__	user	0	0	0	0
+
+OQ	how to get font proxima nova for free? __eou__	user	0	1	1	2
+IG	samosale:  [<-LINK->] ?  $199.99 list price - must be a great font __eou__	agent	0	1	0	0
+CC	d3x0r: sorry, wrong group....but tnx anyway  __eou__	user	0	1	0	0
+IG	 [<-LINK->]  __eou__	agent	1	1	0	1
+
+OQ	Hello, how can I call a function defined in the server side from the client?I have a grid that should be dynamically filled with different posts from a database, I am using a module for pagination and thus would need to make an AJAX request to the server so that it paginates and returns the required information. __eou__	user	0	1	1	2
+FD	Am I overcomplicating things? Kinda seems like it. __eou__	user	0	1	0	0
+IG	eliecerthoms: if you are using template engines like nunjucks or pug with express there are filters in nunjucks which you can use in client side as well as app.locals which are readily available in views for doing manipulation on data and returning formatted data [<-CODE->]  __eou__	agent	0	1	0	0
+CC	I went with something different, since I wanted to do Ajax I configured an endpoint, like so: [<-CODE->]  __eou__	user	0	1	0	0
+FD	kailashyogeshwar85: But my concern is now it not being secure and anyone who knows the path could retrieve said posts. Maybe not a BIG security flaw, but you never know. So is there something to protect it? __eou__	user	0	1	0	0
+IG	eliecerthoms: you would have to put some authentication middleware into your route to handle authentication, however this adds complexity to your application. Have a look at PassportJS [<-LINK->] its a very nice authentication library if you need it.If the posts are public i’d leave it open and if you’re worried about hammering your backend you could look at rate limitingexpress-rate-limit [<-LINK->]  __eou__	agent	1	1	0	1
+PF	jamiemcconnell: Thank you! I use passport.js in my app and you're right, posts indeed are public. And thank you for the rate-limit module! __eou__	user	0	1	0	0
+
+OQ	Hey guys, I am trying to add a image to my tribute page, but it appears with a box with a x in it.  What should I do next? __eou__	user	0	0	0	0
+
+OQ	can anyone show me how to handle internal server error with Nodejs please ? __eou__	user	0	0	0	0
+FD	500 error __eou__	user	0	0	0	0
+FD	I would like to redirect user to a custom error page instead of displaying the default error page __eou__	user	0	0	0	0
+
+OQ	besides 'global' how can I get to global space?  (GLOBAL and root were removed between 5 and 6) __eou__	user	0	1	1	2
+IG	d3x0r: globalis the proper way, and is actually going to be standardized in the language soon __eou__	agent	1	1	0	1
+CQ	ljharb: re 'global' you answer sounds like 'no, there is no other way'... but just to confirm.  I'm asking to patch obvious things so code doesn't jailbreak the VM sandbox.    When I started I know there was GLOBAL but that went away, and seems there's only really the one reference, or saving 'this' in the primary JS file run ?   There's no method/function to return global? __eou__	user	0	1	0	0
+CC	d3x0r: there's alwaysFunction('return this')() __eou__	agent	0	1	0	0
+FD	d3x0r: but a vm doesn't share itsglobalwith the outer one __eou__	agent	0	1	0	0
+
+GG	Hi! __eou__	user	0	1	1	2
+OQ	Is there a way to intercept with node all http requests that chrome is doing? __eou__	user	0	1	0	0
+IG	okbel_twitter: maybe [<-LINK->] would help __eou__	agent	0	1	0	0
+GG	Hola mundo o/ __eou__	agent	0	1	0	0
+CC	Thanks! But I need to intercept that call and redirect it to somewhere else __eou__	user	0	1	0	0
+FD	like a proxy __eou__	user	0	1	0	0
+CQ	Are you hacking the network?  __eou__	agent	0	1	0	0
+CC	nop __eou__	user	0	1	0	0
+FQ	its to my local i dont want to go to some places and I'd like to be redirected :) __eou__	user	0	1	0	0
+AE	okbel_twitter: well, I think that's more of a network topic there __eou__	agent	0	1	0	0
+IG	okbel_twitter: yeah, you are looking for something like a MITM "attack" on your local network.  :p __eou__	agent	1	1	0	1
+FD	you can write a node mitm proxy client and proxy your browser traffic through that proxy.. so when man in the middle proxy intercept something, it will redirect you. __eou__	agent	1	1	0	1
+FD	okbel_twitter:  __eou__	agent	1	1	0	1
+FD	like [<-LINK->] or [<-LINK->]  __eou__	agent	1	1	0	1
+AC	I'll take a look.@StefanYohansson __eou__	user	0	1	0	0
+UF	thanks! __eou__	user	0	1	0	0
+
+OQ	Hi Team, I am implementing a TCP socket connections using net module.. Here I am facing issue while receiving more data on the socket.on('data') event ...Issue is: Not able to get the data at a time , I am getting as chunks ?? __eou__	user	0	1	1	2
+FD	Is there any builtin lib to do this job?? Please help me here __eou__	user	0	1	0	0
+IG	I got some help from stack overflow: [<-LINK->] __eou__	user	1	1	0	1
+
+AE	Building this app with node: [<-LINK->] Its almost complete :) __eou__	user	0	0	0	0
+AE	igoramidzic: you fucking cunt.. you tried it __eou__	agent	0	0	0	0
+CQ	M-Hc0d3: What? lol __eou__	user	0	0	0	0
+FD	M-Hc0d3: Care to explain yourself?AE=[2016-12-29 15:34:47] <M-Hc0d3> Nah mate. Just stop being a cunt. Nobody click on that link. He's gathering your information if you log into that fake website. __eou__	user	0	0	0	0
+
+FD	Building this app with node: [<-LINK->] Its almost complete :) __eou__	user	0	0	0	0
+JK	igoramidzic: you fucking cunt.. you tried it __eou__	agent	0	0	0	0
+FQ	M-Hc0d3: What? lol __eou__	user	0	0	0	0
+CQ	M-Hc0d3: Care to explain yourself? __eou__	user	0	0	0	0
+FD	Nah mate. Just stop being a cunt. Nobody click on that link. He's gathering your information if you log into that fake website. __eou__	agent	0	0	0	0
+
+OP	has anyone here worked with Nodemailer before ? __eou__	user	0	0	0	0
+IG	I tinkered with it, yeah. Not thorough though, just using it in place of sendmail. __eou__	agent	0	0	0	0
+FD	I am trying to send email using it. it gives status  code 250. and no error but I never receive the email. __eou__	user	0	0	0	0
+FQ	I have no idea what's going on@EgoscioAny guesses ? __eou__	user	0	0	0	0
+CQ	Mind sharing your code? __eou__	agent	0	0	0	0
+CC	var transporter = nodemailer.createTransport({host: 'e31.ehosts.com',port: 465,secure: true, // use SSLauth: {user:'contact@quizcollections.com',pass: 'MY_PASSWORD'}}); [<-CODE->]  __eou__	user	0	0	0	0
+FD	 [<-CODE->]  __eou__	user	0	0	0	0
+IG	Just a quick remark, the "from" line has an unbalanced greater than sign. Not sure if that does much. __eou__	agent	0	0	0	0
+AC	I will check real quick. __eou__	user	0	0	0	0
+AE	I wouldn't expect any miracles from such a thing, but sure. __eou__	agent	0	0	0	0
+CC	Yeah. it didn't do anything __eou__	user	0	0	0	0
+CQ	Do you want to see my log message. If that makes any sense to you ? __eou__	user	0	0	0	0
+CC	Uhh, any information could help, I guess. To be quite frank, I never used nodemailer in a production environment, so my advice to you can be quite limited when it comes to mail servers etc. __eou__	agent	0	0	0	0
+FD	(if it's a problem regarding that aspect) __eou__	agent	0	0	0	0
+AE	Egoscio: I have nothing to loose ! You never know  __eou__	user	0	0	0	0
+FD	{"accepted":["sandipsubedi@outlook.com","sandip.subedi27@gmail.com"],"rejected":[],"response":"250 OK id=1cMs7V-0008DM-I5","envelope":{"from":"contact@quizcollections.com","to":["sandipsubedi@outlook.com","sandip.subedi27@gmail.com"]},"messageId":"151ccce5-cf4e-d5e6-fe47-796db863cfa7@quizcollections.com"} __eou__	user	0	0	0	0
+AE	Hmm. Just tried to run locally. Didn't send... not using a mail server though, and pointing it to gmail, so I guess there's some security involved (if it's sending at all) __eou__	agent	0	0	0	0
+AE	Yeah I was getting Auth issues both on Gmail and Outlook. __eou__	user	0	0	0	0
+FD	I have my website email account so i was using that . I can easily send email using the web portal from that website email. __eou__	user	0	0	0	0
+AE	When I use the credentials and SMTP information it doesn't work. __eou__	user	0	0	0	0
+AC	I will probably contact their technical support __eou__	user	0	0	0	0
+UF	Egoscio: Thank you so much for trying though __eou__	user	0	0	0	0
+GG	Hopefully you'll get some better results in doing so. Best of luck. I'll continue to fiddle with this though :P __eou__	agent	0	0	0	0
+AE	haven't touched nodemailer in quite some time, pretty useful __eou__	agent	0	0	0	0
+AE	Yeah it looks very promising. But I am guessing there is a firewall or something that is preventing it. __eou__	user	0	0	0	0
+AE	Probably. Your code looks fine to me. __eou__	agent	0	0	0	0
+
+FD	 [<-LINK->]  __eou__	user	0	1	1	2
+OQ	This is my todo app Mongoose Schema:var todoSchema  = new mongoose.Schema({    title: String,    todoItem: [{        text: String,        completed: {type: Boolean, default: false}    }]});How can I add multiple "todoItem"From this kind of form? __eou__	user	0	1	0	0
+FD	How to add more selecting same todo title __eou__	user	0	1	0	0
+IG	use mongo $push operator for pushing to todoItem array __eou__	agent	1	1	0	1
+CQ	can you give me a example code for this, I am very new to node, Kindly help __eou__	user	0	1	0	0
+IG	Hemanshu: this will solve your problem [<-CODE->]  __eou__	agent	1	1	0	1
+CQ	There's a model for the schema, right? __eou__	agent	0	1	0	0
+CC	Yes __eou__	user	0	1	0	0
+FD	var todoSchema  = new mongoose.Schema({    title: String,    todoItem: [{        text: String,        completed: {type: Boolean, default: false}    }]});var Todo = mongoose.model('Todo', todoSchema); __eou__	user	0	1	0	0
+UF	kailashyogeshwar85: Thank You so much!! __eou__	user	0	1	0	0
+
+OQ	does anyone know what prevents async/await from moving from behind the--harmonyflag? __eou__	user	0	1	1	2
+IG	kevinludwig: a newer version of v8 being used in node __eou__	agent	1	1	0	1
+FQ	does latest v8 have it not behind the--harmonyor is there still some open issue on the v8 side? __eou__	user	0	1	0	0
+IG	kevinludwig: i don't know, i only use v8 through chrome and node, but i think they've fixed the issues that the current node v8 has __eou__	agent	0	1	0	0
+FD	you basically just have to wait and see. you should use babel regardless. __eou__	agent	0	1	0	0
+AE	ljharb: meh, I'm trying to avoid babel on the server side, I like the feature set node has. its just missing async/await and es6 import __eou__	user	0	1	0	0
+CQ	why? __eou__	agent	0	1	0	0
+FD	babel produces faster code, because old code is faster than new code. __eou__	agent	0	1	0	0
+CC	thats interesting, I guess. is it like 100% faster? Or am I jumping through hoops and penny pinching for 12%. __eou__	user	0	1	0	0
+FF	usually the performance bottlenecks of my services are something external from my service itself. Like a data store or an external service that I have to call. __eou__	user	0	1	0	0
+
+OQ	Hi all.  I'm trying to install the latest version of nodejs on Ubuntu, and am having problems.  I've got the tar file (node-v6.9.2-linux-x64.tar.gz) copied to my Downloads directory ... but I'm not sure how to install it from there.  Any suggestions? __eou__	user	0	1	1	2
+FD	By the way, I tried to install using NPM, but it seems to install an earlier version (4.2.6) __eou__	user	0	1	0	0
+CQ	did you t ry apt-get? __eou__	agent	0	1	0	0
+IG	sudo apt-get install lnodejs __eou__	agent	1	1	0	1
+FD	sudo apt-get install nodejs __eou__	agent	0	1	0	0
+CC	I did, but it installs the same 4.2.6 version that I already have __eou__	user	0	1	0	0
+IG	cdfairchild: check [<-LINK->]  __eou__	agent	1	1	0	1
+IG	don't use apt to install node. __eou__	agent	1	1	0	1
+IG	install from source, or use [<-LINK->]  __eou__	agent	1	1	0	1
+JK	cdfairchild: ^ __eou__	agent	0	1	0	0
+AE	(and you can't install node with npm in a meaningful way) __eou__	agent	0	1	0	0
+
+OQ	Hi... I am learning NodeJS from LearnYouNode.... There's a task in it called JugglingAsync, whose right code is [<-CODE->] While I am doing something exactly same, but my Answer is different, it doesn't work in sync - [<-CODE->] Please can someone tell me where the problem is __eou__	user	0	1	1	2
+RQ	Hi... I am learning NodeJS from LearnYouNode.... There's a task in it called JugglingAsync, whose right code is [<-CODE->] While I am doing something exactly same, but my Answer is different, it doesn't work in sync - [<-CODE->] Please can someone tell me where the problem is __eou__	user	0	1	0	0
+CQ	Shub1427: what is the error are getting??? __eou__	agent	0	1	0	0
+IG	Actually I was having trouble to print the response in sequence (in the order, the URLs were called).Anyways, found some help in HelpFrontEnd FreeCodeCamp Community... [<-CODE->] Anyways Thanks for ur reply @imVinayPandya __eou__	user	1	1	0	1
+PF	good@Shub1427 __eou__	agent	0	1	0	0
+
+JK	Yo __eou__	user	0	0	0	0
+
+AE	Dunno, I went with the web developer bootcamp on udemy, I was very happy with it and it was only 15 __eou__	user	0	0	0	0
+FD	Now doing advanced react and redux __eou__	user	0	0	0	0
+UF	hmm awesome... __eou__	agent	0	0	0	0
+CQ	is this bootcamp good ? __eou__	agent	0	0	0	0
+CC	 [<-LINK->] A great value for that kind of money, it goes through front end and back end. __eou__	user	0	0	0	0
+FD	and right now it is only 10 __eou__	user	0	0	0	0
+UF	awesome, thanks for sharing :D __eou__	agent	0	0	0	0
+UF	timojarv: thanks also for the heads-up on that course __eou__	agent	0	0	0	0
+AE	ad. everywhere __eou__	agent	0	0	0	0
+UF	awesome __eou__	agent	0	0	0	0
+
+OQ	Is there a way to install the fs module independently from the whole node framework? __eou__	user	0	1	1	2
+FD	“npm install fs” or something __eou__	user	0	1	0	0
+CQ	fsnot being the built in one? __eou__	agent	0	1	0	0
+CC	I want it to be the built in one __eou__	user	0	1	0	0
+IG	Then it is always going to be in there __eou__	agent	1	1	0	1
+FD	Do not require fs in dependencies. __eou__	agent	1	1	0	1
+FD	You don't get what you expect __eou__	agent	1	1	0	1
+FQ	well, I’m using JSPM for an Electron app and require(‘fs’) doesn’t work, so I was thinking of doing “jspm install npm:fs" __eou__	user	0	1	0	0
+IG	npm fs: [<-LINK->] __eou__	agent	0	1	0	0
+FD	But please let me know when you solve as I am about to use Electron and will need file system access __eou__	agent	0	1	0	0
+CC	yeah I know that’s not the one I’m looking for.. basically I wanna know what its real name is __eou__	user	0	1	0	0
+FD	(if it exists as its own package) __eou__	user	0	1	0	0
+FD	I’ve used fs with an electron app before, you can do “var fs = require(‘fs)” just like any node app. I’m using Aurelia framework with this app, and it uses Systemjs and JSPM for package management. That’s what’s causing problems for me :/ __eou__	user	0	1	0	0
+NF	Ah ok, no idea sorry __eou__	agent	0	1	0	0
+UF	sure, thanks anyway :) __eou__	user	0	1	0	0
+
+OQ	Take a time into look into this problem, code written in node with twitter API. [<-LINK->]  __eou__	user	0	1	1	2
+FD	Anybody here to help me? __eou__	user	0	1	0	0
+IG	Most likely so. __eou__	agent	1	1	0	1
+FQ	I have a noob problem related to Twitter API, I've wrote a twitter bot in node, here is link to my actual question: [<-LINK->] , and this is link to code: [<-LINK->] , please read the full description in first link.. __eou__	user	0	1	0	0
+IG	I personally can't really say. Only used the twitter module for taking in data from a stream, not posting anything back... Maybe someone else here with some practical experiencing using the Twitter API might be able to help out. __eou__	agent	1	1	0	1
+
+OQ	Hi, on my website I want to display 5 items per page. Is it possible on DynamoDB to retrieve only 5 items if I go directly to the page 10 for instance ? __eou__	user	0	0	0	0
+
+OQ	does this mean i shuld never make the queries in the controllers? __eou__	user	0	1	1	2
+FD	idk if its a stupid question __eou__	user	0	1	0	0
+FD	but I feel its more confo to make them in the same layer of the models __eou__	user	0	1	0	0
+IG	idk tbh. i guess it\'s a matter of style... I don\'t use mongoose or mongodb anymore so I don\'t know any "recommended " style __eou__	agent	1	1	0	1
+FQ	why don't you use mongodb? __eou__	agent	0	1	0	0
+FD	anyone tried nodaljs.com before? __eou__	agent	0	1	0	0
+IG	I moved on to Postgres. I experienced database corruption a few times while using mongo, and it wasn't pretty. __eou__	agent	0	1	0	0
+AE	ok.Egoscio. now that's why i am moving to nodaljs.postgres built in. __eou__	agent	0	1	0	0
+
+OQ	So I've been digging around, and I can't seem to find a planned features roadmap, so my question is, when is async/await supposed to drop? __eou__	user	0	1	1	2
+IG	palodequeso: async/await is supposed to land in v8 LTS in march, node.js won\'t get it right away, though it\'s already available behind the "--harmony" flag in node 7 __eou__	agent	1	1	0	1
+PF	ah, interesting, I didn't know it was available behind harmony, but March then, sweet __eou__	user	0	1	0	0
+AC	I'll plan rewrites accordingly haha __eou__	user	0	1	0	0
+AE	don't use the harmony flag ever __eou__	agent	0	1	0	0
+AE	the async/await implementation behind the harmony flag has a ton of memory leaks and bugs __eou__	agent	0	1	0	0
+AE	the harmony flag is for broken features - if it was reliable in production, it'd be unflagged. __eou__	agent	0	1	0	0
+AE	Harmony is for not-quite-production-ready features, horribly broken features get their own separate flags. It does have a bunch of memory leaks and bugs though, so don't use itin production. __eou__	agent	0	1	0	0
+AE	"production-ready" isn\'t a spectrum __eou__	agent	0	1	0	0
+AE	either way, the harmony flags are for testing v8. they're not meant for production use, and you're a bad person if you use them. __eou__	agent	0	1	0	0
+
+OQ	dumb node question __eou__	user	0	1	1	2
+FD	initializing this: var arguments = {command: "",file: ""} __eou__	user	0	1	0	0
+FD	but then I loopo through an array and set the variables. but after the loop, in debug arguments seem to get set back to the initialzed values or are never changed __eou__	user	0	1	0	0
+IG	There's no dumb node question. Node is awesome. __eou__	agent	0	1	0	0
+CC	I think I need to pass in the variable __eou__	user	0	1	0	0
+FD	 [<-CODE->] __eou__	user	0	1	0	0
+FQ	why doesn't this work? __eou__	user	0	1	0	0
+AE	Im mobile and I can't see the right half of this code __eou__	agent	0	1	0	0
+CQ	What are the arguments? __eou__	agent	0	1	0	0
+FD	I see Val and index __eou__	agent	0	1	0	0
+CC	 [<-CODE->] __eou__	user	0	1	0	0
+FD	I just want to set the arguments object that's defined there __eou__	user	0	1	0	0
+FD	in this loop __eou__	user	0	1	0	0
+IG	If you defined arguments outside (which in my  opinion is a bad way to name a variable due to the global arguments object from Function), why are you usingthis.arguments? Maybe it's not working cuz it's thinking it's theargumentsvariable from the function itself __eou__	agent	1	1	0	1
+IG	foxjazz: this is referring to the function's context, I think. __eou__	agent	1	1	0	1
+IG	Try naming it different from arguments (maybe use args, for example), and access it the normal way (args.command = val, etc) __eou__	agent	1	1	0	1
+PF	well I put that in there because it didn't set it __eou__	user	0	1	0	0
+JK	foxjazz: __eou__	agent	0	1	0	0
+AC	I will name it myargs __eou__	user	0	1	0	0
+AE	Yeah, arguments is a reserved keyword. __eou__	agent	0	1	0	0
+
+OQ	Hello anyone knows how i can console log the progress of a createwritestream? __eou__	user	0	1	1	2
+IG	andy-kheng: using writestream event handler ? __eou__	agent	1	1	0	1
+
+OQ	Hi anybody keen to help me with a twitter bot that tweets airfares ? I need to know how to access data that the api returns: [<-LINK->] __eou__	user	0	1	1	2
+FD	How do I get the cost or city value for example ? __eou__	user	0	1	0	0
+IG	Marc-Moeller: if its the json you can just parse response and access it using [<-CODE->] __eou__	agent	1	1	0	1
+CQ	Hi@kailashyogeshwar85I believe it's json, do I need to specify the value of airport[0] ? __eou__	user	0	1	0	0
+FD	currently I'm getting ```        console.log(util.inspect(data.response.trips.data.airport, { depth : 8 }));                                              ^TypeError: Cannot read property 'trips' of undefined    at C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\flight.js:35:47    at Request._callback (C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\node_modules\\qpx-client\\utils.js:18:17)    at Request.self.callback (C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\node_modules\\request\\request.js:186:22)    at emitTwo (events.js:106:13)    at Request.emit (events.js:191:7)    at Request.<anonymous> (C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\node_modules\\request\\request.js:1081:10)    at emitOne (events.js:96:13)    at Request.emit (events.js:188:7)    at IncomingMessage.<anonymous> (C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\node_modules\\request\\request.js:1001:12)    at IncomingMessage.g (events.js:291:16)``` __eou__	user	0	1	0	0
+CC	Marc-Moeller: it must be response.data __eou__	agent	0	1	0	0
+CQ	response.data.trips.data.airport ? __eou__	user	0	1	0	0
+CC	 [<-CODE->] __eou__	agent	0	1	0	0
+JK	``` __eou__	user	0	1	0	0
+CQ	 [<-CODE->] __eou__	user	0	1	0	0
+FD	Can I use your code to replace the console log in the else function ? __eou__	user	0	1	0	0
+CC	yes absolutely __eou__	agent	0	1	0	0
+IG	go step by step first response.data and then nest it again response.data.trips __eou__	agent	0	1	0	0
+AE	Sorry I'm not quite there yet. __eou__	user	0	1	0	0
+CQ	kailashyogeshwar85: could you do me a huge favor and add the code here: [<-LINK->] __eou__	user	0	1	0	0
+IG	done@Marc-Moeller [<-LINK->] __eou__	agent	0	1	0	0
+PF	kailashyogeshwar85: you are awesome, thank you ! I will try it now __eou__	user	0	1	0	0
+PF	kailashyogeshwar85: thanks buddy ! It works perfectly __eou__	user	0	1	0	0
+
+OQ	Is it possible to create an instance of anurlObjectdirectly or one should useurl.parsefor that purpose ? I was wondering if there is a way to build such object directly from each URL components (host, protocol...) rather than using a plain string for that purpose ? __eou__	user	0	0	0	0
+
+OQ	Can someone Help me to send a Result to the Client?The normal way I go is to respond with results [<-CODE->] But now Iam working withhttps://github.com/peteward44/node-svn-ultimateAnd the Functions are not giving a Normal Response as Return but inside itself [<-CODE->] How can I send the Data Result to my Client inside this svn Function? __eou__	user	0	0	0	0
+
+OQ	does nodejs requires access modifiers like other languages? private, protected, public? or if I create another module the functions and variables outside the range of exports is automatically private? __eou__	user	0	1	1	2
+IG	Yes to the second statement __eou__	agent	1	1	0	1
+CQ	so no need different access modifiers r8? __eou__	user	0	1	0	0
+CC	Right __eou__	agent	0	1	0	0
+
+OQ	is anyone here ? __eou__	user	0	1	1	2
+IG	Just ask your question and if anyone is around that can help they will do so :) __eou__	agent	1	1	0	1
+
+GG	hi __eou__	user	0	0	0	0
+GG	anybody here? __eou__	user	0	0	0	0
+
+OQ	any tool to test TLS connections to server? __eou__	user	0	1	1	2
+IG	farukhkhan21_twitter: check this [<-LINK->] __eou__	agent	1	1	0	1
+FD	was looking for any windows tool __eou__	user	0	1	0	0
+
+OQ	how to add unique id to field declared as array in mongoose i know this can work if we define schema for array field but how can this be done without defining schema for array field [<-CODE->] __eou__	user	0	0	0	0
+
+OQ	Suppose I got two modules and one app entry point where all modules are loaded. How to check from module 2 that module 1 is loaded on the entry point or not __eou__	user	0	1	1	2
+IG	Module are loaded as soon as you require them and usually you want to do that once at the top of your app entry point __eou__	agent	1	1	0	1
+JK	1 __eou__	agent	0	1	0	0
+
+OQ	Hello everyone,I need your help !I’m trying to use dropbox api [<-LINK->] I have the list of file when I  get  but how I could have a link of this files for accessing to  ?Thanks ;) __eou__	user	0	0	0	0
+
+GG	Hi there __eou__	user	0	1	1	2
+OQ	Not sureifit is the right chat, but when should I be using arrow functions and when should I not? __eou__	user	0	1	0	0
+IG	Arrow functions are made to preserve the parent context. So if you're inside a method of a class and need to access its context without creating a var self = this; variable, you should probably use arrow function@jruts __eou__	agent	1	1	0	1
+FD	also for quick expressions likeconst doSomeCalc = a => a * 10000 __eou__	agent	1	1	0	1
+
+OQ	is this the room to talk about contributing? __eou__	user	0	0	0	0
+
+OQ	I'm starting a one-page application that will be 90% front-end. I will however need a small bit of back-end to safely store/retrieve data. Assuming my user is signed in using Google on the index page, and that the app sends a post/get request to another page (the back-end), will I be able to use the Google session on that back-end page to authenticate the request? __eou__	user	0	1	1	2
+IG	Nelty78: yes. I recommend passportjs __eou__	agent	1	1	0	1
+PF	Thank you@grantgeorge __eou__	user	0	1	0	0
+AC	I will look into it. __eou__	user	0	1	0	0
+
+OQ	Interesting question: Do you publish packages to NPM transpiled from ES6 -> ES5, or should the people transpile it themselves when using them in an ES5 environment (especially interesting for browser based packages)? What do you think? __eou__	user	0	0	0	0
+CQ	Why would you make it harder for yourself than it needs to be? __eou__	agent	0	0	0	0
+CC	jruts: I don't know. For me it's simpler to publish es6 and let the consumer transpile and optimize their bundle, but what's the right thing to do? __eou__	user	0	0	0	0
+FD	Ah, k, missunderstood that one  __eou__	user	0	0	0	0
+
+OQ	Hello everyone. If someone can please explain to me what's the difference between comment._id, comment.id and comment_id? I saw colt have used all three kinds so far and it has left people completely lost now on which convention to use in the future. I know in RoR I've always used comment.id so I thought in NodeJS it was conventional to to it as comment._id until he started adding the other two. __eou__	user	0	0	0	0
+PF	For all those who help me understand. Thank you in advance. __eou__	user	0	0	0	0
+
+OQ	Hey guys, i’m having trouble figuring out why one of my routes arent firing for an app __eou__	user	0	0	0	0
+FD	i’ve got these two lines __eou__	user	0	0	0	0
+FD	router.get('/board/1/power/hour/2016-10-03/2016-10-03/*', (req, res) => {  res.send('testing');});router.get('board/:boardid/:type/:duration/:startdate/:enddate?', fetchBoardData); __eou__	user	0	0	0	0
+FD	‘’'router.get('/board/1/power/hour/2016-10-03/2016-10-03/*', (req, res) => {  res.send('testing');});router.get('board/:boardid/:type/:duration/:startdate/:enddate?', fetchBoardData);‘'' __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+FD	i’ve confirmed the firest function fires, but when i comment out, the second one does not fire, even thought it captures the exact smae data __eou__	user	0	0	0	0
+
+OQ	why do people go for mean instead of lamp __eou__	user	0	1	1	2
+FD	it seems similar to me __eou__	user	0	1	0	0
+IG	i only really have familiarity with lamp. Remember that lamp itself is a combination of systems. Most people use lamp for php developement because it normally installs apache along side which then takes care of your php parsing. __eou__	agent	1	1	0	1
+IG	Lamp stands for Linux, apache, php, mysql __eou__	agent	1	1	0	1
+
+OQ	Hello guys, I am looking for a leveldown implementation that stores in fs but locks per key and not per db. __eou__	user	0	0	0	0
+
+GG	hi __eou__	user	0	1	1	2
+OQ	I have this kind of JSON, { _id: 5894d5e4dfc0f3184bffbff8,ip: 'xxx.xxx.xxx.xxx',createdAt: 2017-02-03T19:17:56.401Z,'iv:':Binary {_bsontype: 'Binary',sub_type: 0,position: 16,buffer: <Buffer ec 64 9c bc e2 e0 c2 44 bc 2b a7 9b 26 7f 43 e2> } } __eou__	user	0	1	0	0
+FD	How do I access 'iv' part from the result object? __eou__	user	0	1	0	0
+FD	result.iv returns undefined, other things work fine, like result.CreatedAt __eou__	user	0	1	0	0
+GG	Damn... __eou__	user	0	1	0	0
+FD	How can I do it without serializer? __eou__	user	0	1	0	0
+FD	I just wanna access the damn 'iv' Why is that in quotes??? __eou__	user	0	1	0	0
+IG	usually I set encoding to utf-8 for stream containing string. maybe there is something similarr for bson __eou__	agent	0	1	0	0
+IG	you can  use the bracket notation __eou__	agent	0	1	0	0
+CC	you mean result['iv'] that didn't work __eou__	user	0	1	0	0
+IG	The quotes have a:inside, maybe it's like thatresult['iv:'] __eou__	agent	1	1	0	1
+AE	idk, even result[0] for example doens twork __eou__	user	0	1	0	0
+AC	let me try __eou__	user	0	1	0	0
+PF	that was it, thank otroboe __eou__	user	0	1	0	0
+
+GG	Hello World! __eou__	user	0	1	1	2
+OQ	I'm trying to '''npm install node-jsdom''' but getting the dreaded node-gyp rebuild error __eou__	user	0	1	0	0
+FD	Failed at the contextify@0.1.15 install script 'node-gyp rebuild'.\nnpm ERR! Make sure you have the latest version of node.js and npm installed.\nnpm ERR! If you do, this is most likely a problem with the contextify package,\nnpm ERR! not with npm itself. __eou__	user	0	1	0	0
+FD	im using nvm __eou__	user	0	1	0	0
+CQ	there's an npm-debug.log ? __eou__	agent	0	1	0	0
+CC	just opened her up __eou__	user	0	1	0	0
+FD	where should i paste it? __eou__	user	0	1	0	0
+IG	I wouldn't know if there's anything useful... uhmm..  searchign ofr 'paste code' there's a whole page of options __eou__	agent	0	1	0	0
+IG	ended up usingnpm install jsdom-no-contextifyas it appeared that this was the problem dependancy __eou__	user	1	1	0	1
+FD	about to give it a whirl __eou__	user	0	1	0	0
+FD	forget you contenxtify! whoever you are __eou__	user	0	1	0	0
+
+OQ	Hi all, I've just re-written the history of the project I'm working on to purge all remnants of  previously checked in node modules. I've also chosen to use yarn with an offline cache. The only snag is node-sass, which requires a binding. It's not a problem locally, where I have internet access, but the build server is not online, and is therefore not able to download the binding. Does anybody know if it's possible to cache vendor bindings somehow? __eou__	user	0	0	0	0
+
+GG	hi there __eou__	user	0	0	0	0
+OQ	i've just finished my first microservice, if  you want check it please [<-LINK->] thanks! __eou__	user	0	0	0	0
+
+OQ	hi folks. im stuck with pretty basic problem. im trying to split my client script into modules, just to practice this problematics and approach. problem is i cant make it run on browser - im using plain ES5 and require method, but browser console says that require is not defined.. how do i make my little modules work in browser too? __eou__	user	0	1	1	2
+IG	okramovic: uhmm require.js ... smoothie... ? __eou__	agent	1	1	0	1
+AE	d3x0r: require i thought was basic method to work with modules of js, but i learned now that its ES6 feature so i ll go with some transpiller __eou__	user	0	1	0	0
+IG	okramovic: or something like webpack or browserify which would resolve the requires into a flat output file __eou__	agent	1	1	0	1
+
+GG	Hello all __eou__	user	0	0	0	0
+OQ	Is it necessary to gzip a response while the request header already include 'gzip':true' or the response is already zipped? __eou__	user	0	0	0	0
+
+GG	hello __eou__	user	0	0	0	0
+OQ	can anyone let me know what are the use case for event emit and when do we need to remove the event listerner ? __eou__	user	0	0	0	0
+FD	i'm new to event emitter __eou__	user	0	0	0	0
+
+OQ	Can I tell NodeJS to log errors to a file? I can't see what error is bring thrown on my production environment. __eou__	user	0	0	0	0
+
+OQ	Hey can some body do thisnpm install --save mrnodeand tell me if it works __eou__	user	0	1	1	2
+JK	? __eou__	user	0	1	0	0
+IG	talonbragg: yep it works __eou__	agent	1	1	0	1
+PF	thanks@dcstone09appreciate it! __eou__	user	0	1	0	0
+
+OQ	Are you making a twitter bot with twit? __eou__	user	0	1	1	2
+IG	Yes@talonbraggI'm learning, I've made a few I just want to be able to make the code modular __eou__	agent	1	1	0	1
+PF	Nice, I did that to learn some node with javascript. I am only 12 and I keep learning every day. __eou__	user	0	1	0	0
+
+OQ	hey guys, I'm new in Node.js and webservice I wrote this program but it doesn't work. do you know where my mistake is? __eou__	user	0	1	1	2
+FD	var guid = require('guid');var soap = require('soap');  var url = 'https://msproject.sd-c.de/PWA/_vti_bin/psi/statusing.asmx?wsdl';  var args = {sName: 'Testvorgang 1',                 projGuid: '1bbdf07f-9ee8-e611-8100-00155d0a1d05',                 taskGuid: guid.EMPTY,                 assnGuid: guid.create(),                 sumTaskGuid: '30bdf07f-9ee8-e611-8100-00155d0a1d05',                 dtStart: '2017-02-07T08:00:00',                 dtFinish: null,                 actWork: 1,                 fMilestone: false,                 fAddToTimesheet: true,                 fSubmit: false,                 sComment: ''};  soap.createClient('https://msproject.sd-c.de/PWA/_vti_bin/psi/statusing.asmx?wsdl', function(err, client) {client.MyFunction(args, function(err, result) {          console.log(result);      });  });  Hi guys, __eou__	user	0	1	0	0
+FD	I wrote this program but I recieved this error ( can not read property MyFunction of undefined __eou__	user	0	1	0	0
+IG	 [<-CODE->]  __eou__	agent	1	1	0	1
+UF	Thank you  __eou__	user	0	1	0	0
+
+OQ	Hello, can anyone confirm getting silent crashes when running on Windows 10. For an mve look here: [<-LINK->]  __eou__	user	0	1	1	2
+CQ	deostroll: , could you provide a config.json that is required in the repro? __eou__	agent	0	1	0	0
+CC	There is an example which reproduces issue towards the end with instructions... __eou__	user	0	1	0	0
+IG	Tried the json.txt with 324418 characters and it works for me on Windows 10. May be try attaching windbg and share the call stack? __eou__	agent	1	1	0	1
+
+OQ	HI guys, i have this code __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+FD	but when i try print the result, this don't show me nothing(sorry for my bad english) __eou__	user	0	0	0	0
+FD	any idea how to do that? :( __eou__	user	0	0	0	0
+JK	} __eou__	user	0	0	0	0
+
+OQ	yo, I have web server on nodejs (digital ocean droplet) and i would like to add SSL (https) certificate to it... do i have to install SSL on droplet and separate ssl certificate on Namecheap.com domain provider for my node app? __eou__	user	0	1	1	2
+IG	nope, the domain provider doesn't care about the SSL, only users actually connecting to your site __eou__	agent	1	1	0	1
+FD	you'll need to setup the SSL via nginx or your web server __eou__	agent	1	1	0	1
+FD	LetsEncrypt has some good documentation around many servers __eou__	agent	1	1	0	1
+IG	You'll have to do some work vis npm and node __eou__	agent	1	1	0	1
+
+OQ	hello folks  could you suggest a practical node.js book for building real web apps step by step __eou__	user	0	1	1	2
+RQ	Hi@espython if you got a answer on this question can you share me also the name of the book please? Thanks in advance ;) __eou__	agent	0	1	0	0
+IG	kriscard: Node.js Essentials, Nodedotjs By Example, Practical Nodejs __eou__	user	1	1	0	1
+
+OQ	hmm anyone using let's encrypt with their nodejs server? __eou__	user	0	0	0	0
+FD	I'm not sure which path to declare when obtaining certificate with command: __eou__	user	0	0	0	0
+FD	./letsencrypt-auto certonly --webroot --webroot-path /var/www/YOUR_WWW_PATH/ --renew-by-default --email YOURMAIL@example.com --text --agree-tos -d YOURDOMAIN.com -d www.YOURDOMAIN.com __eou__	user	0	0	0	0
+FD	i have nodejs servers running in ./root/somefolder/ __eou__	user	0	0	0	0
+FD	and nginx in completely different folder, __eou__	user	0	0	0	0
+FD	which forwards port :80 to nodejs port :8080 __eou__	user	0	0	0	0
+FD	tough stuff for newbie like me __eou__	user	0	0	0	0
+JK	omg, I'm dying __eou__	user	0	0	0	0
+PF	- Congratulations! Your certificate and chain have been saved __eou__	user	0	0	0	0
+
+OQ	Hello folks... could you please suggest me to handle memory leak in node application? __eou__	user	0	0	0	0
+
+OQ	so is async/await supported out of the box with 7.6? __eou__	user	0	1	1	2
+IG	--harmony tags __eou__	agent	1	1	0	1
+PF	gotcha __eou__	user	0	1	0	0
+IG	 [<-LINK->]  __eou__	agent	1	1	0	1
+FQ	 [<-CODE->]  __eou__	user	0	1	0	0
+PF	I get that :( __eou__	user	0	1	0	0
+IG	node --harmony-async-await __eou__	agent	0	1	0	0
+JK	oh __eou__	user	0	1	0	0
+JK	I dumb __eou__	user	0	1	0	0
+AE	same error __eou__	user	0	1	0	0
+AE	and node -v reports 7.6 __eou__	user	0	1	0	0
+JK	yeah, I didn't read it all lol __eou__	agent	0	1	0	0
+CQ	is your function an async function? __eou__	agent	0	1	0	0
+IG	async () => await foo() __eou__	agent	0	1	0	0
+CC	 [<-CODE->]  __eou__	user	0	1	0	0
+IG	result needs to be in an async function __eou__	agent	0	1	0	0
+UF	oh __eou__	user	0	1	0	0
+PF	That worked, thanks! __eou__	user	0	1	0	0
+
+OQ	can anyone tell me from where should I start learning NodeJS? __eou__	user	0	1	1	2
+FD	I mean which website? __eou__	user	0	1	0	0
+IG	vish01: there are some modules within nodejs you can try on c9.io , like how-to-npm and learnyounode __eou__	agent	1	1	0	1
+
+OQ	i have a dependency problem      i want to use winston logger  but one of my depency uses it as a local pacage ie it in node_module folde 2 level down how can i  import require it in root level files __eou__	user	0	1	1	2
+FD	or please give me some link how node modules are loaded __eou__	user	0	1	0	0
+IG	SanketGuru:  [<-LINK->]  __eou__	agent	1	1	0	1
+UF	thank you __eou__	user	0	1	0	0
+
+OQ	hello i have a beginner question - is this the right forum to ask it __eou__	user	0	1	1	2
+FD	well anyways- the question is - what is the size of the nodejs codebase compared to firefox rhino and chrome v8 __eou__	user	0	1	0	0
+FD	and what makes up the differences in size. i am interested in reading through these codebases to better understand javascript implementations __eou__	user	0	1	0	0
+IG	jtco1010: separate from the fact that "codebase size" doesn\'t correlate to anything meaningful, node uses v8 as a dependency, so node is "node + v8" __eou__	agent	1	1	0	1
+FD	also, rhino is long since obsolete __eou__	agent	1	1	0	1
+CC	i guess i meant to say spidermonkey or something like that __eou__	user	0	1	0	0
+
+OQ	Still want to ask, not figured it out yet. I thoughtres.json({...});is supposed to send data only and not refresh a page. But my page is refreshing after ending it withres.json({...})I need help please. __eou__	user	0	0	0	0
+FD	When using jquery ajax __eou__	user	0	0	0	0
+CQ	How are you requesting the data? __eou__	agent	0	0	0	0
+
+OQ	 [<-CODE->]  [<-CODE->] Thanks __eou__	user	0	1	1	2
+AE	Damn nobody here answers. Always everybody ask :'( __eou__	agent	0	1	0	0
+JK	:'( __eou__	user	0	1	0	0
+JK	:) __eou__	agent	0	1	0	0
+IG	I don'tthinkyou can emit an event. But I guess you could output on the standard out, listen for certain phrases, and then dispatch an event. __eou__	agent	1	1	0	1
+FD	I know you can get the "message" event from a parent to a child.. __eou__	agent	1	1	0	1
+PF	Thanks nice worm, this is what I thought I need to do. But it looks like too much effort to put on, as I'm still learning Nodejs. __eou__	user	0	1	0	0
+AE	myuseringithub: : You might want to look at using the node module pm2 to manage your child processes __eou__	agent	0	1	0	0
+AC	Tried even attaching to globalprocessbut with no luck __eou__	user	0	1	0	0
+IG	 [<-LINK->]  __eou__	agent	1	1	0	1
+UF	I'll check it thanks __eou__	user	0	1	0	0
+IG	From Child:process.send({ foo: 'bar' }); __eou__	agent	1	1	0	1
+UF	Okay and then I would just listen to it on parent __eou__	user	0	1	0	0
+IG	 [<-CODE->] n.on('message', (m) => {  console.log('PARENT got message:', m);});``` __eou__	agent	1	1	0	1
+PF	I need to test that. Looks like it would work __eou__	user	0	1	0	0
+IG	This is using fork, rather than spawn. I am afraid I do not know the difference..And also remember to fire the send asynchronusly. otherwise you may not get the listener added in time __eou__	agent	1	1	0	1
+FD	Let us know if it works.. As I am just guessing here.. __eou__	agent	0	1	0	0
+AC	Okay just a moment __eou__	user	0	1	0	0
+IG	WORMSS:  [<-LINK->]  __eou__	agent	0	1	0	0
+UF	Thanks@bweston92, I just don't have time to look into it at the moment. __eou__	agent	0	1	0	0
+AE	Ok :p __eou__	agent	0	1	0	0
+PF	WORMSS: Thanks !!! Its working ! The message was passed from forked child process to the parent. Upon recieving the message executed some work on parent process. __eou__	user	0	1	0	0
+GG	That is great. Glad it worked. __eou__	agent	0	1	0	0
+
+OQ	anybody wants to build a chrome extention? __eou__	user	0	0	0	0
+
+OQ	Are there any practical examples of the "non-deterministic algorithm" of shrinkwrap causing issues? Its a problem Yarn solves, but I don\'t think I\'ve ever seen or even heard of it before __eou__	user	0	0	0	0
+PA	aaronbeall: no, i've asked the yarn team many times and nobody has yet presented one concrete example where yarn is more deterministic than npm in a way that matters in practice. __eou__	agent	0	0	0	0
+
+OQ	hi, can someone explain to me node js. I feel it is just too hacky, everything depends on something else, it seems like a falling building. No base, or an useless base that doesnt satisfy the need of a developer in the area of backend programming. You either have to depende on all these packages or you cant program anything. Or maybe all of this is because i have just started to learn it __eou__	user	0	1	1	2
+IG	delirious44: The packages not a must have these are helpers to make your job easier. __eou__	agent	1	1	0	1
+FD	But built-in packages are important like "fs" these are must have. __eou__	agent	1	1	0	1
+AE	EmpireWorld: Not really, how do you program a general website without express ? you gonna have to route everything long way __eou__	user	0	1	0	0
+CQ	delirious44: what do you want to do and where are u stuck? __eou__	agent	0	1	0	0
+CC	Bakrog: Its not a specific problem, im just learning node and i dont like that it is so hacky, really dependent on open source modules for everything __eou__	user	0	1	0	0
+IG	delirious44: t hat isn't hacky, it is actually the entire point lol __eou__	agent	1	1	0	1
+AE	jlaustill: yeah it is hacky, otherwise it would be stand alone __eou__	user	0	1	0	0
+AE	delirious44: stand alone is an evil word, you obviously have a very different philosophy than the nodejs crowd on average  __eou__	agent	0	1	0	0
+

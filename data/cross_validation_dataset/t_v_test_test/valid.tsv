@@ -1,0 +1,40 @@
+OQ	Has anyone had the issue of all fonts being italic?  Using Edge  It only happens on one of my machine  Clearing cache, signing out etc nothing helped  __eou__	user	0	1	1	2
+FQ	Sounds like a font/style override in your browser, all sites or just one? __eou__	agent	0	1	0	0
+IG	Only Gitter __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+FD	And it started totally out of nowhere __eou__	user	0	1	0	0
+FD	 [<-ISSUE->]  __eou__	user	0	1	0	0
+IG	that it only happens on one computer and we've heard no other reports of it, would lead me to believe it's something specific with your setup __eou__	agent	0	1	0	0
+FD	does Edge have multiple profiles and does it happen on the same machine in another browser <--- that would actually be interesting, i have a theory __eou__	agent	0	1	0	0
+FD	which is, we use Source Sans font, but we also look for a local version of it before going out to the web for a web font. andmaybeyou have a corrupt local version of source sans on your machine where the regular style is somehow italic __eou__	agent	0	1	0	0
+AC	can you check your installed fonts? __eou__	agent	0	1	0	0
+AC	you can also try inspect and go down to.fonts-loaded bodyclass and removeSourceSansLocal __eou__	agent	0	1	0	0
+JK	felixfbecker:  __eou__	agent	0	1	0	0
+AC	let me check __eou__	user	0	1	0	0
+PF	it works fine in Chrome __eou__	user	0	1	0	0
+FD	I heard some other user had the same problem __eou__	user	0	1	0	0
+NF	Removing SourceSansLocal does not solve it __eou__	user	0	1	0	0
+IG	try removing any of the other ones one at a time from left to right __eou__	agent	0	1	0	0
+PA	removing source-sans-pro fixes it __eou__	user	0	1	0	0
+IG	So now it is font-family: Source Sans Pro,-apple-system,Roboto,pt sans,calibri,sans-serif; __eou__	user	0	1	0	0
+FD	But the font looks different now than in Chrome __eou__	user	0	1	0	0
+AE	source-sans-prois the web font - so somehow your browser is displaying/loading italic in place of regular __eou__	agent	0	1	0	0
+AC	Okay, so I went to fontsquirrel and installed Source Code Pro __eou__	user	0	1	0	0
+NF	Now only the chat box is italic, the chat and chat rooms not anymore __eou__	user	0	1	0	0
+FD	I don't see any network requests for the font __eou__	user	0	1	0	0
+IG	i can see why, the intput text area for some reason doesn't have the local fall-back font __eou__	agent	0	1	0	0
+NF	But still, there is an issue when the user does not have the font downloaded __eou__	user	0	1	0	0
+FQ	i still don't understand why Edge is displaying italics - doesn't happen on your other machine, same OS/Edge versions? __eou__	agent	0	1	0	0
+IG	hm actually my other machine is on stable, while this one is on Insiders.  __eou__	user	0	1	0	0
+AE	ut I don't think that is the problem, because it appeared out of nowhere and I was on Insiders before already __eou__	user	0	1	0	0
+FQ	is there a reason the gist preview box doesn't get scrollbars when embedded vs how GitHub's own embed URLs work eg on a blog? __eou__	agent	0	1	0	0
+
+OQ	I getError: No such image, container or task: a9952be2c74f2c6f3a7ae9faf12dc1576367bba5197fe74c243b637289fb653b  but an exec id is not an image, container or task  so docker inspect, as far as I can tell, does not support quering exec ids  __eou__	user	0	1	1	2
+AE	mikewrighton: I think you are correct, inspect is mostly for containers and images __eou__	agent	1	1	0	1
+
+OQ	docker-compose down && docker-compose build && docker-compose up, i used to be able to pair these and it would only rebuild images when things needed to be. my containers are now being rebuilt from scratch every time. any reason one could think?   [<-CODE->] used to be, that if i hadnt changed requirements.txt, it would reuse that cache. i have not changed requirements.txt and for some reason its bailing and not using the cache  __eou__	user	0	1	1	2
+CQ	is your source is changing between builds? or are you clearing any dangling containers at any point? __eou__	agent	0	1	0	0
+CC	its rebuilding containers that i have definitely not changed. for example, im changing stuff in a django container, but theres a node container i never touch, and its going through all the npm install bs that usually only happens when the package.json is different (invalidates the build) __eou__	user	0	1	0	0
+IG	looks like cache is actually breaking at step 3; which is very strange __eou__	agent	1	1	0	1
+CQ	is something else changing the contents of/usr/srcfrom a shared volume? __eou__	agent	0	1	0	0
+

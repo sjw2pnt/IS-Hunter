@@ -1,0 +1,1220 @@
+JK	 [<-CODE->]  __eou__	user	0	0	0	0
+AE	for those following along, this is the proper way to do the sort of type-safe polymorphism I've been trying for the last few days __eou__	user	0	0	0	0
+FD	very analogous to typeclasses in a language that has them __eou__	user	0	0	0	0
+UF	stevekane: That's cool stuff.... I keep forgetting that overloads can be helpful __eou__	agent	0	0	0	0
+
+GG	Hey guys __eou__	user	0	1	1	2
+OQ	I was wondering, do imports of the same file in multiple files generate code duplication? __eou__	user	0	1	0	0
+IG	d3lm: no imports don't genrate any code __eou__	agent	1	1	0	1
+FD	they just generate [<-CODE->]  __eou__	agent	1	1	0	1
+FD	or the equivalent depending on what you configure your module in tsconfig.json __eou__	agent	1	1	0	1
+CC	Ah ok but require produces code, no? __eou__	user	0	1	0	0
+IG	no it's just a function that returns an object __eou__	agent	1	1	0	1
+FD	of whatever that file exports __eou__	agent	1	1	0	1
+FD	each time you call require you get the same instance __eou__	agent	1	1	0	1
+FD	so no duplication __eou__	agent	1	1	0	1
+UF	dtabuenc: Oh interesting __eou__	user	0	1	0	0
+FD	It is really recommended you start filling in your typings as you code... so if you come to a method like [<-CODE->]  __eou__	agent	1	1	0	1
+AC	So I can import that as often as I want and wont end up having the same code multipe times in my bundle __eou__	user	1	1	0	1
+IG	you can then go into your typing and do something like: [<-CODE->]  __eou__	agent	1	1	0	1
+UF	Pretty cool __eou__	user	0	1	0	0
+FQ	Treeshaking is then just to eliminate code that is not used, right? __eou__	user	0	1	0	0
+IG	d3lm: yeah tree shaking is to remove parts from within a module that were never imported __eou__	agent	1	1	0	1
+UF	Nice __eou__	user	0	1	0	0
+UF	Thanks __eou__	user	0	1	0	0
+
+OQ	Hi Guys, how i can find definitions for typescript? __eou__	user	0	1	1	2
+FD	maybe exist some service? like npm __eou__	user	0	1	0	0
+IG	you actually use npm __eou__	agent	1	1	0	1
+FD	as long as you are using typsecript 2.0 + __eou__	agent	1	1	0	1
+FD	 [<-LINK->] __eou__	agent	1	1	0	1
+FD	so for  example if you need types for lodash __eou__	agent	1	1	0	1
+FD	you do [<-CODE->] __eou__	agent	1	1	0	1
+
+OQ	Could somebody give me a helping hand in order to generate a npm module from a typescript library? Which steps would I need to follow?I've created a [<-LINK->] in order to give access to the code. __eou__	user	0	1	1	2
+IG	dtabuenc: basically converts it to mongoose-way __eou__	agent	1	1	0	1
+IG	jeusdi: just add declarations: true to your ts config __eou__	agent	1	1	0	1
+FD	and add types: index.d.ts to your package.config __eou__	agent	1	1	0	1
+AC	dtabuenc: let me a time in order to dive a bit into what declarations: true and types: index.d.ts means __eou__	user	0	1	0	0
+IG	declarations true makes tsc output a.d.ts file for every.js file it outputs __eou__	agent	1	1	0	1
+FD	and types in pacakge.json just points to it __eou__	agent	1	1	0	1
+CQ	Mmm, as far I've been able to figure out"*.d.ts" files stand for providing typescript code to javascript libraries, doesn't it? __eou__	user	0	1	0	0
+FD	By other side, index.d.ts is generated or is hand-made? __eou__	user	0	1	0	0
+CC	jeusdi: when you compile ts it produces a.js but the js has no information about the types. If you have declarations: true, it will also produce a.d.ts file which has the type information __eou__	agent	0	1	0	0
+FD	the.d.ts file is only used if you import that module in another typescript project __eou__	agent	1	1	0	1
+PF	Got it! __eou__	user	0	1	0	0
+
+OQ	how do I enable generaotrs in tsconfig so when I use async / await in 2.1.1 so my code will take advantage of generators and thus create a lot less trasnpiled code (I am only targeting latest browsers)  ? __eou__	user	0	1	1	2
+PF	found it __eou__	user	0	1	0	0
+NF	sorry didn't find it __eou__	user	0	1	0	0
+FD	I thought this will do it __eou__	user	0	1	0	0
+FD	 [<-CODE->]  __eou__	user	0	1	0	0
+FD	but still I dont see it taking advantage of generators __eou__	user	0	1	0	0
+FD	when used __eou__	user	0	1	0	0
+FD	 [<-CODE->]  __eou__	user	0	1	0	0
+FD	same results __eou__	user	0	1	0	0
+FD	also tried __eou__	user	0	1	0	0
+FD	 [<-CODE->]  __eou__	user	0	1	0	0
+IG	born2net: you have to target es6 __eou__	agent	1	1	0	1
+FD	"target": "es6" __eou__	agent	1	1	0	1
+FD	the"lib"property is just for type declarations from those libs, it doesn't change what's output __eou__	agent	1	1	0	1
+
+OQ	can I force typescript to trust a cast? __eou__	user	0	1	1	2
+CQ	What do you mean by "trust"? __eou__	agent	0	1	0	0
+FD	like if I implement a safer function that the type system cannot verify is correct, can I cast it __eou__	user	0	1	0	0
+FD	such that I'm saying "trust me compiler, this is correct" __eou__	user	0	1	0	0
+IG	Yes __eou__	agent	1	1	0	1
+IG	yeah __eou__	agent	0	1	0	0
+
+OQ	is there a way for my node terminal to give me errors from the typescript file and not the js file. I have source Maptrue in my ts config.json and theres a.map file that gets spit out in the same directory as the file that it maps __eou__	user	0	1	1	2
+IG	if I paste your transpiled example as is __eou__	agent	1	1	0	1
+FD	it also works __eou__	agent	1	1	0	1
+FD	but I'm on node 6.6.0 __eou__	agent	1	1	0	1
+PF	yeah it works for me now too __eou__	user	0	1	0	0
+IG	it was a syntax error elsewhere in the file __eou__	user	1	1	0	1
+UF	oh ok __eou__	agent	0	1	0	0
+FQ	do you inline your sourcemaps? __eou__	user	0	1	0	0
+IG	varunjayaraman: You need to use [<-LINK->] for typescript stack traces in node __eou__	agent	1	1	0	1
+
+OQ	Hey! Is@types/angular-mocks removed? npmjs tells me that the latest version is "0.0.0" and I can't find it in DT on Github :D __eou__	user	0	1	1	2
+IG	 [<-LINK->]  __eou__	agent	0	1	0	0
+UF	con-ssc: I see that :)  __eou__	user	0	1	0	0
+CC	But the latest version is stated as "0.0.0" __eou__	user	0	1	0	0
+IG	well if they use that in their package json so it is __eou__	agent	1	1	0	1
+PF	True, __eou__	user	0	1	0	0
+CC	but I can't find it on DT on github.  __eou__	user	0	1	0	0
+AE	That's why I think they maybe removed it. But could just be a mistake __eou__	user	0	1	0	0
+IG	 [<-LINK->]  __eou__	agent	0	1	0	0
+NF	Oh... It's in another branch :D __eou__	user	0	1	0	0
+IG	 [<-LINK->]  __eou__	agent	1	1	0	1
+IG	They pull it from types-2.0 branchs __eou__	user	1	1	0	1
+
+OP	can someone check out my code? __eou__	user	0	0	0	0
+FD	 [<-LINK->]  __eou__	user	0	0	0	0
+FD	first time I am using TS __eou__	user	0	0	0	0
+FD	I am interesting in opinions of some senior programmers __eou__	user	0	0	0	0
+IG	OCD comment: remove your commented code __eou__	agent	0	0	0	0
+CC	?? __eou__	user	0	0	0	0
+FD	 [<-LINK->] tons of commented out content here __eou__	agent	0	0	0	0
+FD	just makes your clarity worse as reviewer and author __eou__	agent	0	0	0	0
+UF	lol __eou__	user	0	0	0	0
+FD	thats 30 lines, in a 60 line test program __eou__	user	0	0	0	0
+FD	using greek letters is charming but ultimately bad for working with your code __eou__	agent	0	0	0	0
+AE	its statistics __eou__	user	0	0	0	0
+FD	sigma __eou__	user	0	0	0	0
+FD	D3 gave me the idea __eou__	user	0	0	0	0
+IG	I know but it just makes it harder to work with it. __eou__	agent	0	0	0	0
+FD	they use greeks like no other __eou__	user	0	0	0	0
+FD	people have to figure ou how to type that on a keyboard. __eou__	agent	0	0	0	0
+FD	or alt-code __eou__	agent	0	0	0	0
+FD	it's annoying __eou__	agent	0	0	0	0
+FD	although it might look visually prettier __eou__	agent	0	0	0	0
+UF	i will keep it, but thanks __eou__	user	0	0	0	0
+AC	I'd rather select sigma = __eou__	agent	0	0	0	0
+AE	sigma is not a constant like PI or Epsilon __eou__	user	0	0	0	0
+FD	Lately I've been also trying to use const more instead of let __eou__	agent	0	0	0	0
+FD	only going to let when I need to __eou__	agent	0	0	0	0
+UF	I agree w/@dtabuencand@jacobus-brogly __eou__	agent	0	0	0	0
+FD	yes const is pretty handy __eou__	agent	0	0	0	0
+FD	it seems to catch a lot more problems __eou__	agent	0	0	0	0
+FD	I think symbols are fantastic conceptually and ligatures are a great example of their effectiveness __eou__	agent	0	0	0	0
+FD	with unintended reference re-assignment __eou__	agent	0	0	0	0
+FD	but they are still challenging to type :/ __eou__	agent	0	0	0	0
+UF	so no comments on structure , templating, .. thats good __eou__	user	0	0	0	0
+
+OQ	anyone know how to override Webpack Dev Server complaints about errors while compiling so a reload was prevented __eou__	user	0	1	1	2
+FD	there was a typescript error but it's non fatal __eou__	user	0	1	0	0
+FD	it's just like property x can't exist on type {} or whatever __eou__	user	0	1	0	0
+FD	because i modified an object after i declared it __eou__	user	0	1	0	0
+IG	if you use awesome-typescript-loader with fork checker plugin you can split type checking from compilation __eou__	agent	1	1	0	1
+FD	for ts-loader I think there's an option to not do type checking __eou__	agent	1	1	0	1
+FQ	what about other errors that are not typescript-related? __eou__	user	0	1	0	0
+IG	actually ts-loader won't propogate errros to webpack so it will build fine even if you have a few type errors __eou__	agent	1	1	0	1
+
+GG	hi folks) __eou__	user	0	1	1	2
+OQ	Hi, i am looking for types for mongo-db-native __eou__	user	0	1	0	0
+FD	package mongodb __eou__	user	0	1	0	0
+OQ	how can i see if my typesdefs and the lib are in sync? __eou__	user	0	1	0	0
+IG	I found a well-known bug :) [<-LINK->]  __eou__	agent	1	1	0	1
+IG	jacobus-brogly: you can't thats the problem of community driven typedefs, if author of js lib/framework do not provide them, you can't be sure, even it they are packed together in npm __eou__	agent	1	1	0	1
+UF	jcimoch: okidoki __eou__	user	0	1	0	0
+FQ	so how do i mix libraries with type decl and one without type decl __eou__	user	0	1	0	0
+FD	will it default to "any" __eou__	user	0	1	0	0
+IG	depends on tsconfig but generaly yes, those without typeings will be any __eou__	agent	0	1	0	0
+UF	ok __eou__	user	0	1	0	0
+
+OQ	Isn't this the correct syntax to execute a callback in an Angular 1.5 component?this.onSomethingChange({ value: this.someValue }); __eou__	user	0	1	1	2
+FD	The callback stuff really gets me every single time I use it :( __eou__	user	0	1	0	0
+CC	where's the callback? __eou__	agent	0	1	0	0
+FD	this.onSomethingChange is the callback (it has type Function) and is in the bindings with "&" __eou__	user	0	1	0	0
+CC	do you wnat the correct syntax for calling it? or for defining it's type? __eou__	agent	0	1	0	0
+FD	for calling it. Because it seems like it does not get executed (don't get the "response" in the other end) __eou__	user	0	1	0	0
+IG	well... it really depends on what you are binding it to __eou__	agent	0	1	0	0
+CC	I don't follow? :) It's binded to a Function? __eou__	user	0	1	0	0
+CC	so if you have [<-CODE->]  __eou__	agent	1	1	0	1
+PF	Yes __eou__	user	0	1	0	0
+FD	then at it's simplest you just call it: [<-CODE->]  __eou__	agent	1	1	0	1
+PF	Sure __eou__	user	0	1	0	0
+CC	but it expects a parameter in the other end :) __eou__	user	0	1	0	0
+FD	that's the "value"-part __eou__	user	0	1	0	0
+CC	what does onSomethingChanged look like? __eou__	agent	0	1	0	0
+FD	it just takes the value as parameter and console.log it right now __eou__	user	0	1	0	0
+FD	At least that's what I suspect it to do __eou__	user	0	1	0	0
+FD	expect * __eou__	user	0	1	0	0
+CC	ok.. but show me how you use it in a template __eou__	agent	0	1	0	0
+FD	because it's how you use it in the template that matters __eou__	agent	0	1	0	0
+FD	do you include the parameter in the template? __eou__	agent	0	1	0	0
+FD	for example..... [<-CODE->]  __eou__	agent	0	1	0	0
+FD	yes: on-something-changed="vm.doSomething(value)" __eou__	user	0	1	0	0
+FD	But it never hits the doSomething(value) function :( __eou__	user	0	1	0	0
+IG	You're calling it right. __eou__	agent	0	1	0	0
+PF	I thought so... And it usually works that way too...  __eou__	user	0	1	0	0
+NF	But everytime I need to use it a new place, I have problems with it :( __eou__	user	0	1	0	0
+IG	My guess is the expression in your template is somehow wrong __eou__	agent	0	1	0	0
+FD	like you are in the wrong scope or your controller as is bound to something different etc... __eou__	agent	0	1	0	0
+NF	Nope, that seems fine :( __eou__	user	0	1	0	0
+IG	Try seeing if it gets called directly with no controller __eou__	agent	0	1	0	0
+FD	 [<-CODE->]  __eou__	agent	0	1	0	0
+FD	see if the value is output correctly __eou__	agent	0	1	0	0
+FD	also, no errors in the console? __eou__	agent	0	1	0	0
+NF	No errors :( __eou__	user	0	1	0	0
+CC	and does this.onSomethingChanged look like it's being set? __eou__	agent	0	1	0	0
+FD	Yes, and I have checked typos on every part I could think of __eou__	user	0	1	0	0
+IG	Don't know then... you must be doing something odd __eou__	agent	0	1	0	0
+FD	somewhere __eou__	agent	0	1	0	0
+UF	Lol, yeah ;) I know :D __eou__	user	0	1	0	0
+UF	The joy of being a programmer... :D __eou__	user	0	1	0	0
+FQ	dtabuenc: Actually, are there a better type to defined the callback as instead of just Function? __eou__	user	0	1	0	0
+FD	Something like this? (param: { value: string }) => ng.IPromise<any> __eou__	user	0	1	0	0
+IG	kristho91: yes that's how you do it.... I have stuff like this for example [<-CODE->]  __eou__	agent	0	1	0	0
+
+OQ	will this work? __eou__	user	0	1	1	2
+FD	npm search@types/arcgis-js-api __eou__	user	0	1	0	0
+FD	i see only@typesversion 3.18 is on npm (i looked at valid install targets) __eou__	user	0	1	0	0
+FD	i see the vendor also released version 4.1 some time ago on github but not updated npm __eou__	user	0	1	0	0
+OQ	can i just copy paste the t.ds file over the index file and be done with it? __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+FD	the 2 versions __eou__	user	0	1	0	0
+IG	jacobus-brogly: no I would not copy over the file into the@types/folder __eou__	agent	1	1	0	1
+FD	just don't use the@typesfor that one if there is no npm package available for it __eou__	agent	1	1	0	1
+UF	ok __eou__	user	0	1	0	0
+FD	just use typings command or download it manually __eou__	agent	1	1	0	1
+FD	and add it to your files:[] array or your includes:[] __eou__	agent	1	1	0	1
+
+OQ	hey all - I'm searching for some thoughts on a question I've been having regarding the consumption and publishing of third party libraries. I posted it on [<-LINK->] but I don't know if it'd get much attention as it would here. sorry for the re-post if you saw it over there __eou__	user	0	1	1	2
+CQ	dadleyy: tsc --noResolve are you trying that? __eou__	agent	0	1	0	0
+IG	con-ssc: use the "-noResolve" flag during the generation my library's ".d.ts" file using "-declaration" or during the compilation of the consuming module that is importing it? __eou__	user	1	1	0	1
+FD	I made you a ts version if you want __eou__	agent	1	1	0	1
+FD	 [<-LINK->]  __eou__	agent	1	1	0	1
+FD	hope this works __eou__	agent	1	1	0	1
+
+AE	2.1 is out aaaaaaaaaaand all my builds are broken __eou__	user	0	0	0	0
+GG	nice __eou__	user	0	0	0	0
+FD	 [<-ISSUE->] __eou__	user	0	0	0	0
+FD	That is possible withtoString() __eou__	user	0	0	0	0
+
+OQ	dtabuenc: Did you get a chance to get the details of you ts/webpack config for non-relative module resolution? __eou__	user	0	1	1	2
+OQ	dtabuenc: Did you get a chance to get the details of you ts/webpack config for non-relative module resolution? __eou__	user	0	1	0	0
+IG	Yeah we just use resolve: {modules} __eou__	agent	1	1	0	1
+FD	 [<-CODE->]  __eou__	agent	1	1	0	1
+FD	baseUrl is set to app __eou__	agent	1	1	0	1
+FD	and [<-CODE->]  __eou__	agent	1	1	0	1
+AE	I'm not actually sure the../node_modules is necessary __eou__	agent	1	1	0	1
+UF	Thanks. __eou__	user	0	1	0	0
+AC	I'll try something like that.  __eou__	user	0	1	0	0
+CC	So you it set in both the tsconfig and resolve.modules/ __eou__	user	1	1	0	1
+PF	karptonite: yeah you definitely need both __eou__	agent	0	1	0	0
+PF	dtabuenc: Thanks again for you help. I've finally got it working,  __eou__	user	0	1	0	0
+IG	first with ts-loader, now with awesome-typescript-loader. Oddly, although awesome-typescript-loader has a special plugin for Advanced path resolution, [<-LINK->] , it worked fine without it, and using that plugin caused a crash withMaximum call stack size exceeded error. __eou__	user	1	1	0	1
+FD	well with advanced path resolution plugin you wouldn't add the folder to the modules __eou__	agent	1	1	0	1
+FD	it's probably recursive due to that __eou__	agent	1	1	0	1
+FD	Yeah, maybe the problem was adding it to both. __eou__	user	1	1	0	1
+AC	I could try without adding it to modules, using their plugin, but I think I might as well leave well enough alone for now. __eou__	user	1	1	0	1
+
+OQ	How would I use a Proxy on a class if I’m trying to intercept a static method? __eou__	user	0	0	0	0
+
+OQ	Can somebody explain to me what@means in this code [<-LINK->]  __eou__	user	0	1	1	2
+IG	Gacnt: yeah the @ is usually decorators, but they wouldn't typically be used like@vts.blah(1)They would typically be decorating a class, method, parameter, or something like that. __eou__	agent	1	1	0	1
+FD	I guess it could  be used that way if there was an objectvts that had a function blah( param1:number) that returned another function that would actually be the decorator __eou__	agent	1	1	0	1
+AE	In the code you linked.....vts.componentis a decorator provided by the  vue framework __eou__	agent	1	1	0	1
+FD	a decorator is just a function that gets called when your class is declared. It gets passed in information about your class and can do whatever it wants. __eou__	agent	1	1	0	1
+IG	In this case, it would probably register a component with the vue framework or attache extra information to the class  or any number of things. __eou__	agent	1	1	0	1
+FD	you can read about them here [<-LINK->]  __eou__	agent	1	1	0	1
+
+OP	Hi@all, I have a important question about the Interfacing in Typescript.Why does this example act like it does? Shouldn't test2,3 and 4 throw errors? [<-CODE->]  __eou__	user	0	0	0	0
+CC	Z3roCoder: you should wrap your code in ``` __eou__	agent	0	0	0	0
+FD	so it's readable __eou__	agent	0	0	0	0
+UF	There we go :) __eou__	user	0	0	0	0
+IG	interfaces aren't exclusive __eou__	agent	0	0	0	0
+FD	they only require properties be there __eou__	agent	0	0	0	0
+FD	it doesn't care about extra properties __eou__	agent	0	0	0	0
+FQ	But in case 2 and 3, it requires exactly the properties in the interface __eou__	user	0	0	0	0
+FD	b is not in the interface, and this it complains that b shouldnt be there __eou__	user	0	0	0	0
+FD	 [<-LINK->]  __eou__	user	0	0	0	0
+IG	return{a : 3 b:3}satisfies the interface __eou__	agent	0	0	0	0
+CC	Look at my screenshot __eou__	user	0	0	0	0
+NF	oh ... on object literals yeah __eou__	agent	0	0	0	0
+IG	you need to do any on object literals if you want it to work __eou__	agent	0	0	0	0
+FQ	So this is expected behaviour? __eou__	user	0	0	0	0
+PF	yes __eou__	agent	0	0	0	0
+FD	it's mostly designed for when you are passing object literals to function __eou__	agent	0	0	0	0
+FQ	When is, and when isn't, something a object literal in my example? __eou__	user	0	0	0	0
+FD	Isn't <ITest>{ a: 3, b: 3 }; also a object literal? __eou__	user	0	0	0	0
+IG	yeah but then you are casting it specifically to an ITest __eou__	agent	0	0	0	0
+FQ	So what's the difference then betweenreturn <ITest>{ a: 3, b: 3 }; andconst c: ITest = { a: 3, b: 3 } (This complains) __eou__	user	0	0	0	0
+CC	what version are you using? __eou__	agent	0	0	0	0
+FD	2.1.4 __eou__	user	0	0	0	0
+IG	So the thinking is if you are setting extra properties you'll never be able to safely access them from the interface that you are assigning __eou__	agent	0	0	0	0
+FD	so the compiler assumes this is likely an error on your part __eou__	agent	0	0	0	0
+FD	and you have to use type assertion to get around it __eou__	agent	0	0	0	0
+FQ	Why would this not apply to test4 then? This is basically the same example as test3, only that in this case, a Promise of the type ITest is returned __eou__	user	0	0	0	0
+IG	probably an edge case the compiler does not consider __eou__	agent	0	0	0	0
+AC	Alright, i will write a issue about this then __eou__	user	0	0	0	0
+FD	Maybe then it will become clearer __eou__	user	0	0	0	0
+
+OQ	is there any Di/ioc framework (for node.js) currenly widely accepted by typescript community? or is there some method/function in typescript so it’s not needed? couldnt really find anything except the angular one __eou__	user	0	1	1	2
+IG	 [<-LINK->]  __eou__	agent	1	1	0	1
+FD	haven't used it but I know that some people have used that __eou__	agent	0	1	0	0
+FD	would think it's similar to the angular 2 one __eou__	agent	1	1	0	1
+UF	thanks going to check it out __eou__	user	0	1	0	0
+FD	thre are probably others, although I wouldn't classify any as having "wide acceptance" in the community __eou__	agent	1	1	0	1
+FD	angular 2 and aurelia have wide acceptance within their respective communities __eou__	agent	1	1	0	1
+FD	but  probably very few people using them outside as standalone DI __eou__	agent	1	1	0	1
+IG	scarlier: try there's one that's SUPER heavy handed calledinversify __eou__	agent	0	1	0	0
+FD	i prefer this one calledtypedithat i prefer since its API is super simple __eou__	agent	0	1	0	0
+NF	varunjayaraman: ty inversify looks promesing __eou__	user	0	1	0	0
+FQ	varunjayaraman: what qualifies as SUPER heavy handed __eou__	agent	0	1	0	0
+FD	? __eou__	agent	0	1	0	0
+FQ	varunjayaraman: any experience with the performance of it? __eou__	user	0	1	0	0
+IG	dtabuenc: just felt like it was overly complicated to get it to work __eou__	agent	0	1	0	0
+NF	scarlier: I don't think performance is going to vary much between frameworks __eou__	agent	0	1	0	0
+NF	scarlier: i doubt it __eou__	agent	0	1	0	0
+IG	they all essentially register dependencies in some kind of lookup table __eou__	agent	0	1	0	0
+FD	and pull from there on instantiation __eou__	agent	0	1	0	0
+FD	so performance wise they will all be similar __eou__	agent	0	1	0	0
+FD	unless they are doing something really stupid __eou__	agent	0	1	0	0
+AC	all i needed was something that registers, gets, and can invoke functions with injected dependencies __eou__	agent	1	1	0	1
+UF	ah ok __eou__	user	0	1	0	0
+
+OP	Does anyone have idea on why this code does not compile undernoImplicitAny? __eou__	user	0	1	1	2
+FD	 [<-CODE->]  __eou__	user	0	1	0	0
+CQ	how would it know the type of s? __eou__	agent	0	1	0	0
+FD	dtabuenc: noteStrs<T>has an index signature __eou__	user	0	1	0	0
+FD	if I delete the first overload ofmutations, it compiles __eou__	user	0	1	0	0
+IG	I think the type algebra might be too much for the inference engine and you just have to specify it __eou__	agent	1	1	0	1
+FD	This is a reduced example, in real world code the first argument is too complex to get manual annotation __eou__	user	0	1	0	0
+AE	I guess there is some problem in overloading resolution and contextual inference, but cannot debugging further deeper. __eou__	user	1	1	0	1
+FD	Probably this is a related issue to [<-ISSUE->]  __eou__	user	1	1	0	1
+UF	Yeah it looks like that would be it. It's not clear that they are fixing that anytime soon though. __eou__	agent	0	1	0	0
+
+OQ	Will TypeScript interact with C++? Or even embed TypeScript/JavaScript API to C++? __eou__	user	0	1	1	2
+IG	acterhd: there are some things out there, like nibind, and asm.js that can compile c++ to  js/ts or you can embed chrome v8 engine in c++ and run compiled typescript code. __eou__	agent	1	1	0	1
+
+GG	sneek peek __eou__	user	0	1	1	2
+OQ	my progress so far, first "major" use of typescript, __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+FD	Some libraries didnt have type defs (npm-tracer etc) so I didnt learn how to do advanced type defs file yet, __eou__	user	0	1	0	0
+IG	looks like it's coming along nicely __eou__	agent	1	1	0	1
+FD	the only thing left to do is real time updates (websockets) and of course to sign up, i just spread some data around for testing, so not "real people" __eou__	user	0	1	0	0
+UF	thanks@dtabuenc __eou__	user	0	1	0	0
+FQ	also the icons will get smaller when you zoom out to help prevent clogging the screen, ArCGIS is hands down the best Geo API, but it needs a lot of reading into __eou__	user	0	1	0	0
+FD	-- __eou__	user	0	1	0	0
+FQ	for my app, I want to use repsonse mailing to validate signup __eou__	user	0	1	0	0
+FQ	any good solutions for this (preferably something i can try for free) __eou__	user	0	1	0	0
+
+OP	dtabuenc: do you have an idea for  [<-LINK->]  __eou__	user	0	1	1	2
+CQ	yeah you trying to do a discriminated union? __eou__	agent	0	1	0	0
+IG	they type of type has to be a literal type __eou__	agent	1	1	0	1
+FD	right now it's just a string __eou__	agent	1	1	0	1
+FD	 [<-CODE->]  __eou__	agent	1	1	0	1
+IG	they also probably shouldn't be classes. use interface whenever possible for developing these apis __eou__	agent	1	1	0	1
+FD	you can make classes to construct them if you want __eou__	agent	1	1	0	1
+NF	dtabuenc: still not working.  __eou__	user	0	1	0	0
+CC	does this mean I have to create a type'A'? __eou__	user	0	1	0	0
+PF	that should work for certain __eou__	agent	0	1	0	0
+FD	paste your full real code __eou__	agent	0	1	0	0
+PF	ok sorry this is indeed working __eou__	user	0	1	0	0
+FQ	but this was a minimal __eou__	user	0	1	0	0
+FD	now what if I use a var [<-CODE->]  __eou__	user	0	1	0	0
+IG	no change, it will still infer the type of A_TYPE is string __eou__	agent	0	1	0	0
+FD	and won't narrow it to the literal string 'A' __eou__	agent	0	1	0	0
+CC	but I can't doreadonly type: A_TYPE = A_TYPE __eou__	user	0	1	0	0
+PF	yea because that wouldn't make any sense __eou__	agent	0	1	0	0
+FD	A_TYPE is a value not a type __eou__	agent	0	1	0	0
+FD	it's an alias/name for a value in your program __eou__	agent	0	1	0	0
+FD	when the code sees a string literal, it assumes unless given other context that it must be of type string __eou__	agent	0	1	0	0
+AE	I actually have a ticket open about a use-case where I think this is not-awesome __eou__	agent	1	1	0	1
+FD	 [<-ISSUE->]  __eou__	agent	1	1	0	1
+FQ	I don't understand what this is doing [<-CODE->] because if I do [<-CODE->] this works __eou__	user	0	1	0	0
+FD	but the type function is not creating any type __eou__	user	0	1	0	0
+FQ	T is string ? __eou__	user	0	1	0	0
+CQ	where are you gettiug this code from? __eou__	agent	0	1	0	0
+FD	that doesn't look like something you would write accidently __eou__	agent	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+NF	absolutely not lol __eou__	user	0	1	0	0
+FD	I'm trying to understand __eou__	user	0	1	0	0
+UF	gotcha __eou__	agent	0	1	0	0
+
+OQ	anyone got an example of a library that attaches an instance to window? I need to create typings for such a library and can't seem to get it to work __eou__	user	0	1	1	2
+IG	Use interface augmentation __eou__	agent	1	1	0	1
+FD	 [<-CODE->]  __eou__	agent	1	1	0	1
+FD	you can also declare a global [<-CODE->]  __eou__	agent	1	1	0	1
+FQ	hmmm, says X is not a module __eou__	user	1	1	0	1
+FD	I have the import like: [<-CODE->]  __eou__	user	1	1	0	1
+IG	I guess I don't get the reference to the window.lp Tag with that? __eou__	user	1	1	0	1
+FQ	also with that I get:File '/node_modules/liveperson-chat-api/src/index.d.ts' is not a module. __eou__	user	0	1	0	0
+FD	I tried this: [<-CODE->] but then the lpTag is just an empty object and not the one that's attached to window __eou__	user	0	1	0	0
+FD	not a fun experience :/ my TSC takes 7 seconds to compile so it takes me ages to try something that isn't going to work. trial and error __eou__	user	0	1	0	0
+FD	expected this to work, but nope :/ [<-CODE->]  __eou__	user	0	1	0	0
+FD	I've linked in the library that adds itself to window and am providing an index.d.ts, so that when I import it, then the script gets loaded.. but then how to get ahold of that window.lpTag reference -.- __eou__	user	0	1	0	0
+FD	with the declare var lpTag; when I console.log lpTag as I import it, it just seems to be an empty object. Not sure wtf that is meant to be __eou__	user	0	1	0	0
+
+OQ	tsconfig paths - having an issue with using similar names. [<-CODE->] Issue 1: Can't make reference to @core within components core.Issue 2: Would have the word @core in both confuse the compiler? __eou__	user	0	0	0	0
+
+OF	hello! does anyone know where the version number for types pulled using@types/librarycan be found online? i’m trying to figure out whether i have the most recent version of published types. __eou__	user	0	1	1	2
+IG	well if you just npm install it will update to the latest __eou__	agent	0	1	0	0
+NF	that’s not what i’m looking for, though __eou__	user	0	1	0	0
+IG	subvertallchris: there should be a package.json inside thenode_modules/@types/library directories that would have the version number in it, just like anything else from npm __eou__	agent	1	1	0	1
+IG	I use npm update checker to check for updates and tell me what version of everything I have. __eou__	agent	1	1	0	1
+CQ	or are you referring to what version of the lib a particular npm package works with? __eou__	agent	0	1	0	0
+UF	coldacid: i see that __eou__	user	0	1	0	0
+CC	but i am looking in the repo on github and package.json isn’t there __eou__	user	0	1	0	0
+IG	pretty much every package in the@typesscope is magically generated __eou__	agent	0	1	0	0
+CC	there’s a mistake in the types for Three.js __eou__	user	0	1	0	0
+FD	and i’m trying to figure out whether i should update first or if i’m already on latest __eou__	user	0	1	0	0
+AE	you have to actually go into the node_modules directory in your project __eou__	agent	1	1	0	1
+IG	subvertallchris: just use npm view __eou__	agent	1	1	0	1
+FD	to see  all the versions available for a package __eou__	agent	1	1	0	1
+PF	ahh, that’s a big help! thanks. __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	agent	1	1	0	1
+GG	very cool __eou__	user	0	1	0	0
+FD	I use this though, to check all my dependencies and report what updates are available __eou__	agent	1	1	0	1
+PF	that is really helpful __eou__	user	0	1	0	0
+FD	But in any case, if you WANT to be on the latest version and you are not sure...just run npm install @types/library again __eou__	agent	1	1	0	1
+FD	that will always bring you up to the latest __eou__	agent	1	1	0	1
+
+OQ	Anyone have experience contributing to DefinitelyTyped? __eou__	user	0	0	0	0
+FD	It looks like I should clone the entire repo (!) and then runnpm test, which appears to run through the entire directory, says “Testing…” and then exists silently. I do not expect any errors based on the change I made. Travis is failing on the PR and it seems like it has something to do with TypeScript versions — I doubt it was my change. Is this normal? __eou__	user	0	0	0	0
+
+OQ	Can anyone explain to me how I can get my jquery plugins working with typescript?  I'm trying to get [<-LINK->] working but there is no typings file available.  Any idea on a quick way I can make this happen? __eou__	user	0	1	1	2
+CQ	jasonbiondo: did you trynpm i -S @types/jquery? __eou__	agent	0	1	0	0
+FD	doh, misread that. __eou__	agent	0	1	0	0
+IG	you should be able to merge your declarations on top of the jquery declarations like: [<-LINK->]  __eou__	agent	0	1	0	0
+NF	mseddon: yeah, I’m trying to sort it out but can’t seem to figure it out.  Let me check this doc __eou__	user	0	1	0	0
+FD	mseddon: I’m using [<-CODE->]  __eou__	user	0	1	0	0
+PF	whoa…somehow now that works __eou__	user	0	1	0	0
+AC	maybe I just needed to recompile __eou__	user	1	1	0	1
+AE	huh. strange.  __eou__	agent	0	1	0	0
+PF	till, glad that worked for you :) __eou__	agent	0	1	0	0
+UF	@mseddon so this is weird.   __eou__	user	0	1	0	0
+NF	This is what I have… [<-CODE->] then below that code I reference the clndr plugin.  When I remove the console.log then clndr is no longer available as a function.  __eou__	user	0	1	0	0
+FQ	Any idea why? __eou__	user	0	1	0	0
+FQ	jasonbiondo: Are you trying to write a decalration file ? __eou__	agent	0	1	0	0
+IG	I’m trying to use clndr in my ts file __eou__	user	0	1	0	0
+FD	since the declaration file is not available __eou__	user	0	1	0	0
+IG	jasonbiondo: You need to do something llike this template __eou__	agent	1	1	0	1
+FD	 [<-LINK->]  __eou__	agent	1	1	0	1
+FD	because it is almost always an error to manually write out properties that can never be accessed from the object you are assigning to __eou__	agent	1	1	0	1
+FD	but in the case ofx=yyou can still accessbazthroughy.baz __eou__	agent	1	1	0	1
+UF	dtabuenc: hmm I see. __eou__	user	0	1	0	0
+NF	Seems a bit confusing.  __eou__	user	0	1	0	0
+
+OQ	here's another problem __eou__	user	0	1	1	2
+FD	 [<-CODE->]  __eou__	user	0	1	0	0
+FD	but note that this is fine: __eou__	user	0	1	0	0
+FD	 [<-CODE->]  __eou__	user	0	1	0	0
+CQ	and again you actually need to use generics? __eou__	agent	0	1	0	0
+GG	hahaha __eou__	user	0	1	0	0
+FD	dont you know i just put <T> on all my methods for fun by now? ;-) __eou__	user	0	1	0	0
+FD	alright, let me explain what im doing __eou__	user	0	1	0	0
+FD	im writing a clone() method __eou__	user	0	1	0	0
+FD	that recursively clones a JS obj __eou__	user	0	1	0	0
+FD	so i do something liketype MyObject = number | string | boolean | Buffer __eou__	user	0	1	0	0
+FD	i even have{ [key: string]: MyObject }in there, but it's not really relevant __eou__	user	0	1	0	0
+FD	but yeah, the idea is that i want the signature of my clone method to befunction clone<T extends GenericObject>(x: T): T __eou__	user	0	1	0	0
+FD	in order to ensure that when i try to clone something, i've actually written a rule for how it should be cloned, so i dont accidentally try to clone something i can't. __eou__	user	0	1	0	0
+FD	hopefully that's a simple and understandable use case, perhaps unlike yesterday ;-) __eou__	user	0	1	0	0
+CQ	but you don't have to make x be of type T __eou__	agent	0	1	0	0
+CC	hm? __eou__	user	0	1	0	0
+PF	nevermind I see it now __eou__	agent	0	1	0	0
+IG	write up another issue, they seem to be really responsive. __eou__	agent	1	1	0	1
+UF	kk __eou__	user	0	1	0	0
+
+OQ	anyone know how to check for instances of vendor-specific apis? __eou__	user	0	1	1	2
+FD	liek for example, how do I check if window.mozRequestAnimationFrame is defined? __eou__	user	0	1	0	0
+FD	vs msRequestAnimationFrame etc __eou__	user	0	1	0	0
+CQ	stevekane: you mean so typescript won't complain?  __eou__	agent	0	1	0	0
+IG	I'd do if (window['mozRequestAnimationFrame']) {... __eou__	agent	1	1	0	1
+FD	Otherwise I'd just use a requestAnimationFrame polyfill. __eou__	agent	0	1	0	0
+
+OQ	Hi guys, I am having a hard time getting@types/cal-heatmapto work inside an Angular2/ionic2 project. The d.ts doesn't export anything, what do I have to add to benefit from the typings in this case? Here they are: [<-LINK->] __eou__	user	0	1	1	2
+FD	For now, I use a declarations.d.ts in my project where I putdeclare module "cal-heatmap";but this is only to make the transpiler shut up. __eou__	user	0	1	0	0
+IG	thaDude: They are just global declarations __eou__	agent	1	1	0	1
+FD	so you just install them and use them... no need to import anything. __eou__	agent	1	1	0	1
+FD	The declarations assume that there is a globalCalHeatMapvariable __eou__	agent	1	1	0	1
+FD	thaDude: You can do this to make it more friendly so you can import: [<-CODE->] __eou__	agent	1	1	0	1
+FD	put that in your declrations.d.ts __eou__	agent	1	1	0	1
+FD	and then do [<-CODE->] in your files. __eou__	agent	1	1	0	1
+UF	dtabuenc: Thanks for the tip. I'll try that. __eou__	user	0	1	0	0
+
+OQ	 [<-CODE->] Hi @dtabuenc. Thanks a lot! This does work but for me it's still black magic. Are there more comprehensive resources than the official TS doc to learn about how to write declaration files? I don't want to come asking for help here overtime I use a new JS library in my project. [<-CODE->]  [<-CODE->]  [<-CODE->]  __eou__	user	0	1	1	2
+IG	that just describes a constructor __eou__	agent	1	1	0	1
+FD	so if you have a variable: __eou__	agent	1	1	0	1
+FD	 [<-CODE->] the new in that interface is what allows you to do [<-CODE->]  __eou__	agent	1	1	0	1
+FD	if the new wasn't in the interface then that would not compile __eou__	agent	1	1	0	1
+AE	Think of interfaces as a description of what you can do with the object they describe. __eou__	agent	1	1	0	1
+FD	 [<-CODE->] Just declares that there is a global constant calledCalHeatMapand the things you can do with it are describe by the interfaceCalHeatMapStatic __eou__	agent	1	1	0	1
+FD	which means that the thing you can do with that constant is call new CalHeatMap() and you will get back an object which you can do the things described in the CalHeatMapinterface. __eou__	agent	1	1	0	1
+
+GG	Hello __eou__	user	0	0	0	0
+OQ	Can I use mapped types with generics somehow? __eou__	user	0	0	0	0
+FD	For example: [<-CODE->] __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+OP	So errors should be typehinted as errors.key1 and errors.key2, both resolving to strings and both being optional __eou__	user	0	0	0	0
+FD	 [<-LINK->] is the error I get __eou__	user	0	0	0	0
+FD	Same error if I leave errors as an empty object [<-CODE->] __eou__	user	0	0	0	0
+
+OQ	Could someone tell me:  I have created a utility class with  export class Utility {  formatDate() { } }     And to use it in a component, I create a variable of that class ie: util = new Utility();  and the to use the formatDate() function I just call util.formatDate();   My question is this, in C# if  you create a 'static' class with a public static function, you don't have to instantiate the class with new.  Can you do that with typescript ?  What I'm wondering is if I can just do Utility.formatDate() __eou__	user	0	1	1	2
+IG	yes you can do that __eou__	agent	1	1	0	1
+FD	if the class has a static function you don't need to invoke it with new __eou__	agent	1	1	0	1
+
+OP	I'm not sure that's corect. Should the type ofmatchersbe Matchers? __eou__	user	0	0	0	0
+FD	or an array of some sort? __eou__	user	0	0	0	0
+IG	I think that should be fine because he redefined another interface inside that module __eou__	agent	0	0	0	0
+FD	That matches the matchers object __eou__	agent	0	0	0	0
+FQ	what do your exports look like for test-matchers ? __eou__	user	0	0	0	0
+IG	 [<-CODE->]  __eou__	agent	0	0	0	0
+FD	hmm.. should you be doing export default? __eou__	user	0	0	0	0
+IG	it's typically better not to if you intend to be used from node js __eou__	user	0	0	0	0
+IG	He exporting both default and named __eou__	agent	0	0	0	0
+AC	oh I missed that.. I would remove the unecessary "namespacing" around the named one __eou__	user	0	0	0	0
+UF	Yeah I was wondering __eou__	agent	0	0	0	0
+IG	just export jasmineMatchers __eou__	user	0	0	0	0
+FD	people will name it whatever they want when they import __eou__	user	0	0	0	0
+FD	Yeah  I was about to ask that __eou__	agent	0	0	0	0
+FQ	what are the matchers though? __eou__	user	0	0	0	0
+FD	are they an array of some interface from jasmine? __eou__	user	0	0	0	0
+IG	An object of string: functions __eou__	agent	0	0	0	0
+FD	abelmokadem:  [<-CODE->]  __eou__	user	0	0	0	0
+NF	actually don't make your own type __eou__	user	0	0	0	0
+AC	Yeah I’m trying that out now, __eou__	agent	0	0	0	0
+PF	I think it’s working@dtabuenc __eou__	agent	0	0	0	0
+AE	There's a CustomMatcherFactory __eou__	user	0	0	0	0
+FD	 [<-CODE->]  __eou__	user	0	0	0	0
+FD	 [<-CODE->]  __eou__	user	0	0	0	0
+FQ	Is there a reason you're sticking to plain ES6 rather than just writing this all in TS? It would give you the typings for free if you did that. __eou__	user	0	0	0	0
+FD	abelmokadem: Actually, refining things a bit more, if you are actually creating a module you can import from elsewhere then this should be more correct: [<-CODE->]  __eou__	user	0	0	0	0
+AC	Nice, I’m almost ready to push out an update __eou__	agent	0	0	0	0
+FD	The first part basically means you are merging with theglobalnamespace/interface __eou__	user	0	0	0	0
+FD	all other exports in your file are what your module exports... __eou__	user	0	0	0	0
+FD	so you would also add a default export if you wanted __eou__	user	0	0	0	0
+FD	although I would just get rid of the default experts, and just do a named exports... default exports just complicate things with little value (e.g. doing: [<-CODE->] vs [<-CODE->]  __eou__	user	0	0	0	0
+AC	I removed all the default exports __eou__	agent	0	0	0	0
+FD	Exactly , just complicates things __eou__	agent	0	0	0	0
+FD	Update should be out in a bit, just pushed some updates __eou__	agent	0	0	0	0
+NF	Whoops, made a mistake. Pushing out another fix. I’ll let you know if it works __eou__	agent	0	0	0	0
+PF	It’s working guys!@dtabuenc@O4epegbthx a lot! __eou__	agent	0	0	0	0
+FD	 [<-LINK->]  __eou__	agent	0	0	0	0
+PF	dtabuenc: @O4epegbfinally! __eou__	agent	0	0	0	0
+
+OQ	How can i create a dynamic instance of a class? Something like this:new CLASSNAMEFROMSTRING("Title","Dummy Title",null); __eou__	user	0	0	0	0
+
+GG	Hi, can I ask a syntax question here? __eou__	user	0	1	1	2
+UF	try ;) __eou__	agent	0	1	0	0
+OQ	 [<-CODE->]  __eou__	user	0	1	0	0
+FD	this works, but I was wondering if there was a construct like this: [<-CODE->]  __eou__	user	0	1	0	0
+FD	I'm lazy you see ;) __eou__	user	0	1	0	0
+FD	 [<-CODE->] Works fine too, so I was wondering if there was a similar way for class variables __eou__	user	0	1	0	0
+IG	const [a,b] = [foo‘, bar'] __eou__	agent	1	1	0	1
+CC	like this ? __eou__	agent	0	1	0	0
+FQ	that works, the problem is that typeAPrivateList and typeBPrivateList are class variables, they are already declaerd in the constructor __eou__	user	0	1	0	0
+
+OP	Does anyone know how to fix VS from showing zillions of typescript errors from my d.ts files? I have a build working perfectly using webpack but it shows  all kinds of TS2307 errors and such that are taken care of via webpackexternalsand other packages. (I am invoking webpack via a build target and also <TypescriptCompileBlocked /> in the csproj) __eou__	user	0	0	0	0
+PG	For TS2307 you need to either use the path mapping facilities in tsconfig or generate dummy module definitions usingdeclare module 'whatever' __eou__	agent	0	0	0	0
+FD	visual studio can be weird sometimes though, do you see the same errors when compiling  from commandline using plain tsc? (no webpack) __eou__	agent	0	0	0	0
+FD	It's strange though that you would need externals and packages for code in your declaration files __eou__	agent	0	0	0	0
+FD	so i'd be interested to know the specifics of one or two pacakges that you are seeing that error for __eou__	agent	0	0	0	0
+FD	another strategy is to use wildcard declarations __eou__	agent	0	0	0	0
+AC	hmm I am a bit of a noobie at setting up the thing, I guess. I am using ts-loader and have never tried to get it to compile with just tsc __eou__	user	0	0	0	0
+AC	I use tsloader, but it still compiles fine with tsc for me __eou__	agent	0	0	0	0
+FD	declare module 'xxx';did not work, it says "Invalid module name in augmentation" __eou__	user	0	0	0	0
+FD	let me see if I can add the paths to tsconfig.json __eou__	user	0	0	0	0
+FD	can I just add it to rootDirs? __eou__	user	0	0	0	0
+AC	Well I'm trying to understand what modules you are actually mapping to somewhere else __eou__	agent	0	0	0	0
+FD	to see if you are doing it correctly or not __eou__	agent	0	0	0	0
+FD	declare module 'xxx'needs to be in  ad.tsfile __eou__	agent	0	0	0	0
+FQ	It's actually just not finding the modules from the same folder. I have a fileaddress.tsxinside a folder calledsrcwhich also has a file calledclientdata.ts; in address.tsx I haveimport {states} from "clientdata";and it isn't finding clientdata. __eou__	user	0	0	0	0
+FD	oh  ok.. so it' snot from yourd.tsfiles that's the problem __eou__	agent	0	0	0	0
+AC	Actually I changed it to "./clientdata" and that seemed to work __eou__	user	0	0	0	0
+FD	yeah so when you don't do relative paths.. __eou__	agent	0	0	0	0
+FD	it will try to resolve modules fromnode_modules __eou__	agent	0	0	0	0
+JK	ohh __eou__	user	0	0	0	0
+CC	even though I added my src folder to rootDirs? __eou__	user	0	0	0	0
+FD	it will walk up your folders __eou__	agent	0	0	0	0
+FD	so first don't add your src folder torootDirs __eou__	agent	0	0	0	0
+FD	you want to set it forrootDir __eou__	agent	0	0	0	0
+FD	now... if youw ant it to work like you had __eou__	agent	0	0	0	0
+FD	you need to add some path mappings __eou__	agent	0	0	0	0
+AC	I see... I am ok with using './' I think it is probably a better practice __eou__	user	0	0	0	0
+FQ	I do have one more question, it is not happening on my computer but it is happening on my friend's. He tried to open it up and has 1000s of "duplicate identifier" errors from d.ts files. __eou__	user	0	0	0	0
+FD	webpack build also does work on his machine __eou__	user	0	0	0	0
+IG	you can use baseUrl too for it to work without relative paths __eou__	agent	0	0	0	0
+FD	for best intellisense and IDE support it's always good to make sure your project compiles fine through planetsc __eou__	agent	0	0	0	0
+FD	just make sure you do --noEmit or something __eou__	agent	0	0	0	0
+FD	unless you want a gazillion .js files generated throughout your codebase __eou__	agent	0	0	0	0
+FD	or use outDir __eou__	agent	0	0	0	0
+AC	I would have to know the duplicate identifiers __eou__	agent	0	0	0	0
+FD	it's likely stuff in hisnode_module/@types/*folder conflicting with maybe old-school typings files from typings or tsd __eou__	agent	0	0	0	0
+FQ	That sounds likely, so I should get rid of one or the other? __eou__	user	0	0	0	0
+FQ	Also, should the d.ts files be included in the project? __eou__	user	0	0	0	0
+IG	you should get rid of the typings/tsd installed ones if they have that __eou__	agent	0	0	0	0
+FD	andnpm installthe equivalent __eou__	agent	0	0	0	0
+FD	e.gnpm install @types/jquery --save-dev __eou__	agent	0	0	0	0
+FD	all definitely typed typings files are available as npm packages __eou__	agent	0	0	0	0
+FD	and that's the prefered way going forward for third-party global typings __eou__	agent	0	0	0	0
+FD	you should include d.ts  files in the project yes __eou__	agent	0	0	0	0
+FD	you don't need to include any that are installed with npm in@typesthough __eou__	agent	0	0	0	0
+UF	Got it __eou__	user	0	0	0	0
+AE	ususally people will have 1 or 2 custom ones __eou__	agent	0	0	0	0
+FD	that are included globally __eou__	agent	0	0	0	0
+FD	for custom typings you may want to add __eou__	agent	0	0	0	0
+FD	or if a particular project has a stand-alone typings file they publish outside of  definitely typed (more rare) __eou__	agent	0	0	0	0
+FD	most projects will either include d.ts file in the standard npm package (e.g. like angular2 for example) or they will have third-party typings you can install using@types/package-name __eou__	agent	0	0	0	0
+FD	it's rare to have a project just have their own random d.ts file you donwload and install,  although there are a few cases out there __eou__	agent	0	0	0	0
+FQ	sometimes for client-side external libraries __eou__	user	0	0	0	0
+FD	///<reference path="../../typings/tsd.d.ts" />is a line into node_modules needed for@types? __eou__	user	0	0	0	0
+IG	no you should get rid of that __eou__	agent	0	0	0	0
+AC	okies I am going to do my refactoring now :) __eou__	user	0	0	0	0
+FD	and delete everything in typings folderafter installing the equivalent package with npm __eou__	agent	0	0	0	0
+UF	Thank you so much, I really appreciate the help __eou__	user	0	0	0	0
+FD	tsd and typings are deprecated tools __eou__	agent	0	0	0	0
+AE	These kind of errors are extremely difficult to figure out on stackoverflow and github __eou__	user	0	0	0	0
+FD	npm is the preferred way to get typings __eou__	agent	0	0	0	0
+FD	--traceResolutionis a great tool in tsc __eou__	agent	0	0	0	0
+FD	to  figure out where typescript is looking for modules __eou__	agent	0	0	0	0
+FD	if you getTS2307errors __eou__	agent	0	0	0	0
+PF	ahh that is useful __eou__	user	0	0	0	0
+FQ	 [<-CODE->] it is looking inside node_modules but notnode_modules/@types/ __eou__	user	0	0	0	0
+FD	I found: [<-ISSUE->]  __eou__	user	0	0	0	0
+FD	but I am using "node" module resolution __eou__	user	0	0	0	0
+FD	^ that was fixed by upgrading totypescript@2.0 __eou__	user	0	0	0	0
+IG	ahh yeah@types/was introduced in 2.0+ __eou__	agent	0	0	0	0
+FD	so maybe your friend was on 2.0 and that's why he was getting all those conflicting duplicate definitions __eou__	agent	0	0	0	0
+PF	that makes sense! __eou__	user	0	0	0	0
+
+GG	Hi Guys. __eou__	user	0	0	0	0
+OQ	Has anyone tried building Vue.plugin using typescript class? __eou__	user	0	0	0	0
+FD	I am trying to get install method triggered but having no luck in doing that. If someone tried please let me know __eou__	user	0	0	0	0
+
+AE	That link would be a lot shorter if they used Unix style line endings __eou__	user	0	0	0	0
+FD	(not something that's configurable, just something I noticed and found interesting) __eou__	user	0	0	0	0
+FD	More curious: [<-LINK->] __eou__	user	0	0	0	0
+FD	 Or this one __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	Hi, I am a beginner to typescript, and have some simple question. If I have some js library file, then how can I use it in a ts file? __eou__	user	0	1	1	2
+IG	rajdeep26:  [<-LINK->]  __eou__	agent	1	1	0	1
+UF	Thanks@HendrikRoth. I'll go through it __eou__	user	0	1	0	0
+FD	rajdeep26: /// <reference path="pathtofile.ts" /> __eou__	agent	1	1	0	1
+FQ	Can you give some example? __eou__	user	0	1	0	0
+FD	Lets say i have a simple js file which has only 1 function like this: [<-CODE->] How can i use this function in a ts file? __eou__	user	0	1	0	0
+FD	does the library have typescript definitions? __eou__	agent	0	1	0	0
+IG	 [<-CODE->]  __eou__	agent	1	1	0	1
+CC	Not sure if it works but have you triedimport './that_file.js';? __eou__	agent	0	1	0	0
+FD	actually we want to start using typescript for one of our project and were wondering  that there will be many a times where we might come across a library which doesnt  have any type deifinitions and its just a normal js file.  __eou__	user	0	1	0	0
+FQ	So how should we proceed in this scenario? __eou__	user	0	1	0	0
+NF	Usually it is hard to import anything that doesn't has an export __eou__	agent	0	1	0	0
+CC	So how to use such files? __eou__	user	0	1	0	0
+IG	well, maybe require works here __eou__	agent	0	1	0	0
+IG	rajdeep26: i would suggest you to use d.ts files __eou__	agent	0	1	0	0
+FD	better for "porting" an existing project __eou__	agent	0	1	0	0
+CC	what if the d.ts file doesnt exist for some 3rd party library? I wil have to create  a d.ts for it in order to use it? __eou__	user	0	1	0	0
+IG	yes create a dummy d.ts file __eou__	agent	0	1	0	0
+FQ	dummy? __eou__	user	0	1	0	0
+FQ	what do you mean by dummy d.ts file? __eou__	user	0	1	0	0
+AE	creating an empty d.ts works? __eou__	user	0	1	0	0
+CC	rajdeep26: do you have a specific 3rd party lib you want to use? __eou__	agent	0	1	0	0
+IG	rajdeep26: name the library pls __eou__	agent	0	1	0	0
+FD	coz even peerJS which i plan to use have dts files __eou__	agent	0	1	0	0
+FQ	How about this? [<-LINK->]  __eou__	user	0	1	0	0
+FD	BTW I just wanted to know this before we jump into using typescript __eou__	user	0	1	0	0
+FD	You could create a definition that sets the root class or whatever as :any __eou__	agent	0	1	0	0
+FD	you won't get type safety, obviously __eou__	agent	0	1	0	0
+UF	thats fine __eou__	user	0	1	0	0
+FD	For some things we are willing to ignore the type checks for now __eou__	user	0	1	0	0
+FD	in that case you'd probably want something like declare var CitrusPay: any __eou__	agent	0	1	0	0
+UF	echeese: Thanks. Understood __eou__	user	0	1	0	0
+FQ	BTW how do i use it in my code after creating d.ts file? __eou__	user	0	1	0	0
+FQ	Cant import anything from it __eou__	user	0	1	0	0
+FD	I think i understood what I need to do. Just referred this d.ts file for jquery [<-LINK->]  __eou__	user	0	1	0	0
+FQ	Thanks guys __eou__	user	0	1	0	0
+
+OQ	would it be possibe withtscto get  the AST output of a javascript file? And would it be possible to generate a simple d.ts from that AST ? __eou__	user	0	0	0	0
+
+OQ	I am using the following TSConfig; [<-CODE->] In my .ts files, where ever I have a comment on the last line, the JS output is broken. E.g. [<-CODE->] Is this a known TS bug? __eou__	user	0	0	0	0
+FD	 [<-CODE->] does resolve it, but doesn't seem right that it should break on false. __eou__	user	0	0	0	0
+FD	TS file in question [<-CODE->] __eou__	user	0	0	0	0
+FD	Version 2.1.4 __eou__	user	0	0	0	0
+
+OQ	 [<-CODE->] What is the type of _cachedRights? __eou__	user	0	1	1	2
+FD	My json is [<-CODE->] __eou__	user	0	1	0	0
+FD	so I thought it would be _cachedRights: boolean[]But perhaps this is not the case? __eou__	user	0	1	0	0
+IG	types is weird __eou__	agent	0	1	0	0
+CQ	why do you do that? __eou__	agent	0	1	0	0
+CQ	What'stypes/*?? __eou__	agent	0	1	0	0
+IG	you should link to a specific d.ts file __eou__	agent	1	1	0	1
+FD	it should be probably pointing to types/index.d.ts __eou__	agent	1	1	0	1
+FD	if you have one __eou__	agent	0	1	0	0
+FD	basically types should point to the d.ts file of  what main is pointing to __eou__	agent	1	1	0	1
+AE	scippio: it's better if you don't keep a seaparate types/ folder __eou__	agent	1	1	0	1
+FD	and just output d.ts files side-by-side __eou__	agent	1	1	0	1
+FD	so there are both a lib/index.js and a lib/lindex.d.ts along side it __eou__	agent	1	1	0	1
+FD	then you don't really even need the"types":field in your package.json __eou__	agent	1	1	0	1
+
+OQ	Hi, I wanted to use TS'sHarnessAPIs to better verify the correctness of my typings forramda.js, but had trouble importing them since it doesn't export its namespace. Has anyone used these before? __eou__	user	0	1	1	2
+FD	(hi@ShadowManu:D, please consider pulling my tests/documentation to your pug pr! :P) __eou__	user	0	1	0	0
+CQ	never heard of harness, what is that? __eou__	agent	0	1	0	0
+FD	TypeScript uses it to test compilation output for different use-cases to prevent regressions. __eou__	user	0	1	0	0
+IG	domoritz: My guess forts.TypeFlags.Anonymous that now only ts.ObjectFlags.Anonymous is possible, but I'm only guessing __eou__	agent	1	1	0	1
+FD	ts.NodeFlags.Abstract seems to be only available asts.ModifierFlags.Abstract __eou__	agent	1	1	0	1
+AE	Since I have no Idea what your ts to json compiler does it is hard to help you out :) __eou__	agent	0	1	0	0
+FD	tuple is also now in object __eou__	agent	1	1	0	1
+FD	and reference also __eou__	agent	1	1	0	1
+FD	just a reminder@domoritz add more documentation to your lib code ;) __eou__	agent	1	1	0	1
+IG	con-ssc: : json-schema does... schemas for json. his lib would allow reusing TS's compile-time sanity checks during run-time (i.e. on JSON data coming in over the wire), __eou__	user	1	1	0	1
+PF	which is pretty cool. :) __eou__	user	0	1	0	0
+
+OQ	Anyone know how to extend map so as to provide your own strong typed version __eou__	user	0	1	1	2
+IG	Hey I have the following type and i'm looking for a more elegant way  to declare it (an interface maube) [<-CODE->]  __eou__	agent	0	1	0	0
+FD	SamD: Map is a generic, so you can do: [<-CODE->]  __eou__	agent	0	1	0	0
+CC	That's not a type though __eou__	user	0	1	0	0
+FD	I want to define my own type for usage throughout __eou__	user	0	1	0	0
+IG	type myMap = Map<string, number>; ? __eou__	agent	1	1	0	1
+IG	So interface x implements Map<string, sometype> for example __eou__	user	1	1	0	1
+CC	Oh u don't need to extend/implement ? __eou__	user	0	1	0	0
+CC	what is your usecase? __eou__	agent	0	1	0	0
+PF	OK I'm a bit new to type script __eou__	user	0	1	0	0
+AC	I'll try it out thanks __eou__	user	0	1	0	0
+IG	 [<-CODE->]  __eou__	agent	1	1	0	1
+
+OQ	To follow up on my questions about the transition to TS 2.1 for [<-LINK->] , most test are passing now but I'm a bit stuck nonetheless.symbol.getDocumentationComment()used to return the complete comment but now I'm not seeing comments that start with@any more. E.g. [<-LINK->]  __eou__	user	0	1	1	2
+FD	I believe changes to this function cause missing comments in [<-LINK->]  __eou__	user	0	1	0	0
+FD	Looks like it's [<-ISSUE->]  __eou__	user	0	1	0	0
+IG	domoritz: the json schema looks like the one microsoft is using for ms flow and such __eou__	agent	1	1	0	1
+
+GG	hi folks __eou__	user	0	1	1	2
+GG	i have a question __eou__	user	0	1	0	0
+OQ	 [<-CODE->]  __eou__	user	0	1	0	0
+FD	what type should dispatch have, I dont want to give "any" __eou__	user	0	1	0	0
+FD	(react-redux) __eou__	user	0	1	0	0
+FD	Dispatch is defined like so [<-CODE->]  __eou__	user	0	1	0	0
+FD	 [<-CODE->]  __eou__	user	0	1	0	0
+FD	S from Dispatch<S> is not used,  note, this is the orignal "type" file of "react-redux" __eou__	user	0	1	0	0
+IG	ok I see its related to this issue [<-ISSUE->]  __eou__	user	1	1	0	1
+FD	its a "fix" on Dispatch __eou__	user	1	1	0	1
+IG	 [<-CODE->]  [<-CODE->] Types have separate declarations of a private property What am I doing... __eou__	agent	1	1	0	1
+IG	you are definining  _changeDetector twice __eou__	agent	1	1	0	1
+
+OQ	Hi, what do I need to do to get my typescript module which is hosted on my private github group to be used as a module dependancy for other projects from other users in my group?  I read that I should not put my .d.ts or my .js files in github, but they should be in my  module and the .ts files should not be in the module but should be in my github.  Publishing the module privately isn't an option sadly. __eou__	user	0	1	1	2
+IG	avik-so: and option you can consider (I'm not sure if the best one) is using git submodules and your users have relative imports to your submodule location. __eou__	agent	1	1	0	1
+
+OQ	would you say this router is looking like a framework? or can I still get away with calling it vanilla? __eou__	user	0	1	1	2
+IG	I don't think you should fixate on labels __eou__	agent	1	1	0	1
+JK	who cares? __eou__	agent	0	1	0	0
+JK	hehe __eou__	agent	0	1	0	0
+FD	I'm gonna demo it in the [<-LINK->] __eou__	user	0	1	0	0
+
+OQ	What’s the easiest way to test/debug/step through a change to the compiler? __eou__	user	0	0	0	0
+FD	There’s no VSCode launch.json for instance __eou__	user	0	0	0	0
+FD	also, I can’t seem to get sourcemaps to work. :/ __eou__	user	0	0	0	0
+FD	Hrm, had to build with jake (why are there two build tools?) and change it to no longer add -mapRoot __eou__	user	0	0	0	0
+FD	… but it skips my breakpoints, even with stopOnEntry __eou__	user	0	0	0	0
+FD	only works if i use “debugger;" __eou__	user	0	0	0	0
+
+OF	When will we get async/await btw? __eou__	user	0	0	0	0
+PF	you have it now@Rudde __eou__	agent	0	0	0	0
+FD	I assume if there’s a dep conflict, it’ll just nest that version of tslib in the installed package __eou__	agent	0	0	0	0
+CC	joelday: dep conflict with what though? __eou__	agent	0	0	0	0
+FD	tslib is just some internal helpers __eou__	agent	0	0	0	0
+PF	Rudde: yep, you can use async/await even when targeting es5 __eou__	agent	0	0	0	0
+FD	should be no conflicts __eou__	agent	0	0	0	0
+FD	true __eou__	agent	0	0	0	0
+FD	 [<-LINK->] __eou__	agent	0	0	0	0
+CC	joelday: At this time? __eou__	user	0	0	0	0
+IG	Rudde: you need to have a promise polyfill, though __eou__	agent	0	0	0	0
+FD	Rudde: yes, since 2.1 + __eou__	agent	0	0	0	0
+FD	yeah, as of 2.1 i think __eou__	agent	0	0	0	0
+FQ	WHen was that released? :S __eou__	user	0	0	0	0
+FD	few months ago __eou__	agent	0	0	0	0
+GG	hahaha,@dtabuencI’ll let you answer these :D __eou__	agent	0	0	0	0
+JK	Oh __eou__	user	0	0	0	0
+FD	early december I think __eou__	agent	0	0	0	0
+FD	Just remember TS didn't have it when I needed it :( __eou__	user	0	0	0	0
+FD	was the primary reason they did the tslib thing too __eou__	agent	0	0	0	0
+FD	joelday: Tslib is basically just these helpers: [<-CODE->] __eou__	agent	0	0	0	0
+FD	if you don't use tslib then each of those helpers gets inlined into every file that uses a feature required for it __eou__	agent	0	0	0	0
+FD	soextendsis in almost every file,awaiterandgeneratorwhich are pretty big would be in every file that uses async/await ..etc __eou__	agent	0	0	0	0
+FD	so you want to definitely take advantage of tslib __eou__	agent	0	0	0	0
+FD	there is no downside that I know of __eou__	agent	0	0	0	0
+
+OQ	 [<-CODE->]  [<-CODE->]  [<-CODE->]  __eou__	user	0	1	1	2
+IG	chrillewoodz: According to the type string | Date your start Date could either be a string or aDate. Only the Date has the method toISOString()- the string does not. So TypeScript is smart enough to prevent you from calling a method that potentially does not exist during runtime. __eou__	agent	1	1	0	1
+
+OQ	Hey, easiest way to transform a string into a JSON? The string is already in a valid json format, only a bracket at the beginning and at the ending (was originally an array of json objects). Anyone has an idea? __eou__	user	0	1	1	2
+IG	poulinjoel: JSON.parse(validjson) __eou__	agent	1	1	0	1
+
+OQ	are there any npm packages for polyfilling EC2015 in typescript? E.g., the new Array methods? __eou__	user	0	1	1	2
+IG	masonk: just use any js polyfill lib __eou__	agent	1	1	0	1
+FD	then just lib in your tsconfig to inform the compiler your env has those methods __eou__	agent	1	1	0	1
+FQ	nbransby: If I set a lib flag in tsconfig, that only works if I use a polyfill that gives me everything in ecmascript2015, doesn't it? It effectively asserts typings for all of EC2015 __eou__	user	0	1	0	0
+IG	masonk: I supports finer options than that, check the docs __eou__	agent	1	1	0	1
+
+OQ	does a getter at typescript is recommended using Angular2 for  component? __eou__	user	0	1	1	2
+CQ	assaftenen: huh? __eou__	agent	0	1	0	0
+IG	Angular2 components are class's __eou__	agent	1	1	0	1
+PF	Toxicable: I know... __eou__	user	0	1	0	0
+FD	what I meant to ask...is it good practice to use setter and getter at angular classes? Getter by definition is getting called at intervals, putting my proparties with it seems to be not so a good idea, __eou__	user	0	1	0	0
+IG	If you're going to bind data to a getter then no __eou__	agent	1	1	0	1
+FD	It's often a bad idea to bind to a function __eou__	agent	1	1	0	1
+FD	A getter is just a function with synxtaxtical sugar __eou__	agent	1	1	0	1
+IG	which run every change detection is running so I guess it kind of bad prctice __eou__	user	1	1	0	1
+UF	Yup __eou__	agent	0	1	0	0
+
+OQ	I see it's on the roadmap but not for any specific version yet __eou__	user	0	1	1	2
+FD	So one other question, regarding npm publishing.If you include a .d.ts with a JS npm library, how would you handle fixes to types only? i.e., if the package version doesn't increment, I guess no one will get the updated types.But if the library has primarily JS users, they might not want the versioning noise of typescript definition fixes and the maintainers might not want to bump versions for just that. __eou__	user	0	1	0	0
+IG	type changes seem like a good reason to have a new version __eou__	agent	1	1	0	1
+IG	Most users (and maybe maintainers) might not think that way though __eou__	user	1	1	0	1
+FD	Maybe DefinitelyTyped is still a better option here __eou__	user	1	1	0	1
+
+OQ	Hi guys, I have a simple question.  We can define some attribute in class likename?: stringwhich means that it may or may not be present. So is there any compiler flag or anything in typescript which will force me to do a type check before using it. For example handle the null case and to handle the case when name is a string? __eou__	user	0	1	1	2
+IG	rajdeep26: Sortof. __eou__	agent	1	1	0	1
+FD	the closest would be turning on strict null checks __eou__	agent	1	1	0	1
+FD	it won't catch every use, only mis-uses. __eou__	agent	1	1	0	1
+CC	that will not force me to do a type check or empty check before using right? __eou__	user	0	1	0	0
+FD	the type for an optional property likename?: stringwould bestring | undefined __eou__	agent	1	1	0	1
+FD	so for example if you try to do [<-CODE->]  __eou__	agent	1	1	0	1
+FD	that would fail __eou__	agent	1	1	0	1
+FD	sincestring | undefined is not assignable tostring __eou__	agent	1	1	0	1
+FD	Also it would  prevent you from doing object WithOptionalName.name.length __eou__	agent	1	1	0	1
+FD	without first doing a check for object WithOptionalName.name !== undefined __eou__	agent	1	1	0	1
+UF	Thanks@dtabuenc __eou__	user	0	1	0	0
+PF	Pretty close to what i was looking. __eou__	user	0	1	0	0
+FD	yes it's highly encouraged to have strict null checks on on any new project __eou__	agent	1	1	0	1
+FD	harder sometimes to get an existing project up to a state where you can turn that on though __eou__	agent	1	1	0	1
+FD	that's why it's not the default __eou__	agent	1	1	0	1
+PF	ya, we just started with a new project a week back __eou__	user	0	1	0	0
+FD	then I would recommend turning all the optional features on __eou__	agent	1	1	0	1
+FD	no Implicit. Any no Implicit Returns no Implicit This strict Null Checks no Unused Locals no Unused Parameters no Fall through Cases In Switch __eou__	agent	1	1	0	1
+FD	they really make your code much safer, and it's easy to comply with them if the codebase is new __eou__	agent	1	1	0	1
+PF	thanks. I'll do it. __eou__	user	0	1	0	0
+FQ	BTW how will be the code for doingobjectWithOptionalName.name.length __eou__	user	0	1	0	0
+FD	use aif elsestmt? __eou__	user	0	1	0	0
+IG	 [<-CODE->]  __eou__	agent	0	1	0	0
+FD	most any way you would naturally check for null to use it safely would work __eou__	agent	0	1	0	0
+FD	 [<-CODE->]  __eou__	agent	0	1	0	0
+FD	etc ... __eou__	agent	0	1	0	0
+CC	I think its giving meObject is possibly 'null'.error __eou__	user	0	1	0	0
+FD	any idea why? __eou__	user	0	1	0	0
+CQ	What's your code look like? __eou__	agent	0	1	0	0
+CQ	do you have an example? __eou__	agent	0	1	0	0
+FD	I'll try to figure this out and if i still face issues i'll get back to you.  __eou__	user	0	1	0	0
+PF	Thanks for now. __eou__	user	0	1	0	0
+
+OQ	 [<-CODE->]  __eou__	user	0	1	1	2
+FD	It's consistent with what I've said. If webpack says, "I can't find this file", it's not lying to you __eou__	user	0	1	0	0
+FD	It didn't find the file and then pretend that it hasn't found it __eou__	user	0	1	0	0
+FD	Well that may have to do  with search strategy, base-paths, mappings, etc. __eou__	agent	0	1	0	0
+IG	Yes, that's exactly what it has to do with __eou__	user	1	1	0	1
+AE	I thought that part was clear __eou__	user	0	1	0	0
+FD	"can't find file" means, "Can't find file" __eou__	user	1	1	0	1
+FD	require('')will not use typescripts module resolution strategy __eou__	agent	1	1	0	1
+FD	it's just pased through to webpack __eou__	agent	1	1	0	1
+FD	while import will use typescript module resolution __eou__	agent	1	1	0	1
+FD	which will try several different paths and things __eou__	agent	1	1	0	1
+FD	if you don't get a compile time error with typescript that means typescript has found it __eou__	agent	1	1	0	1
+FD	but typescript search paths might not always equate to webpack settings, so a lot of times webpack settings need to be tweaked to match __eou__	agent	1	1	0	1
+FD	usually only the case if you are using path mapping or multiple source roots in typescript __eou__	agent	1	1	0	1
+
+OQ	what does this mean?node_modules/vue/types/index"' has no default export __eou__	user	0	0	0	0
+FD	if anyone can help me get this working, it is much appreciated: [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	Hi, could you please help me with the following conflict: [<-CODE->] i have the following dependencies [<-CODE->] and tsconfig.json [<-CODE->]  __eou__	user	0	1	1	2
+IG	MegaUkrainian: only thing that comes to mind is noLib and then manually define the libs in the tsconfig __eou__	agent	1	1	0	1
+FD	have a look at [<-LINK->] --lib __eou__	agent	1	1	0	1
+FD	but you could possibly just remove the es6-shim __eou__	agent	1	1	0	1
+UF	Thanks __eou__	user	0	1	0	0
+AC	 I'll try __eou__	user	0	1	0	0
+
+OQ	Anyone around who could help me with generic types? __eou__	user	0	1	1	2
+FD	I wanna make use of the new literal types to get an automatic type inference __eou__	user	0	1	0	0
+FD	I don't really understand the concept ofkeyof __eou__	user	0	1	0	0
+FD	Maybe I don't even need it __eou__	user	0	1	0	0
+FD	I have this so far [<-CODE->]  __eou__	user	0	1	0	0
+FD	I kind of want to make those methods generic [<-CODE->]  __eou__	user	0	1	0	0
+FD	So that when I callobserve(EventTypes. APP_TITLE_CHANGE)I wanna get auto completion for the correct return value __eou__	user	0	1	0	0
+FD	Does that makes sense? __eou__	user	0	1	0	0
+FD	Maybe I am getting it completely wrong __eou__	user	0	1	0	0
+FD	Is that even useful in that case? __eou__	user	0	1	0	0
+FD	Or do I just have to use generics? __eou__	user	0	1	0	0
+CQ	d3lm: What is thistype<'AppTitleChange'>('AppTtitleChange')notation? Is that something new I don't know about? __eou__	agent	0	1	0	0
+FD	dtabuenc: Oh that is just something to ensure that the key is unique. Kind of like this [<-CODE->]  __eou__	user	0	1	0	0
+FD	dtabuenc: Do you have any idea if I can make it typed without always passing in the return type to observe like soobserve<string>(...) __eou__	user	0	1	0	0
+FD	I just wanna pass in the literal type and want TS to infere the return value __eou__	user	0	1	0	0
+FD	Is that even possible? __eou__	user	0	1	0	0
+IG	I know it is in a switchCase __eou__	user	1	1	0	1
+PF	It works for me  __eou__	user	0	1	0	0
+FD	when I have a reducer. TS is smart enough to tell me the type of the payload in a particular case __eou__	user	1	1	0	1
+
+OQ	Currently, TypeScript/JavaScript debugging in VS2015 is a mess ( [<-LINK->] ). Can we hope that web client script debugging will be strongly improved with VS 2017? __eou__	user	0	0	0	0
+
+OQ	How can I pass a variable into the scope of a foreach, like so? [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	Hi guys, I would like to know a way to import json from a json file into a Typescript file __eou__	user	0	1	1	2
+CQ	heyheyhey11: import it in what format? __eou__	agent	0	1	0	0
+CQ	like import json straight into a variable? __eou__	agent	0	1	0	0
+CQ	heyheyhey11: I don't think your question makes sense any more than say "How do you import a .txt " file into typescript. Or how do I import an ".html" file into typescript. __eou__	agent	0	1	0	0
+IG	Json files must be read using whatever library, parser, or facility your runtime environment provides. __eou__	agent	1	1	0	1
+FD	it's not a native language feature. __eou__	agent	1	1	0	1
+FD	You can, however, describe the content of the json using interfaces, so that when you read it in using whatever method is appropriate, you  get intellisense in accessing that json's members. __eou__	agent	1	1	0	1
+
+GG	hello guys __eou__	user	0	0	0	0
+OP	before 2.0, in order to usePromises in TS we would need to targed ES6 at tsconfig… if the target browser requires ES5, then we need to use babel to transpile again to ES5… so basically we had TS -> ES6 -> Babel -> ES5… so, did it changed with TS 2.0+ so we can usePromisein TS and target directlyh ES5? Or do we still need babel? __eou__	user	0	0	0	0
+IG	galvesribeiro: You never had to target ES6 to use promises __eou__	agent	0	0	0	0
+FD	galvesribeiro: You could target es5 and set your lib to es6 __eou__	agent	0	0	0	0
+FD	Of course, your browser needs support for Promise to work, or you need a poly-fill for older browsers __eou__	agent	0	0	0	0
+FD	suche ascore-js __eou__	agent	0	0	0	0
+CC	@dtabuencYou could target es5 and set your lib to es6How to do that? __eou__	user	0	0	0	0
+FD	and by poly-fill, it is just a matter of addcore-jsas a dependency and load it? __eou__	user	0	0	0	0
+FD	dtabuenc: I don’t understand one thing… if we are targeting ES5, why do we need polypill ? (sorry the dumb questions) __eou__	user	0	0	0	0
+IG	galvesribeiro: In your tsconfig: [<-CODE->]  __eou__	agent	0	0	0	0
+FD	Because promises are not a language feature __eou__	agent	0	0	0	0
+FD	they are a feature of the runtime environment __eou__	agent	0	0	0	0
+JK	hummm __eou__	user	0	0	0	0
+FD	when you target es6 typescript automatically defaults your "lib" to be ["dom", "es6"] __eou__	agent	0	0	0	0
+IG	I though it were transpired to something ES5 browsers understand since we are using ES5 __eou__	user	0	0	0	0
+FD	galvesribeiro: language features are transpile to es5 __eou__	agent	0	0	0	0
+FD	for example classes, or arrow functions __eou__	agent	0	0	0	0
+FD	ic __eou__	user	0	0	0	0
+AE	Promises and Array stuff etc, are library features __eou__	agent	0	0	0	0
+FQ	Async/await as well, right? __eou__	user	0	0	0	0
+IG	async/await yes __eou__	agent	0	0	0	0
+FD	that also  has a down-compile __eou__	agent	0	0	0	0
+FD	Promises are library features, you can be running es5 in the browser and use promises __eou__	agent	0	0	0	0
+FD	as long as the browser has support for promises __eou__	agent	0	0	0	0
+CC	ic __eou__	user	0	0	0	0
+FD	if it's an older browser that does not, you need poly-fill __eou__	agent	0	0	0	0
+FD	like for older IE __eou__	agent	0	0	0	0
+FD	if you are runing on modern browser you can target es5 but use es6 libs without a polyfill __eou__	agent	0	0	0	0
+FD	need to check how to detect if it is available and load or not core-js __eou__	user	0	0	0	0
+FD	there are many many projects out there that target es5 and use es6 libs __eou__	agent	0	0	0	0
+FD	it's very common __eou__	agent	0	0	0	0
+CC	ic __eou__	user	0	0	0	0
+FD	need to check on that __eou__	user	0	0	0	0
+FD	when you have multiple options you don’t know which one to pick :P __eou__	user	0	0	0	0
+IG	there are other options too... like not use es6 inyou rlibs and then just load types for core-js __eou__	agent	0	0	0	0
+FD	sort-of the equivalent though __eou__	agent	0	0	0	0
+FD	it's just about who wrote the typings at that point __eou__	agent	0	0	0	0
+CC	ic __eou__	user	0	0	0	0
+CC	do you recommend core-js? [<-LINK->]  __eou__	user	0	0	0	0
+IG	yes, that's the most common __eou__	agent	0	0	0	0
+CC	ic __eou__	user	0	0	0	0
+FD	ok, now I need to check how to detect at runtime, whether or not ES6 is available in a browser, and then load core-js __eou__	user	0	0	0	0
+FD	if you don't care about size, you can just always load it __eou__	agent	0	0	0	0
+FD	you can also just use the shims you need from it __eou__	agent	0	0	0	0
+FD	such as only promises if you only need that __eou__	agent	0	0	0	0
+CC	 [<-LINK->]  __eou__	user	0	0	0	0
+FD	No IE will ever support promises… even the latest IE11 heheheh __eou__	user	0	0	0	0
+PF	galvesribeiro: true that, given that IE is no longer developed __eou__	agent	0	0	0	0
+UF	yup __eou__	user	0	0	0	0
+AE	I hope it get gone from Windows :P __eou__	user	0	0	0	0
+IG	it's time for safari to become the bane of developer's existence with undocumented and non-standard behavior..... IE has held that crown way too long.. __eou__	agent	0	0	0	0
+GG	hahaha yeah __eou__	user	0	0	0	0
+FD	well, Chrome follow the standard, but both Chrome and WebKit engines are a pain, because they have 0 docs __eou__	user	0	0	0	0
+FD	ChakraCore in other hand, is very well documented, and the MS team working on it is very kind __eou__	user	0	0	0	0
+CC	you mean ChakraCore vs v8? __eou__	agent	0	0	0	0
+IG	yes __eou__	user	0	0	0	0
+
+OQ	how do you extend an rxjs Observable? __eou__	user	0	0	0	0
+FD	basically this lineRx.Observable.$watch = function (scope, watchExpression, objectEquality)from [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	I am getting the following messages when I run tsc. __eou__	user	0	1	1	2
+FD	declare var require: Require; ~~~node_modules/@types/requirejs/index.d.ts(416,13): error TS2403: Subsequent variable declarations must have the same type.  Variable 'require' must be of type 'NodeRequire', but here has type 'Require'.3:03:07 PM - Compilation complete. Watching for file changes. __eou__	user	0	1	0	0
+FD	i have node_modules  as exclude in tsconfig.json __eou__	user	0	1	0	0
+CC	DavisSylvester: you have two conflicting declarations for require. You likely have both@types/nodeand@types/requirejs. Is there a reason you need both? __eou__	agent	0	1	0	0
+FD	Is your project AMD? __eou__	agent	0	1	0	0
+NF	nope __eou__	user	0	1	0	0
+IG	then try uninstalling@types/requirejs __eou__	agent	1	1	0	1
+PF	thanks a million.   __eou__	user	0	1	0	0
+IG	I removed @types/requirejs and all is HAPPY! __eou__	user	1	1	0	1
+PF	Thanks@dtabuenc __eou__	user	0	1	0	0
+
+OQ	 [<-CODE->] How to do it without Typescript warning? B cannot extend A. __eou__	user	0	0	0	0
+CQ	DanielKucal: so you want to start with an array ofAbut then mutate each element so it becomes aB? __eou__	agent	0	0	0	0
+FD	Yes, should i create new array of elements instead? __eou__	user	0	0	0	0
+NF	I don't know,  __eou__	agent	0	0	0	0
+CC	I'd need more context, but you can get it to work as is. __eou__	agent	0	0	0	0
+
+OQ	does this look ok for the typedef.d.ts __eou__	user	0	0	0	0
+FD	typings.d.ts __eou__	user	0	0	0	0
+CC	?do you have al ink to the js file you downloaded __eou__	agent	0	0	0	0
+IG	just dodecalre module 'mymod'; __eou__	agent	0	0	0	0
+FD	no body no block __eou__	agent	0	0	0	0
+FD	if all you don't care things will be any __eou__	agent	0	0	0	0
+AC	yea I can get that need a sec __eou__	user	0	0	0	0
+FD	 [<-LINK->]  __eou__	user	0	0	0	0
+
+OF	How come the latest release is listed as 2.2 here: [<-LINK->] But the version in npm is 2.1.5? [<-LINK->]  __eou__	user	0	0	0	0
+CC	aaronbeall: It's 2.2.1 for me, check again? __eou__	agent	0	0	0	0
+CC	yeah it's 2.2.1 not sure why you are seeing 2.1.5 __eou__	agent	0	0	0	0
+FD	woah, it literally just changed before my eyes... __eou__	user	0	0	0	0
+FD	and yep,nownpm install typescriptpicks up 2.2 __eou__	user	0	0	0	0
+CC	did it just change? or some kind of cache issue on my local? __eou__	user	0	0	0	0
+IG	no it's been 2.2.1 since a couple days I think __eou__	agent	0	0	0	0
+FD	must be a cache issue __eou__	agent	0	0	0	0
+NF	yeah I thought so... weird __eou__	user	0	0	0	0
+
+OQ	Hi. Is there any simply way (eg some decorator) to convert an interface to a class which will wrap one such object? [<-CODE->]  __eou__	user	0	1	1	2
+IG	larvanitis:  [<-CODE->]  __eou__	agent	0	1	0	0
+CC	dany-on-demand: Thanks but I would like to make it dynamic (at compile time) so that if the IPerson changes my  Friend would automatically get the extra properties __eou__	user	0	1	0	0
+IG	dany-on-demand: The use case is: I have an api libary which defines its responses using interfaces and returns plain objects. I would like to easily extend some responses with custom functionality without having to manually track and apply changes from the source interface __eou__	user	1	1	0	1
+
+OQ	What Typescript version is suggested for compiling  RXJS ? __eou__	user	0	1	1	2
+FD	In order to avoid these issues __eou__	user	0	1	0	0
+IG	Deviad: You need core-js or a similar lib to add Promise support. __eou__	agent	1	1	0	1
+
+OQ	does it make sense to doboolean|voidas return signature of a function? __eou__	user	0	1	1	2
+JK	chrillewoodz: want to know what I think ? __eou__	agent	0	1	0	0
+GG	:) __eou__	agent	0	1	0	0
+FD	ghetolay: Yes please tell me  __eou__	user	0	1	0	0
+IG	It's programatically right but designely weird __eou__	agent	1	1	0	1
+
+OP	Given this: [<-CODE->] Why does this cause an error: [<-CODE->] But this does not: [<-CODE->]  __eou__	user	0	1	1	2
+IG	Matmo10: ahh.. the dangers of javascript type coercion __eou__	agent	1	1	0	1
+FD	it's actually keeping you from doing a  subtle error __eou__	agent	1	1	0	1
+FD	TemplateType.Complexis equal to0 __eou__	agent	1	1	0	1
+FD	so when you do !templateType on a TemplateType.Complexit will actually return true __eou__	agent	1	1	0	1
+FD	which means on the right hand side of your ||templateType will never be able to be TemplateType.Complex __eou__	agent	1	1	0	1
+FD	You should just always avoid doing short hand!templateType when you actually mean to do a null check __eou__	agent	1	1	0	1
+FD	you should always be explicit on your null checks, or you'll run into a lot of subtle js bugs. __eou__	agent	1	1	0	1
+PF	Ah I see..that makes sense now __eou__	user	0	1	0	0
+PF	Thank you :) __eou__	user	0	1	0	0
+
+OQ	Hey guys. What's your favorite Ajax NPM utility that has built in TypeScript support? __eou__	user	0	0	0	0
+FD	Or should I go with something like 'Request' and grab a .ts from DefinitelyTyped? __eou__	user	0	0	0	0
+IG	vyrotek: as long as there is typings shouldn't be any difference between a ts and a js lib __eou__	agent	0	0	0	0
+
+OQ	If I'm coding node with TS, should I avoid npm packages which dont have declaration files or a@typespackage? __eou__	user	0	1	1	2
+IG	Keksike: If you need package, which dont have typings, so you can write your own __eou__	agent	1	1	0	1
+FD	dtabuenc: When I try to use a npm package which doesnt have a declaration file (@types), I get a errorCould not find a declaration file for module 'myLibrary'when I try to import it withimport * as myLib from 'myLibrary'; __eou__	user	0	1	0	0
+FD	How can I get around that error? __eou__	user	0	1	0	0
+IG	you need to add a declaration __eou__	agent	1	1	0	1
+FD	at it's most basic you just have to do declare module 'myLibrary'; __eou__	agent	1	1	0	1
+FD	in that casemyLib will be type any __eou__	agent	1	1	0	1
+FQ	where should I do it so typescript knows how to use it? __eou__	user	0	1	0	0
+IG	usually in a file in your project like custom-typings.d.ts __eou__	agent	0	1	0	0
+FD	and then just make sure you include it in your compilation __eou__	agent	1	1	0	1
+PF	allright, thanks alot :) __eou__	user	0	1	0	0
+
+OP	 [<-CODE->] Guys, I'm new to typescript, how do I garantee the object been passed to.setis of a specific type (say, User)? __eou__	user	0	0	0	0
+IG	 [<-CODE->]  __eou__	agent	0	0	0	0
+FD	that's the easiest way to validate json against a defined interface __eou__	agent	0	0	0	0
+FD	however, if your json is read and stored an ananythen you can't do anything, this type of type checking is only valid at compile time __eou__	agent	0	0	0	0
+IG	hmm.. I see...setparam is defined asanyby angularfire lib, so I cant do anything right? __eou__	user	0	0	0	0
+FD	if your use case is developer written objects, then it doesn't matter if your.setsignature uses ananyfor a parameter, as long as you validate it ahead of time. you could use a passthru function to do this: [<-CODE->]  __eou__	agent	0	0	0	0
+UF	thanks! __eou__	user	0	0	0	0
+FQ	Hm.. when I retrieve my object from the server it adds a new field to it (.$key) so I cannot use my type (User) anymore. How can I handle this? __eou__	user	0	0	0	0
+IG	use an interface instead of a class? __eou__	agent	0	0	0	0
+FD	you probably don't need a class anyway __eou__	agent	0	0	0	0
+FD	it is an interface __eou__	user	0	0	0	0
+NF	sorry... brain wasn't fully engaged __eou__	agent	0	0	0	0
+GG	hehe __eou__	user	0	0	0	0
+FD	Why can't you use your type? __eou__	agent	0	0	0	0
+FD	extra properties don't matter __eou__	agent	0	0	0	0
+PF	yeah.. it should work fine __eou__	agent	0	0	0	0
+FD	i don't know. it saysProperty '$key' does not exist on type 'User' __eou__	user	0	0	0	0
+IG	only if you are trying to assign an object literal __eou__	agent	0	0	0	0
+FD	if you get it from a server it's fine __eou__	agent	0	0	0	0
+FD	I'm passing it via parameter __eou__	user	0	0	0	0
+CC	are you trying to access $key off of a variable of type User? __eou__	agent	0	0	0	0
+FD	if so, that's the problem __eou__	agent	0	0	0	0
+FD	ofabricio: if it's coming form the server, extra properties don't matter __eou__	agent	0	0	0	0
+FD	if you are coding the object in the code, it won't let you __eou__	agent	0	0	0	0
+IG	let foo: User = objFromServer; // this is fine __eou__	agent	0	0	0	0
+FD	console.lof(foo.$key); // this is not __eou__	agent	0	0	0	0
+PF	I see __eou__	user	0	0	0	0
+CC	Hmm.. but I need that key __eou__	user	0	0	0	0
+CC	then add it to the interface? __eou__	agent	0	0	0	0
+CC	should I create two interfaces? __eou__	user	0	0	0	0
+IG	just add a$key?: ...to the interface __eou__	agent	0	0	0	0
+FD	either that or cast it to <any> :) __eou__	agent	0	0	0	0
+NF	i cannot send a key to the server@dtabuenc __eou__	user	0	0	0	0
+FD	or use intersection type __eou__	agent	0	0	0	0
+FD	or extend a base interface with the key __eou__	agent	0	0	0	0
+FD	you have lots of options __eou__	agent	0	0	0	0
+IG	interface IServerObject { $key: string; } __eou__	agent	0	0	0	0
+FD	function foo(obj: IServerObject & User) { } __eou__	agent	0	0	0	0
+FD	or  you can dointerface User extends IServerObject {} __eou__	agent	0	0	0	0
+FD	lots of weird stuff you can do :) __eou__	agent	0	0	0	0
+UF	right __eou__	agent	0	0	0	0
+FD	it's up to you and what you are trying to do __eou__	agent	0	0	0	0
+FD	if you cannot send$keyto the server, you'll have to run your object through a sanitize function to strip the unwanted bits, no way to automate that unfortunately __eou__	agent	0	0	0	0
+AC	Hmm.. I think I'm going to create two interfaces then __eou__	user	0	0	0	0
+PF	that sounds like the most reasonable plan __eou__	agent	0	0	0	0
+CC	not sure yet if I will ever send the objects i retrieve back to the server so this seems to fit better __eou__	user	0	0	0	0
+FD	and either use polymorphism or a type union to express the actual object __eou__	agent	0	0	0	0
+CC	a type union is a third type? __eou__	user	0	0	0	0
+FD	look up Union Types on this page: [<-LINK->]  __eou__	agent	0	0	0	0
+UF	Thanks! __eou__	user	0	0	0	0
+
+OQ	Ok great. What's the advantage of usingPromise<void>overPromise<undefined>in this case? Where do they behave differently? __eou__	user	0	1	1	2
+IG	grovesNL: I don't think it will be different in practice, but void really indicates that you expect no value __eou__	agent	1	1	0	1
+FD	vs undefined implies you would callresolve(undefined) __eou__	agent	1	1	0	1
+FD	even though in practice it won't make a difference, void is more semantically correct __eou__	agent	1	1	0	1
+PF	dtabuenc: right, it does seem to make more sense semantically.  __eou__	user	0	1	0	0
+AC	Alright I'll try outPromise<void> __eou__	user	1	1	0	1
+PF	thanks __eou__	user	0	1	0	0
+
+OQ	Hi all, quick question on testing with typescript/nodejs. What's the best practice for testing a file (without testing its dependencies/mocking them) if I'm not using an IoC container for dependency injection? __eou__	user	0	1	1	2
+FD	In the past I've used proxyquire/mockery to "hijack" node's require but I'm having a little difficulty getting that setup with typescript+ __eou__	user	0	1	0	0
+IG	ezra-quemuel: with jest (ts-jest) you can mock es6 modules __eou__	agent	0	1	0	0
+FD	The trick/problem is that, when es6 modules imports are transpiled to commonjs require calls they are hoisted to the top of the file __eou__	agent	1	1	0	1
+FD	babel-jest hoist your mock calls above the  require calls, but ts-jest doesn't support it yet.So what you can do is to put your jest.mock calls on a module and import first thing to your test file __eou__	agent	1	1	0	1
+FD	ts-jest has other issues, like sometimes inaccurate coverage reports. but its working and super fast __eou__	agent	1	1	0	1
+FD	anyway, i would advocate to inject all the dependencies and import only type information __eou__	agent	1	1	0	1
+UF	thanks@Bnaya i think i may end up having to do that __eou__	user	0	1	0	0
+
+OQ	What are the valid characters for property names in TS? Cuneiform  is not (; Is there a list/rule-book I can check? __eou__	user	0	1	1	2
+IG	that is not typescript specific I think, that is javascript in general __eou__	agent	1	1	0	1
+PF	yea, just realized...  __eou__	user	0	1	0	0
+IG	I found es6 character validator __eou__	user	1	1	0	1
+
+OF	I have an issue [<-ISSUE->] that haven't been triaged for 9 days now while later issues i've opened are already resolved.Is it possible it got missed? __eou__	user	0	0	0	0
+FD	There is upcoming feature to be able to import plain json to typescript __eou__	user	0	0	0	0
+FD	until then you can change the extension to .tsand to something like:export default JSONCONTENT __eou__	user	0	0	0	0
+FD	or if you are using any code bundler (webpack etc) you can use json-loader. but then the returned object won't pick the json structure byitself. __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+FD	And something maybe more simple: [<-CODE->] __eou__	user	0	0	0	0
+
+OQ	is there a semver compare tool for .d.ts files ? __eou__	user	0	1	1	2
+FD	compares two versions of .d.ts and suggests either major, minor or revision bump based on differences in types __eou__	user	0	1	0	0
+IG	 [<-LINK->] may be able to help with that@spion __eou__	agent	1	1	0	1
+FD	there is some support there for diffing .d.ts files in some capacity __eou__	agent	1	1	0	1
+FD	but I haven't used it __eou__	agent	0	1	0	0
+CC	hmm. It doesn’t seem like its based on the language service API, and... __eou__	user	0	1	0	0
+FD	it seems like I might want to read the paper to understand it, and its not linked :D __eou__	user	0	1	0	0
+AE	I was thinking, how hard can it be? no changes to types = revision, “additions" to covariant positions and removals from contravariant positions = minor, every other change in types = major __eou__	user	0	1	0	0
+FD	:D __eou__	user	0	1	0	0
+FD	but thats probably a bit naive __eou__	user	0	1	0	0
+
+OQ	Hi, I am beginner in TypeScript, and I would like  to ask next question: in JS arrow functions don't have own "this" and "arguments" and what about TS functions? __eou__	user	0	1	1	2
+IG	BloodofDen: Arrow functions are transpiled to regular functions if your target is ES5 but I believethisis assigned to a variable to lock the execution context.Well in general, how something behave in TS should closely follow how it behave in JS. __eou__	agent	1	1	0	1
+
+OQ	if you should never use Number why does it even exist? __eou__	user	0	1	1	2
+IG	never is a too strong word __eou__	agent	1	1	0	1
+FD	oh. __eou__	user	0	1	0	0
+IG	wz2b: you should always use primitives and let javascript handle the boxing/unboxing __eou__	agent	1	1	0	1
+FD	thing like Number are there to serve as the prototype for all number operations __eou__	agent	1	1	0	1
+FD	and it's ok to use Number as a function to do runtime type conversion __eou__	agent	1	1	0	1
+FD	e.g.var myNumber = Number('5') __eou__	agent	1	1	0	1
+FD	Although discouraged... if you really needed to add something to the number prototype you could do so... e.g. [<-CODE->]  __eou__	agent	1	1	0	1
+UF	cool __eou__	user	0	1	0	0
+
+OQ	i wonder if anyone can help me with this query.  I have an array of line items.  i want to loop over them and convert them to a different type of line items (typical transform type stuff).  but within my loop, the ts compiler is not recognising that my line item as a property called 'quantity' for example __eou__	user	0	0	0	0
+CQ	FatherDougal: Code example? __eou__	agent	0	0	0	0
+UF	hinell: thanks for coming back to me,  __eou__	user	0	0	0	0
+FD	it seems that, my property 'quantity' wasn't seen as public, i had presumed it was public by default.. weird. __eou__	user	0	0	0	0
+
+OQ	Is it possible to create an object literal in TypeScript which extends a class? For example, consider the following: [<-CODE->]  [<-CODE->]  [<-CODE->]  __eou__	user	0	0	0	0
+IG	sharwell: you can use class expressions: [<-CODE->]  __eou__	agent	0	0	0	0
+UF	Oh, interesting! __eou__	user	0	0	0	0
+FD	JS also has__proto__for object literals, but it doesn't play well with TS [<-CODE->]  __eou__	agent	0	0	0	0
+FD	you would need to cast it, TS doesn't realise this object inherits fromotherObject __eou__	agent	0	0	0	0
+
+OQ	@dtabuenc And to consider using inheritance when a base class needs a way to access the child (polymorphism)What? __eou__	user	0	0	0	0
+CQ	hinell: did you not understand my polymorphism point? __eou__	agent	0	0	0	0
+FD	dtabuenc: Yep. I didn't. __eou__	user	0	0	0	0
+
+OP	How do I export default a function that can return two different types? __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+FD	trying with generics didn't help __eou__	user	0	0	0	0
+IG	it would be just string | INamespace __eou__	agent	0	0	0	0
+CC	tried that didn' work __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+FD	when I try to use it later on and try to decide which function I have to return depending on if it is string or INamespace I get this __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+CQ	hows the definition of "namespace"? __eou__	agent	0	0	0	0
+FD	trying to work on that too __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+FD	lets start from the beginning __eou__	user	0	0	0	0
+FD	namespaces.ts [<-CODE->] __eou__	user	0	0	0	0
+FD	namespace.ts [<-CODE->] __eou__	user	0	0	0	0
+FD	having difficulties with one function returning and accepting different types __eou__	user	0	0	0	0
+IG	then you writereturn namespaces.hasOwnProperty(prefix) ? {space: namespaces[prefix], local} : local;it infers a type to the function __eou__	agent	0	0	0	0
+FD	and it then compares to the type you have defined for it __eou__	agent	0	0	0	0
+CC	? __eou__	user	0	0	0	0
+FD	lets say if you replace __eou__	agent	0	0	0	0
+FD	return namespaces.hasOwnProperty(prefix) ? {space: namespaces[prefix], local} : local; __eou__	agent	0	0	0	0
+FD	with [<-CODE->] __eou__	agent	0	0	0	0
+FD	then you mouseover over out __eou__	agent	0	0	0	0
+FD	(thats just for the mouseover thing) __eou__	agent	0	0	0	0
+FD	oops type there, editing __eou__	agent	0	0	0	0
+FD	typo __eou__	agent	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+AC	wait lemme paste it here __eou__	agent	0	0	0	0
+FD	somehow [<-CODE->]  [<-CODE->] __eou__	user	0	0	0	0
+GG	ah I see __eou__	user	0	0	0	0
+FD	lemme check here __eou__	agent	0	0	0	0
+PF	that works now __eou__	user	0	0	0	0
+FD	ah there __eou__	agent	0	0	0	0
+IG	 [<-LINK->] __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+IG	local can be string or INamespaceso{ space: namespaces[prefix], local }can be{ Inamespace, string }which is againts your function type __eou__	agent	0	0	0	0
+FD	hmm general advice you should not be declaring types everywhere __eou__	agent	0	0	0	0
+FD	{ space: namespaces[prefix], local }can be{ string, INamespace | string } __eou__	user	0	0	0	0
+PF	yes, that.  unless you cast local to string __eou__	agent	0	0	0	0
+AC	Well I want to define it as accurate as possible __eou__	user	0	0	0	0
+FD	so I have a good definition file as well __eou__	user	0	0	0	0
+AC	actually I think I need to use generics somehow because of the different input leads to different output __eou__	user	0	0	0	0
+NF	probably not __eou__	agent	0	0	0	0
+IG	 [<-CODE->] __eou__	agent	0	0	0	0
+FD	you are killing the return type of the thing by declaring it as a functions __eou__	agent	0	0	0	0
+FD	lets say creatorFixed = () => A and creatorInherit = () => Bts would infer A | B as return __eou__	agent	0	0	0	0
+UF	probably __eou__	user	0	0	0	0
+CC	but how can I untangle something like that __eou__	user	0	0	0	0
+FD	And why is does (ah this is it) [<-CODE->] is not of [<-CODE->] __eou__	user	0	0	0	0
+FD	just to add more context, I'm trying to convert this [<-LINK->] to typescript __eou__	user	0	0	0	0
+FD	and I started with the namespaces.js and so on __eou__	user	0	0	0	0
+JK	hmm __eou__	agent	0	0	0	0
+IG	1st thing you should just replace imports and exports __eou__	agent	0	0	0	0
+FD	let the things untyped __eou__	agent	0	0	0	0
+FD	oh its already in es6 modules __eou__	agent	0	0	0	0
+FD	 [<-CODE->] this one is a bit tricky. see they return functions which reference "this" __eou__	agent	0	0	0	0
+FD	its a good idea that you turn on "noImplicitThis", and the functions cannot be converted to arrow format there [<-CODE->] __eou__	agent	0	0	0	0
+AE	otbe: i think you could maybe achieve that by simply using a function... __eou__	agent	0	0	0	0
+GG	oh dang __eou__	agent	0	0	0	0
+FQ	is there any way to "remove a piece" from a type union? [<-CODE->] __eou__	agent	0	0	0	0
+IG	Not yet. __eou__	agent	0	0	0	0
+FQ	any tips on what to search for that on the issue tracker? __eou__	agent	0	0	0	0
+FD	im very bad at finding things there.... __eou__	agent	0	0	0	0
+FD	<3 __eou__	agent	0	0	0	0
+FD	using singletons in javascript is kinda stockholm syndrome __eou__	agent	0	0	0	0
+
+OQ	Hmm.. I'm seeing some weirdness with namespace declaration merging __eou__	user	0	1	1	2
+FD	So I have this declaration file [<-CODE->]  __eou__	user	0	1	0	0
+FD	And then I use it like this: [<-CODE->]  __eou__	user	0	1	0	0
+FD	and that's  fine. __eou__	user	0	1	0	0
+FD	but I want to export FooInterface alias. __eou__	user	0	1	0	0
+FD	but when I try that I get an error [<-CODE->]  __eou__	user	0	1	0	0
+IG	You are switching form a script file to a module file when you add top-level exports. __eou__	agent	1	1	0	1
+FD	Namespace merging does not work across module files, if I remember correctly. __eou__	agent	1	1	0	1
+AC	hmm.. so maybe I have to put a declare global around the namespace __eou__	user	1	1	0	1
+FD	let me try __eou__	user	0	1	0	0
+PF	bingo! Thanks@unional __eou__	user	0	1	0	0
+
+OQ	I find myself writing code like this a little bit: [<-CODE->]  [<-CODE->]  __eou__	user	0	1	1	2
+IG	you would need to declare the scope of the variable outside the loop, no way around that __eou__	agent	1	1	0	1
+

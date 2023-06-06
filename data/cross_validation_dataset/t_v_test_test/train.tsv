@@ -1,0 +1,92 @@
+OQ	I am looking at your main page [<-LINK->] I am 99.99% positive that the past tense spelling should be "bootstrapped" with 2 p's.   (last paragraph)  __eou__	user	0	0	0	0
+
+OQ	Has anyone had the issue of all fonts being italic?  Using Edge  It only happens on one of my machine  Clearing cache, signing out etc nothing helped  __eou__	user	0	1	1	2
+FQ	Sounds like a font/style override in your browser, all sites or just one? __eou__	agent	0	1	0	0
+IG	Only Gitter __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+FD	And it started totally out of nowhere __eou__	user	0	1	0	0
+FD	 [<-ISSUE->]  __eou__	user	0	1	0	0
+IG	that it only happens on one computer and we've heard no other reports of it, would lead me to believe it's something specific with your setup __eou__	agent	0	1	0	0
+FD	does Edge have multiple profiles and does it happen on the same machine in another browser <--- that would actually be interesting, i have a theory __eou__	agent	0	1	0	0
+FD	which is, we use Source Sans font, but we also look for a local version of it before going out to the web for a web font. andmaybeyou have a corrupt local version of source sans on your machine where the regular style is somehow italic __eou__	agent	0	1	0	0
+AC	can you check your installed fonts? __eou__	agent	0	1	0	0
+AC	you can also try inspect and go down to.fonts-loaded bodyclass and removeSourceSansLocal __eou__	agent	0	1	0	0
+JK	felixfbecker:  __eou__	agent	0	1	0	0
+AC	let me check __eou__	user	0	1	0	0
+PF	it works fine in Chrome __eou__	user	0	1	0	0
+FD	I heard some other user had the same problem __eou__	user	0	1	0	0
+NF	Removing SourceSansLocal does not solve it __eou__	user	0	1	0	0
+IG	try removing any of the other ones one at a time from left to right __eou__	agent	0	1	0	0
+PA	removing source-sans-pro fixes it __eou__	user	0	1	0	0
+IG	So now it is font-family: Source Sans Pro,-apple-system,Roboto,pt sans,calibri,sans-serif; __eou__	user	0	1	0	0
+FD	But the font looks different now than in Chrome __eou__	user	0	1	0	0
+AE	source-sans-prois the web font - so somehow your browser is displaying/loading italic in place of regular __eou__	agent	0	1	0	0
+AC	Okay, so I went to fontsquirrel and installed Source Code Pro __eou__	user	0	1	0	0
+NF	Now only the chat box is italic, the chat and chat rooms not anymore __eou__	user	0	1	0	0
+FD	I don't see any network requests for the font __eou__	user	0	1	0	0
+IG	i can see why, the intput text area for some reason doesn't have the local fall-back font __eou__	agent	0	1	0	0
+NF	But still, there is an issue when the user does not have the font downloaded __eou__	user	0	1	0	0
+FQ	i still don't understand why Edge is displaying italics - doesn't happen on your other machine, same OS/Edge versions? __eou__	agent	0	1	0	0
+IG	hm actually my other machine is on stable, while this one is on Insiders.  __eou__	user	0	1	0	0
+AE	ut I don't think that is the problem, because it appeared out of nowhere and I was on Insiders before already __eou__	user	0	1	0	0
+FQ	is there a reason the gist preview box doesn't get scrollbars when embedded vs how GitHub's own embed URLs work eg on a blog? __eou__	agent	0	1	0	0
+
+OQ	I getError: No such image, container or task: a9952be2c74f2c6f3a7ae9faf12dc1576367bba5197fe74c243b637289fb653b  but an exec id is not an image, container or task  so docker inspect, as far as I can tell, does not support quering exec ids  __eou__	user	0	1	1	2
+AE	mikewrighton: I think you are correct, inspect is mostly for containers and images __eou__	agent	1	1	0	1
+
+OQ	docker-compose down && docker-compose build && docker-compose up, i used to be able to pair these and it would only rebuild images when things needed to be. my containers are now being rebuilt from scratch every time. any reason one could think?   [<-CODE->] used to be, that if i hadnt changed requirements.txt, it would reuse that cache. i have not changed requirements.txt and for some reason its bailing and not using the cache  __eou__	user	0	1	1	2
+CQ	is your source is changing between builds? or are you clearing any dangling containers at any point? __eou__	agent	0	1	0	0
+CC	its rebuilding containers that i have definitely not changed. for example, im changing stuff in a django container, but theres a node container i never touch, and its going through all the npm install bs that usually only happens when the package.json is different (invalidates the build) __eou__	user	0	1	0	0
+IG	looks like cache is actually breaking at step 3; which is very strange __eou__	agent	1	1	0	1
+CQ	is something else changing the contents of/usr/srcfrom a shared volume? __eou__	agent	0	1	0	0
+
+OQ	Hello Friend  Hello all  I need help  I am using trackBy in ngFor  but the variables defined in constructor are not accessible in trackBy function  please help me  DzmitryShylovich: please help me  __eou__	user	0	1	1	2
+CQ	gargtushar: why do u need the variables defined in constructor inside trackBy? __eou__	agent	0	1	0	0
+CQ	gargtushar: why not set those variables somewhere in your class? Then, in thetrackByfunction, you can refer them withthis.property. __eou__	agent	0	1	0	0
+CC	they are also not available here __eou__	user	0	1	0	0
+FD	<li #key class = "dropdown"  *ngFor="let children of list.children_data, trackBy: getdetails; let i = index;" >{{children.name}}</li> __eou__	user	0	1	0	0
+FD	export class NavlistComponent  implements OnInit { @Input() list: any;   a : any;   childList : any;   arry : any;   constructor(private elRef:ElementRef, public magentoservice : MagentoApiService) { }   ngOnInit() {   } [<-CODE->] } __eou__	user	0	1	0	0
+FD	I need to hit the service in the trackBy function __eou__	user	0	1	0	0
+JK	wut __eou__	agent	0	1	0	0
+FD	i want to hit a http get request in the track by on the basis of ID of children and returns is details to dislay __eou__	user	0	1	0	0
+AE	if I understood correctly, you don't use trackBy to make requests. RT wut. __eou__	agent	0	1	0	0
+CQ	gargtushar: whyyyyy? __eou__	agent	0	1	0	0
+AE	trackBy cant resolve async functions __eou__	agent	0	1	0	0
+AE	and it shouldn't at all __eou__	agent	0	1	0	0
+IG	u should stop watching anime really __eou__	agent	0	1	0	0
+CQ	gargtushar: I refuse to believe that, you can query for their ID afterwards but not before? __eou__	agent	0	1	0	0
+RQ	please tell me how to make that accessible in trackBy function __eou__	user	0	1	0	0
+FQ	but i am unable to pass extra params to this function __eou__	user	0	1	0	0
+FQ	how can i pass __eou__	user	0	1	0	0
+CQ	gargtushar: how can you pass what? __eou__	agent	0	1	0	0
+GG	gargtushar: hope u are trolling :) __eou__	agent	0	1	0	0
+CC	I want that magentoservice variable inside trackBy function __eou__	user	0	1	0	0
+
+OQ	Can somebody help me? I my synchronization get stuck on 99%. What am I doing wrong?  Why does synchronizing stop at 99%? Anybody?  __eou__	user	0	0	0	0
+
+OQ	I am getting the following messages when I run tsc.  declare var require: Require; ~~~node_modules/@types/requirejs/index.d.ts(416,13): error TS2403: Subsequent variable declarations must have the same type.  Variable 'require' must be of type 'NodeRequire', but here has type 'Require'.3:03:07 PM - Compilation complete. Watching for file changes.  i have node_modules  as exclude in tsconfig.json  __eou__	user	0	1	1	2
+CC	DavisSylvester: you have two conflicting declarations for require. You likely have both@types/nodeand@types/requirejs. Is there a reason you need both? __eou__	agent	0	1	0	0
+FD	Is your project AMD? __eou__	agent	0	1	0	0
+NF	nope __eou__	user	0	1	0	0
+IG	then try uninstalling@types/requirejs __eou__	agent	1	1	0	1
+PF	thanks a million.   __eou__	user	0	1	0	0
+IG	I removed @types/requirejs and all is HAPPY! __eou__	user	1	1	0	1
+PF	Thanks@dtabuenc __eou__	user	0	1	0	0
+
+OQ	Hi,I am new to docker and i am building lemp stack using docker every thing work as expected beside some permission issues, how to fix permissions so that php can create files/folders ( the right way).Knowing that i am using nginx:alpine, php:fpm-alpine and a custom container volume  __eou__	user	0	1	1	2
+IG	smahi: read back a little bit, I pasted a link regarding a good practice for changing permissions for an app __eou__	agent	0	1	0	0
+NF	dragon788: thank you for the link.I did not understand your last question :can you jus docker pullthe image that you are building from to see if it is locally?sorry about that. __eou__	user	0	1	0	0
+NF	smahi: sorry,  __eou__	agent	0	1	0	0
+CC	was mixing up my conversations, that one was for another convo __eou__	agent	0	1	0	0
+IG	kind of sad Gitter doesn't have threading like FlowDock, but that's probably the only thing I really miss, as everything else is very GitHub oriented with the pulls/commits/issues __eou__	agent	1	1	0	1
+UF	dragon788: Thank you again for your kindness and help __eou__	user	0	1	0	0
+
+OQ	Hi there. I have just installed the windows Ethereum wallet from ethereum.org. The synchronisation starts but after about two minutes the processing goes into error each time I start it. I see error "ipcProviderBackend - send request failed: Unable to connect to socket: timeout". Is there somebody here who can explain what the problem is?  __eou__	user	0	1	1	2
+
+OQ	Hi, I have a volume mapped from host to container in docker-compose.yml but the container files don’t seem to update when I change the host file. Any suggestions?  __eou__	user	0	1	1	2
+CQ	arjunurs: the volume is mapped in Dockerfile? __eou__	agent	0	1	0	0
+CC	darkSasori: the volume is mapped in docker-compose.yml file [<-CODE->] __eou__	user	0	1	0	0
+FD	darkSasori: I have this in the Dockerfile [<-CODE->] __eou__	user	0	1	0	0
+IG	arjunurs: and in your Dockerfile has the declaration of volume```VOLUME /source __eou__	agent	1	1	0	1
+FD	arjunurs: you need addVOLUME /sourceto work __eou__	agent	1	1	0	1
+

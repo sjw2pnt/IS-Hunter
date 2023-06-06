@@ -1,0 +1,1017 @@
+OQ	Hi, I wanted to use TS'sHarnessAPIs to better verify the correctness of my typings forramda.js, but had trouble importing them since it doesn't export its namespace. Has anyone used these before? __eou__	user	0	1	1	2
+FD	(hi@ShadowManu:D, please consider pulling my tests/documentation to your pug pr! :P) __eou__	user	0	1	0	0
+CQ	never heard of harness, what is that? __eou__	agent	0	1	0	0
+FD	TypeScript uses it to test compilation output for different use-cases to prevent regressions. __eou__	user	0	1	0	0
+IG	domoritz: My guess forts.TypeFlags.Anonymous that now only ts.ObjectFlags.Anonymous is possible, but I'm only guessing __eou__	agent	1	1	0	1
+FD	ts.NodeFlags.Abstract seems to be only available asts.ModifierFlags.Abstract __eou__	agent	1	1	0	1
+AE	Since I have no Idea what your ts to json compiler does it is hard to help you out :) __eou__	agent	0	1	0	0
+FD	tuple is also now in object __eou__	agent	1	1	0	1
+FD	and reference also __eou__	agent	1	1	0	1
+FD	just a reminder@domoritz add more documentation to your lib code ;) __eou__	agent	1	1	0	1
+IG	con-ssc: : json-schema does... schemas for json. his lib would allow reusing TS's compile-time sanity checks during run-time (i.e. on JSON data coming in over the wire), __eou__	user	1	1	0	1
+PF	which is pretty cool. :) __eou__	user	0	1	0	0
+
+OP	hey all ... i'm trying to get scroll working with python and android but it doesn't seem to be implemented with selenium3? i've searched everywhere and my brain is hurting ... in python-client sourcehttps://github.com/appium/python-client/blob/master/appium/webdriver/webdriver.pyi see the following: [<-CODE->]  __eou__	user	0	1	1	2
+FD	i've tried [<-CODE->]  __eou__	user	0	1	0	0
+FD	doesn't seem to work __eou__	user	0	1	0	0
+FD	 [<-CODE->] ^this one gave me an error saying str is not a func __eou__	user	0	1	0	0
+FD	i'm testing websites not apps .. so no api ... any help is appreciated __eou__	user	0	1	0	0
+FD	this doesn't work [<-CODE->]  __eou__	user	0	1	0	0
+FD	i get the following: [<-CODE->]  __eou__	user	0	1	0	0
+IG	I've had luck scrolling with a swipe event - you might try that! __eou__	agent	1	1	0	1
+FD	(I'm using Mocha though) __eou__	agent	0	1	0	0
+CC	could you send me an example? __eou__	user	0	1	0	0
+GG	Sure __eou__	agent	0	1	0	0
+UF	thank you so much __eou__	user	0	1	0	0
+GG	i think i'm going to go bald soon __eou__	user	0	1	0	0
+GG	lol __eou__	agent	0	1	0	0
+IG	 [<-CODE->]  __eou__	agent	0	1	0	0
+UF	thank you ..  __eou__	user	0	1	0	0
+AC	.let me try this ... __eou__	user	0	1	0	0
+FD	np!  Beware though this is Mocha not python. __eou__	agent	0	1	0	0
+FD	(you could probably tell :)  ) __eou__	agent	0	1	0	0
+FD	haha no worries .. going to try and translate __eou__	user	0	1	0	0
+UF	thanks thanks __eou__	user	0	1	0	0
+CC	did it work? __eou__	agent	0	1	0	0
+NF	ugh nope __eou__	user	0	1	0	0
+FQ	selenium.common.exceptions.WebDriverException: Message: Not yet implemented. Please help us: http://appium.io/get-involved.html __eou__	user	0	1	0	0
+FD	simply trieddriver.swipe(100, 100, 100, 400) __eou__	user	0	1	0	0
+FD	python appium client says [<-CODE->]  __eou__	user	0	1	0	0
+PF	mmcintyre123: thanks for trying tho __eou__	user	0	1	0	0
+IG	I can't help too much with Python unfortunately but I can tell you that in Mocha the swipe action is part of the wd library - so I have to [<-CODE->]  __eou__	agent	0	1	0	0
+IG	I am seeing instruments fail after 90000 ms not being able to locate device. I specify iPhone Simulator is it better to be explicit like provide iPhone 6? __eou__	agent	0	1	0	0
+PF	mmcintyre123: ah ... hmm ... let me try with mocha ... might take me a while __eou__	user	0	1	0	0
+GG	reywinters03: np - good luck! __eou__	agent	0	1	0	0
+
+OQ	Hi people, I love Gitter, coming from Slack. But what's really annoying is that "eyeballs" indicator. It was much clearer and more reliable in Slack which used a connection indicator. This issue [<-ISSUE->] ( [<-ISSUE->] ) was opened like two years ago, any news on an improved indicator? Thanks :) __eou__	user	0	0	0	0
+FD	I also experience the same as [<-ISSUE->] __eou__	user	0	0	0	0
+
+OQ	anyone know how to check for instances of vendor-specific apis? __eou__	user	0	1	1	2
+FD	liek for example, how do I check if window.mozRequestAnimationFrame is defined? __eou__	user	0	1	0	0
+FD	vs msRequestAnimationFrame etc __eou__	user	0	1	0	0
+CQ	stevekane: you mean so typescript won't complain?  __eou__	agent	0	1	0	0
+IG	I'd do if (window['mozRequestAnimationFrame']) {... __eou__	agent	1	1	0	1
+FD	Otherwise I'd just use a requestAnimationFrame polyfill. __eou__	agent	0	1	0	0
+
+OQ	anybody here have good insight on testing streams in node.js __eou__	user	0	1	1	2
+IG	jbelmont: You'll certainly have to write doubles and spies streams. You can start there to understand the idea of creating a stream  : [<-LINK->]  __eou__	agent	1	1	0	1
+FQ	imatmati: how about in tape.jsvar stream = test.createStream(opts)Create a stream of output, bypassing the default output stream that writes messages toconsole.log(). By default stream will be a text stream of TAP output, but you can get an object stream instead by setting opts.objectMode to true.` __eou__	user	0	1	0	0
+FD	imatmati: I will check out your markdown file as well __eou__	user	0	1	0	0
+
+OQ	I just downloaded the sample code for nodejs and ran the simple test, and got an error.Filed an issue 12 days ago here: appium/appium#7510I'm wondering if there's anything I'm missing?or should I just wait for someone to attend the issue on GH? __eou__	user	0	1	1	2
+CQ	goldylucks: i saw your log, could please post your code __eou__	agent	0	1	0	0
+CC	thanks@mgmanikandan87the code is posted in the issue __eou__	user	0	1	0	0
+CC	u want me to copy paste all of it here? __eou__	user	0	1	0	0
+FD	will b quite long ... __eou__	user	0	1	0	0
+CQ	is this android ? __eou__	agent	0	1	0	0
+FD	right ? __eou__	agent	0	1	0	0
+CC	mgmanikandan87: yes, ATM it's only android __eou__	user	0	1	0	0
+IG	goldylucks: try adding appActivity and appWaitActivity capabilities, appium is clearly giving up after few tries to find element. What is happening during actual test run? is the app launched correctly? __eou__	agent	1	1	0	1
+
+GG	sneek peek __eou__	user	0	1	1	2
+OQ	my progress so far, first "major" use of typescript, __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+FD	Some libraries didnt have type defs (npm-tracer etc) so I didnt learn how to do advanced type defs file yet, __eou__	user	0	1	0	0
+IG	looks like it's coming along nicely __eou__	agent	1	1	0	1
+FD	the only thing left to do is real time updates (websockets) and of course to sign up, i just spread some data around for testing, so not "real people" __eou__	user	0	1	0	0
+UF	thanks@dtabuenc __eou__	user	0	1	0	0
+FQ	also the icons will get smaller when you zoom out to help prevent clogging the screen, ArCGIS is hands down the best Geo API, but it needs a lot of reading into __eou__	user	0	1	0	0
+FD	-- __eou__	user	0	1	0	0
+FQ	for my app, I want to use repsonse mailing to validate signup __eou__	user	0	1	0	0
+FQ	any good solutions for this (preferably something i can try for free) __eou__	user	0	1	0	0
+
+OP	org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.I got this error while trying to automate an hybrid app. Please help __eou__	user	0	0	0	0
+CQ	how long the scripts are running ? __eou__	agent	0	0	0	0
+IG	Rahul: : Stop ur appium and stop app on device, start appium again __eou__	agent	0	0	0	0
+FD	we are running daily .But individually its ok .but batch run all r failing only few passing __eou__	agent	0	0	0	0
+CQ	Rahul-Chulliparambil: post your caps here? __eou__	agent	0	0	0	0
+CC	caps means? __eou__	user	0	0	0	0
+CC	desired capabilities __eou__	agent	0	0	0	0
+GG	Ok __eou__	user	0	0	0	0
+FD	 [<-CODE->]  __eou__	user	0	0	0	0
+CQ	new URL(url) ? __eou__	agent	0	0	0	0
+CQ	url ? __eou__	agent	0	0	0	0
+IG	Divya-tfw: yes individually it will work fine __eou__	agent	0	0	0	0
+CC	its for web driver. I am working on a hybrid app. __eou__	user	0	0	0	0
+CQ	driver = new AndroidDriver(new URL(url) ? __eou__	agent	0	0	0	0
+FD	i am asking where is the url params ? __eou__	agent	0	0	0	0
+FD	appium url __eou__	agent	0	0	0	0
+CC	public class FirstAppiumTrial { [<-CODE->]  __eou__	user	0	0	0	0
+CQ	appium logs ? __eou__	agent	0	0	0	0
+CC	Actually I am new to appium. I dont know much. appium logs means? __eou__	user	0	0	0	0
+CQ	did you start the appium >? __eou__	agent	0	0	0	0
+CC	Divya-tfw: : after that do i have to  run my code again in eclipse? __eou__	user	0	0	0	0
+FD	mgmanikandan87: : yes, I started __eou__	user	0	0	0	0
+CC	Divya-tfw: can you try start apium server with override exist session.. __eou__	agent	0	0	0	0
+CC	mgmanikandan87: : So now how can I delete cache data and start run ?or any other alternative for the problem __eou__	agent	0	0	0	0
+FD	override exist session ? where is that option ? Appium or shud i add in capabilit __eou__	agent	0	0	0	0
+IG	In apium server settings u can find override exist session check box..u can check it __eou__	agent	0	0	0	0
+CC	Rahul-Chulliparambil: are you using GUI or command line tool __eou__	agent	0	0	0	0
+AC	ok let me check __eou__	agent	0	0	0	0
+CC	? __eou__	agent	0	0	0	0
+FD	Divya-tfw: override exist session means will override exit session for next run it won’t create new session __eou__	agent	0	0	0	0
+AE	Then scripts will fail I guess, as new session will be created evry time when we run scripts .Now since its over riding that if some thing fails , then it will abort execution __eou__	agent	0	0	0	0
+CC	Divya-tfw: can you post your appium full logs here ? __eou__	agent	0	0	0	0
+FD	Logs will throw error as Element not found and continues with next script __eou__	agent	0	0	0	0
+CC	can you post whole appium logs __eou__	agent	0	0	0	0
+FD	ok will post .Let me give run and send u __eou__	agent	0	0	0	0
+UF	ok __eou__	agent	0	0	0	0
+IG	In my case also I was able to run first test successfully. for second script it is failing. this solution solved for me.. __eou__	agent	0	0	0	0
+UF	ok .let me try __eou__	agent	0	0	0	0
+AC	I am using eclipse IDE __eou__	user	0	0	0	0
+CC	mgmanikandan87: : Do you have any properly running  appium code ? __eou__	user	0	0	0	0
+PF	Rahul-Chulliparambil: yes __eou__	agent	0	0	0	0
+FD	@mgmanikandan87 : this is my appium logLaunching Appium server with command: [<-CODE->] __eou__	user	0	0	0	0
+CQ	Can You share any code with me? __eou__	user	0	0	0	0
+CC	sure, give sometime __eou__	agent	0	0	0	0
+UF	ok __eou__	user	0	0	0	0
+UF	Thank u guys .I got solution for batch run using Override Existing session.Thank u __eou__	agent	0	0	0	0
+FD	Congrats@Divya-tfw.Guys, Please help me to resolve my issue as well. __eou__	user	0	0	0	0
+UF	ok __eou__	agent	0	0	0	0
+FD	Tel me r u getting same issue can not create new session again? __eou__	agent	0	0	0	0
+PF	Yes __eou__	user	0	0	0	0
+FQ	When ever I run the code I am getting same error. __eou__	user	0	0	0	0
+IG	I will send u few capabilties ,try  adding it __eou__	agent	0	0	0	0
+UF	Ok __eou__	user	0	0	0	0
+PF	It shud work.As it worked for me __eou__	agent	0	0	0	0
+
+OQ	what does this mean?node_modules/vue/types/index"' has no default export __eou__	user	0	0	0	0
+FD	if anyone can help me get this working, it is much appreciated: [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	Hi, looking to scale my existing compose file across multiple hosts using swarm. Any examples I could follow? __eou__	user	0	0	0	0
+
+GG	Afternoon!  __eou__	user	0	0	0	0
+OQ	SISheogorath: the swarm init never worked :( __eou__	user	0	0	0	0
+CQ	 I have no real idea why this happens. Are you know part of the docker community? __eou__	agent	0	0	0	0
+CC	nop... got one email from Victor Coisne saying in other words, wait :( __eou__	user	0	0	0	0
+GG	Oh okay :o that's new __eou__	agent	0	0	0	0
+CC	the chat is probably too bloated __eou__	user	0	0	0	0
+FD	so they are controlling access now unfortunately :( __eou__	user	0	0	0	0
+FD	frustrating __eou__	user	0	0	0	0
+IG	I aggree with that but I currently have no idea. Maybe you can file an issue on github __eou__	agent	0	0	0	0
+NF	nah, don't want be an 4ss... let them take their time... __eou__	user	0	0	0	0
+FD	regardless of swarm, I still have the Orleans <-> Docker stuff to deal with __eou__	user	0	0	0	0
+FD	I read thru whole swarm docs yesterday (or Today? Who knows!) before sleep... it is very simple and has not much for my case actually __eou__	user	0	0	0	0
+FD	the Orleans cluster deployment is not actually related to swarm... the only feature of swarm that is actually used but totally unrelated, is the placement strategy of containers on hosts and the desired state... thats it... load balancing etc, those things we will never use __eou__	user	0	0	0	0
+FD	so a single standalone docker host or a swarm cluster makes no diff for me... what we care are the labels and find a way to proper health check the service __eou__	user	0	0	0	0
+
+OP	 [<-CODE->] Guys, I'm new to typescript, how do I garantee the object been passed to.setis of a specific type (say, User)? __eou__	user	0	0	0	0
+IG	 [<-CODE->]  __eou__	agent	0	0	0	0
+FD	that's the easiest way to validate json against a defined interface __eou__	agent	0	0	0	0
+FD	however, if your json is read and stored an ananythen you can't do anything, this type of type checking is only valid at compile time __eou__	agent	0	0	0	0
+IG	hmm.. I see...setparam is defined asanyby angularfire lib, so I cant do anything right? __eou__	user	0	0	0	0
+FD	if your use case is developer written objects, then it doesn't matter if your.setsignature uses ananyfor a parameter, as long as you validate it ahead of time. you could use a passthru function to do this: [<-CODE->]  __eou__	agent	0	0	0	0
+UF	thanks! __eou__	user	0	0	0	0
+FQ	Hm.. when I retrieve my object from the server it adds a new field to it (.$key) so I cannot use my type (User) anymore. How can I handle this? __eou__	user	0	0	0	0
+IG	use an interface instead of a class? __eou__	agent	0	0	0	0
+FD	you probably don't need a class anyway __eou__	agent	0	0	0	0
+FD	it is an interface __eou__	user	0	0	0	0
+NF	sorry... brain wasn't fully engaged __eou__	agent	0	0	0	0
+GG	hehe __eou__	user	0	0	0	0
+FD	Why can't you use your type? __eou__	agent	0	0	0	0
+FD	extra properties don't matter __eou__	agent	0	0	0	0
+PF	yeah.. it should work fine __eou__	agent	0	0	0	0
+FD	i don't know. it saysProperty '$key' does not exist on type 'User' __eou__	user	0	0	0	0
+IG	only if you are trying to assign an object literal __eou__	agent	0	0	0	0
+FD	if you get it from a server it's fine __eou__	agent	0	0	0	0
+FD	I'm passing it via parameter __eou__	user	0	0	0	0
+CC	are you trying to access $key off of a variable of type User? __eou__	agent	0	0	0	0
+FD	if so, that's the problem __eou__	agent	0	0	0	0
+FD	ofabricio: if it's coming form the server, extra properties don't matter __eou__	agent	0	0	0	0
+FD	if you are coding the object in the code, it won't let you __eou__	agent	0	0	0	0
+IG	let foo: User = objFromServer; // this is fine __eou__	agent	0	0	0	0
+FD	console.lof(foo.$key); // this is not __eou__	agent	0	0	0	0
+PF	I see __eou__	user	0	0	0	0
+CC	Hmm.. but I need that key __eou__	user	0	0	0	0
+CC	then add it to the interface? __eou__	agent	0	0	0	0
+CC	should I create two interfaces? __eou__	user	0	0	0	0
+IG	just add a$key?: ...to the interface __eou__	agent	0	0	0	0
+FD	either that or cast it to <any> :) __eou__	agent	0	0	0	0
+NF	i cannot send a key to the server@dtabuenc __eou__	user	0	0	0	0
+FD	or use intersection type __eou__	agent	0	0	0	0
+FD	or extend a base interface with the key __eou__	agent	0	0	0	0
+FD	you have lots of options __eou__	agent	0	0	0	0
+IG	interface IServerObject { $key: string; } __eou__	agent	0	0	0	0
+FD	function foo(obj: IServerObject & User) { } __eou__	agent	0	0	0	0
+FD	or  you can dointerface User extends IServerObject {} __eou__	agent	0	0	0	0
+FD	lots of weird stuff you can do :) __eou__	agent	0	0	0	0
+UF	right __eou__	agent	0	0	0	0
+FD	it's up to you and what you are trying to do __eou__	agent	0	0	0	0
+FD	if you cannot send$keyto the server, you'll have to run your object through a sanitize function to strip the unwanted bits, no way to automate that unfortunately __eou__	agent	0	0	0	0
+AC	Hmm.. I think I'm going to create two interfaces then __eou__	user	0	0	0	0
+PF	that sounds like the most reasonable plan __eou__	agent	0	0	0	0
+CC	not sure yet if I will ever send the objects i retrieve back to the server so this seems to fit better __eou__	user	0	0	0	0
+FD	and either use polymorphism or a type union to express the actual object __eou__	agent	0	0	0	0
+CC	a type union is a third type? __eou__	user	0	0	0	0
+FD	look up Union Types on this page: [<-LINK->]  __eou__	agent	0	0	0	0
+UF	Thanks! __eou__	user	0	0	0	0
+
+OQ	hi all, is there a way to configure the currency pipe to use single quotes instead of commas?{{310000.004 | currency:\'CHF\':true:\'1.2-2\'}}will result to "CHF310,000.00" but I need "CHF310\'000.00" __eou__	user	0	1	1	2
+RQ	any ideas, anyone??? hi all, is there a way to configure the currency pipe to use single quotes instead of commas?{{310000.004 | currency:\'CHF\':true:\'1.2-2\'}}will result to "CHF310,000.00" but I need "CHF310\'000.00" __eou__	user	0	1	0	0
+IG	geekrumper: make a custom pipe which extends the currency pipe __eou__	agent	1	1	0	1
+UF	thanks@dklmuc... not so funny@DzmitryShylovich;) __eou__	user	0	1	0	0
+AE	no context, but I know what you mean a second pipe which transforms comas to quotes... __eou__	user	0	1	0	0
+
+OQ	Hmm.. I'm seeing some weirdness with namespace declaration merging __eou__	user	0	1	1	2
+FD	So I have this declaration file [<-CODE->]  __eou__	user	0	1	0	0
+FD	And then I use it like this: [<-CODE->]  __eou__	user	0	1	0	0
+FD	and that's  fine. __eou__	user	0	1	0	0
+FD	but I want to export FooInterface alias. __eou__	user	0	1	0	0
+FD	but when I try that I get an error [<-CODE->]  __eou__	user	0	1	0	0
+IG	You are switching form a script file to a module file when you add top-level exports. __eou__	agent	1	1	0	1
+FD	Namespace merging does not work across module files, if I remember correctly. __eou__	agent	1	1	0	1
+AC	hmm.. so maybe I have to put a declare global around the namespace __eou__	user	1	1	0	1
+FD	let me try __eou__	user	0	1	0	0
+PF	bingo! Thanks@unional __eou__	user	0	1	0	0
+
+OF	I have an issue [<-ISSUE->] that haven't been triaged for 9 days now while later issues i've opened are already resolved.Is it possible it got missed? __eou__	user	0	0	0	0
+FD	There is upcoming feature to be able to import plain json to typescript __eou__	user	0	0	0	0
+FD	until then you can change the extension to .tsand to something like:export default JSONCONTENT __eou__	user	0	0	0	0
+FD	or if you are using any code bundler (webpack etc) you can use json-loader. but then the returned object won't pick the json structure byitself. __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+FD	And something maybe more simple: [<-CODE->] __eou__	user	0	0	0	0
+
+GG	hi folks) __eou__	user	0	1	1	2
+OQ	Hi, i am looking for types for mongo-db-native __eou__	user	0	1	0	0
+FD	package mongodb __eou__	user	0	1	0	0
+OQ	how can i see if my typesdefs and the lib are in sync? __eou__	user	0	1	0	0
+IG	I found a well-known bug :) [<-LINK->]  __eou__	agent	1	1	0	1
+IG	jacobus-brogly: you can't thats the problem of community driven typedefs, if author of js lib/framework do not provide them, you can't be sure, even it they are packed together in npm __eou__	agent	1	1	0	1
+UF	jcimoch: okidoki __eou__	user	0	1	0	0
+FQ	so how do i mix libraries with type decl and one without type decl __eou__	user	0	1	0	0
+FD	will it default to "any" __eou__	user	0	1	0	0
+IG	depends on tsconfig but generaly yes, those without typeings will be any __eou__	agent	0	1	0	0
+UF	ok __eou__	user	0	1	0	0
+
+OP	Hi guys, I'm trying to bootstrap an Angular2 app inside shadowdom. Shadowdom v1 doesn't have /deep/ so I don't think I can use selector. Is there any way to pass an actual HTMLElement for the entrypoint? __eou__	user	0	0	0	0
+FD	I assume that should be possible with platform-browser __eou__	user	0	0	0	0
+
+OQ	and a docker image isn't 1 file is it, it's a bunch of slices and some meta data describing which slice in which order, eh? __eou__	user	0	0	0	0
+
+OQ	What are the valid characters for property names in TS? Cuneiform  is not (; Is there a list/rule-book I can check? __eou__	user	0	1	1	2
+IG	that is not typescript specific I think, that is javascript in general __eou__	agent	1	1	0	1
+PF	yea, just realized...  __eou__	user	0	1	0	0
+IG	I found es6 character validator __eou__	user	1	1	0	1
+
+OQ	Hey, is it normal behaviour that memory footprint of processes running in docker container are not visible on the host? I.e. when I run 10 containers where each consumes 400MiB of space(reported by docker stats), host machines /proc/meminfo:MemoryAvailable stays mostly the same. __eou__	user	0	1	1	2
+CQ	are they the same container?  __eou__	agent	0	1	0	0
+IG	the kernel is pretty smart about shared vs isolated memory and if it is the same basic runspace it could be the majority of that is being reused between the containers unless you launched with some special cgroup magic to force isolation __eou__	agent	1	1	0	1
+IG	obernardovieira: it sounds like you performed adocker pull somehugerepositoryinstead of adocker pull somehugerepository:specifictagand ended up filling your disk __eou__	agent	1	1	0	1
+
+OP	can someone check out my code? __eou__	user	0	0	0	0
+FD	 [<-LINK->]  __eou__	user	0	0	0	0
+FD	first time I am using TS __eou__	user	0	0	0	0
+FD	I am interesting in opinions of some senior programmers __eou__	user	0	0	0	0
+IG	OCD comment: remove your commented code __eou__	agent	0	0	0	0
+CC	?? __eou__	user	0	0	0	0
+FD	 [<-LINK->] tons of commented out content here __eou__	agent	0	0	0	0
+FD	just makes your clarity worse as reviewer and author __eou__	agent	0	0	0	0
+UF	lol __eou__	user	0	0	0	0
+FD	thats 30 lines, in a 60 line test program __eou__	user	0	0	0	0
+FD	using greek letters is charming but ultimately bad for working with your code __eou__	agent	0	0	0	0
+AE	its statistics __eou__	user	0	0	0	0
+FD	sigma __eou__	user	0	0	0	0
+FD	D3 gave me the idea __eou__	user	0	0	0	0
+IG	I know but it just makes it harder to work with it. __eou__	agent	0	0	0	0
+FD	they use greeks like no other __eou__	user	0	0	0	0
+FD	people have to figure ou how to type that on a keyboard. __eou__	agent	0	0	0	0
+FD	or alt-code __eou__	agent	0	0	0	0
+FD	it's annoying __eou__	agent	0	0	0	0
+FD	although it might look visually prettier __eou__	agent	0	0	0	0
+UF	i will keep it, but thanks __eou__	user	0	0	0	0
+AC	I'd rather select sigma = __eou__	agent	0	0	0	0
+AE	sigma is not a constant like PI or Epsilon __eou__	user	0	0	0	0
+FD	Lately I've been also trying to use const more instead of let __eou__	agent	0	0	0	0
+FD	only going to let when I need to __eou__	agent	0	0	0	0
+UF	I agree w/@dtabuencand@jacobus-brogly __eou__	agent	0	0	0	0
+FD	yes const is pretty handy __eou__	agent	0	0	0	0
+FD	it seems to catch a lot more problems __eou__	agent	0	0	0	0
+FD	I think symbols are fantastic conceptually and ligatures are a great example of their effectiveness __eou__	agent	0	0	0	0
+FD	with unintended reference re-assignment __eou__	agent	0	0	0	0
+FD	but they are still challenging to type :/ __eou__	agent	0	0	0	0
+UF	so no comments on structure , templating, .. thats good __eou__	user	0	0	0	0
+
+OQ	Currently, TypeScript/JavaScript debugging in VS2015 is a mess ( [<-LINK->] ). Can we hope that web client script debugging will be strongly improved with VS 2017? __eou__	user	0	0	0	0
+
+OQ	Hi everyone i am facing some difficulties described here : [<-LINK->] . If anyone as the time to try to answer my question i would really appreciate it thank you very much. __eou__	user	0	0	0	0
+IG	 [<-LINK->] @dgorobopecwe were discussing this an hour ago, as far as I can tell you can do only html templates with i18n, so I would suggest ng2-translate if you need ts code as well __eou__	agent	0	0	0	0
+
+OQ	Hi, what do I need to do to get my typescript module which is hosted on my private github group to be used as a module dependancy for other projects from other users in my group?  I read that I should not put my .d.ts or my .js files in github, but they should be in my  module and the .ts files should not be in the module but should be in my github.  Publishing the module privately isn't an option sadly. __eou__	user	0	1	1	2
+IG	avik-so: and option you can consider (I'm not sure if the best one) is using git submodules and your users have relative imports to your submodule location. __eou__	agent	1	1	0	1
+
+OQ	anyone know how to override Webpack Dev Server complaints about errors while compiling so a reload was prevented __eou__	user	0	1	1	2
+FD	there was a typescript error but it's non fatal __eou__	user	0	1	0	0
+FD	it's just like property x can't exist on type {} or whatever __eou__	user	0	1	0	0
+FD	because i modified an object after i declared it __eou__	user	0	1	0	0
+IG	if you use awesome-typescript-loader with fork checker plugin you can split type checking from compilation __eou__	agent	1	1	0	1
+FD	for ts-loader I think there's an option to not do type checking __eou__	agent	1	1	0	1
+FQ	what about other errors that are not typescript-related? __eou__	user	0	1	0	0
+IG	actually ts-loader won't propogate errros to webpack so it will build fine even if you have a few type errors __eou__	agent	1	1	0	1
+
+OQ	hi, can someone explain to me node js. I feel it is just too hacky, everything depends on something else, it seems like a falling building. No base, or an useless base that doesnt satisfy the need of a developer in the area of backend programming. You either have to depende on all these packages or you cant program anything. Or maybe all of this is because i have just started to learn it __eou__	user	0	1	1	2
+IG	delirious44: The packages not a must have these are helpers to make your job easier. __eou__	agent	1	1	0	1
+FD	But built-in packages are important like "fs" these are must have. __eou__	agent	1	1	0	1
+AE	EmpireWorld: Not really, how do you program a general website without express ? you gonna have to route everything long way __eou__	user	0	1	0	0
+CQ	delirious44: what do you want to do and where are u stuck? __eou__	agent	0	1	0	0
+CC	Bakrog: Its not a specific problem, im just learning node and i dont like that it is so hacky, really dependent on open source modules for everything __eou__	user	0	1	0	0
+IG	delirious44: t hat isn't hacky, it is actually the entire point lol __eou__	agent	1	1	0	1
+AE	jlaustill: yeah it is hacky, otherwise it would be stand alone __eou__	user	0	1	0	0
+AE	delirious44: stand alone is an evil word, you obviously have a very different philosophy than the nodejs crowd on average  __eou__	agent	0	1	0	0
+
+OQ	hey guys, how can my container access the host machine? I mean, which of the IPs the containers should hit to get to the host? __eou__	user	0	0	0	0
+IG	galvesribeiro: Use the hostname of your machine. That's the easiest way __eou__	agent	0	0	0	0
+NF	SISheogorath: it doesn't work :( __eou__	user	0	0	0	0
+CQ	galvesribeiro: for what purposes you nedd host machine? __eou__	agent	0	0	0	0
+CC	the container need to query the Docker Remote API of the host to check some stuff __eou__	user	0	0	0	0
+IG	galvesribeiro: you can mount host docker.sock into your machine __eou__	agent	0	0	0	0
+FD	and write http requests into it __eou__	agent	0	0	0	0
+NF	there is no docker.sock in windows :( __eou__	user	0	0	0	0
+IG	use unix 8) __eou__	agent	0	0	0	0
+NF	I cant hehehe __eou__	user	0	0	0	0
+
+OQ	I am using the following TSConfig; [<-CODE->] In my .ts files, where ever I have a comment on the last line, the JS output is broken. E.g. [<-CODE->] Is this a known TS bug? __eou__	user	0	0	0	0
+FD	 [<-CODE->] does resolve it, but doesn't seem right that it should break on false. __eou__	user	0	0	0	0
+FD	TS file in question [<-CODE->] __eou__	user	0	0	0	0
+FD	Version 2.1.4 __eou__	user	0	0	0	0
+
+GG	hey all.  __eou__	user	0	1	1	2
+OQ	I’m trying to get myself rolling with ng2 and am having a problem with my unit tests. used the cli to make a project, added a module (angular material) and got it working in my hello-world. But, when I run my tests withng testI getError: Template parse errors:\n    'md-card' is not a known element:I imagine my unit test environment isnt loading the module, but I just dont know wher eto go to fix that situation… any guidance? __eou__	user	0	1	0	0
+IG	brendanjerwin: it sounds like you haven't imported angular material into your test __eou__	agent	1	1	0	1
+FD	 [<-LINK->] __eou__	agent	1	1	0	1
+
+OQ	is there a semver compare tool for .d.ts files ? __eou__	user	0	1	1	2
+FD	compares two versions of .d.ts and suggests either major, minor or revision bump based on differences in types __eou__	user	0	1	0	0
+IG	 [<-LINK->] may be able to help with that@spion __eou__	agent	1	1	0	1
+FD	there is some support there for diffing .d.ts files in some capacity __eou__	agent	1	1	0	1
+FD	but I haven't used it __eou__	agent	0	1	0	0
+CC	hmm. It doesn’t seem like its based on the language service API, and... __eou__	user	0	1	0	0
+FD	it seems like I might want to read the paper to understand it, and its not linked :D __eou__	user	0	1	0	0
+AE	I was thinking, how hard can it be? no changes to types = revision, “additions" to covariant positions and removals from contravariant positions = minor, every other change in types = major __eou__	user	0	1	0	0
+FD	:D __eou__	user	0	1	0	0
+FD	but thats probably a bit naive __eou__	user	0	1	0	0
+
+OQ	PeterGolf: hi all!Does any one have problems with finding elements in ios application with ios driver?appium version 1.6.3i can see element on screen of devicebut when i'm making getPageSource - cant find them __eou__	user	0	0	0	0
+
+GG	hello __eou__	user	0	0	0	0
+FD	i want mining eth __eou__	user	0	0	0	0
+OQ	where I can download the program for windows 10? __eou__	user	0	0	0	0
+CQ	NtinoValentino_twitter: you want test-network ETH? __eou__	agent	0	0	0	0
+
+OQ	 [<-CODE->] What is the type of _cachedRights? __eou__	user	0	1	1	2
+FD	My json is [<-CODE->] __eou__	user	0	1	0	0
+FD	so I thought it would be _cachedRights: boolean[]But perhaps this is not the case? __eou__	user	0	1	0	0
+IG	types is weird __eou__	agent	0	1	0	0
+CQ	why do you do that? __eou__	agent	0	1	0	0
+CQ	What'stypes/*?? __eou__	agent	0	1	0	0
+IG	you should link to a specific d.ts file __eou__	agent	1	1	0	1
+FD	it should be probably pointing to types/index.d.ts __eou__	agent	1	1	0	1
+FD	if you have one __eou__	agent	0	1	0	0
+FD	basically types should point to the d.ts file of  what main is pointing to __eou__	agent	1	1	0	1
+AE	scippio: it's better if you don't keep a seaparate types/ folder __eou__	agent	1	1	0	1
+FD	and just output d.ts files side-by-side __eou__	agent	1	1	0	1
+FD	so there are both a lib/index.js and a lib/lindex.d.ts along side it __eou__	agent	1	1	0	1
+FD	then you don't really even need the"types":field in your package.json __eou__	agent	1	1	0	1
+
+OQ	i want to know how can download a website text? __eou__	user	0	0	0	0
+IG	engradeelnayyar: with respect, that's not a Gitter support question. Please seek answers in a more appropriate area; you're likely to find the question asked, and answered, at [<-LINK->]  __eou__	agent	0	0	0	0
+
+OQ	Hello friends.Can you help me to resolve a problem with how to build nested model-driven forms?Here is the plunker [<-LINK->] The problem is when is try to embedded a third form control. __eou__	user	0	0	0	0
+FD	I try* __eou__	user	0	0	0	0
+
+OQ	Hey guys, does anyone knows a solution for the Too many instances of this service are already running error __eou__	user	0	0	0	0
+FD	it happens all the time, even after just a few tests, and I need to reboot the tested device __eou__	user	0	0	0	0
+FD	and it's a pain in the ass to do this all the time __eou__	user	0	0	0	0
+FD	or nobody here is using appium 1.6+ because it's actually unusable with all the bugs and things not working __eou__	user	0	0	0	0
+
+OQ	Hello, I'm new on docker, I would like to know if there is some UI and/or orchestrator that allow me to manage multiple cluster in one place. I understand that there is many Docker UI available but it seems that it allows to manage only one cluster (or maybe I miss something). Indeed my cluster will be hosted on Azure, in different Vnet and I would like a single interface to manage them all. Do you have any idea? __eou__	user	0	1	1	2
+IG	check rancher.com __eou__	agent	1	1	0	1
+UF	interesting thanks@marcelmfs! __eou__	user	0	1	0	0
+
+OQ	cmon guys, it's such a simple question: how to show component by calling service function? __eou__	user	0	0	0	0
+
+OQ	i am checking out the " --read-only” option ..was wondering how to set that as default in the docker DOCKER_OPTS. Did any one try it out? __eou__	user	0	0	0	0
+FD	i want to start all my docker images RO by default and want to set RO as default option. __eou__	user	0	0	0	0
+FD	some thing like this worksdocker run -t -i -d --read-only --tmpfs /run --tmpfs /tmp python:3 /bin/bash __eou__	user	0	0	0	0
+FD	want to set it as default with DOCKER_OPTS __eou__	user	0	0	0	0
+
+OQ	Hi,  guys!  Please,  help me to know how i could add cufon in my project..  Maybe someone can share with me different tutorials or links to educational materials with this topic? __eou__	user	0	0	0	0
+CQ	Is the project Gitter-related?  If it's not a Gitter support question, please ask elsewhere. Thanks. __eou__	agent	0	0	0	0
+IG	There's a "community" link at [<-LINK->] __eou__	agent	0	0	0	0
+
+OQ	My contract creation transaction is pending after 20 minutes, is there a problem? [<-LINK->]  __eou__	user	0	1	1	2
+FD	Is the gas price not high enough? __eou__	user	0	1	0	0
+FD	Can I increase the gas price and do the contract creation again? __eou__	user	0	1	0	0
+FD	I tried a normal transaction, and it does not get mined either, always pending __eou__	user	0	1	0	0
+IG	Gas price is too low __eou__	agent	1	1	0	1
+IG	but now the new transactions need to wait for the others, as nounce increased __eou__	agent	1	1	0	1
+CQ	3esmit: it is set at:      0.00000002 Ether how much should I put? __eou__	user	0	1	0	0
+CC	That should be fine __eou__	agent	0	1	0	0
+FD	but will take more time __eou__	agent	0	1	0	0
+AC	it's been pending one hour already __eou__	user	0	1	0	0
+FQ	Ok I understand. Is it possible to speed it up? Replace it? __eou__	user	0	1	0	0
+IG	the minimum is 0.00000002 ETH __eou__	agent	0	1	0	0
+FD	I don't know how to do it, trying to figure out __eou__	agent	0	1	0	0
+FD	the problem is that nounce increased __eou__	agent	0	1	0	0
+CQ	what wallet software are you using? __eou__	agent	0	1	0	0
+CC	3esmit: parity + geth attach __eou__	user	0	1	0	0
+CQ	(is that secure?) __eou__	user	0	1	0	0
+CQ	what version of parity? __eou__	agent	0	1	0	0
+CC	the github source one __eou__	user	0	1	0	0
+CQ	when you compiled? __eou__	agent	0	1	0	0
+IG	Yes, it is secure __eou__	agent	0	1	0	0
+CQ	but why don't using Parity UI? __eou__	agent	0	1	0	0
+CC	I like the geth command-line! __eou__	user	0	1	0	0
+AE	Ok. __eou__	agent	0	1	0	0
+AE	(I am new to ethereum, experimenting) __eou__	user	0	1	0	0
+IG	Not guaranteed to work, but you can send out another one that is identical (including the same nonce), but with higher gas price. __eou__	agent	0	1	0	0
+FD	I don't understand why your trasactions are not being inclded __eou__	agent	0	1	0	0
+
+OQ	Hi can you merge this with my github account please __eou__	user	0	1	1	2
+FD	MadLittleMods: Hi can you merge accounts __eou__	user	0	1	0	0
+IG	weirdavid1_twitter: re: [<-LINK->] above please refrain from the personal address. Thanks. __eou__	agent	1	1	0	1
+PF	Cool just read it __eou__	user	0	1	0	0
+JK	Quiet in here tonight __eou__	user	0	1	0	0
+
+OQ	The problem I faced with Protractor is, as soon as it invokes app, it immediately tries to inject protractor javascript into webview __eou__	user	0	1	1	2
+FD	in cases of splash screen or 1st screen as native screen, injection of protractor script fails due to absence of any webview __eou__	user	0	1	0	0
+FD	if you can dump the appium log here, that would be helpful __eou__	user	0	1	0	0
+IG	Same thing I was am facing.. I added caps.setCapability("appWaitActivity", "your Main activity name"); __eou__	agent	1	1	0	1
+FD	but this is for java + appium not sure if you can do it in protractor.. __eou__	agent	1	1	0	1
+CC	what do u get in the server log? __eou__	user	0	1	0	0
+IG	 [<-CODE->] It was stopping server at launch.. and it was random... __eou__	agent	1	1	0	1
+FD	sometime it used to launch app successfully and sometimes it was showing me above issue.. __eou__	agent	1	1	0	1
+
+OQ	Hi, I am beginner in TypeScript, and I would like  to ask next question: in JS arrow functions don't have own "this" and "arguments" and what about TS functions? __eou__	user	0	1	1	2
+IG	BloodofDen: Arrow functions are transpiled to regular functions if your target is ES5 but I believethisis assigned to a variable to lock the execution context.Well in general, how something behave in TS should closely follow how it behave in JS. __eou__	agent	1	1	0	1
+
+OQ	How can i create a dynamic instance of a class? Something like this:new CLASSNAMEFROMSTRING("Title","Dummy Title",null); __eou__	user	0	0	0	0
+
+OQ	Hi, could you please help me with the following conflict: [<-CODE->] i have the following dependencies [<-CODE->] and tsconfig.json [<-CODE->]  __eou__	user	0	1	1	2
+IG	MegaUkrainian: only thing that comes to mind is noLib and then manually define the libs in the tsconfig __eou__	agent	1	1	0	1
+FD	have a look at [<-LINK->] --lib __eou__	agent	1	1	0	1
+FD	but you could possibly just remove the es6-shim __eou__	agent	1	1	0	1
+UF	Thanks __eou__	user	0	1	0	0
+AC	 I'll try __eou__	user	0	1	0	0
+
+OQ	 [<-CODE->] anyone have suggestions for a tool for this? __eou__	user	0	1	1	2
+IG	 [<-CODE->] gulp.task('default', function () {   return browserify('./source/app.js')      .transform(babelify)      .bundle()      .pipe(source('your-destination-single-file-name.js'))      .pipe(gulp.dest('./build/'));});``` this will compile everything into a single js file that you can include in your html __eou__	agent	1	1	0	1
+PF	ah cool :) __eou__	user	0	1	0	0
+IG	not sure why to code isn't formatted correctly but you get the idea __eou__	agent	0	1	0	0
+FD	babel is for jsx and stuff. not sure what libs you're using butbrowserifyis the main one you're looking for __eou__	agent	0	1	0	0
+JK	devzer01:  __eou__	agent	0	1	0	0
+PF	i see __eou__	user	0	1	0	0
+AE	i  didn't use anything yet __eou__	user	0	1	0	0
+AE	i just wrote few classes and setup ci and stuff, and made a tiny mock for window and document by hand just to keep it simple and before i go any further wanted to figure out how to do this step properly :) __eou__	user	0	1	0	0
+UF	so thank u very much __eou__	user	0	1	0	0
+AC	i have couple of things to read about now, thanks again :) __eou__	user	0	1	0	0
+JK	devzer01: yw __eou__	agent	0	1	0	0
+IG	devzer01: rollup is pretty easy too __eou__	agent	0	1	0	0
+UF	cool :) thanks :) __eou__	user	0	1	0	0
+
+GG	hello __eou__	user	0	0	0	0
+OQ	@ProProgrammer  can you notice any bug in the  html here<!DOCTYPE html><html><head>  <!--All attachments go here-->  <link rel="text/stylesheet" href="css/bootstrap.min.css">  <link href="text/javascript" href="css/bootstrap-theme.min.css"></head><body><nav id="myNav" class="navbar navbar-default ">  <div class="container-fluid">    <div class="navbar-header">      <a href="#" class="navbar-brand">Sanjay</a>    </div>    <div>      <ul class="nav navbar-nav">        <li class="active"><a href="#">Home</a><li>          <li><a href="#">Movies</a></li>          <li><a href="#">Songs</a></li>          <li><a href="#">Tweets</a></li>      </ul>    </div></div></nav><script src="js/bootstrap.min.js"></script><script src="js/jquery.min.js"></script></body></html> __eou__	user	0	0	0	0
+NF	indonogakusei: if not related to support for Gitter, please seek help elsewhere. This room is dedicated to Gitter. Thanks. __eou__	agent	0	0	0	0
+
+OQ	Hi All, I'm having trouble with Appium 1.6.3, Xcode 8.2.1, and iOS 10.2.  I installed the new iOS driver XCUITest and now I am trying to get my tests to run in an iPad Air 2 simulator - or really any iOS 10+ simulator.  The simulator pops up, the new WebDriverAgent appears to start, but my app WILL NOT launch.  It tries to, but closes immediately.  I've tried almost everything and sort of at a loss.  Will post more details momentarily about how I built the app and appium logs.  If anyone can help though I would appreciate it!! __eou__	user	0	1	1	2
+FD	I can launch the app in the simulator from within Xcode, which is strange.  So I am wondering if there is some conflict or incorrect setup of the new automation drivers... __eou__	user	0	1	0	0
+FD	My OS is El Capitan 10.11.6 __eou__	user	0	1	0	0
+IG	mmcintyre123: logs will help, I can try to assist you when you are ready. __eou__	agent	1	1	0	1
+FD	My OS is El Capitan 10.11.6 __eou__	user	0	1	0	0
+UF	ok __eou__	user	0	1	0	0
+UF	thx __eou__	user	0	1	0	0
+FD	give me one min __eou__	user	0	1	0	0
+FD	Edge-Man: __eou__	user	0	1	0	0
+AC	sent log in PM to avoid cluttering the channel - will share solution here if we get it working! __eou__	user	0	1	0	0
+IG	mmcintyre123:  [<-LINK->] __eou__	agent	1	1	0	1
+FD	see if this helps __eou__	agent	1	1	0	1
+FD	mainlyappium-remote-debugger@3.2.1piece __eou__	agent	1	1	0	1
+FD	in my case sleep 5 also helped __eou__	agent	1	1	0	1
+
+OQ	This may be an entirely dumb question, but I’m wondering why I can’t find a transaction that’s displayed as “Confirmed” in Mist, connected to test-net, when I look for it on [<-LINK->]  __eou__	user	0	0	0	0
+
+AE	Even scientists are unable to understand time and space.Stephen Hawking is researching about it. We might see the results soon... o/ __eou__	user	0	0	0	0
+
+OP	For reference, but not worth making an issue of at this time (QupZilla here is not the most recent version): __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+FD	After the event I browsed back and realised that whilst double-clicking to select text within a title, I had inadvertently clicked a 'CREATE TOPIC' button: __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+AEFQ	that doesn't look normal at all, does it look like that in other browsers? __eou__	agent	0	0	0	0
+FQ	like FireFox? __eou__	agent	0	0	0	0
+IG	Not reproducible with Firefox. With regard to QupZilla, see the postscript to [<-ISSUE->] __eou__	user	0	0	0	0
+FD	Appearances are very unpredictable, worse, in [<-LINK->] 4.14.10 but (again) that's probably an outdated version. __eou__	user	0	0	0	0
+FD	I don't use Konqueror (I launched it out of curiosity), I do sometimes use QupZilla. __eou__	user	0	0	0	0
+
+OQ	is it possible to auto pull volumes from registry while doing docker service create? do i have to manually ssh into all swarm nodes and do a pull of my volume(container) each time a new version is ready? __eou__	user	0	0	0	0
+
+OQ	hi any of you know what is "p" & "d" represents  in api request ? __eou__	user	0	0	0	0
+
+OQ	Guys, how should I call my async validator? __eou__	user	0	1	1	2
+FD	I've got a service which looks like this: [<-CODE->] __eou__	user	0	1	0	0
+FD	and I call just simply this way __eou__	user	0	1	0	0
+FD	 [<-CODE->] __eou__	user	0	1	0	0
+FD	But the input always invalid __eou__	user	0	1	0	0
+IG	zedz01: why do you use new Promise ? You can use toPromise() operator ... __eou__	agent	1	1	0	1
+
+OQ	off topic: any used AMP ? __eou__	user	0	0	0	0
+IG	only awp __eou__	agent	0	0	0	0
+CQ	seriously though, how'd you handle it? __eou__	agent	0	0	0	0
+CQ	handle what? __eou__	agent	0	0	0	0
+CQ	erm, awp? __eou__	user	0	0	0	0
+IG	Toxicable: yes on AMP __eou__	agent	0	0	0	0
+FD	i'm experimenting with AMP + universal __eou__	agent	0	0	0	0
+CQ	Oh so it actually works with Angular? __eou__	user	0	0	0	0
+CQ	Toxicable: lol u don't know what is awp? __eou__	agent	0	0	0	0
+CC	nope __eou__	user	0	0	0	0
+IG	AMP __eou__	agent	0	0	0	0
+IG	Accelerated mobile pages __eou__	agent	0	0	0	0
+IG	Take out your smartphone, Google "AMP" __eou__	agent	0	0	0	0
+FD	awp __eou__	user	0	0	0	0
+IG	Toxicable: AMP pages can't run any JS in the browser __eou__	agent	0	0	0	0
+UF	robwormald: Yeah that's what I thought, then I realized that's probably why you said + universal  :D __eou__	user	0	0	0	0
+
+OQ	Depending on whether I'm running on staging or on production __eou__	user	0	0	0	0
+FD	I need to use a different nginx.config file __eou__	user	0	0	0	0
+FD	But i have no idea how to do that. anyone know? __eou__	user	0	0	0	0
+
+OQ	 [<-CODE->] Hi @dtabuenc. Thanks a lot! This does work but for me it's still black magic. Are there more comprehensive resources than the official TS doc to learn about how to write declaration files? I don't want to come asking for help here overtime I use a new JS library in my project. [<-CODE->]  [<-CODE->]  [<-CODE->]  __eou__	user	0	1	1	2
+IG	that just describes a constructor __eou__	agent	1	1	0	1
+FD	so if you have a variable: __eou__	agent	1	1	0	1
+FD	 [<-CODE->] the new in that interface is what allows you to do [<-CODE->]  __eou__	agent	1	1	0	1
+FD	if the new wasn't in the interface then that would not compile __eou__	agent	1	1	0	1
+AE	Think of interfaces as a description of what you can do with the object they describe. __eou__	agent	1	1	0	1
+FD	 [<-CODE->] Just declares that there is a global constant calledCalHeatMapand the things you can do with it are describe by the interfaceCalHeatMapStatic __eou__	agent	1	1	0	1
+FD	which means that the thing you can do with that constant is call new CalHeatMap() and you will get back an object which you can do the things described in the CalHeatMapinterface. __eou__	agent	1	1	0	1
+
+OQ	Is there any way to change the default data directory in Windows 10? I'd like to put it on a volume other than my "C:" drive. Space is limited on "C:" for me as I have a non-standard partition set up, and I believe it would perform better (as well as have some more data robustness) on a RAID5 volume I have available. __eou__	user	0	0	0	0
+FD	Also, the "Start Mining" option which is only available on the testnet, is there any schedule for when that option will be fully functional. Currently I use genoil's ethminer, but it would be interesting to have this fully integrated with the main core app. __eou__	user	0	0	0	0
+
+OQ	hey ,all!I have problem with downloading local csv file.I have a cli project and my file in src folder.I have next template: [<-CODE->] But it just doesn't work. Any ideas? __eou__	user	0	1	1	2
+IG	I don't think angular-cli serves files from /src directly, put them into assets, as it gets copied over during serve/build __eou__	agent	1	1	0	1
+
+GG	Hey __eou__	user	0	1	1	2
+OQ	How can I give admin permissions for a gitter organization to one more user ? __eou__	user	0	1	0	0
+FD	I can see a "Permissions" option in every room's settings, but I want to give admin rights to this user organization-wide __eou__	user	0	1	0	0
+FQ	amberj: what do you see at the bottom left of that modal? __eou__	agent	0	1	0	0
+IG	"Edit community permission".. yup this is what I was looking for. Thanks@mydigitalself __eou__	user	0	1	0	0
+JK	 __eou__	agent	0	1	0	0
+IG	just add them as extra admins if the community is linked to a GitHub org __eou__	agent	1	1	0	1
+
+OQ	Hello, I want to be able to clone a repo into my docker container at run time. Because I'm using SSH to get read-only access to my repo I need to have the keys within the docker container somewhere. Is it safe to keep the public and private keys within the containers files and then link the volume in the docker-compose file? or should I be doing this another way? __eou__	user	0	1	1	2
+IG	jjohnson1994: it depends on your "secretness". If it\'s a deployment key and it\'s not a problem if everyone has it. Include it. If it is a problem, you can thing aboutmount the key to container\nadd it as environment variables\nwait vor 1.13 and add it as secret __eou__	agent	1	1	0	1
+PF	SISheogorath: It's just a deployment key so should be okay, thanks __eou__	user	0	1	0	0
+IG	You can think about it like about "would I include that into  my github repository". __eou__	agent	1	1	0	1
+
+OQ	I find myself writing code like this a little bit: [<-CODE->]  [<-CODE->]  __eou__	user	0	1	1	2
+IG	you would need to declare the scope of the variable outside the loop, no way around that __eou__	agent	1	1	0	1
+
+OQ	does anyone know anything about performance testing? __eou__	user	0	0	0	0
+IG	Performance of Gitter? If it's not a Gitter support question, please ask elsewhere. Thanks. __eou__	agent	0	0	0	0
+
+OQ	I accidentally missed my ethereum wallet app. How can I get it back please> __eou__	user	0	1	1	2
+CQ	fdbelaihun: which wallet? __eou__	agent	0	1	0	0
+CQ	on which OS __eou__	agent	0	1	0	0
+CC	Anfortunatly I am a new user for Ethereum and down loaded the app to my window 10 laptop. After a few trial to make purchase I think my downloaded app is diappeared. __eou__	user	0	1	0	0
+IG	Try to install EasyDex maybe it will locate your wallet. __eou__	agent	1	1	0	1
+FD	 [<-LINK->] __eou__	agent	1	1	0	1
+UF	Thanks! __eou__	user	0	1	0	0
+AC	I will try it. __eou__	user	0	1	0	0
+PF	I find the wallet. Thank you so much! __eou__	user	0	1	0	0
+
+OQ	Is it possible to create an instance of anurlObjectdirectly or one should useurl.parsefor that purpose ? I was wondering if there is a way to build such object directly from each URL components (host, protocol...) rather than using a plain string for that purpose ? __eou__	user	0	0	0	0
+
+GG	Hello evry one __eou__	user	0	0	0	0
+GG	first head gitter __eou__	user	0	0	0	0
+GG	tommego: Hey! __eou__	agent	0	0	0	0
+GG	seanmitch: Aha? __eou__	user	0	0	0	0
+JK	coding __eou__	user	0	0	0	0
+OQ	tommego: Hello, hey I was wondering, I am a C# dev and was debating between also learning C and V++ __eou__	agent	0	0	0	0
+FD	C++* __eou__	agent	0	0	0	0
+AE	I like OOP and encapsulation, but since I might want to penetration test when I'm older C might be better for that? __eou__	agent	0	0	0	0
+OQ	Do you think I should learn c or c++? __eou__	agent	0	0	0	0
+AE	seanmitch: I prefer to c++ __eou__	user	0	0	0	0
+CQ	Any reason why? __eou__	agent	0	0	0	0
+IG	And I dev app using c++ __eou__	user	0	0	0	0
+FQ	And is that still easily usable on Linux? __eou__	agent	0	0	0	0
+JK	^ __eou__	agent	0	0	0	0
+PF	of course __eou__	user	0	0	0	0
+NF	DKurilo: @tommego@seanmitchThis room is for Gitter support. Please read the welcome message when joining a room and mind the room description/topic in the chat header. Please use [<-LINK->] __eou__	agent	0	0	0	0
+IG	I use Qt __eou__	user	0	0	0	0
+UF	MadLittleMods: sorry __eou__	user	0	0	0	0
+IG	tommego: Join the chat: [<-LINK->] __eou__	agent	0	0	0	0
+UF	Lol so we don't get yelled at __eou__	agent	0	0	0	0
+
+GG	Hi guys, strange problem.  __eou__	user	0	0	0	0
+OQ	Using firebase I making a chatbot app. In the oninit cycle I subscribe to the input-observable but first push a welcome message to the firebase list observable. But somehow when I start sending input the items will show up before the welcome message. Is a subscribe function handled first or something? __eou__	user	0	0	0	0
+FD	 [<-CODE->] __eou__	user	0	0	0	0
+
+OP	I am stuck . <p>   I have to Chang colour  to p element tex. Can anyone help please __eou__	user	0	0	0	0
+IG	 [<-LINK->] @craigchilled This room is for Gitter support, not general technical support. Please read the welcome message when joining a room and take note of the room description/topic in the chat header at the top. After fixing up your question, [<-LINK->] , you should try [<-LINK->]  __eou__	agent	0	0	0	0
+
+AE	bitcoin just moves money from one place to another __eou__	user	0	0	0	0
+AE	ethereum is capable of replacing most computer systems!! __eou__	user	0	0	0	0
+AE	the upside potential of ethereum is amazing __eou__	user	0	0	0	0
+AE	its like geting into the internet in 1991 __eou__	user	0	0	0	0
+AE	and on top of that - it is a cryptocurrency like bitcoin without all of bitcoins problems __eou__	user	0	0	0	0
+AE	people are frusrtated with bitcoin and are looking for alternatives... ethereum is it __eou__	user	0	0	0	0
+CQ	have u started mining ether yet chris? __eou__	agent	0	0	0	0
+CC	yes, i have 9 gpus mining __eou__	user	0	0	0	0
+FD	err 10 __eou__	user	0	0	0	0
+FD	well depends on when, my son turns off the miner on his computer when he plays overwatch :) __eou__	user	0	0	0	0
+FQ	chris, any trusted website you recommend to buy miners from? __eou__	agent	0	0	0	0
+
+OQ	how do you extend an rxjs Observable? __eou__	user	0	0	0	0
+FD	basically this lineRx.Observable.$watch = function (scope, watchExpression, objectEquality)from [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	besides 'global' how can I get to global space?  (GLOBAL and root were removed between 5 and 6) __eou__	user	0	1	1	2
+IG	d3x0r: globalis the proper way, and is actually going to be standardized in the language soon __eou__	agent	1	1	0	1
+CQ	ljharb: re 'global' you answer sounds like 'no, there is no other way'... but just to confirm.  I'm asking to patch obvious things so code doesn't jailbreak the VM sandbox.    When I started I know there was GLOBAL but that went away, and seems there's only really the one reference, or saving 'this' in the primary JS file run ?   There's no method/function to return global? __eou__	user	0	1	0	0
+CC	d3x0r: there's alwaysFunction('return this')() __eou__	agent	0	1	0	0
+FD	d3x0r: but a vm doesn't share itsglobalwith the outer one __eou__	agent	0	1	0	0
+
+OQ	Hi,I am new to docker and i am building lemp stack using docker every thing work as expected beside some permission issues, how to fix permissions so that php can create files/folders ( the right way).Knowing that i am using nginx:alpine, php:fpm-alpine and a custom container volume __eou__	user	0	1	1	2
+IG	smahi: read back a little bit, I pasted a link regarding a good practice for changing permissions for an app __eou__	agent	0	1	0	0
+NF	dragon788: thank you for the link.I did not understand your last question :can you jus docker pullthe image that you are building from to see if it is locally?sorry about that. __eou__	user	0	1	0	0
+NF	smahi: sorry,  __eou__	agent	0	1	0	0
+CC	was mixing up my conversations, that one was for another convo __eou__	agent	0	1	0	0
+IG	kind of sad Gitter doesn't have threading like FlowDock, but that's probably the only thing I really miss, as everything else is very GitHub oriented with the pulls/commits/issues __eou__	agent	1	1	0	1
+UF	dragon788: Thank you again for your kindness and help __eou__	user	0	1	0	0
+
+OQ	trying to install the program... get error __eou__	user	0	0	0	0
+
+OQ	Is there any way of preserving component state when leaving for another route? __eou__	user	0	1	1	2
+FD	I know one - using service __eou__	user	0	1	0	0
+IG	sinedsem: RouteReuseStartegy __eou__	agent	1	1	0	1
+IG	Redux __eou__	agent	1	1	0	1
+IG	use a service __eou__	agent	1	1	0	1
+IG	sinedsem: A service can be an easy way to do this, otherwise some implementation of state management like ngrx/Store or Redux __eou__	agent	1	1	0	1
+AE	2 votes for service and 1 vote for one more poorly documented thing - routeReuseStrategy __eou__	user	0	1	0	0
+AE	services are boring :) __eou__	agent	0	1	0	0
+AE	oh if we're voting i'd vote for ngrx/Store __eou__	agent	0	1	0	0
+AE	it depends on yor use case __eou__	agent	0	1	0	0
+AE	^ and your knowledge of flux architecture __eou__	agent	0	1	0	0
+
+OF	I just use the boostrap 3 css. I'm not really satisfied with the current state of any of the libs __eou__	user	0	0	0	0
+AE	it's a problem with many ng wrappers. Often one-man shows that are maintained for a year or two before they start to rot. __eou__	agent	0	0	0	0
+AE	And even with maintained packages, they tend to lag __eou__	agent	0	0	0	0
+
+OQ	hi, trying to use the android app login via Github, and it's stuck at Two-factor authentication, waiting to receive an SMS but nothing coming. Is this only usable on a phone (and not a tablet with no SIM) ? __eou__	user	0	1	1	2
+IG	never mind, SMS arrived after a long wait! __eou__	user	1	1	0	1
+
+OQ	If I've got a docker container running docker (teamcity agent running builds) what is the best way to mount a volume in the 'parent' container into the 'child' container? __eou__	user	0	1	1	2
+FD	The 'parent' container has the host docker socket bound (-v /var/run/docker.sock:) so when the agent (parent container) tries to run a new container and pass some -v flags; the -v flags don't get mounted correctly as far as I can tell __eou__	user	0	1	0	0
+IG	presumably because it's not actually a child; but a sibling; and the directory trying to be mounted doesn't actually exist outside the 'parent' __eou__	user	1	1	0	1
+IG	Trezamere: I haven\'t actually messed with volumes in that manner, but have you tried using "volumes_from" by creating a sibling of the parent container that maps in the volumes from the host you want to use and then having the spun up agents using  volumes_from? __eou__	agent	1	1	0	1
+
+OQ	Pleasr how can I create an ethereum wallet? __eou__	user	0	1	1	2
+IG	AMZIJERIMIAH_twitter: you can use myetherwallet.com, or download one of the following clients: [<-LINK->]  [<-LINK->]  __eou__	agent	1	1	0	1
+
+OQ	Hi guys, I would like to know a way to import json from a json file into a Typescript file __eou__	user	0	1	1	2
+CQ	heyheyhey11: import it in what format? __eou__	agent	0	1	0	0
+CQ	like import json straight into a variable? __eou__	agent	0	1	0	0
+CQ	heyheyhey11: I don't think your question makes sense any more than say "How do you import a .txt " file into typescript. Or how do I import an ".html" file into typescript. __eou__	agent	0	1	0	0
+IG	Json files must be read using whatever library, parser, or facility your runtime environment provides. __eou__	agent	1	1	0	1
+FD	it's not a native language feature. __eou__	agent	1	1	0	1
+FD	You can, however, describe the content of the json using interfaces, so that when you read it in using whatever method is appropriate, you  get intellisense in accessing that json's members. __eou__	agent	1	1	0	1
+
+OQ	How can I delay showing my "loading-screen" to only show if the Observable takes more than x ms to return a result? __eou__	user	0	0	0	0
+
+GG	hi __eou__	user	0	1	1	2
+OQ	I have this kind of JSON, { _id: 5894d5e4dfc0f3184bffbff8,ip: 'xxx.xxx.xxx.xxx',createdAt: 2017-02-03T19:17:56.401Z,'iv:':Binary {_bsontype: 'Binary',sub_type: 0,position: 16,buffer: <Buffer ec 64 9c bc e2 e0 c2 44 bc 2b a7 9b 26 7f 43 e2> } } __eou__	user	0	1	0	0
+FD	How do I access 'iv' part from the result object? __eou__	user	0	1	0	0
+FD	result.iv returns undefined, other things work fine, like result.CreatedAt __eou__	user	0	1	0	0
+GG	Damn... __eou__	user	0	1	0	0
+FD	How can I do it without serializer? __eou__	user	0	1	0	0
+FD	I just wanna access the damn 'iv' Why is that in quotes??? __eou__	user	0	1	0	0
+IG	usually I set encoding to utf-8 for stream containing string. maybe there is something similarr for bson __eou__	agent	0	1	0	0
+IG	you can  use the bracket notation __eou__	agent	0	1	0	0
+CC	you mean result['iv'] that didn't work __eou__	user	0	1	0	0
+IG	The quotes have a:inside, maybe it's like thatresult['iv:'] __eou__	agent	1	1	0	1
+AE	idk, even result[0] for example doens twork __eou__	user	0	1	0	0
+AC	let me try __eou__	user	0	1	0	0
+PF	that was it, thank otroboe __eou__	user	0	1	0	0
+
+GG	Hey guys __eou__	user	0	1	1	2
+OQ	I was wondering, do imports of the same file in multiple files generate code duplication? __eou__	user	0	1	0	0
+IG	d3lm: no imports don't genrate any code __eou__	agent	1	1	0	1
+FD	they just generate [<-CODE->]  __eou__	agent	1	1	0	1
+FD	or the equivalent depending on what you configure your module in tsconfig.json __eou__	agent	1	1	0	1
+CC	Ah ok but require produces code, no? __eou__	user	0	1	0	0
+IG	no it's just a function that returns an object __eou__	agent	1	1	0	1
+FD	of whatever that file exports __eou__	agent	1	1	0	1
+FD	each time you call require you get the same instance __eou__	agent	1	1	0	1
+FD	so no duplication __eou__	agent	1	1	0	1
+UF	dtabuenc: Oh interesting __eou__	user	0	1	0	0
+FD	It is really recommended you start filling in your typings as you code... so if you come to a method like [<-CODE->]  __eou__	agent	1	1	0	1
+AC	So I can import that as often as I want and wont end up having the same code multipe times in my bundle __eou__	user	1	1	0	1
+IG	you can then go into your typing and do something like: [<-CODE->]  __eou__	agent	1	1	0	1
+UF	Pretty cool __eou__	user	0	1	0	0
+FQ	Treeshaking is then just to eliminate code that is not used, right? __eou__	user	0	1	0	0
+IG	d3lm: yeah tree shaking is to remove parts from within a module that were never imported __eou__	agent	1	1	0	1
+UF	Nice __eou__	user	0	1	0	0
+UF	Thanks __eou__	user	0	1	0	0
+
+OQ	dtabuenc: Did you get a chance to get the details of you ts/webpack config for non-relative module resolution? __eou__	user	0	1	1	2
+OQ	dtabuenc: Did you get a chance to get the details of you ts/webpack config for non-relative module resolution? __eou__	user	0	1	0	0
+IG	Yeah we just use resolve: {modules} __eou__	agent	1	1	0	1
+FD	 [<-CODE->]  __eou__	agent	1	1	0	1
+FD	baseUrl is set to app __eou__	agent	1	1	0	1
+FD	and [<-CODE->]  __eou__	agent	1	1	0	1
+AE	I'm not actually sure the../node_modules is necessary __eou__	agent	1	1	0	1
+UF	Thanks. __eou__	user	0	1	0	0
+AC	I'll try something like that.  __eou__	user	0	1	0	0
+CC	So you it set in both the tsconfig and resolve.modules/ __eou__	user	1	1	0	1
+PF	karptonite: yeah you definitely need both __eou__	agent	0	1	0	0
+PF	dtabuenc: Thanks again for you help. I've finally got it working,  __eou__	user	0	1	0	0
+IG	first with ts-loader, now with awesome-typescript-loader. Oddly, although awesome-typescript-loader has a special plugin for Advanced path resolution, [<-LINK->] , it worked fine without it, and using that plugin caused a crash withMaximum call stack size exceeded error. __eou__	user	1	1	0	1
+FD	well with advanced path resolution plugin you wouldn't add the folder to the modules __eou__	agent	1	1	0	1
+FD	it's probably recursive due to that __eou__	agent	1	1	0	1
+FD	Yeah, maybe the problem was adding it to both. __eou__	user	1	1	0	1
+AC	I could try without adding it to modules, using their plugin, but I think I might as well leave well enough alone for now. __eou__	user	1	1	0	1
+
+GG	Hello World! __eou__	user	0	1	1	2
+OQ	I'm trying to '''npm install node-jsdom''' but getting the dreaded node-gyp rebuild error __eou__	user	0	1	0	0
+FD	Failed at the contextify@0.1.15 install script 'node-gyp rebuild'.\nnpm ERR! Make sure you have the latest version of node.js and npm installed.\nnpm ERR! If you do, this is most likely a problem with the contextify package,\nnpm ERR! not with npm itself. __eou__	user	0	1	0	0
+FD	im using nvm __eou__	user	0	1	0	0
+CQ	there's an npm-debug.log ? __eou__	agent	0	1	0	0
+CC	just opened her up __eou__	user	0	1	0	0
+FD	where should i paste it? __eou__	user	0	1	0	0
+IG	I wouldn't know if there's anything useful... uhmm..  searchign ofr 'paste code' there's a whole page of options __eou__	agent	0	1	0	0
+IG	ended up usingnpm install jsdom-no-contextifyas it appeared that this was the problem dependancy __eou__	user	1	1	0	1
+FD	about to give it a whirl __eou__	user	0	1	0	0
+FD	forget you contenxtify! whoever you are __eou__	user	0	1	0	0
+
+OQ	How would I use a Proxy on a class if I’m trying to intercept a static method? __eou__	user	0	0	0	0
+
+OQ	Can someone Help me to send a Result to the Client?The normal way I go is to respond with results [<-CODE->] But now Iam working withhttps://github.com/peteward44/node-svn-ultimateAnd the Functions are not giving a Normal Response as Return but inside itself [<-CODE->] How can I send the Data Result to my Client inside this svn Function? __eou__	user	0	0	0	0
+
+OQ	 [<-CODE->]  __eou__	user	0	1	1	2
+FD	It's consistent with what I've said. If webpack says, "I can't find this file", it's not lying to you __eou__	user	0	1	0	0
+FD	It didn't find the file and then pretend that it hasn't found it __eou__	user	0	1	0	0
+FD	Well that may have to do  with search strategy, base-paths, mappings, etc. __eou__	agent	0	1	0	0
+IG	Yes, that's exactly what it has to do with __eou__	user	1	1	0	1
+AE	I thought that part was clear __eou__	user	0	1	0	0
+FD	"can't find file" means, "Can't find file" __eou__	user	1	1	0	1
+FD	require('')will not use typescripts module resolution strategy __eou__	agent	1	1	0	1
+FD	it's just pased through to webpack __eou__	agent	1	1	0	1
+FD	while import will use typescript module resolution __eou__	agent	1	1	0	1
+FD	which will try several different paths and things __eou__	agent	1	1	0	1
+FD	if you don't get a compile time error with typescript that means typescript has found it __eou__	agent	1	1	0	1
+FD	but typescript search paths might not always equate to webpack settings, so a lot of times webpack settings need to be tweaked to match __eou__	agent	1	1	0	1
+FD	usually only the case if you are using path mapping or multiple source roots in typescript __eou__	agent	1	1	0	1
+
+OQ	@losorio2015_twitterHello guys, when I consult an observable, it emits me 2 timesThe first obsevable emptyAnd the second observable with date.How can I avoid it, just ask me 2 times?I just want you to consult me, the observable date@Dorusbefore you modifiy them (or just dont modify)https://files.gitter.im/ngrx/store/1q9N/blob __eou__	user	0	0	0	0
+FD	I consult my observable state, with the operator select () __eou__	user	0	0	0	0
+CQ	make a plunker. screenshots don't help anyone diagnose anything __eou__	agent	0	0	0	0
+CC	@robwormald , I am only consulting my state, observable, with this lineThis.sub1 = this.store.select (fromRoot.getDocumentDialog);And I am emitting 2 times the observable. __eou__	user	0	0	0	0
+FD	I'm using the project, from the official app exampleHttps://github.com/ngrx/example-app __eou__	user	0	0	0	0
+FD	When I use the first () operator, it emits only once the observable one, but I get the observable void:This.sub1 = this.store.select (fromRoot.getDocumentDialog) .firts () __eou__	user	0	0	0	0
+CQ	again. make a plunker. it is impossible to diagnose your code with you explaining it line by line, or posting screenshots __eou__	agent	0	0	0	0
+CC	I understand,@robwormald, I'm going to try to make a plunker __eou__	user	0	0	0	0
+IG	here's a starter [<-LINK->] __eou__	agent	0	0	0	0
+UF	thank __eou__	user	0	0	0	0
+
+AE	That link would be a lot shorter if they used Unix style line endings __eou__	user	0	0	0	0
+FD	(not something that's configurable, just something I noticed and found interesting) __eou__	user	0	0	0	0
+FD	More curious: [<-LINK->] __eou__	user	0	0	0	0
+FD	 Or this one __eou__	user	0	0	0	0
+FD	 [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	I would like to know if there is something else on the market. I've asked previously in this chat about Hive CI, but there was no response. __eou__	user	0	1	1	2
+IG	RatkoD: Yes __eou__	agent	1	1	0	1
+
+OQ	Can anyone recommend a package that exports an API for getting from the npm registry a package.json by name? __eou__	user	0	0	0	0
+FD	 [<-LINK->] , obviously, duh.. __eou__	user	0	0	0	0
+
+GG	guys __eou__	user	0	1	1	2
+OP	i need on help __eou__	user	0	1	0	0
+FD	manikandan can u help me __eou__	user	0	1	0	0
+CC	tell me what you need ? __eou__	agent	0	1	0	0
+FD	package audio;import java.net.MalformedURLException;import java.net.URL;import java.util.concurrent.TimeUnit;import org.openqa.selenium.WebDriver;import org.openqa.selenium.remote.CapabilityType;import org.openqa.selenium.remote.DesiredCapabilities;import org.openqa.selenium.remote.RemoteWebDriver;import org.testng.annotations.BeforeTest;import org.testng.annotations.Test;import io.appium.java_client.ios.IOSDriver;import io.appium.java_client.service.local.AppiumDriverLocalService;public class trackinfo {    RemoteWebDriver driver;    AppiumDriverLocalService appiumService;    //String appiumServiceUrl; [<-CODE->]  __eou__	user	0	1	0	0
+FD	this the code i am using but i cant connect to appium server __eou__	user	0	1	0	0
+FD	but server is running __eou__	user	0	1	0	0
+FD	can u help m ein this __eou__	user	0	1	0	0
+CQ	appium logs ? __eou__	agent	0	1	0	0
+CC	nothing is coming in my appium server __eou__	user	0	1	0	0
+CQ	screenshot ? __eou__	agent	0	1	0	0
+CC	Last login: Tue Nov 22 12:56:56 on ttys000RIMM12:~ user$ appium[Appium] Welcome to Appium v1.6.1-beta[Appium] Appium REST http interface listener started on 0.0.0.0:4723 __eou__	user	0	1	0	0
+FD	its is just in this state only __eou__	user	0	1	0	0
+IG	 [<-CODE->] appiumServiceUrl = appiumService.getUrl().toString(); __eou__	agent	1	1	0	1
+FD	can you remove above code __eou__	agent	1	1	0	1
+FD	 __eou__	agent	1	1	0	1
+FD	and run it __eou__	agent	1	1	0	1
+UF	ok __eou__	user	0	1	0	0
+FD	and __eou__	agent	0	1	0	0
+AC	i willl try  it __eou__	user	0	1	0	0
+IG	change __eou__	agent	1	1	0	1
+FD	RemoteWebDriver __eou__	agent	1	1	0	1
+FD	to IOSDriver<> __eou__	agent	1	1	0	1
+UF	as ok __eou__	user	0	1	0	0
+UF	ok __eou__	user	0	1	0	0
+AC	i will try it and say u __eou__	user	0	1	0	0
+GG	ok __eou__	agent	0	1	0	0
+
+FD	Building this app with node: [<-LINK->] Its almost complete :) __eou__	user	0	0	0	0
+JK	igoramidzic: you fucking cunt.. you tried it __eou__	agent	0	0	0	0
+FQ	M-Hc0d3: What? lol __eou__	user	0	0	0	0
+CQ	M-Hc0d3: Care to explain yourself? __eou__	user	0	0	0	0
+FD	Nah mate. Just stop being a cunt. Nobody click on that link. He's gathering your information if you log into that fake website. __eou__	agent	0	0	0	0
+
+OQ	 [<-CODE->] How to do it without Typescript warning? B cannot extend A. __eou__	user	0	0	0	0
+CQ	DanielKucal: so you want to start with an array ofAbut then mutate each element so it becomes aB? __eou__	agent	0	0	0	0
+FD	Yes, should i create new array of elements instead? __eou__	user	0	0	0	0
+NF	I don't know,  __eou__	agent	0	0	0	0
+CC	I'd need more context, but you can get it to work as is. __eou__	agent	0	0	0	0
+
+OQ	can we have an option to upload images so that users can share screenshots __eou__	user	0	1	1	2
+IG	arunkumar413: You can already paste or drag images into the chat. __eou__	agent	1	1	0	1
+UF	cbj4074: thanks.  __eou__	agent	0	1	0	0
+NF	aste does not have the required effect when the copy is from within e.g. Eye of MATE Image Viewer. __eou__	agent	0	1	0	0
+PF	 see now that it works when copied from e.g. GIMP. __eou__	agent	1	1	0	1
+AE	grahamperrin: Depends on how the OS and your browser interprets things. Not very standard __eou__	agent	1	1	0	1
+PF	grahamperrin: Sure, no prob... sounds like it can be finnicky! __eou__	agent	0	1	0	0
+
+OQ	Interesting question: Do you publish packages to NPM transpiled from ES6 -> ES5, or should the people transpile it themselves when using them in an ES5 environment (especially interesting for browser based packages)? What do you think? __eou__	user	0	0	0	0
+CQ	Why would you make it harder for yourself than it needs to be? __eou__	agent	0	0	0	0
+CC	jruts: I don't know. For me it's simpler to publish es6 and let the consumer transpile and optimize their bundle, but what's the right thing to do? __eou__	user	0	0	0	0
+FD	Ah, k, missunderstood that one  __eou__	user	0	0	0	0
+
+OF	anyone updated to the new itunes?  I have a suspicion its broke appium’s ability to talk to safari on real devices __eou__	user	0	1	1	2
+IG	i haven't, its knocking on the door __eou__	agent	1	1	0	1
+
+OQ	Hi guys, is anyone here able to answer or give me a hint what's going on with my angular2 app?  Details are posted here: [<-LINK->] __eou__	user	0	0	0	0
+
+OQ	Would you mind linking the PR? __eou__	user	0	0	0	0
+
+OQ	To follow up on my questions about the transition to TS 2.1 for [<-LINK->] , most test are passing now but I'm a bit stuck nonetheless.symbol.getDocumentationComment()used to return the complete comment but now I'm not seeing comments that start with@any more. E.g. [<-LINK->]  __eou__	user	0	1	1	2
+FD	I believe changes to this function cause missing comments in [<-LINK->]  __eou__	user	0	1	0	0
+FD	Looks like it's [<-ISSUE->]  __eou__	user	0	1	0	0
+IG	domoritz: the json schema looks like the one microsoft is using for ms flow and such __eou__	agent	1	1	0	1
+
+OQ	hiI'm using appium 1.6 on real iOS 9 deviceand the app launch twice for the appium sessionis this the expected  __eou__	user	0	0	0	0
+
+OQ	If I'm coding node with TS, should I avoid npm packages which dont have declaration files or a@typespackage? __eou__	user	0	1	1	2
+IG	Keksike: If you need package, which dont have typings, so you can write your own __eou__	agent	1	1	0	1
+FD	dtabuenc: When I try to use a npm package which doesnt have a declaration file (@types), I get a errorCould not find a declaration file for module 'myLibrary'when I try to import it withimport * as myLib from 'myLibrary'; __eou__	user	0	1	0	0
+FD	How can I get around that error? __eou__	user	0	1	0	0
+IG	you need to add a declaration __eou__	agent	1	1	0	1
+FD	at it's most basic you just have to do declare module 'myLibrary'; __eou__	agent	1	1	0	1
+FD	in that casemyLib will be type any __eou__	agent	1	1	0	1
+FQ	where should I do it so typescript knows how to use it? __eou__	user	0	1	0	0
+IG	usually in a file in your project like custom-typings.d.ts __eou__	agent	0	1	0	0
+FD	and then just make sure you include it in your compilation __eou__	agent	1	1	0	1
+PF	allright, thanks alot :) __eou__	user	0	1	0	0
+
+OQ	I just bought some ethereum from coinbase, but etherscan shows the balance as 0 for the ethereum wallet address coinbase has for me.  Any ideas? __eou__	user	0	1	1	2
+IG	chafey: Takes a minute to update the balance. Check again in a few minutes. __eou__	agent	0	1	0	0
+CC	Its been about 30 minutes now __eou__	user	0	1	0	0
+AE	Perhaps coinbase doesn't actually put the ethereum on the network and keeps it internally? __eou__	user	0	1	0	0
+AE	Maybe I need to transfer it out of coinbase into my own account? __eou__	user	0	1	0	0
+IG	chafey: They keep it internally, you need to call for withdraw in the account, I don't know how to do it but you can ask support for coinbase. __eou__	agent	1	1	0	1
+PF	I see how to transfer,  __eou__	user	0	1	0	0
+AE	just surprised they don't actually put it on the network.+ __eou__	user	0	1	0	0
+
+GG	Hi all __eou__	user	0	0	0	0
+OQ	we are having some issues with translations in our application as we have multiple sources of XLF that we want to inject.Is there an option to change the format from xlf to JSON or some other easy to parse in the frontend value? __eou__	user	0	0	0	0
+
+OQ	docker-compose down && docker-compose build && docker-compose up, i used to be able to pair these and it would only rebuild images when things needed to be. my containers are now being rebuilt from scratch every time. any reason one could think? __eou__	user	0	1	1	2
+FD	 [<-CODE->] used to be, that if i hadnt changed requirements.txt, it would reuse that cache. i have not changed requirements.txt and for some reason its bailing and not using the cache __eou__	user	0	1	0	0
+CQ	is your source is changing between builds? or are you clearing any dangling containers at any point? __eou__	agent	0	1	0	0
+CC	its rebuilding containers that i have definitely not changed. for example, im changing stuff in a django container, but theres a node container i never touch, and its going through all the npm install bs that usually only happens when the package.json is different (invalidates the build) __eou__	user	0	1	0	0
+IG	looks like cache is actually breaking at step 3; which is very strange __eou__	agent	1	1	0	1
+CQ	is something else changing the contents of/usr/srcfrom a shared volume? __eou__	agent	0	1	0	0
+
+OQ	is there an easy way to get  current function name? I could throw-catch a new Error and parse it from there... (yes it might be called 'Anonymous') __eou__	user	0	1	1	2
+IG	d3x0r: no  __eou__	agent	1	1	0	1
+CC	ut why would you want it __eou__	agent	0	1	0	0
+IG	you're inside the function you wrote, so you can just reference it. __eou__	agent	1	1	0	1
+CC	ya.... copyable code snippets... or just tags that reference where they are...shrugno macros so can't really hide it as easily as C __eou__	user	0	1	0	0
+CC	what would be the use case? __eou__	agent	0	1	0	0
+AE	(also, code snippets should never be blindly copied) __eou__	agent	0	1	0	0
+
+OQ	is there any Di/ioc framework (for node.js) currenly widely accepted by typescript community? or is there some method/function in typescript so it’s not needed? couldnt really find anything except the angular one __eou__	user	0	1	1	2
+IG	 [<-LINK->]  __eou__	agent	1	1	0	1
+FD	haven't used it but I know that some people have used that __eou__	agent	0	1	0	0
+FD	would think it's similar to the angular 2 one __eou__	agent	1	1	0	1
+UF	thanks going to check it out __eou__	user	0	1	0	0
+FD	thre are probably others, although I wouldn't classify any as having "wide acceptance" in the community __eou__	agent	1	1	0	1
+FD	angular 2 and aurelia have wide acceptance within their respective communities __eou__	agent	1	1	0	1
+FD	but  probably very few people using them outside as standalone DI __eou__	agent	1	1	0	1
+IG	scarlier: try there's one that's SUPER heavy handed calledinversify __eou__	agent	0	1	0	0
+FD	i prefer this one calledtypedithat i prefer since its API is super simple __eou__	agent	0	1	0	0
+NF	varunjayaraman: ty inversify looks promesing __eou__	user	0	1	0	0
+FQ	varunjayaraman: what qualifies as SUPER heavy handed __eou__	agent	0	1	0	0
+FD	? __eou__	agent	0	1	0	0
+FQ	varunjayaraman: any experience with the performance of it? __eou__	user	0	1	0	0
+IG	dtabuenc: just felt like it was overly complicated to get it to work __eou__	agent	0	1	0	0
+NF	scarlier: I don't think performance is going to vary much between frameworks __eou__	agent	0	1	0	0
+NF	scarlier: i doubt it __eou__	agent	0	1	0	0
+IG	they all essentially register dependencies in some kind of lookup table __eou__	agent	0	1	0	0
+FD	and pull from there on instantiation __eou__	agent	0	1	0	0
+FD	so performance wise they will all be similar __eou__	agent	0	1	0	0
+FD	unless they are doing something really stupid __eou__	agent	0	1	0	0
+AC	all i needed was something that registers, gets, and can invoke functions with injected dependencies __eou__	agent	1	1	0	1
+UF	ah ok __eou__	user	0	1	0	0
+
+GG	Hello __eou__	user	0	0	0	0
+OQ	i'm having this issue 'npm install' __eou__	user	0	0	0	0
+FD	npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform forfsevents@1.0.15: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"}) __eou__	user	0	0	0	0
+FD	please house to fix it ? __eou__	user	0	0	0	0
+
+OQ	mgmanikandan87: @RatkoDany  iOS  in built to hit enter or back button..similar to Androidkey method in android __eou__	user	0	1	1	2
+FD	? __eou__	user	0	1	0	0
+FD	inbuilt methods? __eou__	user	0	1	0	0
+FD	mgmanikandan87:  __eou__	user	0	1	0	0
+FD	any suggestion for me __eou__	user	0	1	0	0
+FD	? __eou__	user	0	1	0	0
+FD	for hitting the enter from virtual keypad __eou__	user	0	1	0	0
+FD	? __eou__	user	0	1	0	0
+IG	.submit() ? __eou__	agent	1	1	0	1
+FD	will work i guss __eou__	agent	1	1	0	1
+UF	hmm __eou__	user	0	1	0	0
+AC	let me check but not sure about __eou__	user	0	1	0	0
+FD	it __eou__	user	0	1	0	0
+GG	yes __eou__	agent	0	1	0	0
+
+OQ	I also have 2 instructions, one updates my ruby gems, and one updates my node packages. No matter how i go about this, at some point one of those cache layers will be invalidated for no reason because the other changes __eou__	user	0	1	1	2
+FD	the Dockerfile is a naively simple tool __eou__	user	0	1	0	0
+FD	would have been much more powerful if they had given us a ruby DSL to build out dockerfile descriptions, that way we could have implemented caching as we pleased __eou__	user	0	1	0	0
+FD	bbl __eou__	user	0	1	0	0
+AE	hmm, wish I could help, but I'm equally as stuck __eou__	agent	0	1	0	0
+IG	siassaj: you simply combine your two commands into one "call" and this would create a single layer with all the changes from both, IIRC you can also while building a container run a couple commands from the command line and then "commit" afterwards in order to control when the layer actually gets saved __eou__	agent	1	1	0	1
+
+OQ	Hello gyus, I am new to ether before starting with ether I want to know  Is it possible to develop a blockchain for record keeping using etherum platform where I can decide where to store the records __eou__	user	0	1	1	2
+FD	thanx@Gustav-Simonsson.. I want to make somwhat centralized blockchain __eou__	user	0	1	0	0
+FD	to reduce the storage and increase scalability __eou__	user	0	1	0	0
+FD	I dont need any incentives for miners for now..just want to test the core concept of my idea __eou__	user	0	1	0	0
+FD	is it possible using etherum? __eou__	user	0	1	0	0
+IG	yepp that's possible, some of the clients are quite modular and can be used for systems with alternative levels of (de)centralization / consensus algorithms __eou__	agent	1	1	0	1
+UF	thanx a lot@Gustav-Simonsson __eou__	user	0	1	0	0
+
+OQ	anyone got an example of a library that attaches an instance to window? I need to create typings for such a library and can't seem to get it to work __eou__	user	0	1	1	2
+IG	Use interface augmentation __eou__	agent	1	1	0	1
+FD	 [<-CODE->]  __eou__	agent	1	1	0	1
+FD	you can also declare a global [<-CODE->]  __eou__	agent	1	1	0	1
+FQ	hmmm, says X is not a module __eou__	user	1	1	0	1
+FD	I have the import like: [<-CODE->]  __eou__	user	1	1	0	1
+IG	I guess I don't get the reference to the window.lp Tag with that? __eou__	user	1	1	0	1
+FQ	also with that I get:File '/node_modules/liveperson-chat-api/src/index.d.ts' is not a module. __eou__	user	0	1	0	0
+FD	I tried this: [<-CODE->] but then the lpTag is just an empty object and not the one that's attached to window __eou__	user	0	1	0	0
+FD	not a fun experience :/ my TSC takes 7 seconds to compile so it takes me ages to try something that isn't going to work. trial and error __eou__	user	0	1	0	0
+FD	expected this to work, but nope :/ [<-CODE->]  __eou__	user	0	1	0	0
+FD	I've linked in the library that adds itself to window and am providing an index.d.ts, so that when I import it, then the script gets loaded.. but then how to get ahold of that window.lpTag reference -.- __eou__	user	0	1	0	0
+FD	with the declare var lpTag; when I console.log lpTag as I import it, it just seems to be an empty object. Not sure wtf that is meant to be __eou__	user	0	1	0	0
+
+FD	 [<-CODE->]  [<-CODE->]  __eou__	user	0	1	1	2
+OQ	can I somehow inject Math object to use inside my template? __eou__	user	0	1	0	0
+IG	 [<-CODE->]  __eou__	agent	1	1	0	1
+PF	DzmitryShylovich: I got it to work as you explained, thank you! __eou__	user	0	1	0	0
+IG	PhotoPaul: creating a pipe is more elegant __eou__	agent	1	1	0	1
+PF	n00dl3: You are right __eou__	user	0	1	0	0
+AE	but this is already part of a 3 piece pipe so I thought of keeping it simple __eou__	user	0	1	0	0
+AC	Maybe if I need to use it again I will convert it into a pipe __eou__	user	0	1	0	0
+
+OQ	all: I always observe this channel is full of questions and not a single one answering. If you are currently waiting for an answer, please feel free to cross-post your question on [<-LINK->] . __eou__	user	0	0	0	0
+
+OQ	I'm facing some problems while I'm using Appium with wd-bridge __eou__	user	0	0	0	0
+FD	I have this config file __eou__	user	0	0	0	0
+FD	[<-CODE->] __eou__	user	0	0	0	0
+FD	When I try to run protractor, it returns an errro __eou__	user	0	0	0	0
+FD	WebDriverError: No such context found. __eou__	user	0	0	0	0
+FD	From: Task: WebDriver.createSession() __eou__	user	0	0	0	0
+OQ	What would be the problem here? __eou__	user	0	0	0	0
+
+OQ	And how would I make that base image? __eou__	user	0	0	0	0
+FD	the problem I'm having is with the devel packages that I need to install, and then remove in the runtime image __eou__	user	0	0	0	0
+FD	but those packages come with some dependencies __eou__	user	0	0	0	0
+CQ	are you building a Windows NanoServer image or something on an ubuntu/CentOS base? __eou__	agent	0	0	0	0
+FD	and I'm not sure on what's the best way to keep track of those __eou__	user	0	0	0	0
+CC	I'm basing off the python image.. so eventualy it's debian __eou__	user	0	0	0	0
+CQ	so the runtime image uses a package that you are compiling in the devel image or it requires an environment similar to the devel image minus a few devel packages? __eou__	agent	0	0	0	0
+CC	I need gcc to compile some python modules __eou__	user	0	0	0	0
+FD	and I don't need gcc in the runtime image __eou__	user	0	0	0	0
+FD	for example __eou__	user	0	0	0	0
+FD	gcc is not the only one __eou__	user	0	0	0	0
+
+OQ	hey guys I am using angular 2 as my client side , express +node at server and want to use firebase as my db ,, so hw can I get started?? __eou__	user	0	1	1	2
+FD	when i try to retrieve the data.name from my server i dont get the value: __eou__	user	0	1	0	0
+FD	res.json({name:['ayz','s'],work:['web app dev','front end dev']}); __eou__	user	0	1	0	0
+FD	i need to retireve data.name in my client side... when i retrieve name i get it but how can i retrieve data.name __eou__	user	0	1	0	0
+CQ	AyzPat: can you explain better "i need to retireve data.name in my client side... when i retrieve name i get it but how can i retrieve data.name"? __eou__	agent	0	1	0	0
+CC	fox1t: i have a plukr with basic files not exactly working one.. __eou__	user	0	1	0	0
+FD	 [<-LINK->]  __eou__	user	0	1	0	0
+IG	*ngFor="let data of data"? maybe change the name of local var to not clash with data __eou__	agent	0	1	0	0
+CC	@fox1tits not a problem on the client side, the problem is in res.json() __eou__	user	0	1	0	0
+FD	fox1t: m new to node so not getting how to send the information __eou__	user	0	1	0	0
+IG	res.json({name:['ayz','s'],work:['web app dev','front end dev']}); <-- this is ok __eou__	agent	0	1	0	0
+FD	try to query the route with postman and check if the returned object's props __eou__	agent	0	1	0	0
+CQ	fox1t: then why is data.name or say user.name is not getting retrieved it gives an error: Cannot find a differ supporting object '[object Object]' of type 'ayz,s'. NgFor only supports binding to Iterables such as Arrays. __eou__	user	0	1	0	0
+FD	Cannot find a differ supporting object '[object Object]' of type 'ayz,s'. NgFor only supports binding to Iterables such as Arrays. __eou__	user	0	1	0	0
+FD	on queryin to postman i got this:{"name": ["ayz","s"],"work": ["web app dev","front end dev"]} __eou__	user	0	1	0	0
+IG	so nodejs part is ok, as you can see __eou__	agent	1	1	0	1
+FD	the problem is inside client side code __eou__	agent	1	1	0	1
+FD	i am not angular2 ninja, but i suppose you have to find a way to convert your data to array.  Maybe here: [<-ISSUE->]  __eou__	agent	1	1	0	1
+FD	ok here is the answer: [<-LINK->]  __eou__	agent	1	1	0	1
+FD	this one is your issue, see problem 1 __eou__	agent	0	1	0	0
+
