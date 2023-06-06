@@ -4,7 +4,7 @@ Please download dataset at: https://drive.google.com/drive/folders/1YlN6sszyo9vm
 
 The whole dataset includes the Gitter-based train/test set and open-sourced issue-solution pairs.
 
-# Pre-processing Dataset
+# Pre-processed Dataset
 
 The dataset in [cross_validation_dataset](./cross_validation_dataset) has been pre-processed.
 
