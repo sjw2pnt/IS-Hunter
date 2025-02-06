@@ -1,0 +1,60 @@
+issue: Hi Team, I have upgraded my app to use java21 and when trying to build native image it is checking for java 21 from https://github.com/bell-sw/Liberica/releases , as it is not available as of now. What would be the alternative to fix this?
+solution: "I encountered similar issues when upgrading to 21, and got exception like the following set BP_JVM_VERSION to 21. Error:  Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.2.0-SNAPSHOT:build-image (default-cli) on project react-boot-mongo-kotlin-backend: Execution default-cli of goal org.springframework.boot:spring-boot-maven-plugin:3.2.0-SNAPSHOT:build-image failed: Builder lifecycle 'creator' failed with status code 51 -> [Help 1] (edited)". 
+
+issue: Hey, if I have two starters, one which requires a property to be enabled, how can the 2nd starter enable this property and use the first components?
+solution: A property of the starter? 2nd starter must use components of the first starter?. 
+
+issue: "Hi everyone, I'm having some issues migrating from Spring Boot 2.4 to 2.5, I suddenly get a 404 for a path served by a @RepositoryRestController. I'm trying to understand how @RepositoryRestController behaves, so I created an MWE (with Spring Boot 2.7) that includes a @RepositoryRestController, and even in this project, I can't get it to work, I always get a 404. My Controller looks like this: @RepositoryRestController
+class FooBarController {
+
+  @GetMapping(path = [""/fooBars""])
+  fun get(): ResponseEntity<String> {
+    return ResponseEntity(""ok"", HttpStatus.OK)
+  }
+} But when I call this endpoint, e.g. via curl -v 'http://localhost:8080/fooBars a 404 is returned. If anyone wants to take a closer look, the full repo is available here: https://github.com/nroi/repotest/blob/main/src/main/kotlin/space/xnet/repotest/FooBarController.kt"
+solution: I'm not familiar with this, but shouldn't you include /api as per your application.properties base path?. 
+
+issue: What's the best way to implement username-password authentication for my simple CRUD API? It'll be connected to MySQL via Spring Data JPA I'll be making an Angular frontend for it with a form for logging in.
+solution: What's the industry standard? I assume salting and hashing the credentials myself would be unwise and I should just use something like JWT*. If you're already using Spring, you should use Spring Security. The standard for storing passwords is hash/salt in DB. JWT doesn't deal with password storage - it's typically used for replacing stateful cookies.. 
+
+issue: "So i've got a basic fragment <body th:fragment=""thumbnail(video, link)"">
+                <a th:href=""@{${link}}""
+                   th:text=""${link}""
+                ></a>
+</body> When I do             <th:block th:each=""video : ${videos_latest}""
+                      th:insert=""~{frag/thumbnail :: thumbnail(video=${video},link=${video.getSlug()})}"">
+            ></th:block> It throws an error that the ""getSlug()"" is being called on a null context object But when I do <th:block th:each=""video : ${videos_latest}""
+                      th:with=""url='/latest'""
+                      th:insert=""~{frag/thumbnail :: thumbnail(video=${video},link=${url})}"">
+            ></th:block> The link and text are blank"
+solution: "So essentially what I did was just use parameterless fragments with named parameters on the call and just do error checking in the fragment. It's a bit.. not what I was hoping for as far as calling fragments goes, but the added bonus of this approach is I get my optional and default variables back             <th:block th:each=""video : ${videos_latest}""
+                      th:with=""video=${video},link=|/latest/${video.getSlug()}|,truncateTitle=50""
+                      th:insert=""~{frag/thumbnail :: thumbnail}""
+            ></th:block>
+
+            <th:block th:each=""video : ${videos_latest}""
+                      th:with=""video=${video}""
+                      th:insert=""~{frag/thumbnail :: thumbnail}""
+            ></th:block> Both work perfectly". 
+
+issue: "Hi everyone! I have a problem with running tests using [<-CODE->] Some of the tests pass successfully, but some of them fail 2024-04-30 10:51:12.432  INFO \[,,\] 753 --- \[    Test worker\] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2024-04-30 10:51:12.433  INFO \[,,\] 753 --- \[    Test worker\] o.apache.catalina.core.StandardService   : Starting service \[Tomcat\]
+2024-04-30 10:51:12.433  INFO \[,,\] 753 --- \[    Test worker\] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: \[Apache Tomcat/9.0.81\]
+2024-04-30 10:51:12.478  INFO \[,,\] 753 --- \[    Test worker\] o.a.c.c.C.\[Tomcat\].\[localhost\].\[/\]       : Initializing Spring embedded WebApplicationContext
+2024-04-30 10:51:12.478  INFO \[,,\] 753 --- \[    Test worker\] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1527 ms
+............................................................................................................................................
+2024-04-30 10:51:18.829  INFO \[,,\] 753 --- \[    Test worker\] o.s.i.endpoint.EventDrivenConsumer       : started bean '\_org.springframework.integration.errorLogger'
+2024-04-30 10:51:18.839  WARN \[,,\] 753 --- \[    Test worker\] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 0 is already in use
+2024-04-30 10:51:18.839  INFO \[,,\] 753 --- \[    Test worker\] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:\_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2024-04-30 10:51:18.839  INFO \[,,\] 753 --- \[    Test worker\] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s). How to fix that? Thanks in advance!"
+solution: "Hello. From the logs I can see that tomcat starts to listen on port 0 2024-04-30 10:51:12.432 INFO [,,] 753 --- [ Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 0 (http) and 2024-04-30 10:51:18.839 WARN [,,] 753 --- [ Test worker] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 0 is already in use says that the port is already in use. So I'm guessing that tomcat and wiremock is trying to use the same port maybe and few test cases fail because of that. (edited)". 
+
+issue: [[pihentagy]: have you checked that your test classes are all annotated with @SpringBootTest?? because only spring boot will pick config from test/resources/application.yml
+solution: For some strange reason, if I put application.yml inside src/{main,test}/resources/config, then test overrides main. If I just put both under resources, it is NOT. that works as designed. resources in test should override resources in main, by doing this tests can easily configured without changed production resources.. 
+
+issue: "Cross-posting from stackoverflow. spring-boot 3.0.12 uses JOOQ 3.17.16 as mentioned here. Can someone let me know if JOOQ 3.18.x compatible with spring-boot 3.0.12? What is the general compatibility guideline between JOOQ and spring-boot versions? I have asked the same in JOOQ community, where I was suggested that the spring-boot community would be the correct place to discuss this."
+solution: "Reply I got in JOOQ community Thanks for your message. Since these things are managed entirely by Spring Boot, I'd ask Spring Boot folks. jOOQ is (luckily) entirely unaware of whatever frameworks do with it, including Spring Boot, Micronaut, Quarkus, etc. etc. Good luck Lukas". 
+
+issue: Hello, we are trying to use the official maven docker image (https://hub.docker.com/_/maven) to build a spring boot containerized application using spring-boot:build-image. Can someone help with how to build a spring boot image using the maven image? The problem appears to be that docker is unavailable inside the maven build container, even though it is available on the build host.
+solution: Mounting the host's docker socket into the container seems promising. Ref: https://kodekloud.com/blog/run-docker-in-docker-container/. 
+

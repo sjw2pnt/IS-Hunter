@@ -1,0 +1,221 @@
+issue: But now I feel very timid. Since I am here to post my own stuff, well, using Solidity/Yul. Hopefully it's okay for you!!
+solution: Oh yeah, I don't know what you will post, but your post will be moderated haha. Please read our guidelines before post anything: https://forum.soliditylang.org/t/read-this-before-posting/7 we don't endorse others products or services though.. 
+
+issue: But I will be the thicker skin and post my stuff there since I just got my rights, if you won't mind 😝
+solution: "I mean, I personally wouldn't mind, but indeed it seems a bit off-topic to me, since the forum is mainly for solidity related topics and your project, although uses Yul, may not be directly related to Solidity. But I haven't spend much time reading about your project yet though. So I'm not sure if the Solidity forum is the right place to announce such project. I guess there are better options where you could advertise your project. (edited)". "IMO it's perfectly fine since it's about language design. Even if it's not strictly about the current or future state of Solidity or Yul, discussing ideas that other languages and compilers bring to the table is still on topic.  Personally, I think we should not be too strict about topics in general and err on the side of allowing interesting discussions rather than driving people away. We want it to be a place where people can indirectly contribute to the development and implementation of the language by expressing their opinions. The main reason for moderation is that we don't want the forum to become just another support channel. Or be infested by spam or people advertising their commercial products. Beyond that it should be mostly up to the users and we can always step in if it actually starts affecting the usefulness of the forum. (edited)". 
+
+issue: "hi, i have a question about the metadata of the solidity deployed bytecode. iiuc it stores compiler version, optimizer runs and other info. but how can actually access them? for example: i copied the deployed bytecode of ethena ((https://etherscan.io/token/0x57e114B691Db790C35207b2e685D4A43181e6061) and pasted in https://playground.sourcify.dev/ and i got the ipfs link that stores the metadata: https://ipfs.io/ipfs/QmZvE9dGYwfhXCAigZ5UgCmWUaUxy1Nksvfr4dNWKwiJ1p  however, when i try to open it in my browser, it says 504 Gateway timeout, i'm so confused... can anyone here help me with this? many many thanks!"
+solution: Could be a network fluke, the IPFS link works for me.. 
+
+issue: Hello, i have some deployed bytecode of a contract, so as far as i can tell, the deployed bytecode is consist of 3 parts: 1. the initialization code 2. the runtime code (code logic) 3. the metadata. My question is is it possible to extract the runtime code from the deployed bytecode? if so, how?
+solution: "The deployed bytecode is the runtime code. It's the creation code that contains initcode and deployed code and you can get the deployed part with solc --bin-runtime. Though note that it's not necessarily identical with what is actually deployed to the chain because of immutables, library linking, etc. (edited)". 
+
+issue: Can you clarify what specifically doesn't work in that scenario? It seems to work just fine for me:
+solution: in this case, I does not have the error as part of it's an interface, but it should because we want I and C to have identical interfaces. 
+
+issue: "Hello people, have a question regarding of inlining of pure functions. Is it even possible to inline such function in a sense that result is computed at compile time and then used for inlining?"
+solution: "With the body of compute address function computeAddress(bytes32 salt, bytes32 bytecodeHash, address deployer) internal pure returns (address addr) {
+        /// @solidity memory-safe-assembly
+        assembly {
+            let ptr := mload(0x40) // Get free memory pointer
+
+            mstore(add(ptr, 0x40), bytecodeHash)
+            mstore(add(ptr, 0x20), salt)
+            mstore(ptr, deployer) // Right-aligned with 12 preceding garbage bytes
+            let start := add(ptr, 0x0b) // The hashed data starts at the final garbage byte which we will set to 0xff
+            mstore8(start, 0xff)
+            addr := keccak256(start, 85)
+        }
+    }
+
+function getAddress() internal pure returns (address)
+     return computeAddress(   // computeAddress is internal pure too
+            SALT,
+            keccak256(abi.encodePacked(
+                type(SomeContract).creationCode)),
+            DEPLOYER);". "Depends on what it is computing. In very simple cases yes, but not for anything touching memory currently. In the long term it will have more extensive compile-time evaluation. (edited)". 
+
+issue: Hi guys, I’m new to here & this language, is there anyone who can give me a brief intro about background of this ?
+solution: "Hey Akash Gamage ! This channel is great for discussions on Solidity that are specific to a certain topic or aspect of the language. Feel free to ask more specific questions going forward so that we can help you out. :) (edited)". 
+
+issue: Hey all. I want to use delegatecall to preserve the caller. Though, as you know, delegatecall overwrites the storage - i.e if something is set in storage on the callee, it would overwrite the state variables in the caller. What I want to achieve is to either:
+solution: "Is that meant as a security measure or just to prevent mistakes? If you don't trust the callee, then delegatecalling them is a bad idea and not only because of potential storage access. But if it's just to avoid accidental collisions then this is basically the problem we're currently dealing with in the new account abstraction design (EIP-7702). The solution is placing the storage variables at a location that will be unlikely to conflict. Proper support for custom storage locations is currently being discussed in https://github.com/ethereum/solidity/issues/597#issuecomment-2137917945 (we have an initial design and are waiting for a bit more feedback before we finalize it). In the meantime you could still do that ""manually"" by following a convention like ERC-7201.". 
+
+issue: Ah amazing answer. What security aspect you mean when saying that delegatecall should not be used with untrusty callees ? Selfdestruct is deprecated. So just curious
+solution: "The callee can fully impersonate your contract to the outside world. It can fire events, call other contracts, spend your tokens (and ether), etc. Storage is important too, but not necessarily the only issue to be worried about. (edited)". 
+
+issue: I would also like to know about contracts written entirely in Yul. Should such contracts strictly follow Solidity's Memory Layout? (For example, I have a completely independent contract from others and I want to optimize it for size and gas).
+solution: "No, in Yul memory management is completely up to you. Unless you want to use stack-to-memory mover - but even then you only have to stick to what you promise using memoryguard(). Other than that you don't have to stick to Solidity's memory management model in Yul. (edited)". 
+
+issue: "In Solidity, no. Codegen depends on dynamic memory being available. In Yul, yes, there you have full control over your contract."
+solution: "Let's say I have Solidity contract that doesn't use dynamic memory. Can I directly add to 0x80 (free memory pointer) instead of doing mload(0x40)? let pos := 0x80
+// let pos := mload(0x40)
+mstore(pos, hash)
+mstore(add(pos, 0x20), v)
+mstore(add(pos, 0x40), r)
+mstore(add(pos, 0x60), s)". 
+
+issue: "This sounds safe to me because it matches the 4th memory rule: > Temporary memory that is located after the value of the free memory pointer at the beginning of the assembly block, i.e. memory that is “allocated” at the free memory pointer without updating the free memory pointer."
+solution: "Memory safety rules do not apply in pure Yul. It applies to Solidity's memory management. The only thing you have to worry about in Yul is potentially memoryguard (if you use it) or maybe cases where you copy some helpers from Solidity-generated Yul that do assume Solidity memory management rules. Other than that, in Yul memory is a clean slate with no rules, up to you to manage. (edited)". 
+
+issue: Stack-to-memory-mover is not related to any of these. It will kick in when using too many stack slots to prevent StackTooDeep.
+solution: Well, if anything, my contract was also 100% covered by tests. What stack size is needed to trigger the stack move into memory?. 
+
+issue: I mean, you might be able to do it if you make enough assumptions and know a lot about how the compiler generates code but you're going into compiler's implementation details and it does not seem worth it to me just to avoid using the free mem ptr. If you want to do that, you should really use pure Yul.
+solution: And that's with unoptimized code. With optimization it would be much harder, because e.g. things like inlining can easily affect how many slots you need (by spilling variables from a function that got inlined).. 
+
+issue: Hi, how to repair the bellow code to compile successfully without change the contract structure.
+solution: "I literally asked the same question ChatGPT, tell me if that helps: pragma solidity ^0.8.24;
+
+interface NI1 {
+    function NInfo() external view returns (bytes32);
+}
+
+contract N1 is NI1 {
+    bytes32 public NInfo;
+
+    constructor() {
+        NInfo = keccak256(""aaa"");
+    }
+
+    function NInfo() external view override returns (bytes32) {
+        return NInfo;
+    }
+}
+
+interface N2I {
+    function NInfo() external view returns (bytes32);
+}
+
+contract N2 is N2I, N1 {
+    function NInfo() public view override(N1, N2I) returns (bytes32) {
+        return N1.NInfo();
+    }
+}". 
+
+issue: "Hii, sorry for off-topic, but do we have a similar Matrix community for general Ethereum discussions?  (I don't want to join Discord for this )"
+solution: "I'm afraid there's no Matrix channel for general Ethereum discussions as such. There are, however, some other channels that may be useful to you: Ethereum StackExchange if you have specific support questions r/ethereum & r/ethdev subreddits And as you may have noticed, the Ethereum.org Discord continues to be the place where most of the community has discussions and hangs out.". 
+
+issue: hey all. I am hitting the head against the wall. Would appreciate your inputs.
+solution: "What version of the compiler are you using, what pipeline (--via-ir or not?), are you requesting optimized output or not? I've tried compiling and can't get a repro.". "Thanks for the follow up ^_^ Solidity version - 0.8.17 I am NOT using --via-ir I am not sure whether I use optimizer or not (basically using default confuguration of foundry - nothing mentioned in foundry.toml file about optimizer)". 
+
+issue: Hi guys, I’m new to here & this language, is there anyone who can give me a brief intro about background of this ?
+solution: "Hey Akash Gamage ! This channel is great for discussions on Solidity that are specific to a certain topic or aspect of the language. Feel free to ask more specific questions going forward so that we can help you out. :) (edited)". 
+
+issue: Hey all. I want to use delegatecall to preserve the caller. Though, as you know, delegatecall overwrites the storage - i.e if something is set in storage on the callee, it would overwrite the state variables in the caller. What I want to achieve is to either:
+solution: "Is that meant as a security measure or just to prevent mistakes? If you don't trust the callee, then delegatecalling them is a bad idea and not only because of potential storage access. But if it's just to avoid accidental collisions then this is basically the problem we're currently dealing with in the new account abstraction design (EIP-7702). The solution is placing the storage variables at a location that will be unlikely to conflict. Proper support for custom storage locations is currently being discussed in https://github.com/ethereum/solidity/issues/597#issuecomment-2137917945 (we have an initial design and are waiting for a bit more feedback before we finalize it). In the meantime you could still do that ""manually"" by following a convention like ERC-7201.". 
+
+issue: Is that meant as a security measure or just to prevent mistakes?
+solution: "Ah amazing answer. What security aspect you mean when saying that delegatecall should not be used with untrusty callees ? Selfdestruct is deprecated. So just curious 🙏 cameel (edited)". "The callee can fully impersonate your contract to the outside world. It can fire events, call other contracts, spend your tokens (and ether), etc. Storage is important too, but not necessarily the only issue to be worried about. (edited)". 
+
+issue: I would also like to know about contracts written entirely in Yul. Should such contracts strictly follow Solidity's Memory Layout? (For example, I have a completely independent contract from others and I want to optimize it for size and gas).
+solution: "No, in Yul memory management is completely up to you. Unless you want to use stack-to-memory mover - but even then you only have to stick to what you promise using memoryguard(). Other than that you don't have to stick to Solidity's memory management model in Yul. (edited)". 
+
+issue: "In Solidity, no. Codegen depends on dynamic memory being available. In Yul, yes, there you have full control over your contract."
+solution: "Let's say I have Solidity contract that doesn't use dynamic memory. Can I directly add to 0x80 (free memory pointer) instead of doing mload(0x40)? let pos := 0x80
+// let pos := mload(0x40)
+mstore(pos, hash)
+mstore(add(pos, 0x20), v)
+mstore(add(pos, 0x40), r)
+mstore(add(pos, 0x60), s)". 
+
+issue: Hi, how to repair the bellow code to compile successfully without change the contract structure.
+solution: "I literally asked the same question ChatGPT, tell me if that helps: pragma solidity ^0.8.24;
+
+interface NI1 {
+    function NInfo() external view returns (bytes32);
+}
+
+contract N1 is NI1 {
+    bytes32 public NInfo;
+
+    constructor() {
+        NInfo = keccak256(""aaa"");
+    }
+
+    function NInfo() external view override returns (bytes32) {
+        return NInfo;
+    }
+}
+
+interface N2I {
+    function NInfo() external view returns (bytes32);
+}
+
+contract N2 is N2I, N1 {
+    function NInfo() public view override(N1, N2I) returns (bytes32) {
+        return N1.NInfo();
+    }
+}". 
+
+issue: "Hii, sorry for off-topic, but do we have a similar Matrix community for general Ethereum discussions?  (I don't want to join Discord for this )"
+solution: "I'm afraid there's no Matrix channel for general Ethereum discussions as such. There are, however, some other channels that may be useful to you: Ethereum StackExchange if you have specific support questions r/ethereum & r/ethdev subreddits And as you may have noticed, the Ethereum.org Discord continues to be the place where most of the community has discussions and hangs out.". 
+
+issue: hey all. I am hitting the head against the wall. Would appreciate your inputs.
+solution: "What version of the compiler are you using, what pipeline (--via-ir or not?), are you requesting optimized output or not? I've tried compiling and can't get a repro.". "Thanks for the follow up ^_^ Solidity version - 0.8.17 I am NOT using --via-ir I am not sure whether I use optimizer or not (basically using default confuguration of foundry - nothing mentioned in foundry.toml file about optimizer)". 
+
+issue: Hi, how to repair the bellow code to compile successfully without change the contract structure.
+solution: "I literally asked the same question ChatGPT, tell me if that helps: pragma solidity ^0.8.24;
+
+interface NI1 {
+    function NInfo() external view returns (bytes32);
+}
+
+contract N1 is NI1 {
+    bytes32 public NInfo;
+
+    constructor() {
+        NInfo = keccak256(""aaa"");
+    }
+
+    function NInfo() external view override returns (bytes32) {
+        return NInfo;
+    }
+}
+
+interface N2I {
+    function NInfo() external view returns (bytes32);
+}
+
+contract N2 is N2I, N1 {
+    function NInfo() public view override(N1, N2I) returns (bytes32) {
+        return N1.NInfo();
+    }
+}". 
+
+issue: "Hii, sorry for off-topic, but do we have a similar Matrix community for general Ethereum discussions?  (I don't want to join Discord for this )"
+solution: "I'm afraid there's no Matrix channel for general Ethereum discussions as such. There are, however, some other channels that may be useful to you: Ethereum StackExchange if you have specific support questions r/ethereum & r/ethdev subreddits And as you may have noticed, the Ethereum.org Discord continues to be the place where most of the community has discussions and hangs out.". 
+
+issue: Hi, I have a question about the compiled JSON artifacts. When a storage field or abi input is an enum type, it is treated as a uint8, while also telling you the name of the original enum type. Would there be any way to get back the maximum value of that enum type without going through the AST to find the definition of the enum and counting its members?
+solution: Not last I checked, could be wrong, but shouldn't be too much trouble to parse the JSON. Not to the best of my knowledge.. 
+
+issue: Re debug mode, we're currently pinned to 0.8.15 and hope to update soon, though I've tested with 0.8.25 and still get stack too deep, even when assembly blocks are memory safe. Stack too deep can be hard to track down, and we have a few independent instances of it, so haven't spent much time trying to solve it with changes to solidity code, especially since a few parts are security critical.
+solution: "Hmm... our hope was really that what we did 0.8.21 would solve StackTooDeep in most cases. What it does is basically to run the UnusedPruner optimizer step which gets rid of excess unused variables generated by the codegen. And to enable the stack-to-memory mover even for unoptimized code. This is usually enough. We do have some cases when the problem still persists even with memory-safe assembly, and we're working on solving them in upcoming versions. For the time being, I can't give you any specific workaround, but there should be much fewer of them than you saw on 0.8.15. It seems plausible that one specific contract included by a lot of others would trigger it. It might actually be worthwhile to try to adjust that particular contract to get them to go away. The only other solution is to wait.". 
+
+issue: "Hi guys, I'm not sure if this is the correct channel, but I was wondering if there is any place where I can learn about the different medium/long term research lines regarding language design and Solidity. I was checking the forum (), but I was wondering if there is something a little more ""organized"" or more ""official"".  Thank you very much!"
+solution: Hi, not sure if this covers what you are looking for, but did you check out the roadmap? :) -> https://github.com/orgs/ethereum/projects/26. Unfortunately we don't have any neatly organized overview that could be used to catch up on this, so looking at the roadmap and posting on the forum about the topics you're specifically interested in is probably the best idea for now. The forum was meant as the place for this kind of discussion and we want more of it. It's just that people mostly just post support questions there, which get removed and this makes the forum look quite empty. Serious questions will actually get serious answers.. 
+
+issue: Hi, guys, Geth clien of ethereum node only run one evm to deal transaction. In other word, no go newEvm(...) to concurrent run evm.
+solution: Wrong chat. Here is exclusively about the Solidity language, you can try to ask in the geth discord server: https://discord.com/invite/nthXNEv. Sorry for bother you, I do not intend to upset anyone.. 
+
+issue: hi im very new to developing, total newbie here and im on my final year project on blockchain development. i want to ask if for creating a login session we must store the credentials (username & password) somewhere right? where should i store the credentials, mySQL or IPFS
+solution: "Hey, no need to say sorry, you didn't bother anyone. Sorry if my reply sounded rude or something. I was just informing that this was not the right place to search for help about geth :) I hope you get the help that you need in the geth discord server. (edited)". 
+
+issue: "Hey msolomon ! Thanks for bringing this up. It's a discussion we are actively having as part of our language design and research. Based on insights that come up, we intend to continue investigating various possible factors that currently impact compilation times of contracts and further make adjustments in the optimiser accordingly."
+solution: "Thanks for the info! To clarify, it's less that specific contracts seem problematic, and more that as project sizes grow—especially with test contracts now all written in solidity with forge (which can become very large)—compile time for the whole project become the bottleneck to development. I've noticed this on many projects in the past ~2 years and always put it in the solidity survey as my largest pain point with solidity :) A solc debug mode that optimizes for rapid compilation (while still mitigating stack too deep) is the ideal solution here. But as a stopgap I was hoping there might be some generic known tricks we can use to refactor things to get a significant performance boost". 
+
+issue: "Hi guys, I'm not sure if this is the correct channel, but I was wondering if there is any place where I can learn about the different medium/long term research lines regarding language design and Solidity. I was checking the forum (), but I was wondering if there is something a little more ""organized"" or more ""official"".  Thank you very much!"
+solution: Hi, not sure if this covers what you are looking for, but did you check out the roadmap? :) -> https://github.com/orgs/ethereum/projects/26. Unfortunately we don't have any neatly organized overview that could be used to catch up on this, so looking at the roadmap and posting on the forum about the topics you're specifically interested in is probably the best idea for now. The forum was meant as the place for this kind of discussion and we want more of it. It's just that people mostly just post support questions there, which get removed and this makes the forum look quite empty. Serious questions will actually get serious answers.. 
+
+issue: Hi, guys, Geth clien of ethereum node only run one evm to deal transaction. In other word, no go newEvm(...) to concurrent run evm.
+solution: Wrong chat. Here is exclusively about the Solidity language, you can try to ask in the geth discord server: https://discord.com/invite/nthXNEv. Sorry for bother you, I do not intend to upset anyone.. "Hey, no need to say sorry, you didn't bother anyone. Sorry if my reply sounded rude or something. I was just informing that this was not the right place to search for help about geth :) I hope you get the help that you need in the geth discord server. (edited)". 
+
+issue: "Hi everyone, I have a quick question, since I'm not sure where to find it in the documentation.  Is there a guarantied order of evaluation of f() g() h() in this example: some_external_function(f(), g(), h())  Is the order of argument evaluation guarantied?"
+solution: "No, it's undefined: https://docs.soliditylang.org/en/latest/control-structures.html#order-of-evaluation-of-expressions And not just theoretically. The order is actually different in the IR codegen: https://docs.soliditylang.org/en/latest/ir-breaking-changes.html#index-0". 
+
+issue: Hello, I am interested in Transient Storage (EIP 1153). I have looked at https://github.com/ethereum/solidity and I am unsure whether the solc already supports transient storage? There are a couple of pull requests (open and closed) mentioning it, but I can find nothing in the release notes. Can anyone provide insights here?
+solution: It will only be available in assembly. You're welcome. Additionally, please note that the release schedule is not a strict deadline. We plan to conduct further tests, and if everything appears to be in order, the release will likely take place this week.. 
+
+issue: "Hi everyone, I have a quick question, since I'm not sure where to find it in the documentation.  Is there a guarantied order of evaluation of f() g() h() in this example: some_external_function(f(), g(), h())  Is the order of argument evaluation guarantied?"
+solution: "No, it's undefined: https://docs.soliditylang.org/en/latest/control-structures.html#order-of-evaluation-of-expressions And not just theoretically. The order is actually different in the IR codegen: https://docs.soliditylang.org/en/latest/ir-breaking-changes.html#index-0". Thanks. 
+

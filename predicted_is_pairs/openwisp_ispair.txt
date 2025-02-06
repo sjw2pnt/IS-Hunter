@@ -1,0 +1,72 @@
+issue: If the issue persists on the dashboard container as well, then that would also explain the login problem. Django uses Redis (cache) to store session info. This is already configured in docker-openwisp. You can read the Django docs for troubleshooting.
+solution: I used the auto install scripts. The only errors come up during the container starting and then they go away. I have no errors, just the login goes back to the login screen. Have yet to use it and honestly I can read all the Django docs, but it's a fresh Debian install, and fresh auto install of the docker, so I'm not entirely sure where to go.. 
+
+issue: Hello, everyone! regarding internationalization i18, I attempted to modify the Language_comDE in the Django configuration file py, but it had no impact. How can it take effect?
+solution: have you run compilemessages and restarted the application? Are you using ansible-openwisp2 or what else?. Just restarted the device. I didn't use ansible-openwip2, just tried to switch the language of the application.. 
+
+issue: "Hello everyone! I'm Patrik Malina, a Computer Science student from Slovakia currently working on my diploma thesis. My project focuses on adding custom functionality to the OpenWISP controller, and I’ve hit a roadblock I hope you can help me with."
+solution: Is the celery worker running? Does the SSH connection between the controller and the device work?. Yes the celery worker is running and the connection works, because when i update configuration for connected device on the website it modifies the device. When i did it with code like i showed, it updated configuration in the database and triggered the task for configuration but it didnt update the device even when i waited for 30min.. 
+
+issue: "Server Error (500)  I got this error when i  sudo systemctl restart nginx sudo systemctl restart supervisor   i have make some changes in UI after that chnages not reflecting so i restart the services then i got this issue "
+solution: "If you have made changes to the CSS/JS, execute this command 1 /opt/openwisp2/env/bin/python /opt/openwisp2/manage.py collectstatic --no-input Restart the services after running this command. (edited)". 
+
+issue: If you have made changes to the CSS/JS, execute this command
+solution: "/opt/openwisp2/env/bin/python /opt/openwisp2/manage.py collectstatic --no-input i have run this cmd first then restart the nginx services and sudo supervisorctl restart openwisp2  then i got server 500 error again". 
+
+issue: "good point, pandafy is it possible to delete a device which has been flagged for deletion but is not completely deactivated yet? If not, we have to think about a way to allow forcing the deletion anyway."
+solution: i assume currently i would need to remove it straight from the DB? ...or bring a VM as fake device online? ;-). "I just saw the bug/issue on github, thanks pandafy". 
+
+issue: "pandafy : based on your answer for the deletion of devices, it looks like OpenWISP uses virtual env and neither the debian package nor the normal PIP packages, but is the cron command also using the virtual env?"
+solution: yes, the cron command uses virtualenv. "the urllib in venv is version 2.2.3, wheras debian 12 has python3-urllib3 in versoin 1.26.12. i removed the debian package and re-run the ansible role and now i don't get any errors. the downside is that due to the removal of the debian urllib3 package, the cloud-init package was removed too as i requires urllib3 :-(". 
+
+issue: "the urllib in venv is version 2.2.3, wheras debian 12 has python3-urllib3 in versoin 1.26.12. i removed the debian package and re-run the ansible role and now i don't get any errors. the downside is that due to the removal of the debian urllib3 package, the cloud-init package was removed too as i requires urllib3 :-("
+solution: "pandafy : due to the removal of the debian python3-urllib3 package the certbot package got removed too. i just saw that it got removed because of a cron mail. is the certbot now deployed in the virtualenv and so the certbot debian package isn't needed anymore?". If you followed the Using Let's Encrypt SSL Certificate of Ansible docs, then you used the geerlingguy.certbot role for installing certbot. I would recommend re-running the playbook with that role to install everything correctly.. 
+
+issue: "Thanks for the new release! I am using the ansible version til now but want to switch to the docker version. shall i first upgrade to the new release and than try to migrate to docker or the other way around? i only need to keep the devices & configs but no stats/history data. so i suppose it would be sufficient to just take over the sqlite file? (whereas best i migrate to a sql server too in that step)"
+solution: I've never done this personally, I wouldn't do it if I was you unless you have a very good reason for the extra effort. If your instance is working I wouldn't touch it.. 
+
+issue: "looking at the other logs, I believe this is now the issue: [8736d69e12df] - WARNING, time: [2024-12-04 01:44:07,735],process: 26, thread: 23409243191040 Forbidden (Origin checking failed -  does not match any trusted origins.): /admin/login/  So where do I set the trusted origins?"
+solution: after many web searches, I found that if I edit the custom_django_settings.py to include my domain, it doesn't give me a 403 error. I can 'login' but I just end up back at the login page. so I appear to be making progress, but not sure what is going on with this.. the fact that you're going back to the login page means that probably the session cookies aren't working. 
+
+issue: the fact that you're going back to the login page means that probably the session cookies aren't working
+solution: if you use an HTTP proxy, the proxy may be messing with it. I am not sure because I never deployed a proxy myself. Some customers I work for have their deployments behind proxies but they have experts who take care of that part and for me is transparent, so I can't really help you apart from pointing you in this direction or advise to get rid of the proxy and simplify your life.. Yep, not getting a cookie, but the nginxproxymanager doesn't seem to be getting the request for it either. And I'm at a loss as to how to fix that and can't figure out how to log in with just ip. This is actually the most frustrating docker install I've ever done. 
+
+issue: the fact that you're going back to the login page means that probably the session cookies aren't working
+solution: if you use an HTTP proxy, the proxy may be messing with it. I am not sure because I never deployed a proxy myself. Some customers I work for have their deployments behind proxies but they have experts who take care of that part and for me is transparent, so I can't really help you apart from pointing you in this direction or advise to get rid of the proxy and simplify your life.. Yep, not getting a cookie, but the nginxproxymanager doesn't seem to be getting the request for it either. And I'm at a loss as to how to fix that and can't figure out how to log in with just ip. This is actually the most frustrating docker install I've ever done. 
+
+issue: You can keep your existing installation. The ansible-openwisp2 will upgrade the modules.
+solution: Thank you. Could you give me a clue on which variables to set for my scenario: I'm using one debian machine for all components. All my Wi-Fi routers with OpenWrt are in the same flat network.. 
+
+issue: "Hi All! If I want to change one of the variables in the playbook.yml, how do I restart openwisp2, so the changes take effect? (edited)"
+solution: "After execution, the playbook would automatically restart the required services. If you want to manually restart any service, check the troubleshooting docs https://openwisp.io/docs/dev/ansible/user/troubleshooting.html". 
+
+issue: "Hi, All! What's the best way to test if monitoring working? I have 26 Wi-Fi routers, 6 of which are not displaying ""Wi-Fi Sessions"" tab... but there are stats in Chart tab. So, is it working or not?"
+solution: you're probably using OpenWISP 22.05, we just released 24.11, before these features were available only in the dev version. 
+
+issue: "Hey everyone!  Glad to be here! I'm a 2nd year Computer Engineering student, I have a keen mastery in languages like Python, Django & Javascript, hoping to contribute to openwsp. New to this field of open source contribution. I'm here to make friends and meet new people and learn from them.  Can someone guide me though what I hv to do to get started with contributing to openwsp. Thanks ;)"
+solution: Hi there Neil, you can go through the official docs of openWISP https://openwisp.io/docs/ to have a high level understanding of the project. Once you get the idea next step would be to go through some issues labelled as good-first issues and also setup the project on your local machine and playaround for a while to get better understanding of the functionalities. I myself am quite new to this so anyone can correct me if am wrong.. 
+
+issue: also, i can only access web interface trough hostname (https://vpngateway) but if i try ip (https://192.168.55.11) i get error 404 
+solution: Unless you add the ip to the allowed hosts, you can't access via IP address. yes, i can ping both ways. 
+
+issue: You can keep your existing installation. The ansible-openwisp2 will upgrade the modules.
+solution: Thank you. Could you give me a clue on which variables to set for my scenario: I'm using one debian machine for all components. All my Wi-Fi routers with OpenWrt are in the same flat network.. 
+
+issue: "Hey everyone!  Glad to be here! I'm a 2nd year Computer Engineering student, I have a keen mastery in languages like Python, Django & Javascript, hoping to contribute to openwsp. New to this field of open source contribution. I'm here to make friends and meet new people and learn from them.  Can someone guide me though what I hv to do to get started with contributing to openwsp. Thanks ;)"
+solution: Hi there Neil, you can go through the official docs of openWISP https://openwisp.io/docs/ to have a high level understanding of the project. Once you get the idea next step would be to go through some issues labelled as good-first issues and also setup the project on your local machine and playaround for a while to get better understanding of the functionalities. I myself am quite new to this so anyone can correct me if am wrong.. 
+
+issue: So it seems when the devices initially check-in on boot they will pull the config over the internet directly from the OpenWISP server, but if I then change the config I can't remotely push it to the device, I have to wait for the device to check-in again.  Presumably having the VPN connection would enable the 'push' of the configs?
+solution: correct, if the device is reachable directly on the management interface, e.g. via VPN, it would apply the config immediately (via push). 
+
+issue: So next question!  Is there a configuration template for Cron tasks?  or would that just be done as a file into /etc/crontabs/?
+solution: 
+
+issue: You don't need to use a VPN connection, it is just beneficial for some usecases.
+solution: So it seems when the devices initially check-in on boot they will pull the config over the internet directly from the OpenWISP server, but if I then change the config I can't remotely push it to the device, I have to wait for the device to check-in again.  Presumably having the VPN connection would enable the 'push' of the configs?. correct, if the device is reachable directly on the management interface, e.g. via VPN, it would apply the config immediately (via push). 
+
+issue: So next question!  Is there a configuration template for Cron tasks?  or would that just be done as a file into /etc/crontabs/?
+solution: putting a file into that location works but it needs a restart of the cron service to take effect, can that be done remotely?. 
+
+issue: "Hi! Does anyone know how to add ip's to ""allowed ips"" in the wireguard config on the server side? Managed to add ip's on the client side in the wg client template but the peer on the server side has only the peer ip in ""allowed ips"". (edited)"
+solution: when a device is assigned the VPN template, the wireguard IP assigned to the device is automatically added. 
+
